@@ -1,0 +1,40 @@
+name: Recolección Diaria Métricas SEO
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 08:00 UTC
+    - cron: '0 8 * * *'
+  # Permite ejecutarlo manualmente desde la pestaña Actions para probar
+  workflow_dispatch:
+
+jobs:
+  audit_seo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # IMPORTANTE: Permiso para hacer commit y push
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalar dependencias
+        run: |
+          pip install requests
+
+      - name: Ejecutar Script de Auditoría
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: python collect_seo.py
+
+      - name: Guardar cambios (Commit & Push)
+        run: |
+          git config --global user.name 'GitHub Action Bot'
+          git config --global user.email 'action@github.com'
+          git add data/seo/*.json
+          # Solo hace commit si hay cambios
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: Nuevas métricas SEO capturadas" && git push)
