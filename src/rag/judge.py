@@ -105,8 +105,9 @@ class RAGJudge:
                 if attempt == max_retries:
                     raise
 
-        # Should not reach here, but just in case
-        raise RuntimeError("generate_answer: all retries exhausted")
+        # Unreachable: the loop always returns or raises on last attempt.
+        # Kept as defensive guard.
+        raise RuntimeError("generate_answer: all retries exhausted")  # pragma: no cover
 
     # ------------------------------------------------------------------
     # Context formatting
@@ -121,7 +122,7 @@ class RAGJudge:
 
             header = f"## [Fuente {i}: {url}]"
             if title:
-                header += f"\n### Titulo: {title}"
+                header += f"\n### Título: {title}"
             header += f"\n\n{doc.page_content}"
             sections.append(header)
 

@@ -54,7 +54,7 @@ def create_embeddings(config: Optional[Dict[str, Any]] = None):
     fallback_dim = fallback.get("dimensions", 1536)
     logger.warning(
         "Using OpenAI embeddings: %s (%dd). "
-        "ATENCION: Las dimensiones (%d) difieren de las locales (%d). "
+        "ATENCIÓN: Las dimensiones (%d) difieren de las locales (%d). "
         "NO mezclar vectorstores generados con distintos modelos de embeddings.",
         model,
         fallback_dim,

@@ -96,7 +96,7 @@ class StructuredWebLoader:
                     resp.encoding = resp.apparent_encoding
                 return resp.text
             except requests.RequestException as exc:
-                wait = 2**attempt
+                wait = min(2**attempt, 30)
                 logger.warning(
                     "Attempt %d/%d failed for %s: %s. Retry in %ds",
                     attempt + 1,
@@ -195,7 +195,37 @@ class StructuredWebLoader:
                 if text and href and href.startswith("http"):
                     lines.append(f"[{text}]({href})")
 
-            elif name in ("div", "section", "span", "figure", "blockquote"):
+            elif name == "blockquote":
+                text = child.get_text(strip=True)
+                if text:
+                    lines.append("> " + text)
+
+            elif name in ("pre", "code"):
+                text = child.get_text()
+                if text.strip():
+                    lines.append("```\n" + text.strip() + "\n```")
+
+            elif name in ("strong", "b"):
+                text = child.get_text(strip=True)
+                if text:
+                    lines.append(f"**{text}**")
+
+            elif name in ("em", "i"):
+                text = child.get_text(strip=True)
+                if text:
+                    lines.append(f"*{text}*")
+
+            elif name in ("dl",):
+                for dt in child.find_all("dt", recursive=False):
+                    text = dt.get_text(strip=True)
+                    if text:
+                        lines.append(f"**{text}**")
+                for dd in child.find_all("dd", recursive=False):
+                    text = dd.get_text(strip=True)
+                    if text:
+                        lines.append(f": {text}")
+
+            elif name in ("div", "section", "span", "figure", "article", "main"):
                 self._walk(child, lines)
 
     # ------------------------------------------------------------------

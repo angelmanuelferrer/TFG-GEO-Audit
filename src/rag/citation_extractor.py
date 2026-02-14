@@ -70,7 +70,12 @@ class CitationExtractor:
     def _url_matches_target(self, url: str) -> bool:
         """Check whether *url* belongs to the target domain."""
         normalized = self._normalize_url(url)
-        return normalized.startswith(self._normalized_target)
+        # Ensure exact domain match: after the target string there must be
+        # either nothing, a '/', or a '?' — prevents "programamos.es.evil.com".
+        if not normalized.startswith(self._normalized_target):
+            return False
+        remainder = normalized[len(self._normalized_target):]
+        return remainder == "" or remainder[0] in ("/", "?", "#")
 
     def _count_target_citations(self, citations: List[dict]) -> int:
         """Count how many citations reference the target URL."""
