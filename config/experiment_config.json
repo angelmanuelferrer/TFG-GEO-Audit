@@ -1,0 +1,55 @@
+{
+  "version": "1.0.0",
+  "target_url": "https://programamos.es",
+  "target_brand": "Programamos",
+
+  "rag_simulator": {
+    "model": "gpt-4o",
+    "temperature": 0.0,
+    "seed": 42,
+    "max_tokens": 2000,
+    "response_format": "json_object"
+  },
+
+  "embeddings": {
+    "model": "intfloat/multilingual-e5-large",
+    "dimensions": 1024,
+    "provider": "local",
+    "fallback": {
+      "model": "text-embedding-3-small",
+      "dimensions": 1536,
+      "provider": "openai"
+    }
+  },
+
+  "chunking": {
+    "default_chunk_size_tokens": 1024,
+    "default_overlap_tokens": 128,
+    "faq_chunk_size_tokens": 256,
+    "faq_overlap_tokens": 64,
+    "separators": ["\n## ", "\n### ", "\n\n", "\n", ". ", " "]
+  },
+
+  "retrieval": {
+    "top_k": 5,
+    "search_type": "similarity"
+  },
+
+  "competitors": [
+    "code.org",
+    "scratch.mit.edu",
+    "codelearn.es",
+    "campustecnologico.es"
+  ],
+
+  "live_evaluation": {
+    "engines": ["chatgpt", "gemini"],
+    "chatgpt_model": "gpt-4o",
+    "gemini_model": "gemini-2.0-flash"
+  },
+
+  "sentiment": {
+    "model": "gpt-4o-mini",
+    "temperature": 0.0
+  }
+}

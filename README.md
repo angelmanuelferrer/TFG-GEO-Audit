@@ -1,89 +1,129 @@
-🚀 GEO & Technical SEO Audit System: Caso de Estudio "Programamos"
-Trabajo de Fin de Grado (TFG) Optimización de Motores Generativos: Arquitectura, Medición y Estrategias de Intervención.
+## 1. Introducción
 
-📄 Resumen del Proyecto
-La arquitectura fundamental de la recuperación de información está cambiando de un modelo determinista (Google SERP) a un modelo probabilístico y sintetizado (ChatGPT, Perplexity, Gemini). Este cambio de paradigma da lugar a una nueva disciplina: GEO (Generative Engine Optimization).
+La evolución de los motores de búsqueda hacia sistemas basados en **modelos generativos** (como Google AI Overviews, Perplexity o ChatGPT con navegación) ha provocado un cambio de paradigma: la visibilidad de una marca ya no depende únicamente del posicionamiento en rankings clásicos, sino de **su aparición y citación dentro de respuestas generadas por IA**.
 
-Este proyecto desarrolla un sistema de Agentes Autónomos capaz de auditar, medir y optimizar la visibilidad de la organización sin ánimo de lucro Programamos.es en este nuevo ecosistema. A diferencia del SEO tradicional, que busca clics, el GEO busca la inclusión semántica en la respuesta generada por la IA.
+Este proyecto propone el diseño e implementación de un **pipeline de auditoría GEO (Generative Engine Optimization)** que permita medir, analizar y mejorar la visibilidad de un sitio web dentro de respuestas generativas, tomando como caso de estudio **Programamos.es**.
 
-El sistema combina métricas de Rendimiento Web (Core Web Vitals) con métricas de Visibilidad en IA (PAWC, SoM) para establecer una correlación entre la calidad técnica y la autoridad semántica percibida por los LLMs.
+---
 
-🎯 Objetivos del Proyecto
-Auditoría Dual (SEO + GEO): Automatizar la recolección de métricas técnicas (Lighthouse) y de visibilidad generativa (Simulación RAG).
+## 2. Objetivos del proyecto
 
-Ingeniería Inversa de Intención: Utilizar agentes de IA para deducir las preguntas de nicho donde la marca debería ser citada, evitando el sesgo de marca (Brand Bias).
+### Objetivo principal
 
+Diseñar un sistema que permita **medir de forma sistemática la visibilidad de un sitio web en motores generativos**, y analizar cómo dicha visibilidad evoluciona tras cambios controlados en el contenido del sitio.
 
-Medición Científica: Implementar métricas académicas como Position-Adjusted Word Count (PAWC) y Share of Model (SoM) para cuantificar la visibilidad.
+### Objetivos secundarios
 
-Generación de Activos Web: Desplegar agentes capaces de generar código (HTML/Tailwind) optimizado para ser ingerido por sistemas RAG (Retrieval-Augmented Generation).
+* Definir métricas GEO cuantificables (visibilidad, Share of Model, ranking de citación).
+* Evaluar la evolución temporal de dichas métricas ante intervenciones de contenido.
+* Analizar de forma exploratoria la coexistencia entre métricas GEO y métricas SEO técnicas (Lighthouse).
+* Diseñar una arquitectura extensible que pueda evolucionar hacia una plataforma de auditoría completa.
 
-🏗️ Arquitectura del Sistema (Agentic Workflow)
-El núcleo del proyecto es un grafo de estados (StateGraph) construido con LangGraph que orquesta el flujo de trabajo de múltiples agentes especializados:
+---
 
-Fragmento de código
-graph LR
-    A[Nodo Estratega] --> B[Nodo Descubridor]
-    B --> C[Nodo Procesador]
-    C --> D[Nodo Técnico SEO]
-    D --> E[Simulador RAG]
-    E --> F[Reportero Notion]
-Descripción de Nodos:
-🧠 Nodo A: El Estratega (Intent Reverse Engineering) Analiza la web objetivo y deduce, mediante GPT-4, cuáles son las necesidades del usuario ("Pain Points") que la web resuelve, generando prompts de búsqueda de nicho.
+## 3. Enfoque metodológico
 
-🕵️ Nodo B: El Descubridor (Competitive Intelligence) Utiliza Tavily para realizar búsquedas profundas en internet y detectar a los competidores reales que dominan esas consultas, ignorando resultados irrelevantes.
+El proyecto sigue un **enfoque experimental y evolutivo**, alineado con la literatura reciente sobre GEO y sistemas RAG:
 
-⚙️ Nodo C: El Procesador (RAG Pipeline) Realiza scraping ético de la web objetivo y la competencia, aplicando estrategias de chunking (fragmentación) para preparar el contenido para su análisis vectorial.
+* Se define un **pipeline de evaluación fijo**, que actúa como “juez”.
+* El pipeline se ejecuta periódicamente sobre el sitio web.
+* **La única variable experimental es el contenido del sitio**, que se modifica de forma controlada entre versiones.
+* Las variaciones en las métricas observadas se atribuyen exclusivamente a dichos cambios de contenido.
 
-⚡ Nodo Técnico (Google PageSpeed) Consulta la API de Lighthouse para extraer métricas críticas: LCP (Largest Contentful Paint), TBT (Total Blocking Time) y Puntuación SEO, correlacionando velocidad con visibilidad.
+Este enfoque evita introducir sesgos derivados de cambios en el sistema de evaluación.
 
-⚖️ Nodo D: El Juez (Simulador de Motor Generativo) Crea una base de datos vectorial efímera (FAISS) y simula el comportamiento de un motor de respuesta (como Perplexity). Evalúa si la marca es citada en la respuesta generada.
+---
 
-📊 Nodo E: El Reportero (Integration) Inyecta los resultados en tiempo real en una base de datos de Notion, creando un dashboard histórico de evolución.
+## 4. Métricas de evaluación
 
-📏 Métricas Implementadas
-Basándonos en la investigación de Aggarwal et al. (2024) y Chen et al. (2025), el sistema calcula:
+### 4.1 Métricas GEO (principales)
 
-1. Métricas GEO (Visibilidad IA)
-PAWC (Position-Adjusted Word Count): Mide la visibilidad ponderada por la posición de la cita. Una mención al principio vale más que al final.
+El sistema mide, entre otras, las siguientes métricas:
 
+* **Visibilidad**: aparición del sitio web en la respuesta generativa.
+* **Share of Model (SoM)**: proporción de citas atribuidas al sitio respecto al total de fuentes citadas.
+* **Ranking de citación**: posición en la que aparece citado el sitio dentro de la respuesta.
+* **Cobertura**: número de consultas en las que el sitio aparece citado.
 
-SoM (Share of Model): Porcentaje de citas que pertenecen a nuestra marca frente al total de competidores en una respuesta generada.
+Estas métricas se calculan a partir de respuestas generadas por un modelo SOTA que actúa como simulador de motor generativo.
 
-Ranking de Citación: Posición ordinal de la primera aparición de la marca (1º, 2º, 3º...).
+---
 
+### 4.2 Métricas SEO técnicas (exploratorias)
 
-Subjective Impression: Evaluación cualitativa (Relevancia, Autoridad) realizada por un "LLM-as-a-Judge".
+De forma complementaria, se recogen métricas técnicas mediante Lighthouse/PageSpeed (SEO score, performance, CWV).
 
-2. Métricas Técnicas (SEO Tradicional)
-Performance Score: Puntuación global de rendimiento (0-100).
+⚠️ Estas métricas **no se utilizan para establecer causalidad**, sino para analizar su coexistencia temporal con las métricas GEO.
 
-LCP & TBT: Métricas clave de la experiencia de usuario (Core Web Vitals).
+---
 
-🛠️ Stack Tecnológico
-Lenguaje: Python 3.10+
+## 5. Arquitectura del sistema
 
-Orquestación: LangChain & LangGraph
+El sistema se estructura en un pipeline modular con dos modos de operación:
 
-LLMs: OpenAI GPT-4o (Cerebro), GPT-4o-Mini (Tareas auxiliares)
+### 5.1 Modo Experimental (núcleo del TFG)
 
-Búsqueda & Web: Tavily API (Search), LangChain WebBaseLoader (Scraping)
+Modo diseñado para garantizar rigor científico:
 
-Vector Store: FAISS (Facebook AI Similarity Search)
+* Queries fijas y versionadas.
+* Pipeline de evaluación completamente congelado.
+* Modelo juez SOTA constante.
+* Cambios únicamente en el contenido del sitio web.
 
-Análisis Técnico: Google PageSpeed Insights API
+Este modo es el utilizado para la validación experimental del trabajo.
 
-Dashboard: Notion API (client-python)
+---
 
-📚 Fundamentación Teórica
-Este proyecto se apoya en la literatura reciente sobre la optimización para motores generativos. Específicamente, adopta la definición de Generative Engine (GE) como sistemas que sintetizan información de múltiples fuentes utilizando LLMs.
+### 5.2 Modo Plataforma (extensión)
 
-Se validan experimentalmente las hipótesis de Aggarwal et al. sobre cómo la Adición de Citas y Estadísticas  influyen positivamente en la probabilidad de que un contenido sea recuperado por el sistema RAG y citado en la respuesta final.
+Modo orientado a auditorías completas y uso industrial:
 
-🚀 Instalación y Uso
+* Arquitectura multi-agente (estratega, descubridor, procesador, auditor técnico).
+* Análisis de competidores.
+* Integración con dashboards (Notion).
+* Generación automática de recomendaciones.
 
-Bash
-pip install -r requirements.txt
-# Principales: langchain, langgraph, faiss-cpu, notion-client, openai, tavily-python
-Configurar Variables de Entorno (.env):
+Este modo se presenta como evolución natural del sistema una vez validado el enfoque experimental.
 
+---
+
+## 6. Simulación de motores generativos
+
+La literatura indica que la evaluación GEO **no es válida** si se realiza únicamente con modelos locales o simulaciones offline.
+
+Por este motivo:
+
+* El sistema utiliza **modelos SOTA accesibles vía API** como referencia de comportamiento real.
+* El simulador actúa como juez generativo, obligado a citar explícitamente las fuentes utilizadas.
+
+Este enfoque garantiza realismo y alineación con el funcionamiento de los motores actuales.
+
+---
+
+## 7. Principios de optimización GEO considerados
+
+El diseño del sistema y las intervenciones propuestas se apoyan en los siguientes principios descritos en la literatura:
+
+* Claridad semántica y baja ambigüedad.
+* Estructura fácilmente parseable (machine scannability).
+* Preparación para la citación (citation readiness).
+* Similitud semántica con las consultas objetivo.
+* Consideración del **sesgo hacia fuentes de autoridad externas (earned media bias)**.
+* Análisis del trade-off entre predictabilidad del contenido y diversidad expresiva.
+
+---
+
+## 8. Alcance y limitaciones
+
+* El estudio se centra en un único caso de estudio.
+* No se pretende demostrar causalidad directa entre métricas SEO técnicas y visibilidad GEO.
+* Los resultados están condicionados al comportamiento probabilístico de los modelos generativos.
+* Se mitiga dicha variabilidad mediante ejecuciones repetidas y análisis agregado.
+
+---
+
+## 9. Conclusión
+
+Este proyecto propone un marco reproducible y extensible para el estudio de la optimización GEO, combinando rigor experimental con una arquitectura cercana a escenarios reales de industria.
+
+La validación del pipeline experimental sienta las bases para futuras extensiones hacia plataformas completas de auditoría y optimización para motores generativos.
