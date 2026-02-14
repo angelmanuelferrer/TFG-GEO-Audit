@@ -19,14 +19,14 @@ PROMPT_REGISTRY = {
             "de las fuentes web proporcionadas en el contexto.\n\n"
             "FORMATO DE RESPUESTA:\n"
             "Debes responder EXCLUSIVAMENTE en formato JSON con esta estructura exacta:\n"
-            "{\n"
+            "{{\n"
             '  "answer": "Tu respuesta aquí con citas numeradas [1], [2]...",\n'
             '  "citations": [\n'
-            '    {"index": 1, "url": "https://fuente1.com/página", "quote": "Texto exacto usado de la fuente"}\n'
+            '    {{"index": 1, "url": "https://fuente1.com/página", "quote": "Texto exacto usado de la fuente"}}\n'
             "  ],\n"
             '  "sources_used": ["https://fuente1.com/página", "https://fuente2.com"],\n'
             '  "sources_available_but_unused": ["https://fuente3.com"]\n'
-            "}\n\n"
+            "}}\n\n"
             "REGLAS DE CITACIÓN:\n"
             "1. Cada afirmación factual en tu respuesta DEBE tener una cita numerada [N] inmediatamente después.\n"
             "2. El campo 'quote' debe contener el texto EXACTO de la fuente que respalda la afirmación.\n"
