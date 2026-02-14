@@ -30,7 +30,7 @@ def create_embeddings(config: Optional[Dict[str, Any]] = None):
     if emb_config.get("provider") == "local":
         try:
             import torch
-            from langchain_community.embeddings import HuggingFaceEmbeddings
+            from langchain_huggingface import HuggingFaceEmbeddings
 
             device = "cuda" if torch.cuda.is_available() else "cpu"
             model_name = emb_config["model"]
