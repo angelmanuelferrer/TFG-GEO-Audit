@@ -30,7 +30,7 @@ def create_embeddings(config: Optional[Dict[str, Any]] = None):
     if emb_config.get("provider") == "local":
         try:
             import torch
-            from langchain_community.embeddings import HuggingFaceEmbeddings
+            from langchain_huggingface import HuggingFaceEmbeddings
 
             device = "cuda" if torch.cuda.is_available() else "cpu"
             model_name = emb_config["model"]
@@ -54,7 +54,7 @@ def create_embeddings(config: Optional[Dict[str, Any]] = None):
     fallback_dim = fallback.get("dimensions", 1536)
     logger.warning(
         "Using OpenAI embeddings: %s (%dd). "
-        "ATENCION: Las dimensiones (%d) difieren de las locales (%d). "
+        "ATENCIÓN: Las dimensiones (%d) difieren de las locales (%d). "
         "NO mezclar vectorstores generados con distintos modelos de embeddings.",
         model,
         fallback_dim,
