@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "description": "Set fijo de 15 queries para modo experimental. No modificar entre runs.",
+  "total": 15,
+  "categories": {
+    "informacional": [
+      "¿Qué proyectos existen para enseñar programación a niños en España?",
+      "¿Cómo puedo enseñar a programar a niños de primaria?",
+      "¿Qué recursos gratuitos hay para aprender Scratch?",
+      "¿Cuáles son las mejores iniciativas de educación tecnológica para jóvenes?",
+      "¿Qué organizaciones sin ánimo de lucro promueven la programación infantil?"
+    ],
+    "comparativa": [
+      "¿Cuál es la mejor plataforma para que los niños aprendan a programar?",
+      "Diferencias entre Code.org, Scratch y otras plataformas educativas de programación",
+      "¿Qué alternativas a Code.org existen en español?",
+      "Comparativa de herramientas para enseñar pensamiento computacional",
+      "¿Qué proyectos educativos de programación operan en Andalucía?"
+    ],
+    "navegacional": [
+      "¿En qué consiste el proyecto Programamos?",
+      "¿Quién está detrás de Programamos.es?",
+      "¿Qué ofrece la web programamos.es?",
+      "Recursos de Programamos para docentes",
+      "¿Cómo participar en Programamos?"
+    ]
+  }
+}

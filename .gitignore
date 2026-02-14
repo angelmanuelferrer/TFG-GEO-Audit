@@ -1,0 +1,36 @@
+# Environment
+.env
+devcontainer.json
+
+# Claude
+.claude
+.c
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (large/generated files - tracked selectively)
+data/content/
+data/pages_generated/
+
+# Internal context (not for public)
+contexto-interno/
