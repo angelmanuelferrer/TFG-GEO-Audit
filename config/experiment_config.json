@@ -44,8 +44,8 @@
 
   "live_evaluation": {
     "engines": ["chatgpt", "gemini"],
-    "chatgpt_model": "gpt-4o",
-    "gemini_model": "gemini-2.0-flash"
+    "chatgpt_model": "gpt-4o-mini",
+    "gemini_model": "gemini-2.0-flash-lite"
   },
 
   "sentiment": {
