@@ -1,9 +1,9 @@
-"""Discover real competitors by querying live LLMs and extracting cited sources.
+"""Discover real competitors by querying Claude with web search.
 
-Asks the 15 fixed queries to ChatGPT and Gemini, extracts the URLs they cite,
-and ranks them by frequency. The result is saved as frozen_competitors.json
+Asks the 15 fixed queries to Claude (with web search enabled), extracts the URLs
+it cites, and ranks them by frequency. The result is saved as frozen_competitors.json
 and used as the fixed competitor set for all experimental runs.
-See ADR-004 in docs/DECISIONS.md.
+See ADR-004 and ADR-009 in docs/DECISIONS.md.
 """
 
 from __future__ import annotations
@@ -37,7 +37,7 @@ _EXCLUDED_DOMAINS = {
 
 
 class CompetitorFinder:
-    """Queries live LLMs to discover which sources they cite for the target queries."""
+    """Queries Claude with web search to discover which sources it cites."""
 
     def __init__(self, config: Optional[Dict[str, Any]] = None) -> None:
         if config is None:
@@ -47,12 +47,8 @@ class CompetitorFinder:
 
         self.config = config
         live = config.get("live_evaluation", {})
-        self._chatgpt_model = live.get("chatgpt_model", "gpt-4o")
-        self._gemini_model = live.get("gemini_model", "gemini-2.0-flash")
-
-        # Initialize LLM clients once (not per query)
-        self._chatgpt = None
-        self._gemini = None
+        self._claude_model = live.get("claude_model", "claude-sonnet-4-5-20250929")
+        self._client = None
 
     # ------------------------------------------------------------------
     # Public API
@@ -61,12 +57,12 @@ class CompetitorFinder:
     def discover_competitors(
         self, queries: List[str], delay: float = 2.0
     ) -> Dict[str, Any]:
-        """Ask each query to ChatGPT and Gemini, extract cited URLs.
+        """Ask each query to Claude with web search, extract cited URLs.
 
         Parameters
         ----------
         queries : list of str
-            The queries to send to each engine.
+            The queries to send to Claude.
         delay : float
             Seconds to wait between API calls (rate limiting).
 
@@ -80,29 +76,29 @@ class CompetitorFinder:
 
         for i, query in enumerate(queries):
             logger.info("Query %d/%d: %s", i + 1, len(queries), query[:60])
-            entry: Dict[str, Any] = {}
 
-            # ChatGPT
-            chatgpt_resp = self._query_chatgpt(query)
-            chatgpt_urls = self._extract_urls(chatgpt_resp)
-            entry["chatgpt"] = {
-                "response": chatgpt_resp,
-                "urls_cited": chatgpt_urls,
+            result = self._query_claude(query)
+            text_urls = self._extract_urls(result["text"])
+
+            # Citation URLs come from web search citations (higher quality)
+            citation_urls = []
+            for u in result.get("citation_urls", []):
+                cleaned = self._clean_url(u)
+                if cleaned:
+                    citation_urls.append(cleaned)
+
+            # Combine: citation URLs first (verified by search), then text URLs
+            combined = list(dict.fromkeys(citation_urls + text_urls))
+
+            per_query[query] = {
+                "claude": {
+                    "response": result["text"],
+                    "urls_cited": combined,
+                    "search_urls": result.get("search_urls", []),
+                    "citation_urls": citation_urls,
+                }
             }
-            all_urls.extend(chatgpt_urls)
-
-            time.sleep(delay)
-
-            # Gemini
-            gemini_resp = self._query_gemini(query)
-            gemini_urls = self._extract_urls(gemini_resp)
-            entry["gemini"] = {
-                "response": gemini_resp,
-                "urls_cited": gemini_urls,
-            }
-            all_urls.extend(gemini_urls)
-
-            per_query[query] = entry
+            all_urls.extend(combined)
 
             if i < len(queries) - 1:
                 time.sleep(delay)
@@ -112,7 +108,7 @@ class CompetitorFinder:
 
         return {
             "discovery_date": datetime.now().isoformat(),
-            "engines_used": ["chatgpt", "gemini"],
+            "engines_used": ["claude"],
             "per_query": per_query,
             "aggregated_urls": aggregated,
             "top_competitors": [u["url"] for u in aggregated[:15]],
@@ -126,54 +122,90 @@ class CompetitorFinder:
         logger.info("Saved %d competitors to %s", n, output_path)
 
     # ------------------------------------------------------------------
-    # LLM queries
+    # LLM query
     # ------------------------------------------------------------------
 
-    def _query_chatgpt(self, query: str) -> str:
-        """Send query to ChatGPT and return the response text."""
+    def _query_claude(self, query: str) -> Dict[str, Any]:
+        """Send query to Claude with web search and return structured data."""
         try:
-            if self._chatgpt is None:
-                from langchain_openai import ChatOpenAI
+            if self._client is None:
+                import anthropic
 
-                self._chatgpt = ChatOpenAI(model=self._chatgpt_model, temperature=0.0)
-            llm = self._chatgpt
-            system = (
-                "Eres un asistente que responde preguntas citando fuentes web. "
-                "Incluye las URLs completas de las fuentes que uses en tu respuesta."
+                self._client = anthropic.Anthropic()
+
+            response = self._client.messages.create(
+                model=self._claude_model,
+                max_tokens=2000,
+                tools=[
+                    {
+                        "type": "web_search_20250305",
+                        "name": "web_search",
+                        "max_uses": 5,
+                        "user_location": {
+                            "type": "approximate",
+                            "country": "ES",
+                            "timezone": "Europe/Madrid",
+                        },
+                    }
+                ],
+                messages=[
+                    {
+                        "role": "user",
+                        "content": (
+                            "Responde a la siguiente pregunta citando fuentes web "
+                            "reales con sus URLs completas. Prioriza fuentes en "
+                            "español.\n\n"
+                            f"Pregunta: {query}"
+                        ),
+                    }
+                ],
             )
-            response = llm.invoke(
-                [("system", system), ("human", query)]
+
+            text = ""
+            search_urls = []
+            citation_urls = []
+
+            for block in response.content:
+                if block.type == "text":
+                    text += block.text
+                    if hasattr(block, "citations") and block.citations:
+                        for citation in block.citations:
+                            if hasattr(citation, "url") and citation.url:
+                                citation_urls.append(citation.url)
+                elif block.type == "web_search_tool_result":
+                    if isinstance(block.content, list):
+                        for result in block.content:
+                            if hasattr(result, "url"):
+                                search_urls.append(result.url)
+
+            logger.info(
+                "Claude response: %d chars, %d search URLs, %d citation URLs",
+                len(text),
+                len(search_urls),
+                len(citation_urls),
             )
-            return response.content
+
+            return {
+                "text": text,
+                "search_urls": search_urls,
+                "citation_urls": citation_urls,
+            }
+
         except Exception as exc:
-            logger.error("ChatGPT query failed: %s", exc)
-            return ""
-
-    def _query_gemini(self, query: str) -> str:
-        """Send query to Gemini and return the response text."""
-        try:
-            if self._gemini is None:
-                from langchain_google_genai import ChatGoogleGenerativeAI
-
-                self._gemini = ChatGoogleGenerativeAI(
-                    model=self._gemini_model, temperature=0.0
-                )
-            llm = self._gemini
-            system = (
-                "Eres un asistente que responde preguntas citando fuentes web. "
-                "Incluye las URLs completas de las fuentes que uses en tu respuesta."
-            )
-            response = llm.invoke(
-                [("system", system), ("human", query)]
-            )
-            return response.content
-        except Exception as exc:
-            logger.error("Gemini query failed: %s", exc)
-            return ""
+            logger.error("Claude query failed: %s", exc)
+            return {"text": "", "search_urls": [], "citation_urls": []}
 
     # ------------------------------------------------------------------
     # URL extraction
     # ------------------------------------------------------------------
+
+    def _clean_url(self, url: str) -> Optional[str]:
+        """Clean a URL and return None if it should be excluded."""
+        url = _TRAILING_PUNCT.sub("", url).rstrip("/")
+        domain = urlparse(url).netloc.replace("www.", "")
+        if domain in _EXCLUDED_DOMAINS or not domain:
+            return None
+        return url
 
     def _extract_urls(self, text: str) -> List[str]:
         """Find all URLs in text, clean and deduplicate them."""
@@ -185,12 +217,8 @@ class CompetitorFinder:
         seen = set()
 
         for url in raw_urls:
-            url = _TRAILING_PUNCT.sub("", url).rstrip("/")
-            domain = urlparse(url).netloc.replace("www.", "")
-
-            if domain in _EXCLUDED_DOMAINS:
-                continue
-            if url in seen:
+            url = self._clean_url(url)
+            if url is None or url in seen:
                 continue
 
             seen.add(url)
@@ -208,11 +236,10 @@ class CompetitorFinder:
         # Map URL -> list of queries where it appeared
         url_queries: Dict[str, List[str]] = {}
         for query, data in per_query.items():
-            for engine in ("chatgpt", "gemini"):
-                for url in data.get(engine, {}).get("urls_cited", []):
-                    url_queries.setdefault(url, [])
-                    if query not in url_queries[url]:
-                        url_queries[url].append(query)
+            for url in data.get("claude", {}).get("urls_cited", []):
+                url_queries.setdefault(url, [])
+                if query not in url_queries[url]:
+                    url_queries[url].append(query)
 
         aggregated = []
         for url, count in freq.most_common():

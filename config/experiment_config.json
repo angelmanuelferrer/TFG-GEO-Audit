@@ -43,9 +43,8 @@
   ],
 
   "live_evaluation": {
-    "engines": ["chatgpt", "gemini"],
-    "chatgpt_model": "gpt-4o-mini",
-    "gemini_model": "gemini-2.0-flash-lite"
+    "engines": ["claude"],
+    "claude_model": "claude-sonnet-4-5-20250929"
   },
 
   "sentiment": {
