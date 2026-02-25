@@ -53,6 +53,17 @@ def get_all_queries() -> list[str]:
     return queries
 
 
+def get_discovery_queries() -> list[str]:
+    """Devuelve solo queries informacionales + comparativas (sin navegacionales).
+
+    Las navegacionales preguntan por el target (Programamos), no aportan
+    competidores reales y distorsionan el ranking del discovery.
+    """
+    data = load_queries()
+    categories = data["categories"]
+    return categories.get("informacional", []) + categories.get("comparativa", [])
+
+
 def get_target_url() -> str:
     """Devuelve la URL objetivo del experimento."""
     return load_experiment_config()["target_url"]
