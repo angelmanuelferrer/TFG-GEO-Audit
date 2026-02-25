@@ -63,7 +63,7 @@ class CompetitorFinder:
     # ------------------------------------------------------------------
 
     def discover_competitors(
-        self, queries: List[str], delay: float = 2.0
+        self, queries: List[str], delay: float = 15.0
     ) -> Dict[str, Any]:
         """Ask each query to Claude with web search, extract cited URLs.
 
@@ -74,6 +74,7 @@ class CompetitorFinder:
             i.e. informational + comparative, no navigational).
         delay : float
             Seconds to wait between API calls (rate limiting).
+            Default 15s to stay within 30k input tokens/min rate limits.
 
         Returns
         -------
@@ -133,75 +134,98 @@ class CompetitorFinder:
     # LLM query
     # ------------------------------------------------------------------
 
-    def _query_claude(self, query: str) -> Dict[str, Any]:
-        """Send query to Claude with web search and return structured data."""
-        try:
-            if self._client is None:
-                import anthropic
+    def _query_claude(
+        self, query: str, max_retries: int = 5, initial_wait: float = 30.0
+    ) -> Dict[str, Any]:
+        """Send query to Claude with web search and return structured data.
 
-                self._client = anthropic.Anthropic()
+        Retries with exponential backoff on rate-limit (429) errors.
+        """
+        if self._client is None:
+            import anthropic
 
-            response = self._client.messages.create(
-                model=self._claude_model,
-                max_tokens=2000,
-                tools=[
-                    {
-                        "type": "web_search_20250305",
-                        "name": "web_search",
-                        "max_uses": 5,
-                        "user_location": {
-                            "type": "approximate",
-                            "country": "ES",
-                            "timezone": "Europe/Madrid",
-                        },
-                    }
-                ],
-                messages=[
-                    {
-                        "role": "user",
-                        "content": (
-                            "Responde a la siguiente pregunta citando fuentes web "
-                            "reales con sus URLs completas. Prioriza fuentes en "
-                            "español.\n\n"
-                            f"Pregunta: {query}"
-                        ),
-                    }
-                ],
-            )
+            self._client = anthropic.Anthropic()
 
-            text = ""
-            search_urls = []
-            citation_urls = []
+        import anthropic as _anthropic
 
-            for block in response.content:
-                if block.type == "text":
-                    text += block.text
-                    if hasattr(block, "citations") and block.citations:
-                        for citation in block.citations:
-                            if hasattr(citation, "url") and citation.url:
-                                citation_urls.append(citation.url)
-                elif block.type == "web_search_tool_result":
-                    if isinstance(block.content, list):
-                        for result in block.content:
-                            if hasattr(result, "url"):
-                                search_urls.append(result.url)
+        wait = initial_wait
+        for attempt in range(max_retries + 1):
+            try:
+                response = self._client.messages.create(
+                    model=self._claude_model,
+                    max_tokens=2000,
+                    tools=[
+                        {
+                            "type": "web_search_20250305",
+                            "name": "web_search",
+                            "max_uses": 5,
+                            "user_location": {
+                                "type": "approximate",
+                                "country": "ES",
+                                "timezone": "Europe/Madrid",
+                            },
+                        }
+                    ],
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": (
+                                "Responde a la siguiente pregunta citando fuentes web "
+                                "reales con sus URLs completas. Prioriza fuentes en "
+                                "español.\n\n"
+                                f"Pregunta: {query}"
+                            ),
+                        }
+                    ],
+                )
 
-            logger.info(
-                "Claude response: %d chars, %d search URLs, %d citation URLs",
-                len(text),
-                len(search_urls),
-                len(citation_urls),
-            )
+                text = ""
+                search_urls = []
+                citation_urls = []
 
-            return {
-                "text": text,
-                "search_urls": search_urls,
-                "citation_urls": citation_urls,
-            }
+                for block in response.content:
+                    if block.type == "text":
+                        text += block.text
+                        if hasattr(block, "citations") and block.citations:
+                            for citation in block.citations:
+                                if hasattr(citation, "url") and citation.url:
+                                    citation_urls.append(citation.url)
+                    elif block.type == "web_search_tool_result":
+                        if isinstance(block.content, list):
+                            for result in block.content:
+                                if hasattr(result, "url"):
+                                    search_urls.append(result.url)
 
-        except Exception as exc:
-            logger.error("Claude query failed: %s", exc)
-            return {"text": "", "search_urls": [], "citation_urls": []}
+                logger.info(
+                    "Claude response: %d chars, %d search URLs, %d citation URLs",
+                    len(text),
+                    len(search_urls),
+                    len(citation_urls),
+                )
+
+                return {
+                    "text": text,
+                    "search_urls": search_urls,
+                    "citation_urls": citation_urls,
+                }
+
+            except _anthropic.RateLimitError as exc:
+                if attempt < max_retries:
+                    logger.warning(
+                        "Rate limit hit (attempt %d/%d). Waiting %.0fs…",
+                        attempt + 1,
+                        max_retries,
+                        wait,
+                    )
+                    time.sleep(wait)
+                    wait *= 2  # exponential backoff
+                else:
+                    logger.error("Rate limit exceeded after %d retries: %s", max_retries, exc)
+                    return {"text": "", "search_urls": [], "citation_urls": []}
+
+            except Exception as exc:
+                logger.error("Claude query failed: %s", exc)
+                return {"text": "", "search_urls": [], "citation_urls": []}
 
     # ------------------------------------------------------------------
     # URL extraction & aggregation
