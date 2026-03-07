@@ -1,14 +1,20 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "target_url": "https://programamos.es",
   "target_brand": "Programamos",
 
+  "discovery": {
+    "model": "gemini-2.5-flash",
+    "provider": "google",
+    "grounding": "google_search"
+  },
+
   "rag_simulator": {
-    "model": "gpt-4o",
+    "model": "gemini-2.5-flash",
     "temperature": 0.0,
-    "seed": 42,
     "max_tokens": 2000,
-    "response_format": "json_object"
+    "response_format": "json_object",
+    "mode": "agent"
   },
 
   "embeddings": {
@@ -23,8 +29,8 @@
   },
 
   "chunking": {
-    "default_chunk_size_tokens": 1024,
-    "default_overlap_tokens": 128,
+    "default_chunk_size_tokens": 256,
+    "default_overlap_tokens": 64,
     "faq_chunk_size_tokens": 256,
     "faq_overlap_tokens": 64,
     "separators": ["\n## ", "\n### ", "\n\n", "\n", ". ", " "]
