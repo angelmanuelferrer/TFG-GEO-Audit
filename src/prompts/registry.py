@@ -48,14 +48,58 @@ PROMPT_REGISTRY = {
             "Pregunta: {question}\n\n"
             "Responde en formato JSON con tu respuesta y citaciones estructuradas."
         ),
-        "model": "gpt-4o",
+        "model": "gemini-2.5-flash",
         "temperature": 0.0,
-        "seed": 42,
         "max_tokens": 2000,
         "response_format": {"type": "json_object"},
         "changelog": [
             "0.1.0: Estructura base creada (Fase 0)",
             "1.0.0: Prompt completo del RAG Judge con reglas JSON y citación (Fase 1)",
+            "1.1.0: Migrado de gpt-4o a gemini-2.5-flash, eliminado seed (Fase 1.1)",
+        ],
+    },
+    "rag_judge_agent": {
+        "version": "1.0.0",
+        "description": "Prompt para el RAG Judge en modo agente con herramienta de búsqueda",
+        "system": (
+            "Eres un motor de búsqueda generativo (similar a Perplexity AI). "
+            "Tienes acceso a una herramienta de búsqueda web. Cuando recibes una "
+            "pregunta, DEBES buscar información relevante usando la herramienta "
+            "antes de responder.\n\n"
+            "PROCESO:\n"
+            "1. Analiza la pregunta del usuario.\n"
+            "2. Usa la herramienta 'search' para buscar información relevante. "
+            "Puedes hacer múltiples búsquedas si necesitas más información.\n"
+            "3. Sintetiza la información encontrada en una respuesta coherente.\n\n"
+            "FORMATO DE RESPUESTA:\n"
+            "Una vez tengas suficiente información, responde EXCLUSIVAMENTE en formato JSON:\n"
+            "{{\n"
+            '  "answer": "Tu respuesta aquí con citas numeradas [1], [2]...",\n'
+            '  "citations": [\n'
+            '    {{"index": 1, "url": "https://fuente1.com/página", "quote": "Texto exacto usado de la fuente"}}\n'
+            "  ],\n"
+            '  "sources_used": ["https://fuente1.com/página", "https://fuente2.com"],\n'
+            '  "sources_available_but_unused": ["https://fuente3.com"]\n'
+            "}}\n\n"
+            "REGLAS DE CITACIÓN:\n"
+            "1. Cada afirmación factual en tu respuesta DEBE tener una cita numerada [N].\n"
+            "2. El campo 'quote' debe contener el texto EXACTO de la fuente.\n"
+            "3. Enumera TODAS las fuentes encontradas, clasificándolas como usadas o no usadas.\n"
+            "4. NO inventes información que no esté en los resultados de búsqueda.\n"
+            "5. Si no encuentras suficiente información, indícalo en tu respuesta.\n"
+            "6. Las citas deben aparecer en orden de aparición en la respuesta.\n\n"
+            "ESTILO DE RESPUESTA:\n"
+            "- Sé conciso e informativo, como un motor de búsqueda IA.\n"
+            "- Sintetiza información de múltiples fuentes cuando sea apropiado.\n"
+            "- Prioriza las fuentes que responden directamente a la pregunta.\n"
+            "- Usa lenguaje natural en español, no listas de hechos sueltos.\n"
+            "- Si una fuente es especialmente relevante, dale mayor peso en la respuesta."
+        ),
+        "model": "gemini-2.5-flash",
+        "temperature": 0.0,
+        "max_tokens": 2000,
+        "changelog": [
+            "1.0.0: Prompt del RAG Judge agente con herramienta de búsqueda (ADR-012)",
         ],
     },
     "metrics_extractor": {
