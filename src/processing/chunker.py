@@ -1,8 +1,8 @@
 """Token-aware text chunking using tiktoken and LangChain splitters.
 
 Replaces prototype character-based chunking (1000 chars) with proper
-token-based chunking (1024 tokens default, 256 tokens for FAQ content).
-See ADR-001 in docs/DECISIONS.md.
+token-based chunking (256 tokens default, aligned with SAGEO Arena benchmark).
+See ADR-001 and ADR-011 in docs/DECISIONS.md.
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 _DEFAULT_SEPARATORS = ["\n## ", "\n### ", "\n\n", "\n", ". ", " "]
 
 _DEFAULT_PROFILES = {
-    "default": {"chunk_size": 1024, "overlap": 128},
+    "default": {"chunk_size": 256, "overlap": 64},
     "faq": {"chunk_size": 256, "overlap": 64},
 }
 

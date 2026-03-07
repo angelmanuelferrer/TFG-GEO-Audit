@@ -1,10 +1,10 @@
-"""Discover real competitors by querying Claude with web search.
+"""Discover real competitors by querying Gemini with Google Search grounding.
 
-Asks the discovery queries (informational + comparative, no navigational) to Claude
-with web search enabled, extracts the URLs it cites, and ranks them by domain
-frequency. The result is saved as frozen_competitors.json and used as the fixed
-competitor set for all experimental runs.
-See ADR-004 and ADR-009 in docs/DECISIONS.md.
+Asks the discovery queries (informational + comparative, no navigational) to Gemini
+with Google Search enabled, extracts the URLs it cites via grounding metadata, and
+ranks them by domain frequency. The result is saved as frozen_competitors.json and
+used as the fixed competitor set for all experimental runs.
+See ADR-004 and ADR-010 in docs/DECISIONS.md.
 """
 
 from __future__ import annotations
@@ -42,7 +42,7 @@ _TEXT_WEIGHT = 1
 
 
 class CompetitorFinder:
-    """Queries Claude with web search to discover which sources it cites."""
+    """Queries Gemini with Google Search grounding to discover which sources it cites."""
 
     def __init__(self, config: Optional[Dict[str, Any]] = None) -> None:
         if config is None:
@@ -54,8 +54,8 @@ class CompetitorFinder:
         self._target_domain = (
             urlparse(config["target_url"]).netloc.replace("www.", "")
         )
-        live = config.get("live_evaluation", {})
-        self._claude_model = live.get("claude_model", "claude-sonnet-4-5-20250929")
+        discovery = config.get("discovery", {})
+        self._gemini_model = discovery.get("model", "gemini-2.5-flash")
         self._client = None
 
     # ------------------------------------------------------------------
@@ -63,18 +63,18 @@ class CompetitorFinder:
     # ------------------------------------------------------------------
 
     def discover_competitors(
-        self, queries: List[str], delay: float = 15.0
+        self, queries: List[str], delay: float = 2.0
     ) -> Dict[str, Any]:
-        """Ask each query to Claude with web search, extract cited URLs.
+        """Ask each query to Gemini with Google Search grounding, extract cited URLs.
 
         Parameters
         ----------
         queries : list of str
-            The queries to send to Claude (should be discovery queries only,
+            The queries to send to Gemini (should be discovery queries only,
             i.e. informational + comparative, no navigational).
         delay : float
             Seconds to wait between API calls (rate limiting).
-            Default 15s to stay within 30k input tokens/min rate limits.
+            Default 2s for Gemini free tier (15 RPM).
 
         Returns
         -------
@@ -86,10 +86,10 @@ class CompetitorFinder:
         for i, query in enumerate(queries):
             logger.info("Query %d/%d: %s", i + 1, len(queries), query[:60])
 
-            result = self._query_claude(query)
+            result = self._query_gemini(query)
             text_urls = self._extract_urls(result["text"])
 
-            # Citation URLs come from web search citations (verified, higher weight)
+            # Citation URLs come from grounding supports (verified, higher weight)
             citation_urls = []
             for u in result.get("citation_urls", []):
                 cleaned = self._clean_url(u)
@@ -100,7 +100,7 @@ class CompetitorFinder:
             combined = list(dict.fromkeys(citation_urls + text_urls))
 
             per_query[query] = {
-                "claude": {
+                "gemini": {
                     "response": result["text"],
                     "urls_cited": combined,
                     "search_urls": result.get("search_urls", []),
@@ -116,7 +116,7 @@ class CompetitorFinder:
 
         return {
             "discovery_date": datetime.now().isoformat(),
-            "engines_used": ["claude"],
+            "engines_used": ["gemini"],
             "n_queries": len(queries),
             "per_query": per_query,
             "aggregated_domains": aggregated,
@@ -134,70 +134,77 @@ class CompetitorFinder:
     # LLM query
     # ------------------------------------------------------------------
 
-    def _query_claude(
+    def _query_gemini(
         self, query: str, max_retries: int = 5, initial_wait: float = 30.0
     ) -> Dict[str, Any]:
-        """Send query to Claude with web search and return structured data.
+        """Send query to Gemini with Google Search grounding and return structured data.
 
-        Retries with exponential backoff on rate-limit (429) errors.
+        Retries with exponential backoff on rate-limit (429 / RESOURCE_EXHAUSTED) errors.
         """
         if self._client is None:
-            import anthropic
+            from google import genai
 
-            self._client = anthropic.Anthropic()
+            self._client = genai.Client()
 
-        import anthropic as _anthropic
+        from google.genai import types
 
         wait = initial_wait
         for attempt in range(max_retries + 1):
             try:
-                response = self._client.messages.create(
-                    model=self._claude_model,
-                    max_tokens=2000,
-                    tools=[
-                        {
-                            "type": "web_search_20250305",
-                            "name": "web_search",
-                            "max_uses": 5,
-                            "user_location": {
-                                "type": "approximate",
-                                "country": "ES",
-                                "timezone": "Europe/Madrid",
-                            },
-                        }
-                    ],
-                    messages=[
-                        {
-                            "role": "user",
-                            "content": (
-                                "Responde a la siguiente pregunta citando fuentes web "
-                                "reales con sus URLs completas. Prioriza fuentes en "
-                                "español.\n\n"
-                                f"Pregunta: {query}"
-                            ),
-                        }
-                    ],
+                response = self._client.models.generate_content(
+                    model=self._gemini_model,
+                    contents=(
+                        "Responde a la siguiente pregunta citando fuentes web "
+                        "reales con sus URLs completas. Prioriza fuentes en "
+                        "español.\n\n"
+                        f"Pregunta: {query}"
+                    ),
+                    config=types.GenerateContentConfig(
+                        tools=[types.Tool(google_search=types.GoogleSearch())]
+                    ),
                 )
 
-                text = ""
+                text = response.text or ""
                 search_urls = []
                 citation_urls = []
 
-                for block in response.content:
-                    if block.type == "text":
-                        text += block.text
-                        if hasattr(block, "citations") and block.citations:
-                            for citation in block.citations:
-                                if hasattr(citation, "url") and citation.url:
-                                    citation_urls.append(citation.url)
-                    elif block.type == "web_search_tool_result":
-                        if isinstance(block.content, list):
-                            for result in block.content:
-                                if hasattr(result, "url"):
-                                    search_urls.append(result.url)
+                # Extract URLs from grounding metadata
+                grounding = getattr(
+                    response.candidates[0], "grounding_metadata", None
+                )
+                if grounding:
+                    # search_urls: all sources from grounding chunks
+                    chunks = getattr(grounding, "grounding_chunks", None) or []
+                    for chunk in chunks:
+                        web = getattr(chunk, "web", None)
+                        if web and getattr(web, "uri", None):
+                            search_urls.append(web.uri)
+
+                    # citation_urls: only those backing specific claims (weight=2)
+                    supports = (
+                        getattr(grounding, "grounding_supports", None) or []
+                    )
+                    cited_indices = set()
+                    for support in supports:
+                        indices = (
+                            getattr(support, "grounding_chunk_indices", None)
+                            or []
+                        )
+                        for idx in indices:
+                            cited_indices.add(idx)
+
+                    for idx in sorted(cited_indices):
+                        if idx < len(chunks):
+                            web = getattr(chunks[idx], "web", None)
+                            if web and getattr(web, "uri", None):
+                                citation_urls.append(web.uri)
+
+                # Deduplicate while preserving order
+                citation_urls = list(dict.fromkeys(citation_urls))
+                search_urls = list(dict.fromkeys(search_urls))
 
                 logger.info(
-                    "Claude response: %d chars, %d search URLs, %d citation URLs",
+                    "Gemini response: %d chars, %d search URLs, %d citation URLs",
                     len(text),
                     len(search_urls),
                     len(citation_urls),
@@ -209,8 +216,11 @@ class CompetitorFinder:
                     "citation_urls": citation_urls,
                 }
 
-            except _anthropic.RateLimitError as exc:
-                if attempt < max_retries:
+            except Exception as exc:
+                exc_str = str(exc)
+                is_rate_limit = "429" in exc_str or "RESOURCE_EXHAUSTED" in exc_str
+
+                if is_rate_limit and attempt < max_retries:
                     logger.warning(
                         "Rate limit hit (attempt %d/%d). Waiting %.0fs…",
                         attempt + 1,
@@ -219,13 +229,18 @@ class CompetitorFinder:
                     )
                     time.sleep(wait)
                     wait *= 2  # exponential backoff
+                elif is_rate_limit:
+                    logger.error(
+                        "Rate limit exceeded after %d retries: %s",
+                        max_retries,
+                        exc,
+                    )
+                    return {"text": "", "search_urls": [], "citation_urls": []}
                 else:
-                    logger.error("Rate limit exceeded after %d retries: %s", max_retries, exc)
+                    logger.error("Gemini query failed: %s", exc)
                     return {"text": "", "search_urls": [], "citation_urls": []}
 
-            except Exception as exc:
-                logger.error("Claude query failed: %s", exc)
-                return {"text": "", "search_urls": [], "citation_urls": []}
+        return {"text": "", "search_urls": [], "citation_urls": []}
 
     # ------------------------------------------------------------------
     # URL extraction & aggregation
@@ -276,9 +291,9 @@ class CompetitorFinder:
         )
 
         for query, data in per_query.items():
-            claude_data = data.get("claude", {})
-            citation_urls = set(claude_data.get("citation_urls", []))
-            all_urls = claude_data.get("urls_cited", [])
+            gemini_data = data.get("gemini", {})
+            citation_urls = set(gemini_data.get("citation_urls", []))
+            all_urls = gemini_data.get("urls_cited", [])
 
             # Track best weight per domain for this query (avoid double counting)
             domain_best_weight: Dict[str, int] = {}

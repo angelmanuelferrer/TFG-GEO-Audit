@@ -163,7 +163,7 @@ Documento vivo con todas las decisiones de diseño del sistema GEO-Audit, sus ju
 ## ADR-009: Discovery con modelos web-grounded (no chat puro)
 
 **Fecha**: 2026-02-16
-**Estado**: Aprobado e implementado (2026-02-22)
+**Estado**: Reemplazado por ADR-010
 
 **Contexto**: El `CompetitorFinder` original usaba `ChatOpenAI` y `ChatGoogleGenerativeAI` como chat puro. Estos modelos NO tienen acceso a web — las URLs que citan son de memoria (training data) y pueden ser alucinadas o inexistentes. Esto invalida el descubrimiento de competidores porque no refleja lo que un usuario real obtendria al preguntar a un chatbot.
 
@@ -190,16 +190,117 @@ Documento vivo con todas las decisiones de diseño del sistema GEO-Audit, sus ju
 
 ---
 
+## ADR-010: Discovery con Gemini 2.5 Flash + Google Search Grounding
+
+**Fecha**: 2026-03-07
+**Estado**: Aprobado (reemplaza ADR-009)
+
+**Contexto**: ADR-009 usaba Claude con `web_search` tool para el discovery. Esto costaba ~$0.45 por ejecucion (15 queries) y dependia de la API de Anthropic. Gemini 2.5 Flash ofrece Google Search grounding gratuito con el SDK nuevo (`google-genai`).
+
+**Decision**: Migrar el discovery a **Gemini 2.5 Flash** con **Google Search grounding**. Usar el SDK nuevo `google-genai>=1` (el antiguo `google-generativeai` fue sunset en agosto 2025).
+
+**Implementacion**:
+- SDK: `google-genai` (nuevo, reemplaza `google-generativeai`)
+- Modelo: `gemini-2.5-flash`
+- Tool: `GoogleSearch()` via `GenerateContentConfig`
+- Extraccion de URLs: `grounding_metadata.grounding_chunks[].web.uri` (search URLs) + `grounding_supports[].grounding_chunk_indices` resueltos a chunks (citation URLs, weight=2)
+- Rate limiting: 2s delay (Gemini free tier = 15 RPM)
+
+**Justificacion**:
+- Coste $0 (Google Search grounding es gratuito en Gemini API).
+- Google Search grounding usa el mismo indice que Google Search real, resultados mas relevantes.
+- El SDK nuevo es el unico soportado oficialmente desde agosto 2025.
+- Las URLs de grounding_metadata son verificadas (vienen del indice de Google).
+
+**Alternativa descartada**: Mantener Claude con web_search. Rechazado por coste ($0.45/ejecucion) cuando Gemini ofrece lo mismo gratis.
+
+---
+
+## ADR-011: Chunking SAGEO Arena (256 tokens, 64 overlap)
+
+**Fecha**: 2026-03-07
+**Estado**: Aprobado (actualiza ADR-001)
+
+**Contexto**: ADR-001 establecio chunks de 1024 tokens basandose en Chen et al. (2025). Sin embargo, los motores generativos reales usan ventanas mas pequenias (~200-377 palabras segun analisis de BrightEdge). SAGEO Arena, el benchmark de referencia para evaluacion GEO, usa 256 tokens con 64 de overlap.
+
+**Decision**: Reducir chunking a **256 tokens** con **64 tokens de overlap** para ambos perfiles (default y FAQ). Alineado con SAGEO Arena.
+
+**Justificacion**:
+- SAGEO Arena (benchmark de referencia) usa exactamente 256/64.
+- Motores reales (Perplexity, ChatGPT con search) procesan fragmentos cortos, no paginas enteras.
+- Chunks mas pequenios = mas granularidad en citaciones = metricas GEO mas discriminativas.
+- Compatible con nuestro top_k=5: 5 chunks x 256 tokens = ~1280 tokens de contexto, bien dentro del presupuesto.
+
+**Impacto**: Invalida el vectorstore congelado existente. Requiere re-ejecutar `00_discover_competitors.ipynb`.
+
+**Alternativa descartada**: 512 tokens (punto medio). Rechazado porque no se alinea con el benchmark de referencia.
+
+---
+
+## ADR-012: RAG Judge con Gemini 2.5 Flash + agente de busqueda
+
+**Fecha**: 2026-03-07
+**Estado**: Aprobado (actualiza ADR-002)
+
+**Contexto**: El RAG Judge usaba GPT-4o con chunks pre-recuperados. Esto no replica como funciona un motor generativo real, donde el modelo decide que buscar y puede reformular queries.
+
+**Decision**: Migrar a **Gemini 2.5 Flash** y convertir el judge en un **agente con herramienta de busqueda FAISS**. El LLM no sabe que busca en FAISS — cree que tiene un buscador web. Puede hacer 1-5 busquedas con queries que el mismo formula.
+
+**Implementacion**:
+- Modelo: `gemini-2.5-flash` via `langchain-google-genai`
+- Modo: agente con `create_tool_calling_agent` de LangChain
+- Tool: `search()` que wrappea FAISS retriever, devuelve chunks formateados
+- `max_iterations=5` (el agente puede buscar varias veces)
+- Fallback: modo `classic` (pre-retrieval) sigue disponible via config
+
+**Justificacion**:
+1. **Coste ~10x menor**: Gemini 2.5 Flash vs GPT-4o.
+2. **Pipeline mas realista**: el agente reformula queries como un motor real.
+3. **Reproducibilidad**: `temperature=0.0` (sin seed, Gemini no lo soporta).
+4. **Flexibilidad**: el agente puede buscar multiples veces si la primera busqueda no es suficiente.
+
+**Alternativa descartada**: Mantener GPT-4o. Rechazado por coste excesivo para un TFG (~$0.50/run de 15 queries).
+
+---
+
+## ADR-013: Expansion a 100 queries con sistema de rotacion
+
+**Fecha**: 2026-03-07
+**Estado**: Aprobado
+
+**Contexto**: El set original de 15 queries era insuficiente para analisis estadisticamente significativos y cubria pocos subtemas del dominio (programacion educativa infantil en Espana).
+
+**Decision**: Expandir a **100 queries** (35 informacionales + 35 comparativas + 30 navegacionales) con sistema de rotacion:
+- **Core 20**: se ejecutan en TODOS los runs (incluye las 15 originales + 5 nuevas).
+- **4 bloques rotativos** (R1-R4): 20 queries cada uno, se ejecuta 1 bloque por run.
+- Cada run ejecuta 40 queries (20 core + 20 rotativas).
+
+**Formato v2** de `queries.json`: cada query tiene ID unico (`Q001`-`Q100`), categoria, y flag `original_15`.
+
+**Justificacion**:
+- 100 queries cubren mas subtemas: robotica, STEAM, IA, inclusividad, formacion docente, etc.
+- La rotacion permite cubrir los 100 en 4 runs sin sobrecargar un solo run.
+- Las 20 core garantizan comparabilidad longitudinal entre runs.
+- Las 15 originales siempre se ejecutan (estan en core), preservando serie temporal.
+
+**Alternativa descartada**: Ejecutar las 100 en cada run. Rechazado por coste y tiempo de ejecucion (~2.5h con 100 queries x Gemini rate limits).
+
+---
+
 ## Indice de decisiones
 
 | ADR | Titulo | Estado |
 |-----|--------|--------|
-| 001 | Chunking basado en tokens | Aprobado |
-| 002 | JSON estructurado del RAG Judge | Aprobado |
+| 001 | Chunking basado en tokens | Actualizado por ADR-011 |
+| 002 | JSON estructurado del RAG Judge | Actualizado por ADR-012 |
 | 003 | Embeddings locales con fallback | Aprobado |
 | 004 | Competidores desde LLMs reales | Aprobado |
 | 005 | FAISS local para vectorstore | Aprobado |
 | 006 | Separacion discovery vs runs | Aprobado |
 | 007 | Procesamiento HTML-aware | Aprobado |
 | 008 | Ejecucion Kaggle, desarrollo local | Aprobado |
-| 009 | Discovery con modelos web-grounded (Anthropic) | Aprobado |
+| 009 | Discovery con modelos web-grounded (Anthropic) | Reemplazado por ADR-010 |
+| 010 | Discovery con Gemini 2.5 Flash + Google Search | Aprobado |
+| 011 | Chunking SAGEO Arena (256/64) | Aprobado |
+| 012 | RAG Judge Gemini + agente de busqueda | Aprobado |
+| 013 | Expansion a 100 queries con rotacion | Aprobado |
