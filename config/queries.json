@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "description": "100 queries para modo experimental con sistema de rotacion. Core 20 + 4 bloques rotativos (R1-R4) de 20 cada uno.",
+  "description": "100 queries para modo experimental con sistema de rotacion. Core 20 + 4 bloques rotativos (R1-R4) de 20 cada uno. Queries alineadas con el dominio real de programamos.es: Scratch, pensamiento computacional, formacion docente, IA educativa, Dr. Scratch, divulgacion.",
   "total": 100,
   "original_15": ["Q001", "Q002", "Q003", "Q004", "Q005", "Q006", "Q007", "Q008", "Q009", "Q010", "Q011", "Q012", "Q013", "Q014", "Q015"],
   "rotation": {
@@ -87,22 +87,22 @@
       "original_15": true
     },
     "Q016": {
-      "text": "¿Cómo introducir la programación en educación infantil sin ordenadores?",
-      "category": "informacional",
-      "original_15": false
-    },
-    "Q017": {
       "text": "¿Qué es el pensamiento computacional y cómo desarrollarlo en niños?",
       "category": "informacional",
       "original_15": false
     },
+    "Q017": {
+      "text": "¿Cómo introducir la programación en educación infantil sin ordenadores?",
+      "category": "informacional",
+      "original_15": false
+    },
     "Q018": {
-      "text": "¿Scratch vs Python para empezar a programar con niños de 10 años?",
+      "text": "¿Cuál es la diferencia entre Scratch y Scratch Jr?",
       "category": "comparativa",
       "original_15": false
     },
     "Q019": {
-      "text": "¿Qué es mejor para robótica educativa: LEGO Mindstorms o Arduino?",
+      "text": "¿Qué herramientas existen para evaluar proyectos Scratch de estudiantes?",
       "category": "comparativa",
       "original_15": false
     },
@@ -117,37 +117,37 @@
       "original_15": false
     },
     "Q022": {
-      "text": "¿Qué lenguajes de programación son mejores para niños de 8 a 12 años?",
+      "text": "¿Qué actividades desenchufadas puedo hacer para enseñar algoritmos a niños?",
       "category": "informacional",
       "original_15": false
     },
     "Q023": {
-      "text": "¿Cómo enseñar Python a adolescentes sin experiencia previa?",
+      "text": "¿Cómo enseñar programación de videojuegos con Scratch en el aula?",
       "category": "informacional",
       "original_15": false
     },
     "Q024": {
-      "text": "¿Qué kits de robótica educativa recomiendan los profesores en España?",
+      "text": "¿Qué formación necesita un profesor para dar clases de programación a niños?",
       "category": "informacional",
       "original_15": false
     },
     "Q025": {
-      "text": "¿Existen campamentos tecnológicos de verano para niños en España?",
+      "text": "¿Qué recursos hay para enseñar inteligencia artificial a niños y adolescentes?",
       "category": "informacional",
       "original_15": false
     },
     "Q026": {
-      "text": "¿Cuál es la diferencia entre Scratch y Scratch Jr?",
+      "text": "¿Scratch vs Code.org para clases de primaria?",
       "category": "comparativa",
       "original_15": false
     },
     "Q027": {
-      "text": "¿App Inventor vs Thunkable para crear apps con estudiantes?",
+      "text": "¿App Inventor vs Scratch para crear aplicaciones con estudiantes de secundaria?",
       "category": "comparativa",
       "original_15": false
     },
     "Q028": {
-      "text": "¿Qué plataforma de programación es más adecuada: Blockly o Code.org?",
+      "text": "¿Qué plataforma de programación por bloques es más adecuada para infantil?",
       "category": "comparativa",
       "original_15": false
     },
@@ -157,7 +157,7 @@
       "original_15": false
     },
     "Q030": {
-      "text": "Programamos talleres presenciales en colegios",
+      "text": "Programamos talleres presenciales de programación en colegios",
       "category": "navegacional",
       "original_15": false
     },
@@ -167,22 +167,22 @@
       "original_15": false
     },
     "Q032": {
-      "text": "Contacto Programamos.es para colaboraciones",
+      "text": "Contacto Programamos.es para colaboraciones educativas",
       "category": "navegacional",
       "original_15": false
     },
     "Q033": {
-      "text": "¿Micro:bit vs Arduino para proyectos escolares de secundaria?",
+      "text": "¿Qué curso online es mejor para formar profesores en pensamiento computacional?",
       "category": "comparativa",
       "original_15": false
     },
     "Q034": {
-      "text": "¿Qué actividades desenchufadas puedo hacer para enseñar algoritmos?",
-      "category": "informacional",
+      "text": "¿Tynker vs Scratch para enseñar programación a niños?",
+      "category": "comparativa",
       "original_15": false
     },
     "Q035": {
-      "text": "¿Cómo integrar la programación en el currículo de matemáticas?",
+      "text": "¿Cómo integrar la programación en el currículo de primaria en España?",
       "category": "informacional",
       "original_15": false
     },
@@ -192,27 +192,27 @@
       "original_15": false
     },
     "Q037": {
-      "text": "¿Qué campamento de verano tecnológico es mejor en Madrid?",
-      "category": "comparativa",
+      "text": "¿Dr. Scratch qué es y cómo funciona?",
+      "category": "navegacional",
       "original_15": false
     },
     "Q038": {
-      "text": "¿Qué formación necesita un profesor para dar clases de programación?",
+      "text": "¿Cómo motivar a las niñas a interesarse por la programación?",
       "category": "informacional",
       "original_15": false
     },
     "Q039": {
-      "text": "¿Codecademy vs Khan Academy para aprender programación en español?",
-      "category": "comparativa",
+      "text": "¿Qué iniciativas STEAM hay para colegios públicos en España?",
+      "category": "informacional",
       "original_15": false
     },
     "Q040": {
-      "text": "¿Programamos organiza eventos o encuentros?",
+      "text": "¿Programamos organiza eventos durante la Semana del Código?",
       "category": "navegacional",
       "original_15": false
     },
     "Q041": {
-      "text": "¿Dónde conseguir material didáctico gratuito sobre robótica educativa?",
+      "text": "¿Cómo crear un club de programación Scratch en un colegio?",
       "category": "informacional",
       "original_15": false
     },
@@ -222,32 +222,32 @@
       "original_15": false
     },
     "Q043": {
-      "text": "¿Cómo motivar a las niñas a interesarse por la tecnología y programación?",
+      "text": "¿Dónde conseguir material didáctico gratuito sobre pensamiento computacional?",
       "category": "informacional",
       "original_15": false
     },
     "Q044": {
-      "text": "¿Qué iniciativas STEAM hay para colegios públicos en España?",
+      "text": "¿Cómo evaluar las competencias de pensamiento computacional en primaria?",
       "category": "informacional",
       "original_15": false
     },
     "Q045": {
-      "text": "¿Robot educativo: Bee-Bot, mBot o Dash?",
-      "category": "comparativa",
+      "text": "¿Qué actividades unplugged existen para enseñar pensamiento computacional?",
+      "category": "informacional",
       "original_15": false
     },
     "Q046": {
-      "text": "¿Qué curso online es mejor para formar profesores en programación?",
+      "text": "¿CoderDojo vs otras iniciativas gratuitas de enseñanza de programación en España?",
       "category": "comparativa",
       "original_15": false
     },
     "Q047": {
-      "text": "¿Tynker vs Code.org para clases de primaria?",
+      "text": "¿Qué asociación de programación infantil es más activa en Andalucía?",
       "category": "comparativa",
       "original_15": false
     },
     "Q048": {
-      "text": "¿Python vs JavaScript para adolescentes que quieren crear webs?",
+      "text": "¿Scratch vs Blockly para aprender programación por bloques?",
       "category": "comparativa",
       "original_15": false
     },
@@ -257,52 +257,52 @@
       "original_15": false
     },
     "Q050": {
-      "text": "¿Cómo descargar recursos de Programamos?",
+      "text": "¿Cómo descargar recursos gratuitos de Programamos?",
       "category": "navegacional",
       "original_15": false
     },
     "Q051": {
-      "text": "Programamos proyectos de ejemplo con Python",
+      "text": "Curso de inteligencia artificial y educación de Programamos",
       "category": "navegacional",
       "original_15": false
     },
     "Q052": {
-      "text": "¿Programamos tiene blog o newsletter?",
+      "text": "¿Programamos tiene canal de YouTube con tutoriales de Scratch?",
       "category": "navegacional",
       "original_15": false
     },
     "Q053": {
-      "text": "¿Qué asociación de programación infantil es más activa en Cataluña?",
+      "text": "¿Dr. Scratch vs otras herramientas para evaluar pensamiento computacional?",
       "category": "comparativa",
       "original_15": false
     },
     "Q054": {
-      "text": "¿Cómo evaluar las competencias digitales de los estudiantes de primaria?",
+      "text": "¿Qué recursos en español hay para la Hour of Code?",
       "category": "informacional",
       "original_15": false
     },
     "Q055": {
-      "text": "¿Qué recursos hay para enseñar inteligencia artificial a adolescentes?",
+      "text": "¿Cómo enseñar Scratch Jr a niños de 3 a 5 años?",
       "category": "informacional",
       "original_15": false
     },
     "Q056": {
-      "text": "¿CoderDojo vs otras iniciativas gratuitas de enseñanza de código?",
+      "text": "¿Qué plataformas ofrecen formación en pensamiento computacional para profesores en España?",
       "category": "comparativa",
       "original_15": false
     },
     "Q057": {
-      "text": "¿Raspberry Pi vs micro:bit para aprender electrónica básica?",
+      "text": "¿Code.org en español vs recursos locales españoles de programación educativa?",
       "category": "comparativa",
       "original_15": false
     },
     "Q058": {
-      "text": "Actividades unplugged disponibles en Programamos",
+      "text": "Actividades unplugged y sin ordenador en Programamos",
       "category": "navegacional",
       "original_15": false
     },
     "Q059": {
-      "text": "¿Programamos ofrece certificación para docentes?",
+      "text": "¿Programamos ofrece certificación o acreditación para docentes?",
       "category": "navegacional",
       "original_15": false
     },
@@ -317,167 +317,167 @@
       "original_15": false
     },
     "Q062": {
-      "text": "¿Qué extraescolares de tecnología hay disponibles para niños?",
+      "text": "¿Qué proyectos de Scratch pueden hacer niños de primaria?",
       "category": "informacional",
       "original_15": false
     },
     "Q063": {
-      "text": "¿Cómo crear un club de programación en un colegio?",
+      "text": "¿Cómo enseñar a crear videojuegos con Scratch paso a paso?",
       "category": "informacional",
       "original_15": false
     },
     "Q064": {
-      "text": "¿Qué competiciones de programación existen para estudiantes de secundaria en España?",
+      "text": "¿Qué metodologías activas funcionan mejor para enseñar programación a niños?",
       "category": "informacional",
       "original_15": false
     },
     "Q065": {
-      "text": "¿Dónde encontrar tutoriales de Arduino para proyectos escolares?",
+      "text": "¿Cómo usar Makey Makey en proyectos educativos de primaria?",
       "category": "informacional",
       "original_15": false
     },
     "Q066": {
-      "text": "¿Qué videojuego educativo enseña mejor programación: CodeCombat o Lightbot?",
+      "text": "¿Bee-Bot vs Scratch Jr para educación infantil?",
       "category": "comparativa",
       "original_15": false
     },
     "Q067": {
-      "text": "¿Minecraft Education vs Roblox Studio para aprender desarrollo de juegos?",
+      "text": "¿Qué organizaciones ofrecen talleres gratuitos de programación para niños en España?",
       "category": "comparativa",
       "original_15": false
     },
     "Q068": {
-      "text": "¿Qué extraescolar es mejor: robótica, programación o diseño 3D?",
+      "text": "¿Scratch vs App Inventor para desarrollar apps educativas?",
       "category": "comparativa",
       "original_15": false
     },
     "Q069": {
-      "text": "¿Code.org en español vs alternativas locales españolas?",
+      "text": "¿Qué comunidad online de educadores en programación es más activa en español?",
       "category": "comparativa",
       "original_15": false
     },
     "Q070": {
-      "text": "¿Programamos tiene recursos sobre robótica educativa?",
+      "text": "¿Programamos tiene recursos para usar Bee-Bot en clase?",
       "category": "navegacional",
       "original_15": false
     },
     "Q071": {
-      "text": "Programamos redes sociales y comunidad online",
+      "text": "Programamos redes sociales y comunidad de docentes",
       "category": "navegacional",
       "original_15": false
     },
     "Q072": {
-      "text": "¿Qué convenios tiene Programamos con instituciones educativas?",
+      "text": "¿Qué convenios tiene Programamos con la Junta de Andalucía?",
       "category": "navegacional",
       "original_15": false
     },
     "Q073": {
-      "text": "Programamos recursos para familias que hacen homeschooling",
+      "text": "¿Programamos tiene recursos para usar con familias en casa?",
       "category": "navegacional",
       "original_15": false
     },
     "Q074": {
-      "text": "¿Qué plataforma STEAM tiene más recursos en castellano?",
+      "text": "¿Qué plataforma tiene más recursos de Scratch en español?",
       "category": "comparativa",
       "original_15": false
     },
     "Q075": {
-      "text": "¿Qué metodologías activas funcionan mejor para enseñar programación?",
+      "text": "¿Cómo implementar la gamificación en clases de programación?",
       "category": "informacional",
       "original_15": false
     },
     "Q076": {
-      "text": "¿Cómo enseñar ciberseguridad básica a niños y adolescentes?",
+      "text": "¿Qué eventos de divulgación de programación hay para familias en España?",
       "category": "informacional",
       "original_15": false
     },
     "Q077": {
-      "text": "¿Qué plataformas online ofrecen cursos de programación infantil en español?",
+      "text": "¿Cómo enseñar pensamiento computacional en educación infantil?",
       "category": "informacional",
       "original_15": false
     },
     "Q078": {
-      "text": "¿AppInventor vs Scratch para crear aplicaciones móviles con niños?",
+      "text": "¿Qué iniciativa de programación educativa tiene más presencia en Andalucía?",
       "category": "comparativa",
       "original_15": false
     },
     "Q079": {
-      "text": "¿Programamos tiene canal de YouTube con tutoriales?",
+      "text": "Presentaciones y diapositivas de Scratch en Programamos",
       "category": "navegacional",
       "original_15": false
     },
     "Q080": {
-      "text": "Mapa de actividades de Programamos por comunidades autónomas",
+      "text": "¿Programamos colabora con universidades o centros de investigación?",
       "category": "navegacional",
       "original_15": false
     },
     "Q081": {
-      "text": "¿Cómo fomentar el aprendizaje colaborativo en proyectos de programación?",
+      "text": "¿Cómo fomentar el aprendizaje colaborativo en proyectos de Scratch?",
       "category": "informacional",
       "original_15": false
     },
     "Q082": {
-      "text": "¿Qué recursos hay para enseñar diseño de videojuegos a jóvenes?",
+      "text": "¿Qué curso de Scratch online gratuito es mejor para empezar?",
       "category": "informacional",
       "original_15": false
     },
     "Q083": {
-      "text": "¿Cómo implementar la gamificación en clases de tecnología?",
+      "text": "¿Cómo integrar inteligencia artificial en proyectos educativos de primaria?",
       "category": "informacional",
       "original_15": false
     },
     "Q084": {
-      "text": "¿Qué eventos de divulgación tecnológica hay para familias en España?",
-      "category": "informacional",
-      "original_15": false
-    },
-    "Q085": {
-      "text": "¿Cómo enseñar programación visual con Blockly o similares?",
-      "category": "informacional",
-      "original_15": false
-    },
-    "Q086": {
       "text": "¿Qué beneficios tiene aprender programación en edades tempranas?",
       "category": "informacional",
       "original_15": false
     },
+    "Q085": {
+      "text": "¿Cómo organizar una Hour of Code en un colegio español?",
+      "category": "informacional",
+      "original_15": false
+    },
+    "Q086": {
+      "text": "¿Qué recursos hay para enseñar programación con licencia abierta en español?",
+      "category": "informacional",
+      "original_15": false
+    },
     "Q087": {
-      "text": "¿Qué iniciativa de programación tiene más presencia en Andalucía: Programamos vs otras?",
+      "text": "¿LearningML vs otras herramientas para enseñar IA a niños con Scratch?",
       "category": "comparativa",
       "original_15": false
     },
     "Q088": {
-      "text": "¿Python con Turtle vs Scratch para enseñar gráficos y animación?",
+      "text": "¿Hour of Code vs proyectos continuados de programación escolar?",
       "category": "comparativa",
       "original_15": false
     },
     "Q089": {
-      "text": "¿Qué kit de robótica es más económico para un aula: mBot vs Makeblock?",
+      "text": "¿Qué plataforma tiene mejor comunidad hispanohablante para educadores en programación?",
       "category": "comparativa",
       "original_15": false
     },
     "Q090": {
-      "text": "¿Hour of Code vs proyectos a largo plazo en programación escolar?",
+      "text": "¿INTEF vs otras plataformas para formación docente en competencia digital?",
       "category": "comparativa",
       "original_15": false
     },
     "Q091": {
-      "text": "¿Qué plataforma tiene mejor comunidad hispanohablante: Scratch o Code.org?",
+      "text": "¿Qué organización ofrece mejor formación docente en programación en España?",
       "category": "comparativa",
       "original_15": false
     },
     "Q092": {
-      "text": "¿FLL (First Lego League) vs otras competiciones de robótica juvenil en España?",
+      "text": "¿Scratch con extensiones de IA vs herramientas dedicadas de IA educativa?",
       "category": "comparativa",
       "original_15": false
     },
     "Q093": {
-      "text": "¿Qué organización ofrece mejor formación docente: Programamos, Code.org u otras?",
+      "text": "¿Guía de computación creativa de Harvard vs otros currículos de Scratch?",
       "category": "comparativa",
       "original_15": false
     },
     "Q094": {
-      "text": "¿Alice vs Scratch para introducir programación 3D a estudiantes?",
+      "text": "¿Snap! vs Scratch para estudiantes avanzados de secundaria?",
       "category": "comparativa",
       "original_15": false
     },
@@ -487,27 +487,27 @@
       "original_15": false
     },
     "Q096": {
-      "text": "¿Programamos colabora con otras organizaciones educativas?",
+      "text": "¿Programamos colabora con Google o Microsoft en proyectos educativos?",
       "category": "navegacional",
       "original_15": false
     },
     "Q097": {
-      "text": "Programamos recursos de inteligencia artificial para niños",
+      "text": "Curso de Programamos para hacer videojuegos con Scratch",
       "category": "navegacional",
       "original_15": false
     },
     "Q098": {
-      "text": "¿Cómo hacer una donación a Programamos?",
+      "text": "¿Cómo hacer una donación o apoyar a Programamos?",
       "category": "navegacional",
       "original_15": false
     },
     "Q099": {
-      "text": "Programamos currículo completo de pensamiento computacional",
+      "text": "¿Programamos tiene materiales para Scratch Jr en educación infantil?",
       "category": "navegacional",
       "original_15": false
     },
     "Q100": {
-      "text": "¿Programamos tiene app móvil o todo es web?",
+      "text": "Proyectos realizados y premios de Programamos",
       "category": "navegacional",
       "original_15": false
     }
