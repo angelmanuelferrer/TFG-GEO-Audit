@@ -18,6 +18,8 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
 
+import requests as _requests
+
 logger = logging.getLogger(__name__)
 
 _URL_PATTERN = re.compile(r"https?://[^\s\)\]\"\' <>]+")
@@ -34,6 +36,13 @@ _EXCLUDED_DOMAINS = {
     "linkedin.com",
     "amazon.com",
     "github.com",
+    "godaddy.com",
+}
+
+# Gemini grounding infrastructure domains (not real sources)
+_GROUNDING_PROXY_DOMAINS = {
+    "vertexaisearch.cloud.google.com",
+    "vertexaisearch.google.com",
 }
 
 # Citation URLs get more weight than text-extracted URLs
@@ -84,12 +93,12 @@ class CompetitorFinder:
         per_query: Dict[str, Dict[str, Any]] = {}
 
         for i, query in enumerate(queries):
-            logger.info("Query %d/%d: %s", i + 1, len(queries), query[:60])
+            print(f"[{i+1}/{len(queries)}] {query[:60]}…", flush=True)
 
             result = self._query_gemini(query)
             text_urls = self._extract_urls(result["text"])
 
-            # Citation URLs come from grounding supports (verified, higher weight)
+            # Citation URLs from grounding metadata (resolved from proxies)
             citation_urls = []
             for u in result.get("citation_urls", []):
                 cleaned = self._clean_url(u)
@@ -98,6 +107,17 @@ class CompetitorFinder:
 
             # Combine: citation URLs first (verified by search), then text URLs
             combined = list(dict.fromkeys(citation_urls + text_urls))
+
+            print(
+                f"  → {len(result['text'])} chars, "
+                f"{len(citation_urls)} citations, "
+                f"{len(text_urls)} text URLs, "
+                f"{len(combined)} total unique",
+                flush=True,
+            )
+            print(f"  Respuesta: {result['text'][:300]}…", flush=True)
+            if combined:
+                print(f"  URLs: {', '.join(combined[:5])}", flush=True)
 
             per_query[query] = {
                 "gemini": {
@@ -154,9 +174,13 @@ class CompetitorFinder:
                 response = self._client.models.generate_content(
                     model=self._gemini_model,
                     contents=(
-                        "Responde a la siguiente pregunta citando fuentes web "
-                        "reales con sus URLs completas. Prioriza fuentes en "
-                        "español.\n\n"
+                        "Responde a la siguiente pregunta usando tu herramienta "
+                        "de búsqueda. En tu respuesta DEBES incluir las URLs "
+                        "completas de cada fuente que utilices, escritas tal cual "
+                        "(ejemplo: https://scratch.mit.edu). "
+                        "Al final de tu respuesta incluye una sección "
+                        "'Fuentes:' con la lista numerada de todas las URLs "
+                        "consultadas. Prioriza fuentes en español.\n\n"
                         f"Pregunta: {query}"
                     ),
                     config=types.GenerateContentConfig(
@@ -178,7 +202,9 @@ class CompetitorFinder:
                     for chunk in chunks:
                         web = getattr(chunk, "web", None)
                         if web and getattr(web, "uri", None):
-                            search_urls.append(web.uri)
+                            resolved = self._resolve_proxy_url(web.uri)
+                            if resolved:
+                                search_urls.append(resolved)
 
                     # citation_urls: only those backing specific claims (weight=2)
                     supports = (
@@ -197,7 +223,9 @@ class CompetitorFinder:
                         if idx < len(chunks):
                             web = getattr(chunks[idx], "web", None)
                             if web and getattr(web, "uri", None):
-                                citation_urls.append(web.uri)
+                                resolved = self._resolve_proxy_url(web.uri)
+                                if resolved:
+                                    citation_urls.append(resolved)
 
                 # Deduplicate while preserving order
                 citation_urls = list(dict.fromkeys(citation_urls))
@@ -243,6 +271,30 @@ class CompetitorFinder:
         return {"text": "", "search_urls": [], "citation_urls": []}
 
     # ------------------------------------------------------------------
+    # Proxy URL resolution
+    # ------------------------------------------------------------------
+
+    def _resolve_proxy_url(self, url: str) -> Optional[str]:
+        """Resolve a vertexaisearch proxy URL to the real destination URL.
+
+        If the URL is not a proxy, returns it as-is.
+        Returns None if resolution fails.
+        """
+        domain = self._get_domain(url)
+        if domain not in _GROUNDING_PROXY_DOMAINS:
+            return url
+
+        try:
+            resp = _requests.head(url, allow_redirects=False, timeout=5)
+            location = resp.headers.get("Location")
+            if location and location.startswith("http"):
+                return location
+        except Exception as exc:
+            logger.debug("Failed to resolve proxy URL %s: %s", url[:80], exc)
+
+        return None
+
+    # ------------------------------------------------------------------
     # URL extraction & aggregation
     # ------------------------------------------------------------------
 
@@ -254,7 +306,12 @@ class CompetitorFinder:
         """Clean a URL and return None if it should be excluded."""
         url = _TRAILING_PUNCT.sub("", url).rstrip("/")
         domain = self._get_domain(url)
-        if domain in _EXCLUDED_DOMAINS or domain == self._target_domain or not domain:
+        if (
+            not domain
+            or domain in _EXCLUDED_DOMAINS
+            or domain in _GROUNDING_PROXY_DOMAINS
+            or domain == self._target_domain
+        ):
             return None
         return url
 
