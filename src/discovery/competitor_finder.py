@@ -27,6 +27,7 @@ _TRAILING_PUNCT = re.compile(r"[.,;:!?\)]+$")
 
 # Domains to exclude (not real competitors)
 _EXCLUDED_DOMAINS = {
+    # Social / general platforms
     "google.com",
     "youtube.com",
     "wikipedia.org",
@@ -37,6 +38,13 @@ _EXCLUDED_DOMAINS = {
     "amazon.com",
     "github.com",
     "godaddy.com",
+    "reddit.com",
+    "medium.com",
+    "sites.google.com",
+    # Not educational programming competitors
+    "lenovo.com",
+    "xataka.com",
+    "bluehost.com",
 }
 
 # Gemini grounding infrastructure domains (not real sources)
