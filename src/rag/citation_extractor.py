@@ -6,6 +6,7 @@ See ADR-002 in docs/DECISIONS.md.
 
 from __future__ import annotations
 
+import math
 import re
 from typing import Any, Dict, List, Optional
 from urllib.parse import urlparse
@@ -52,6 +53,8 @@ class CitationExtractor:
             "som": round((target_count / total) * 100, 2) if total > 0 else 0.0,
             "first_citation_rank": first_rank,
             "brand_mentions": mentions,
+            "pawc": self._calculate_pawc(citations),
+            "citation_rate": self._calculate_citation_rate(judge_output),
         }
 
     # ------------------------------------------------------------------
@@ -94,6 +97,38 @@ class CitationExtractor:
             if self._url_matches_target(citation.get("url", "")):
                 return position
         return None
+
+    def _calculate_pawc(self, citations: List[dict]) -> float:
+        """Position-Adjusted Word Count for target citations.
+
+        PAWC(q) = Σ w_i / log₂(i + 1) for each target citation at position i.
+        """
+        sorted_cits = sorted(citations, key=lambda c: c.get("index", 0))
+        pawc = 0.0
+        for position, cit in enumerate(sorted_cits, start=1):
+            if self._url_matches_target(cit.get("url", "")):
+                word_count = len(cit.get("quote", "").split())
+                pawc += word_count / math.log2(position + 1)
+        return round(pawc, 2)
+
+    def _calculate_citation_rate(self, judge_output: dict) -> Optional[float]:
+        """Citation Rate: (times cited / times retrieved) × 100.
+
+        Retrieved = target URLs in sources_used + sources_available_but_unused.
+        Returns None when the target was not retrieved at all.
+        """
+        all_sources = judge_output.get("sources_used", []) + judge_output.get(
+            "sources_available_but_unused", []
+        )
+        target_retrieved = sum(
+            1 for u in all_sources if self._url_matches_target(u)
+        )
+        if target_retrieved == 0:
+            return None
+        target_cited = self._count_target_citations(
+            judge_output.get("citations", [])
+        )
+        return round((target_cited / target_retrieved) * 100, 2)
 
     def _detect_brand_mentions(
         self, answer: str, citations: List[dict]
