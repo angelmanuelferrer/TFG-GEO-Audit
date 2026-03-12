@@ -49,5 +49,29 @@
   "sentiment": {
     "model": "gpt-4o-mini",
     "temperature": 0.0
+  },
+
+  "crawler": {
+    "request_delay": 1.0,
+    "timeout": 10,
+    "max_retries": 3,
+    "respect_robots_txt": true,
+    "target": {
+      "enabled": true,
+      "max_pages": null,
+      "exclude_patterns": ["/tag/", "/author/", "/wp-admin/", "/wp-content/", "/sitemap"],
+      "priority": "pages_first"
+    },
+    "competitor": {
+      "enabled": true,
+      "max_pages": 100,
+      "priority": "discovered_urls_first",
+      "exclude_patterns": ["/tag/", "/category/", "/author/"]
+    },
+    "fallback": {
+      "bfs_enabled": true,
+      "max_depth": 2,
+      "same_domain_only": true
+    }
   }
 }

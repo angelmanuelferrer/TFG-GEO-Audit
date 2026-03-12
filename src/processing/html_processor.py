@@ -63,8 +63,18 @@ class StructuredWebLoader:
         markdown = self._html_to_markdown(main)
 
         if not markdown.strip():
-            logger.warning("No content extracted from %s", self.url)
-            return []
+            # Fallback: extract raw text from body if structured extraction failed
+            body = soup.body or soup
+            fallback_text = body.get_text(separator="\n", strip=True)
+            if fallback_text and len(fallback_text) > 50:
+                logger.warning(
+                    "Structured extraction empty for %s, using body text fallback",
+                    self.url,
+                )
+                markdown = fallback_text
+            else:
+                logger.warning("No content extracted from %s", self.url)
+                return []
 
         metadata.update(
             {
@@ -83,11 +93,15 @@ class StructuredWebLoader:
     def _download_with_retry(self) -> Optional[str]:
         """GET the URL with exponential backoff. Returns HTML string or None."""
         headers = {"User-Agent": self.user_agent}
+        ssl_failed = False
 
         for attempt in range(self.max_retries):
             try:
                 resp = requests.get(
-                    self.url, headers=headers, timeout=self.timeout
+                    self.url,
+                    headers=headers,
+                    timeout=self.timeout,
+                    verify=not ssl_failed,
                 )
                 resp.raise_for_status()
                 if resp.encoding is None or "charset" not in resp.headers.get(
@@ -95,6 +109,26 @@ class StructuredWebLoader:
                 ):
                     resp.encoding = resp.apparent_encoding
                 return resp.text
+            except requests.exceptions.SSLError as exc:
+                if not ssl_failed:
+                    logger.warning(
+                        "SSL error for %s, retrying without verification: %s",
+                        self.url,
+                        exc,
+                    )
+                    ssl_failed = True
+                    continue
+                wait = min(2**attempt, 30)
+                logger.warning(
+                    "Attempt %d/%d failed for %s: %s. Retry in %ds",
+                    attempt + 1,
+                    self.max_retries,
+                    self.url,
+                    exc,
+                    wait,
+                )
+                if attempt < self.max_retries - 1:
+                    time.sleep(wait)
             except requests.RequestException as exc:
                 wait = min(2**attempt, 30)
                 logger.warning(
@@ -130,9 +164,9 @@ class StructuredWebLoader:
     def _extract_main_content(self, soup: BeautifulSoup) -> Tag:
         """Find the main content area of the page."""
         for semantic in ["main", "article"]:
-            found = soup.find(semantic)
-            if found:
-                return found
+            for found in soup.find_all(semantic):
+                if found.get_text(strip=True):
+                    return found
 
         # Fallback: div with the most paragraph text
         divs = soup.find_all("div")
