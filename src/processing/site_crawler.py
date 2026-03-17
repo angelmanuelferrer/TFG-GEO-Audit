@@ -1,5 +1,4 @@
 """Site crawler with sitemap parsing, robots.txt compliance, and BFS fallback.
-
 Crawls entire websites to build representative vectorstores instead of
 scraping single URLs. Uses StructuredWebLoader for each page.
 """
@@ -121,9 +120,7 @@ class SitemapParser:
             url_el.find(f"{prefix}priority", ns) if ns else url_el.find("priority")
         )
         changefreq_el = (
-            url_el.find(f"{prefix}changefreq", ns)
-            if ns
-            else url_el.find("changefreq")
+            url_el.find(f"{prefix}changefreq", ns) if ns else url_el.find("changefreq")
         )
 
         priority = None
@@ -135,17 +132,31 @@ class SitemapParser:
 
         return URLInfo(
             loc=loc_el.text.strip(),
-            lastmod=lastmod_el.text.strip() if lastmod_el is not None and lastmod_el.text else None,
+            lastmod=(
+                lastmod_el.text.strip()
+                if lastmod_el is not None and lastmod_el.text
+                else None
+            ),
             priority=priority,
-            changefreq=changefreq_el.text.strip() if changefreq_el is not None and changefreq_el.text else None,
+            changefreq=(
+                changefreq_el.text.strip()
+                if changefreq_el is not None and changefreq_el.text
+                else None
+            ),
         )
 
     def _fetch(self, url: str) -> Optional[str]:
-        """Download sitemap XML content."""
+        """Download sitemap XML content. Returns None if response is not XML."""
         headers = {"User-Agent": self.user_agent}
         try:
             resp = requests.get(url, headers=headers, timeout=self.timeout)
             resp.raise_for_status()
+            content_type = resp.headers.get("content-type", "")
+            if "xml" not in content_type and "text/plain" not in content_type:
+                logger.debug(
+                    "Sitemap %s returned non-XML content-type: %s", url, content_type
+                )
+                return None
             return resp.text
         except requests.RequestException as e:
             logger.warning("Failed to fetch sitemap %s: %s", url, e)
@@ -301,7 +312,10 @@ class SiteCrawler:
         # 5. Filter
         exclude_patterns = cfg.get("exclude_patterns", [])
         url_infos = self._filter_urls(
-            url_infos, base_domain, exclude_patterns, robots if self.respect_robots else None
+            url_infos,
+            base_domain,
+            exclude_patterns,
+            robots if self.respect_robots else None,
         )
 
         # 6. Prioritize
@@ -318,9 +332,7 @@ class SiteCrawler:
 
         # 8. Scrape each URL
         role = "target" if is_target else "competitor"
-        logger.info(
-            "Crawling %d URLs for %s [%s]", len(url_infos), base_url, role
-        )
+        logger.info("Crawling %d URLs for %s [%s]", len(url_infos), base_url, role)
         docs = self._scrape_urls(url_infos, is_target)
 
         logger.info(
@@ -335,9 +347,7 @@ class SiteCrawler:
     # Sitemap discovery
     # ------------------------------------------------------------------
 
-    def _get_sitemap_urls(
-        self, robots: RobotsTxtChecker, base_url: str
-    ) -> List[str]:
+    def _get_sitemap_urls(self, robots: RobotsTxtChecker, base_url: str) -> List[str]:
         """Get sitemap URLs from robots.txt, falling back to common locations."""
         sitemap_urls = robots.get_sitemap_urls()
         if not sitemap_urls:
@@ -472,19 +482,17 @@ class SiteCrawler:
                 continue
 
             # Skip non-HTML resources
-            if re.search(r"\.(pdf|jpg|jpeg|png|gif|svg|css|js|zip|xml|json)$", path, re.I):
+            if re.search(
+                r"\.(pdf|jpg|jpeg|png|gif|svg|css|js|zip|xml|json)$", path, re.I
+            ):
                 continue
 
             filtered.append(info)
 
-        logger.info(
-            "Filtered from %d to %d URLs", len(url_infos), len(filtered)
-        )
+        logger.info("Filtered from %d to %d URLs", len(url_infos), len(filtered))
         return filtered
 
-    def _prioritize(
-        self, url_infos: List[URLInfo], mode: str
-    ) -> List[URLInfo]:
+    def _prioritize(self, url_infos: List[URLInfo], mode: str) -> List[URLInfo]:
         """Sort URLs by priority mode."""
         if mode == "pages_first":
             # Static pages (no /20xx/ date pattern, shorter paths) before blog posts
@@ -512,9 +520,7 @@ class SiteCrawler:
     # Scraping
     # ------------------------------------------------------------------
 
-    def _scrape_urls(
-        self, url_infos: List[URLInfo], is_target: bool
-    ) -> List[Document]:
+    def _scrape_urls(self, url_infos: List[URLInfo], is_target: bool) -> List[Document]:
         """Scrape each URL using StructuredWebLoader with delay between requests."""
         docs: List[Document] = []
         total = len(url_infos)
