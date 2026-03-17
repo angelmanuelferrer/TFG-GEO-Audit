@@ -48,6 +48,10 @@ class SitemapParser:
 
     def parse(self, sitemap_url: str) -> List[URLInfo]:
         """Parse a sitemap URL, handling both index and regular sitemaps."""
+        if not sitemap_url.endswith(".xml"):
+            logger.debug("Skipping non-XML sitemap: %s", sitemap_url)
+            return []
+
         xml_text = self._fetch(sitemap_url)
         if not xml_text:
             return []
