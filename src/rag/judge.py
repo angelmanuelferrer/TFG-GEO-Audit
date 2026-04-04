@@ -1,11 +1,10 @@
 """RAG Judge: simulates a generative search engine with JSON structured output.
 
-Supports two modes:
-- **classic**: Receives pre-retrieved chunks and generates a JSON answer (legacy).
-- **agent**: Uses a FAISS search tool — the LLM decides what to search and how
-  many times, then produces the JSON answer. More realistic simulation.
+Uses a FAISS search tool — the LLM decides what to search and how many times,
+then produces a JSON answer with structured citations. More realistic simulation
+of how generative engines work.
 
-See ADR-002 and ADR-012 in docs/DECISIONS.md.
+See ADR-012 in docs/DECISIONS.md.
 """
 
 from __future__ import annotations
@@ -14,7 +13,6 @@ import json
 import logging
 from typing import Any, Dict, List, Optional
 
-from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 
 from src.prompts.registry import get_prompt
@@ -36,7 +34,6 @@ class RAGJudge:
 
         self._config = config
         rag_config = config["rag_simulator"]
-        self._mode = rag_config.get("mode", "classic")
 
         self._init_llm(rag_config)
         self._init_prompts()
@@ -67,74 +64,19 @@ class RAGJudge:
             )
 
     def _init_prompts(self) -> None:
-        """Load prompts for classic and agent modes."""
-        prompt_spec = get_prompt("rag_judge")
-        self.prompt = ChatPromptTemplate.from_messages(
+        """Load prompt for agent mode."""
+        agent_spec = get_prompt("rag_judge_agent")
+        self._agent_prompt = ChatPromptTemplate.from_messages(
             [
-                ("system", prompt_spec["system"]),
-                ("human", prompt_spec["user_template"]),
+                ("system", agent_spec["system"]),
+                ("placeholder", "{agent_scratchpad}"),
+                ("human", "{input}"),
             ]
         )
-
-        if self._mode == "agent":
-            agent_spec = get_prompt("rag_judge_agent")
-            self._agent_prompt = ChatPromptTemplate.from_messages(
-                [
-                    ("system", agent_spec["system"]),
-                    ("placeholder", "{agent_scratchpad}"),
-                    ("human", "{input}"),
-                ]
-            )
 
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
-
-    def generate_answer(
-        self,
-        question: str,
-        retrieved_docs: List[Document],
-        max_retries: int = 2,
-    ) -> Dict[str, Any]:
-        """Generate a JSON answer for *question* using *retrieved_docs* as context.
-
-        Classic mode: pre-retrieved chunks are passed directly to the LLM.
-        """
-        context = self._format_context(retrieved_docs)
-
-        for attempt in range(max_retries + 1):
-            try:
-                messages = self.prompt.format_messages(
-                    context=context, question=question
-                )
-                response = self.llm.invoke(messages)
-                self._track_usage(question, response)
-
-                result = json.loads(response.content)
-                self._validate_schema(result)
-                return result
-
-            except json.JSONDecodeError as exc:
-                logger.warning(
-                    "JSON parse error (attempt %d/%d): %s",
-                    attempt + 1,
-                    max_retries + 1,
-                    exc,
-                )
-                if attempt == max_retries:
-                    raise
-
-            except ValueError as exc:
-                logger.warning(
-                    "Schema validation error (attempt %d/%d): %s",
-                    attempt + 1,
-                    max_retries + 1,
-                    exc,
-                )
-                if attempt == max_retries:
-                    raise
-
-        raise RuntimeError("generate_answer: all retries exhausted")  # pragma: no cover
 
     def generate_answer_with_agent(
         self,
@@ -213,25 +155,6 @@ class RAGJudge:
         raise RuntimeError("generate_answer_with_agent: all retries exhausted")  # pragma: no cover
 
     # ------------------------------------------------------------------
-    # Context formatting
-    # ------------------------------------------------------------------
-
-    def _format_context(self, docs: List[Document]) -> str:
-        """Format retrieved chunks as structured markdown for the judge prompt."""
-        sections = []
-        for i, doc in enumerate(docs, 1):
-            url = doc.metadata.get("source_url", "Unknown")
-            title = doc.metadata.get("title", "")
-
-            header = f"## [Fuente {i}: {url}]"
-            if title:
-                header += f"\n### Título: {title}"
-            header += f"\n\n{doc.page_content}"
-            sections.append(header)
-
-        return "\n\n---\n\n".join(sections)
-
-    # ------------------------------------------------------------------
     # JSON extraction
     # ------------------------------------------------------------------
 
@@ -239,6 +162,11 @@ class RAGJudge:
     def _extract_json(text: str) -> dict:
         """Extract JSON from agent output, handling markdown code blocks."""
         text = text.strip()
+
+        if not text:
+            raise json.JSONDecodeError(
+                "El modelo devolvió una respuesta vacía", text, 0
+            )
 
         # Try direct parse first
         try:
@@ -282,19 +210,6 @@ class RAGJudge:
     # ------------------------------------------------------------------
     # Token tracking
     # ------------------------------------------------------------------
-
-    def _track_usage(self, question: str, response: Any) -> None:
-        """Track token usage from a LangChain response."""
-        if hasattr(response, "response_metadata"):
-            usage = response.response_metadata.get("token_usage", {})
-            self.token_usage.append(
-                {"question": question[:80], "usage": usage}
-            )
-            logger.info(
-                "Tokens — prompt: %s, completion: %s",
-                usage.get("prompt_tokens", "?"),
-                usage.get("completion_tokens", "?"),
-            )
 
     def get_token_usage_summary(self) -> Dict[str, Any]:
         """Return aggregated token usage across all calls."""

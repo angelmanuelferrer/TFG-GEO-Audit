@@ -1,70 +1,57 @@
-"""Embedding factory: local HuggingFace with OpenAI fallback.
+"""Embedding factory: Google text-embedding-004 via google-genai SDK.
 
-Tries intfloat/multilingual-e5-large on GPU first (Kaggle),
-falls back to OpenAI text-embedding-3-small if unavailable.
-See ADR-003 in docs/DECISIONS.md.
+Uses the new google-genai>=1 SDK directly (not langchain-google-genai, which
+uses v1beta API where text-embedding-004 is unavailable).
+
+See ADR-016 in docs/DECISIONS.md.
 """
 
 from __future__ import annotations
 
 import logging
-from typing import Any, Dict, Optional
+import os
+from typing import Any, Dict, List, Optional
+
+from google import genai
+from google.genai import types
+from langchain_core.embeddings import Embeddings
 
 logger = logging.getLogger(__name__)
 
+_BATCH_SIZE = 100
 
-def create_embeddings(config: Optional[Dict[str, Any]] = None):
-    """Create a LangChain-compatible embeddings object.
 
-    Tries local sentence-transformers with GPU, falls back to OpenAI.
-    Returns an Embeddings instance ready for FAISS or other vectorstores.
-    """
-    if config is None:
-        from src.config import load_experiment_config
+class GoogleGenAIEmbeddings(Embeddings):
+    """LangChain-compatible embeddings via google-genai SDK (text-embedding-004)."""
 
-        config = load_experiment_config()
+    def __init__(self, model: str = "models/gemini-embedding-001") -> None:
+        self.model = model
+        self._client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
 
-    emb_config = config.get("embeddings", {})
-
-    # Try local embeddings first
-    if emb_config.get("provider") == "local":
-        try:
-            import torch
-            try:
-                from langchain_huggingface import HuggingFaceEmbeddings
-            except ImportError:
-                from langchain_community.embeddings import HuggingFaceEmbeddings
-
-            device = "cuda" if torch.cuda.is_available() else "cpu"
-            model_name = emb_config["model"]
-
-            logger.info("Loading local embeddings: %s (device=%s)", model_name, device)
-            embeddings = HuggingFaceEmbeddings(
-                model_name=model_name,
-                model_kwargs={"device": device},
-                encode_kwargs={"normalize_embeddings": True},
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        all_embeddings: List[List[float]] = []
+        for i in range(0, len(texts), _BATCH_SIZE):
+            batch = texts[i : i + _BATCH_SIZE]
+            response = self._client.models.embed_content(
+                model=self.model,
+                contents=batch,
+                config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT"),
             )
-            logger.info("Local embeddings loaded successfully on %s", device)
-            return embeddings
+            all_embeddings.extend([e.values for e in response.embeddings])
+            logger.debug("Embedded %d/%d texts", min(i + _BATCH_SIZE, len(texts)), len(texts))
+        return all_embeddings
 
-        except (ImportError, RuntimeError, OSError) as exc:
-            logger.warning("Local embeddings failed: %s. Falling back to OpenAI.", exc)
+    def embed_query(self, text: str) -> List[float]:
+        response = self._client.models.embed_content(
+            model=self.model,
+            contents=text,
+            config=types.EmbedContentConfig(task_type="RETRIEVAL_QUERY"),
+        )
+        return response.embeddings[0].values
 
-    # Fallback to OpenAI
-    fallback = emb_config.get("fallback", {})
-    model = fallback.get("model", "text-embedding-3-small")
-    local_dim = emb_config.get("dimensions", 1024)
-    fallback_dim = fallback.get("dimensions", 1536)
-    logger.warning(
-        "Using OpenAI embeddings: %s (%dd). "
-        "ATENCIÓN: Las dimensiones (%d) difieren de las locales (%d). "
-        "NO mezclar vectorstores generados con distintos modelos de embeddings.",
-        model,
-        fallback_dim,
-        fallback_dim,
-        local_dim,
-    )
 
-    from langchain_openai import OpenAIEmbeddings
-
-    return OpenAIEmbeddings(model=model)
+def create_embeddings(
+    config: Optional[Dict[str, Any]] = None,
+) -> GoogleGenAIEmbeddings:
+    """Create embeddings via Google text-embedding-004 API."""
+    return GoogleGenAIEmbeddings()

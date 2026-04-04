@@ -18,14 +18,9 @@
   },
 
   "embeddings": {
-    "model": "intfloat/multilingual-e5-large",
-    "dimensions": 1024,
-    "provider": "local",
-    "fallback": {
-      "model": "text-embedding-3-small",
-      "dimensions": 1536,
-      "provider": "openai"
-    }
+    "model": "models/gemini-embedding-001",
+    "dimensions": 3072,
+    "provider": "google"
   },
 
   "chunking": {
@@ -42,8 +37,11 @@
   },
 
   "live_evaluation": {
-    "engines": ["claude"],
-    "claude_model": "claude-sonnet-4-5-20250929"
+    "engines": {
+      "gemini": {"model": "gemini-2.5-flash", "tier": "full"},
+      "claude": {"model": "claude-haiku-4-5-20251001", "tier": "light"},
+      "openai": {"model": "gpt-4o-mini", "tier": "medium"}
+    }
   },
 
   "sentiment": {

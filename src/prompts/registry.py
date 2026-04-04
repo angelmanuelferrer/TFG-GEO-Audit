@@ -115,13 +115,19 @@ PROMPT_REGISTRY = {
         ],
     },
     "sentiment_analyzer": {
-        "version": "0.1.0",
+        "version": "1.0.0",
         "description": "Clasifica sentimiento de menciones de marca (POSITIVO/NEUTRO/NEGATIVO)",
-        "system": "",  # Implementar en Fase 2
-        "model": "gpt-4o-mini",
+        "system": (
+            "Clasifica el sentimiento con el que este motor de IA menciona la marca "
+            '"Programamos" en su respuesta. '
+            "Responde únicamente con una palabra: POSITIVO, NEUTRO o NEGATIVO.\n\n"
+            "Contexto: {context}"
+        ),
+        "model": "gemini-2.0-flash",
         "temperature": 0.0,
         "changelog": [
             "0.1.0: Estructura base creada (Fase 0)",
+            "1.0.0: Implementado con gemini-2.0-flash-lite para live evaluation",
         ],
     },
     "page_generator": {
