@@ -74,6 +74,44 @@ def get_core_queries() -> list[str]:
     return get_all_queries()
 
 
+def get_queries_for_run_with_meta(
+    block: Optional[str] = None,
+) -> list[dict]:
+    """Como get_queries_for_run pero devuelve dicts con metadata completa.
+
+    Returns
+    -------
+    list[dict] con keys: ``id``, ``text``, ``category``, ``original_15``.
+    20 elementos si block=None, 40 si se especifica bloque.
+    """
+    data = load_queries()
+
+    if "rotation" not in data or "queries" not in data:
+        # v1 fallback: sin metadata
+        texts = get_all_queries()
+        return [{"id": None, "text": t, "category": "unknown", "original_15": False} for t in texts]
+
+    rotation = data["rotation"]
+    queries_db = data["queries"]
+
+    ids = list(rotation["core"])
+    if block is not None:
+        if block not in rotation:
+            valid = [k for k in rotation if k != "core"]
+            raise ValueError(f"Bloque '{block}' no valido. Bloques disponibles: {valid}")
+        ids.extend(rotation[block])
+
+    return [
+        {
+            "id": qid,
+            "text": queries_db[qid]["text"],
+            "category": queries_db[qid].get("category", "unknown"),
+            "original_15": queries_db[qid].get("original_15", False),
+        }
+        for qid in ids
+    ]
+
+
 def get_queries_for_run(block: Optional[str] = None) -> list[str]:
     """Devuelve las queries para un run: core 20 + bloque rotativo seleccionado.
 

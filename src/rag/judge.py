@@ -159,8 +159,40 @@ class RAGJudge:
     # ------------------------------------------------------------------
 
     @staticmethod
+    def _sanitize_control_chars(text: str) -> str:
+        """Escape bare control characters inside JSON string literals.
+
+        Gemini sometimes emits literal newlines/tabs inside string values
+        instead of the \\n / \\t escape sequences, producing invalid JSON.
+        This walks the text char-by-char and escapes control chars that
+        appear inside strings without breaking the JSON structure.
+        """
+        result: list[str] = []
+        in_string = False
+        escape_next = False
+        _escapes = {"\n": "\\n", "\r": "\\r", "\t": "\\t"}
+
+        for ch in text:
+            if escape_next:
+                result.append(ch)
+                escape_next = False
+            elif ch == "\\" and in_string:
+                result.append(ch)
+                escape_next = True
+            elif ch == '"':
+                result.append(ch)
+                in_string = not in_string
+            elif in_string and ord(ch) < 0x20:
+                result.append(_escapes.get(ch, f"\\u{ord(ch):04x}"))
+            else:
+                result.append(ch)
+
+        return "".join(result)
+
+    @staticmethod
     def _extract_json(text: str) -> dict:
-        """Extract JSON from agent output, handling markdown code blocks."""
+        """Extract JSON from agent output, handling markdown code blocks
+        and unescaped control characters inside string values."""
         text = text.strip()
 
         if not text:
@@ -168,24 +200,34 @@ class RAGJudge:
                 "El modelo devolvió una respuesta vacía", text, 0
             )
 
-        # Try direct parse first
+        import re
+
+        def _try_parse(s: str) -> dict:
+            try:
+                return json.loads(s)
+            except json.JSONDecodeError:
+                sanitized = RAGJudge._sanitize_control_chars(s)
+                return json.loads(sanitized)
+
+        # 1. Direct parse (with sanitize fallback)
         try:
-            return json.loads(text)
+            return _try_parse(text)
         except json.JSONDecodeError:
             pass
 
-        # Try extracting from ```json ... ``` blocks
-        import re
-
+        # 2. Extract from ```json ... ``` blocks
         match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL)
         if match:
-            return json.loads(match.group(1).strip())
+            try:
+                return _try_parse(match.group(1).strip())
+            except json.JSONDecodeError:
+                pass
 
-        # Try finding first { ... last }
+        # 3. Find first { ... last }
         start = text.find("{")
         end = text.rfind("}")
         if start != -1 and end != -1 and end > start:
-            return json.loads(text[start : end + 1])
+            return _try_parse(text[start : end + 1])
 
         raise json.JSONDecodeError("No JSON found in agent output", text, 0)
 

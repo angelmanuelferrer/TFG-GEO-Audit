@@ -32,7 +32,7 @@ load_dotenv(PROJECT_ROOT / ".env")
 from langchain_community.vectorstores import FAISS
 
 from src.config import (
-    get_queries_for_run,
+    get_queries_for_run_with_meta,
     load_experiment_config,
 )
 from src.processing.chunker import TokenAwareChunker
@@ -72,8 +72,8 @@ def main() -> None:
     print(f"Target: {target_url}")
     print(f"Block: {args.block or 'core only'}")
 
-    queries = get_queries_for_run(args.block)
-    print(f"Queries: {len(queries)}")
+    query_metas = get_queries_for_run_with_meta(args.block)
+    print(f"Queries: {len(query_metas)} (block={args.block or 'core only'})")
 
     # --- 2. Embeddings ---
     print("\n=== 1/6 Connecting to embedding server ===")
@@ -111,30 +111,31 @@ def main() -> None:
     print("Merged vectorstore ready")
 
     # --- 5. RAG Judge + Metrics ---
-    print(f"\n=== 5/6 Running RAG Judge on {len(queries)} queries ===")
+    print(f"\n=== 5/6 Running RAG Judge on {len(query_metas)} queries ===")
     judge = RAGJudge(config)
     extractor = CitationExtractor(target_url, target_brand)
 
     raw_results = []
     metrics_list = []
 
-    for i, query in enumerate(queries, 1):
-        print(f"\n[{i}/{len(queries)}] {query[:70]}...")
+    for i, qmeta in enumerate(query_metas, 1):
+        query = qmeta["text"]
+        print(f"\n[{i}/{len(query_metas)}] [{qmeta['category']}] {query[:65]}...")
 
         try:
             answer = judge.generate_answer_with_agent(query, merged_vs)
             metrics = extractor.extract_metrics(answer)
 
-            raw_results.append({"query": query, "answer": answer})
-            metrics_list.append({"query": query, **metrics})
+            raw_results.append({"query_id": qmeta["id"], "query": query, "answer": answer})
+            metrics_list.append({"query_id": qmeta["id"], "query": query, "category": qmeta["category"], **metrics})
 
             visible = "VISIBLE" if metrics["is_visible"] else "not visible"
             print(f"  -> {visible} | SoM={metrics['som']}% | Citations={metrics['target_citations']}/{metrics['total_citations']}")
 
         except Exception as exc:
             logger.error("Query failed: %s — %s", query[:50], exc)
-            raw_results.append({"query": query, "error": str(exc)})
-            metrics_list.append({"query": query, "error": str(exc)})
+            raw_results.append({"query_id": qmeta["id"], "query": query, "error": str(exc)})
+            metrics_list.append({"query_id": qmeta["id"], "query": query, "category": qmeta["category"], "error": str(exc)})
 
     # --- 6. Save results ---
     print(f"\n=== 6/6 Saving results to {output_dir} ===")
@@ -147,18 +148,35 @@ def main() -> None:
     successful = [m for m in metrics_list if "error" not in m]
     n_visible = sum(1 for m in successful if m["is_visible"])
 
+    # Per-category breakdown
+    categories = sorted(set(m.get("category", "unknown") for m in metrics_list))
+    by_category = {}
+    for cat in categories:
+        cat_all = [m for m in metrics_list if m.get("category") == cat]
+        cat_ok = [m for m in cat_all if "error" not in m]
+        cat_vis = [m for m in cat_ok if m["is_visible"]]
+        by_category[cat] = {
+            "n": len(cat_all),
+            "n_errors": len(cat_all) - len(cat_ok),
+            "n_successful": len(cat_ok),
+            "visibility_rate": round(len(cat_vis) / len(cat_ok) * 100, 2) if cat_ok else 0,
+            "avg_som": round(sum(m["som"] for m in cat_ok) / len(cat_ok), 2) if cat_ok else 0,
+            "avg_citations": round(sum(m["total_citations"] for m in cat_ok) / len(cat_ok), 2) if cat_ok else 0,
+        }
+
     scorecard = {
         "run_id": run_id,
         "timestamp": datetime.now().isoformat(),
         "target_url": target_url,
         "target_brand": target_brand,
         "rotation_block": args.block,
-        "n_queries": len(queries),
+        "n_queries": len(metrics_list),
         "n_successful": len(successful),
-        "n_errors": len(queries) - len(successful),
+        "n_errors": len(metrics_list) - len(successful),
         "visibility_rate": round(n_visible / len(successful) * 100, 2) if successful else 0,
         "avg_som": round(sum(m["som"] for m in successful) / len(successful), 2) if successful else 0,
-        "avg_citations": round(sum(m["target_citations"] for m in successful) / len(successful), 2) if successful else 0,
+        "avg_citations": round(sum(m["total_citations"] for m in successful) / len(successful), 2) if successful else 0,
+        "by_category": by_category,
         "per_query_metrics": metrics_list,
     }
 
@@ -167,10 +185,12 @@ def main() -> None:
 
     # Summary
     print(f"\n=== Results ===")
-    print(f"  Visibility rate: {scorecard['visibility_rate']}%")
-    print(f"  Average SoM: {scorecard['avg_som']}%")
-    print(f"  Avg target citations: {scorecard['avg_citations']}")
-    print(f"  Errors: {scorecard['n_errors']}/{scorecard['n_queries']}")
+    print(f"  Queries:     {len(successful)}/{len(metrics_list)} ok  ({scorecard['n_errors']} errores)")
+    print(f"  Visibility:  {scorecard['visibility_rate']}%")
+    print(f"  Avg SoM:     {scorecard['avg_som']}%")
+    print(f"\n  By category:")
+    for cat, stats in by_category.items():
+        print(f"    {cat:<15} n={stats['n']} (err={stats['n_errors']})  vis={stats['visibility_rate']:.0f}%  SoM={stats['avg_som']:.1f}%")
     print(f"\n  Scorecard: {output_dir / 'scorecard.json'}")
     print(f"  Raw results: {output_dir / 'raw_results.json'}")
 
