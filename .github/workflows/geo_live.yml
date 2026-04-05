@@ -10,9 +10,9 @@ on:
       engines:
         description: 'Motores a evaluar (separados por espacio)'
         default: 'gemini claude openai'
-      tier:
-        description: 'Tier de queries: core (20), light (40), medium (60), full (100)'
-        default: 'core'
+      engine_tiers:
+        description: 'Tier por motor: gemini=full claude=light openai=medium'
+        default: 'gemini=full claude=light openai=medium'
 
 jobs:
   geo_live:
@@ -39,8 +39,8 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           ENGINES="${{ github.event.inputs.engines || 'gemini claude openai' }}"
-          TIER="${{ github.event.inputs.tier || 'core' }}"
-          python collect_metrics/collect_geo_live.py --engines $ENGINES --tier $TIER
+          ENGINE_TIERS="${{ github.event.inputs.engine_tiers || 'gemini=full claude=light openai=medium' }}"
+          python collect_metrics/collect_geo_live.py --engines $ENGINES --engine-tiers $ENGINE_TIERS
 
       - name: Guardar resultados (Commit & Push)
         run: |

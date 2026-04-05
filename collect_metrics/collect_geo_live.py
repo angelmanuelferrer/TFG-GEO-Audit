@@ -8,6 +8,8 @@ Usage:
     python collect_metrics/collect_geo_live.py
     python collect_metrics/collect_geo_live.py --engines gemini --tier core
     python collect_metrics/collect_geo_live.py --engines gemini claude openai --tier light
+    python collect_metrics/collect_geo_live.py --engines gemini claude openai \
+        --engine-tiers gemini=full claude=light openai=medium
 """
 
 from __future__ import annotations
@@ -41,6 +43,7 @@ logger = logging.getLogger(__name__)
 
 _RATE_LIMIT_DELAY = 2.0
 _GROUNDING_PROXY_DOMAIN = "vertexaisearch.cloud.google.com"
+_TIER_RANK = {"core": 0, "light": 1, "medium": 2, "full": 3}
 
 
 # ---------------------------------------------------------------------------
@@ -79,6 +82,64 @@ def _get_queries_with_ids(tier: str) -> List[Dict[str, str]]:
         for qid in ids
         if qid in queries_db
     ]
+
+
+# ---------------------------------------------------------------------------
+# Delta tracking
+# ---------------------------------------------------------------------------
+
+
+def _load_prev_week_results(out_dir: Path, current_run_id: str) -> Optional[Dict]:
+    """Return the results list from the most recent previous run file, or None."""
+    files = sorted(out_dir.glob("LIVE-*.json"))
+    for f in reversed(files):
+        if current_run_id not in f.name:
+            try:
+                with open(f, encoding="utf-8") as fh:
+                    return json.load(fh)
+            except Exception as exc:
+                logger.warning("Could not load prev week file %s: %s", f.name, exc)
+    return None
+
+
+def _compute_delta(current_results: List[Dict], prev_results: List[Dict]) -> Dict:
+    """Compare is_visible per query/engine between current and previous week.
+
+    Returns a dict keyed by engine with lists: gained, lost, stable_visible,
+    stable_invisible. Only queries evaluated in both runs are compared.
+    """
+    prev_by_query = {r["query_id"]: r for r in prev_results}
+    delta: Dict[str, Dict[str, List[str]]] = {}
+
+    for result in current_results:
+        qid = result["query_id"]
+        if qid not in prev_by_query:
+            continue
+        for engine, metrics in result.get("engines", {}).items():
+            prev_engine = prev_by_query[qid].get("engines", {}).get(engine)
+            if prev_engine is None:
+                continue
+            curr_vis = metrics.get("is_visible", False)
+            prev_vis = prev_engine.get("is_visible", False)
+
+            if engine not in delta:
+                delta[engine] = {
+                    "gained": [],
+                    "lost": [],
+                    "stable_visible": [],
+                    "stable_invisible": [],
+                }
+
+            if curr_vis and not prev_vis:
+                delta[engine]["gained"].append(qid)
+            elif not curr_vis and prev_vis:
+                delta[engine]["lost"].append(qid)
+            elif curr_vis and prev_vis:
+                delta[engine]["stable_visible"].append(qid)
+            else:
+                delta[engine]["stable_invisible"].append(qid)
+
+    return delta
 
 
 # ---------------------------------------------------------------------------
@@ -321,8 +382,18 @@ class LiveEvaluator:
         "openai": "_query_openai",
     }
 
-    def run(self, queries: List[Dict[str, str]], engines: List[str]) -> Dict[str, Any]:
-        """Evaluate all queries across the requested engines."""
+    def run(
+        self,
+        queries: List[Dict[str, str]],
+        engines: List[str],
+        engine_tier_map: Dict[str, str],
+        tier_query_ids: Dict[str, set],
+    ) -> Dict[str, Any]:
+        """Evaluate all queries across the requested engines.
+
+        engine_tier_map: {engine -> tier}, e.g. {"gemini": "full", "claude": "light"}
+        tier_query_ids:  {tier -> set of query IDs} for fast per-engine filtering
+        """
         results = []
         totals: Dict[str, Dict] = {
             e: {"visible": 0, "total": 0, "som_sum": 0.0, "rank_sum": 0.0, "rank_count": 0}
@@ -330,10 +401,18 @@ class LiveEvaluator:
         }
 
         for i, q in enumerate(queries, 1):
+            # Only run engines whose tier includes this query
+            engines_for_query = [
+                e for e in engines
+                if q["id"] in tier_query_ids[engine_tier_map[e]]
+            ]
+            if not engines_for_query:
+                continue
+
             print(f"\n[{i}/{len(queries)}] {q['text'][:70]}...")
             engine_results: Dict[str, Any] = {}
 
-            for engine in engines:
+            for engine in engines_for_query:
                 method = getattr(self, self._ENGINE_METHODS[engine])
                 try:
                     judge_output = method(q["text"])
@@ -378,12 +457,12 @@ class LiveEvaluator:
 
                 time.sleep(_RATE_LIMIT_DELAY)
 
-            # Engine Coverage for this query
+            # Engine Coverage — denominator = engines that actually evaluated this query
             n_visible = sum(
-                1 for e in engines
+                1 for e in engines_for_query
                 if engine_results.get(e, {}).get("is_visible", False)
             )
-            engine_coverage = round(n_visible / len(engines) * 100, 2)
+            engine_coverage = round(n_visible / len(engines_for_query) * 100, 2)
 
             results.append({
                 "query_id": q["id"],
@@ -431,9 +510,30 @@ def main() -> None:
         "--tier",
         default="core",
         choices=["core", "light", "medium", "full"],
-        help="Query tier — core=20, light=40, medium=60, full=100 (default: core)",
+        help="Single tier for all engines — core=20, light=40, medium=60, full=100 (default: core)",
+    )
+    parser.add_argument(
+        "--engine-tiers",
+        nargs="+",
+        metavar="ENGINE=TIER",
+        help="Per-engine tiers, e.g. gemini=full claude=light openai=medium. "
+             "Overrides --tier when specified.",
     )
     args = parser.parse_args()
+
+    # Build engine→tier map (per-engine takes precedence over global --tier)
+    if args.engine_tiers:
+        engine_tier_map = dict(pair.split("=") for pair in args.engine_tiers)
+    else:
+        engine_tier_map = {e: args.tier for e in args.engines}
+
+    # Load union of queries (max tier) and precompute ID sets per tier
+    max_tier = max(engine_tier_map.values(), key=lambda t: _TIER_RANK[t])
+    all_queries = _get_queries_with_ids(max_tier)
+    tier_query_ids: Dict[str, set] = {
+        tier: {q["id"] for q in _get_queries_with_ids(tier)}
+        for tier in set(engine_tier_map.values())
+    }
 
     now = datetime.now(timezone.utc)
     week = now.isocalendar()[1]
@@ -441,27 +541,31 @@ def main() -> None:
 
     print(f"\n=== Live GEO Evaluation: {run_id} ===")
     print(f"Engines : {', '.join(args.engines)}")
-    print(f"Tier    : {args.tier}")
-
-    queries = _get_queries_with_ids(args.tier)
-    print(f"Queries : {len(queries)}")
+    for engine, tier in engine_tier_map.items():
+        print(f"  {engine:8s} → {tier} ({len(tier_query_ids[tier])} queries)")
+    print(f"Total unique queries: {len(all_queries)}")
 
     evaluator = LiveEvaluator()
-    run_data = evaluator.run(queries, args.engines)
+    run_data = evaluator.run(all_queries, args.engines, engine_tier_map, tier_query_ids)
+
+    out_dir = PROJECT_ROOT / "data" / "geo" / "live"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    # Delta vs previous week
+    prev_data = _load_prev_week_results(out_dir, run_id)
+    delta = _compute_delta(run_data["results"], prev_data["results"]) if prev_data else None
 
     output = {
         "run_id": run_id,
         "timestamp": now.isoformat(),
         "engines": args.engines,
-        "tier": args.tier,
-        "n_queries": len(queries),
+        "engine_tiers": engine_tier_map,
+        "n_queries": len(all_queries),
         **run_data,
+        "delta_vs_prev_week": delta,
     }
 
-    out_dir = PROJECT_ROOT / "data" / "geo" / "live"
-    out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{run_id}.json"
-
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
@@ -475,6 +579,18 @@ def main() -> None:
             f"{stats['n_visible']}/{stats['n_queries']} queries"
         )
     print(f"  Engine Coverage avg: {run_data['engine_coverage_avg']}%")
+
+    if delta:
+        print(f"\n=== Delta vs semana anterior ({prev_data['run_id']}) ===")
+        for engine, d in delta.items():
+            print(
+                f"  {engine:8s} → +{len(d['gained'])} ganadas | "
+                f"-{len(d['lost'])} perdidas | "
+                f"{len(d['stable_visible'])} estables visibles"
+            )
+    else:
+        print("\n(Sin semana anterior para comparar — primera ejecución)")
+
     print(f"\nSaved: {out_path}")
 
 

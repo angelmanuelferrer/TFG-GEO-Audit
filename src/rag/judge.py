@@ -69,8 +69,8 @@ class RAGJudge:
         self._agent_prompt = ChatPromptTemplate.from_messages(
             [
                 ("system", agent_spec["system"]),
-                ("placeholder", "{agent_scratchpad}"),
                 ("human", "{input}"),
+                ("placeholder", "{agent_scratchpad}"),
             ]
         )
 
