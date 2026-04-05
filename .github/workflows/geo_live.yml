@@ -1,0 +1,51 @@
+name: GEO Live Evaluation (Semanal)
+
+on:
+  schedule:
+    # Domingos a las 09:00 UTC (después del collect_seo diario de las 08:00)
+    - cron: '0 9 * * 0'
+  # Permite lanzarlo manualmente desde la pestaña Actions
+  workflow_dispatch:
+    inputs:
+      engines:
+        description: 'Motores a evaluar (separados por espacio)'
+        default: 'gemini claude openai'
+      tier:
+        description: 'Tier de queries: core (20), light (40), medium (60), full (100)'
+        default: 'core'
+
+jobs:
+  geo_live:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar evaluación Live
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          ENGINES="${{ github.event.inputs.engines || 'gemini claude openai' }}"
+          TIER="${{ github.event.inputs.tier || 'core' }}"
+          python collect_metrics/collect_geo_live.py --engines $ENGINES --tier $TIER
+
+      - name: Guardar resultados (Commit & Push)
+        run: |
+          git config --global user.name 'GitHub Action Bot'
+          git config --global user.email 'action@github.com'
+          git add data/geo/live/*.json
+          git diff --quiet && git diff --staged --quiet || \
+            (git commit -m "auto: GEO live evaluation $(date +%Y-W%V)" && git push)
