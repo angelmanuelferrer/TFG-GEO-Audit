@@ -287,20 +287,127 @@ Documento vivo con todas las decisiones de diseño del sistema GEO-Audit, sus ju
 
 ---
 
+## ADR-014: Kaggle como endpoint remoto de GPU + scripts locales
+
+**Fecha**: 2026-03-18
+**Estado**: Aprobado (actualiza ADR-008)
+
+**Contexto**: ADR-008 establecia que toda la ejecucion se hacia en Kaggle (clonar repo, instalar deps, ejecutar notebooks). Sin embargo, la unica operacion que necesita GPU es `create_embeddings()` (multilingual-e5-large, ~1.2GB). Todo lo demas (Gemini API, scraping, chunking, FAISS, metricas) es CPU o llamadas API que pueden ejecutarse localmente.
+
+Ejecutar todo en Kaggle tiene desventajas:
+- Sesiones limitadas a 12h con reinicio de estado.
+- No se puede automatizar con cron ni CI/CD.
+- La interfaz de notebooks dificulta debugging y logging.
+
+**Decision**: Separar la GPU del resto del pipeline:
+1. **Kaggle solo sirve embeddings**: Un notebook (`kaggle_gpu_server.ipynb`) carga `multilingual-e5-large` en GPU y expone un endpoint HTTP (`POST /embed`) via localtunnel. Auth con Bearer token.
+2. **Scripts locales**: `scripts/run_discovery.py` y `scripts/run_experimental.py` automatizan el pipeline completo por terminal, usando `RemoteEmbeddings` para llamar al servidor de Kaggle.
+3. **Notebooks intactos**: Los notebooks originales (`00_discover_competitors.ipynb`, `experimental_run.ipynb`) se mantienen para trazabilidad y referencia.
+
+**Implementacion**:
+- `src/processing/remote_embeddings.py`: Clase `RemoteEmbeddings` que implementa `langchain_core.embeddings.Embeddings` via HTTP POST con retry y batching.
+- `src/processing/embeddings.py`: Simplificado para devolver siempre `RemoteEmbeddings`.
+- `notebooks/kaggle_gpu_server.ipynb`: Flask server + localtunnel en 4 celdas.
+- `scripts/run_discovery.py`: Pipeline completo de discovery (equivalente al notebook).
+- `scripts/run_experimental.py`: Pipeline completo experimental (equivalente al notebook).
+
+**Justificacion**:
+- La GPU solo se necesita para embeddings (~5% del tiempo de ejecucion). El resto son llamadas API o CPU.
+- Localtunnel expone el servidor de Kaggle sin configuracion de red.
+- Los scripts son mas faciles de automatizar, debuggear y versionar que notebooks.
+- `RemoteEmbeddings` es un drop-in compatible con LangChain (misma interfaz que `HuggingFaceEmbeddings`).
+
+**Alternativa descartada**: Serverless GPU (Modal, RunPod). Rechazado por coste y complejidad para un TFG. Kaggle es gratuito.
+
+**Alternativa descartada**: OpenAI embeddings como unico proveedor. Rechazado por ADR-003: coste recurrente y dimensiones diferentes (1536 vs 1024) invalidarian el vectorstore congelado.
+
+---
+
+## ADR-015: Metricas GEO adaptadas al tipo de sitio web (modo plataforma)
+
+**Fecha**: 2026-03-23
+**Estado**: Aprobado (diseño para modo plataforma)
+
+**Contexto**: Las metricas GEO actuales (visibility rate, Share of Mind, citation count) se tratan de forma uniforme para todos los sitios. Sin embargo, no todos los tipos de sitio web necesitan optimizar las mismas metricas. Una tienda online necesita aparecer en listas de "mejores X", mientras que un articulo cientifico necesita ser citado como fuente de autoridad. Programamos.es, como plataforma educativa, necesita visibilidad y recomendacion como recurso.
+
+**Decision**: En el **modo plataforma** (extension futura), el sistema clasificara automaticamente el tipo de sitio web tras el crawling y priorizara las metricas GEO relevantes. La clasificacion la hara el LLM analizando el contenido crawleado.
+
+**Taxonomia de tipos y metricas prioritarias**:
+
+| Tipo de sitio | Metricas prioritarias | Justificacion |
+|---|---|---|
+| **E-commerce / tienda** | Posicion en lista, citation count | Aparicion en rankings "top N mejores X" |
+| **Academico / cientifico** | Authority citation, cita textual | Ser referenciado como fuente fiable |
+| **Educativo / formativo** | Visibility rate, Share of Mind | Ser recomendado como recurso de aprendizaje |
+| **SaaS / herramienta** | Citation con enlace, recomendacion directa | Ser sugerido como solucion a un problema |
+| **Blog / medio de comunicacion** | Frecuencia de cita, recencia | Ser citado para informacion actualizada |
+| **Institucional / ONG** | Visibilidad, autoridad tematica | Ser reconocido como referente en su ambito |
+
+**Flujo en modo plataforma**:
+1. Usuario introduce URL de su sitio.
+2. `SiteCrawler` scrapea el contenido.
+3. LLM clasifica el tipo de sitio a partir del contenido.
+4. El sistema prioriza y pondera metricas segun la taxonomia.
+5. El dashboard muestra las metricas relevantes destacadas y recomendaciones adaptadas.
+
+**Alcance**: Solo modo plataforma. El modo experimental (TFG) usa las metricas uniformes actuales con Programamos.es (tipo: educativo).
+
+**Justificacion**:
+- Hace el sistema util para cualquier tipo de web, no solo educativas.
+- Las recomendaciones de optimizacion son mas accionables si estan contextualizadas al tipo de negocio.
+- Diferenciador respecto a herramientas GEO genericas que tratan todas las metricas por igual.
+
+**Alternativa descartada**: Dejar que el usuario elija manualmente su tipo de sitio. Rechazado como opcion unica porque muchos usuarios no sabrian clasificarse. Se ofrecera como override si la clasificacion automatica no es correcta.
+
+---
+
+## ADR-016: Migración de embeddings a Google text-embedding-004 (API)
+
+**Fecha**: 2026-04-04
+**Estado**: Aprobado (reemplaza ADR-014 en lo relativo a embeddings)
+
+**Contexto**: ADR-014 establecía Kaggle GPU como servidor remoto de embeddings via localtunnel/serveo. En la práctica, los tunnels SSH disponibles (ngrok, localtunnel, serveo) resultaron bloqueados o inestables en el entorno de desarrollo, haciendo inviable el flujo de trabajo. Cada ejecución requería levantar manualmente el servidor en Kaggle, obtener la URL del tunnel y configurar las variables de entorno.
+
+**Decision**: Sustituir `RemoteEmbeddings` (HTTP a Kaggle) por `GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")` de `langchain-google-genai`. La ejecución pasa a ser 100% local sin dependencias de GPU.
+
+**Implementacion**:
+- `src/processing/embeddings.py`: `create_embeddings()` devuelve `GoogleGenerativeAIEmbeddings` con `task_type="retrieval_document"`. `embed_query()` usa automáticamente `task_type="retrieval_query"`.
+- `config/experiment_config.json`: modelo actualizado a `models/text-embedding-004`, dimensiones 768 (vs 1024 anterior), provider `google`.
+- `GOOGLE_API_KEY` ya existía en `.env` para Gemini — cero variables nuevas.
+- Variables eliminadas: `EMBEDDING_SERVER_URL`, `EMBEDDING_SERVER_TOKEN`.
+
+**Consecuencia operativa**: El vectorstore congelado existente queda invalidado (dimensiones incompatibles: 1024 → 768). Se debe ejecutar `scripts/run_discovery.py` desde cero para regenerar el vectorstore con el nuevo modelo.
+
+**Justificacion**:
+- Elimina la dependencia de GPU y de tunneling completamente.
+- `text-embedding-004` tiene soporte multilingüe nativo (español incluido) y rendimiento comparable a `multilingual-e5-large` en benchmarks de retrieval semántico.
+- `GOOGLE_API_KEY` ya estaba presente: cero coste de configuración adicional.
+- A la escala del TFG (discovery one-time ~200k tokens, target por run ~50k tokens), el coste de API es de céntimos.
+- `GoogleGenerativeAIEmbeddings` es drop-in compatible con la interfaz `langchain_core.embeddings.Embeddings` — los scripts no cambian.
+
+**Alternativa descartada**: Google Colab con Cloudflare tunnel. Mejora la situación de tunneling respecto a Kaggle pero no la elimina: sesiones limitadas (~90 min inactivo), infraestructura adicional que mantener.
+
+**Alternativa descartada**: OpenAI `text-embedding-3-small`. Requeriría `OPENAI_API_KEY` adicional. Google ya cubre el stack completo (Gemini discovery + RAG Judge + embeddings).
+
+---
+
 ## Indice de decisiones
 
 | ADR | Titulo | Estado |
 |-----|--------|--------|
 | 001 | Chunking basado en tokens | Actualizado por ADR-011 |
 | 002 | JSON estructurado del RAG Judge | Actualizado por ADR-012 |
-| 003 | Embeddings locales con fallback | Aprobado |
+| 003 | Embeddings locales con fallback | Actualizado por ADR-014 |
 | 004 | Competidores desde LLMs reales | Aprobado |
 | 005 | FAISS local para vectorstore | Aprobado |
 | 006 | Separacion discovery vs runs | Aprobado |
 | 007 | Procesamiento HTML-aware | Aprobado |
-| 008 | Ejecucion Kaggle, desarrollo local | Aprobado |
+| 008 | Ejecucion Kaggle, desarrollo local | Actualizado por ADR-014 |
 | 009 | Discovery con modelos web-grounded (Anthropic) | Reemplazado por ADR-010 |
 | 010 | Discovery con Gemini 2.5 Flash + Google Search | Aprobado |
 | 011 | Chunking SAGEO Arena (256/64) | Aprobado |
 | 012 | RAG Judge Gemini + agente de busqueda | Aprobado |
 | 013 | Expansion a 100 queries con rotacion | Aprobado |
+| 014 | Kaggle como endpoint remoto de GPU | Aprobado |
+| 015 | Metricas GEO adaptadas al tipo de sitio | Aprobado (modo plataforma) |
+| 016 | Embeddings Google text-embedding-004 (API) | Aprobado (reemplaza ADR-014 embeddings) |
