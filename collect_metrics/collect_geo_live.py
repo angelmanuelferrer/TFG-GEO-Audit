@@ -314,7 +314,7 @@ class LiveEvaluator:
                 block_type = getattr(block, "type", "")
                 if block_type == "text":
                     answer += getattr(block, "text", "")
-                elif block_type == "tool_result":
+                elif block_type == "web_search_tool_result":
                     for result in getattr(block, "content", None) or []:
                         url = getattr(result, "url", None)
                         if url and url not in search_urls:
