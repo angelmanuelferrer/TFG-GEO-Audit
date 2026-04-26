@@ -10,48 +10,6 @@ from app.services import metrics_aggregator
 router = APIRouter()
 
 
-@router.get("/timeline/experimental", dependencies=[Depends(verify_api_key)])
-def timeline_experimental(
-    metric: str = Query(...),
-    category: Optional[str] = Query(None),
-    from_date: Optional[str] = Query(None, alias="from"),
-    to_date: Optional[str] = Query(None, alias="to"),
-):
-    try:
-        points = metrics_aggregator.timeline_experimental(metric, category, from_date, to_date)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    return {"metric": metric, "category": category, "points": points}
-
-
-@router.get("/timeline/live", dependencies=[Depends(verify_api_key)])
-def timeline_live(
-    metric: str = Query(...),
-    engine: Optional[str] = Query(None),
-    from_date: Optional[str] = Query(None, alias="from"),
-    to_date: Optional[str] = Query(None, alias="to"),
-):
-    try:
-        points = metrics_aggregator.timeline_live(metric, engine, from_date, to_date)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    return {"metric": metric, "engine": engine, "points": points}
-
-
-@router.get("/timeline/seo", dependencies=[Depends(verify_api_key)])
-def timeline_seo(
-    device: str = Query(...),
-    metric: str = Query(...),
-    from_date: Optional[str] = Query(None, alias="from"),
-    to_date: Optional[str] = Query(None, alias="to"),
-):
-    try:
-        points = metrics_aggregator.timeline_seo(device, metric, from_date, to_date)
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    return {"metric": metric, "device": device, "points": points}
-
-
 @router.get("/coverage-matrix", dependencies=[Depends(verify_api_key)])
 def coverage_matrix(run_id: str = Query(...)):
     matrix = metrics_aggregator.coverage_matrix(run_id)
