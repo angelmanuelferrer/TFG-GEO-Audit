@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 60% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 45% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 45% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 187 94% 43%;
+    --primary-foreground: 222 60% 7%;
+
+    --secondary: 263 70% 66%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 216 40% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 216 40% 15%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 160 84% 39%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 60% 7%;
+
+    --border: 213 40% 22%;
+    --input: 213 40% 22%;
+    --ring: 187 94% 43%;
+
+    --radius: 0.75rem;
+
+    --surface: 222 45% 10%;
+    --surface-elevated: 220 40% 14%;
+
+    --engine-gemini: 217 90% 61%;
+    --engine-claude: 32 80% 44%;
+    --engine-openai: 160 84% 39%;
+
+    --sidebar-background: 222 50% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 187 94% 43%;
+    --sidebar-primary-foreground: 222 60% 7%;
+    --sidebar-accent: 220 40% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 213 40% 22%;
+    --sidebar-ring: 187 94% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}

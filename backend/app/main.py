@@ -1,0 +1,37 @@
+from __future__ import annotations
+
+import sys
+import pathlib
+
+# Añadir el raíz del repo al path para poder importar src/
+PROJECT_ROOT = pathlib.Path(__file__).parents[2]
+sys.path.insert(0, str(PROJECT_ROOT))
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from app.settings import settings
+from app.routers import catalog, experimental, live, metrics, overview, seo
+
+
+app = FastAPI(
+    title="GEO-Audit Dashboard API",
+    version="1.0.0",
+    description="API REST para el dashboard de visibilidad GEO de programamos.es",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.allowed_origins_list,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+app.include_router(catalog.router, prefix="/api", tags=["catalog"])
+app.include_router(experimental.router, prefix="/api/runs/experimental", tags=["experimental"])
+app.include_router(live.router, prefix="/api/runs/live", tags=["live"])
+app.include_router(seo.router, prefix="/api/seo", tags=["seo"])
+app.include_router(metrics.router, prefix="/api/metrics", tags=["metrics"])
+app.include_router(overview.router, prefix="/api/dashboard/overview", tags=["overview"])
