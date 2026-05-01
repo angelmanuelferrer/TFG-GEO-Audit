@@ -5,6 +5,7 @@ import {
   GitCompare,
   Radio,
   BarChart3,
+  Wand2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +18,7 @@ const navGroups = [
       { to: "/experimental/compare", label: "Comparar Runs", icon: GitCompare },
       { to: "/live", label: "Live Multi-motor", icon: Radio },
       { to: "/seo", label: "SEO Histórico", icon: BarChart3 },
+      { to: "/optimizer", label: "Optimizer", icon: Wand2 },
     ],
   },
 ];

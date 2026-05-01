@@ -1,3 +1,4 @@
+import React from "react";
 import type { CoverageMatrixResponse } from "@/api/types";
 
 function heatColor(value: number): string {
@@ -36,8 +37,8 @@ export function CoverageHeatmap({ matrix }: { matrix: CoverageMatrixResponse }) 
 
           {/* Data rows */}
           {matrix.categories.map((cat) => (
-            <>
-              <div key={`label-${cat}`} className="flex items-center text-sm text-foreground capitalize font-medium px-2">
+            <React.Fragment key={cat}>
+              <div className="flex items-center text-sm text-foreground capitalize font-medium px-2">
                 {cat}
               </div>
               {matrix.engines.map((engine) => {
@@ -52,7 +53,7 @@ export function CoverageHeatmap({ matrix }: { matrix: CoverageMatrixResponse }) 
                   </div>
                 );
               })}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>
