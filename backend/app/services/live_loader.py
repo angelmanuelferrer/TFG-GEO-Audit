@@ -57,6 +57,8 @@ def _enrich_live(data: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def load_live_run(run_id: str) -> Optional[Dict[str, Any]]:
+    if run_id == "latest":
+        return load_latest_live()
     path = _live_dir() / f"{run_id}.json"
     if not path.exists():
         return None

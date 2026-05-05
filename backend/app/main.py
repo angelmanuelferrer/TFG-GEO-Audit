@@ -11,7 +11,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.settings import settings
-from app.routers import catalog, experimental, live, metrics, overview, seo
+from app.routers import catalog, experimental, live, metrics, overview, seo, optimizer
 
 
 app = FastAPI(
@@ -35,3 +35,4 @@ app.include_router(live.router, prefix="/api/runs/live", tags=["live"])
 app.include_router(seo.router, prefix="/api/seo", tags=["seo"])
 app.include_router(metrics.router, prefix="/api/metrics", tags=["metrics"])
 app.include_router(overview.router, prefix="/api/dashboard/overview", tags=["overview"])
+app.include_router(optimizer.router, prefix="/api/optimizer", tags=["optimizer"])

@@ -18,11 +18,20 @@ const ENGINE_TEXT: Record<string, string> = {
 };
 
 export default function HomePage() {
-  const { data, isLoading } = useOverview();
+  const { data, isLoading, error } = useOverview();
 
   const exp = data?.experimental;
   const live = data?.live;
   const seo = data?.seo;
+
+  if (error) {
+    return (
+      <div className="rounded-lg border border-destructive/30 bg-destructive/5 p-4 text-sm text-destructive">
+        Error al cargar datos: {(error as Error).message}. Comprueba que el backend está activo en{" "}
+        <code className="font-mono">localhost:8000</code>.
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6 max-w-7xl">
