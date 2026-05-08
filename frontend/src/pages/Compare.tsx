@@ -162,7 +162,7 @@ export default function ComparePage() {
           </div>
 
           {/* Bar Chart */}
-          {chartData.length > 0 && (
+          {chartData.length > 0 && !differentBlocks && (
             <div className="bg-card border border-border rounded-lg p-4">
               <h3 className="text-sm font-semibold text-foreground mb-4">Top cambios de SoM</h3>
               <ResponsiveContainer width="100%" height={300}>
@@ -176,7 +176,9 @@ export default function ComparePage() {
                     tick={{ fill: "hsl(215 20% 65%)", fontSize: 11, fontFamily: "monospace" }}
                   />
                   <Tooltip
-                    contentStyle={{ backgroundColor: "hsl(222 45% 10%)", border: "1px solid hsl(213 40% 22%)", borderRadius: "8px", fontSize: "12px" }}
+                    contentStyle={{ backgroundColor: "hsl(222 45% 10%)", border: "1px solid hsl(213 40% 22%)", borderRadius: "8px", fontSize: "12px", color: "hsl(215 20% 85%)" }}
+                    labelStyle={{ color: "hsl(215 20% 85%)" }}
+                    itemStyle={{ color: "hsl(215 20% 85%)" }}
                     formatter={(value: number) => [`${value.toFixed(1)}pp`, "Δ SoM"]}
                   />
                   <Bar dataKey="delta" radius={[0, 4, 4, 0]}>

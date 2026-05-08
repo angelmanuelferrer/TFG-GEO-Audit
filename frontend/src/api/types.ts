@@ -262,49 +262,27 @@ export interface QueriesCatalogResponse {
 
 // === Jobs types ===
 
-export type JobStatus = "queued" | "running" | "completed" | "failed" | "cancelled";
+export type JobStatus = "pending" | "running" | "done" | "error";
+export type JobType = "experimental" | "live";
 
-export interface ScriptInfo {
-  script_id: string;
-  name: string;
-  description: string;
-  side_effects: string;
-  cost_estimate: string;
-  duration_estimate: string;
-  env_vars: string[];
-  requires_confirmation: boolean;
-  args_schema?: {
-    block?: { type: "select"; options: string[] };
-    engines?: { type: "multi-select"; options: string[] };
-    tier?: { type: "select"; options: string[] };
-  };
+export interface ExperimentalJobParams {
+  block: "R1" | "R2" | "R3" | "R4" | null;
 }
 
-export interface ScriptsResponse {
-  scripts: ScriptInfo[];
-}
-
-export interface JobPreview {
-  script_id: string;
-  cost_estimate: string;
-  duration_estimate: string;
-  side_effects: string;
-  missing_env: string[];
-  available_env: string[];
+export interface LiveJobParams {
+  engines: string[];
+  tier: "core" | "light" | "medium" | "full";
 }
 
 export interface Job {
-  id: string;
-  script_id: string;
-  script_name: string;
+  job_id: string;
+  type: JobType;
   status: JobStatus;
+  params: ExperimentalJobParams | LiveJobParams;
+  output: string;
+  run_id: string | null;
   created_at: string;
-  started_at: string | null;
-  completed_at: string | null;
-  duration_seconds: number | null;
-  output_path: string | null;
-  error: string | null;
-  args: Record<string, unknown>;
+  updated_at: string;
 }
 
 export interface JobsListResponse {
@@ -312,7 +290,7 @@ export interface JobsListResponse {
   total: number;
 }
 
-export interface JobLogs {
-  job_id: string;
-  lines: string[];
+export interface LaunchJobRequest {
+  type: JobType;
+  params: Partial<ExperimentalJobParams & LiveJobParams>;
 }

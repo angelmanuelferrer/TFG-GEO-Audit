@@ -1,9 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import apiClient from "./client";
 import type {
   OverviewResponse, RunsListResponse, RunScorecard, RawResponse, CompareResponse,
   LiveRunsListResponse, LiveRunResponse, CoverageMatrixResponse, SentimentDistribution,
-  SeoSnapshot,
+  SeoSnapshot, Job, JobsListResponse, LaunchJobRequest,
 } from "./types";
 
 export function useOverview() {
@@ -130,6 +130,50 @@ export function useSeoHistory() {
       return data;
     },
     staleTime: 60_000,
+  });
+}
+
+// === Jobs hooks ===
+
+export function useJobs(hasRunning: boolean) {
+  return useQuery<JobsListResponse>({
+    queryKey: ["jobs"],
+    queryFn: async () => {
+      const { data } = await apiClient.get<JobsListResponse>("/api/jobs");
+      return data;
+    },
+    // Refresca cada 4s si hay un job activo, cada 30s si no
+    refetchInterval: hasRunning ? 4_000 : 30_000,
+    staleTime: 0,
+  });
+}
+
+export function useJob(jobId: string | undefined) {
+  return useQuery<Job>({
+    queryKey: ["job", jobId],
+    queryFn: async () => {
+      const { data } = await apiClient.get<Job>(`/api/jobs/${jobId}`);
+      return data;
+    },
+    enabled: !!jobId,
+    refetchInterval: (query) => {
+      const status = query.state.data?.status;
+      return status === "pending" || status === "running" ? 3_000 : false;
+    },
+    staleTime: 0,
+  });
+}
+
+export function useLaunchJob() {
+  const qc = useQueryClient();
+  return useMutation<Job, Error, LaunchJobRequest>({
+    mutationFn: async (body) => {
+      const { data } = await apiClient.post<Job>("/api/jobs", body);
+      return data;
+    },
+    onSuccess: () => {
+      qc.invalidateQueries({ queryKey: ["jobs"] });
+    },
   });
 }
 

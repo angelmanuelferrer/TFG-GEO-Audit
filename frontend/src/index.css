@@ -70,3 +70,23 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 }
+
+@layer utilities {
+  .chart-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(213 40% 32%) transparent;
+  }
+  .chart-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+  .chart-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chart-scroll::-webkit-scrollbar-thumb {
+    background-color: hsl(213 40% 32%);
+    border-radius: 2px;
+  }
+  .chart-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(213 40% 50%);
+  }
+}

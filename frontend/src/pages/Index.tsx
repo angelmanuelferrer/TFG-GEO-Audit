@@ -134,6 +134,7 @@ export default function HomePage() {
                       {engine}
                     </span>
                     <div className="flex-1 text-xs text-muted-foreground text-right">
+                      {"Visib. "}
                       <span className="text-foreground font-medium">{stats.visibility_rate}%</span>
                       {" · SoM "}
                       <span className="text-foreground">{stats.avg_som}%</span>

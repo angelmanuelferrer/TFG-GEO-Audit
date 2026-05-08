@@ -11,6 +11,7 @@ import ComparePage from "./pages/Compare";
 import LivePage from "./pages/Live";
 import SeoPage from "./pages/Seo";
 import OptimizerPage from "./pages/Optimizer";
+import JobsPage from "./pages/Jobs";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/live" element={<LivePage />} />
             <Route path="/seo" element={<SeoPage />} />
             <Route path="/optimizer" element={<OptimizerPage />} />
+            <Route path="/jobs" element={<JobsPage />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -138,7 +138,9 @@ export function PerQueryTab({ metrics }: { metrics: PerQueryMetric[] }) {
                   </div>
                   <div className="bg-surface-elevated rounded-md p-3">
                     <p className="text-[10px] text-muted-foreground uppercase">Citation Rate</p>
-                    <p className="text-sm text-foreground">{selected.citation_rate.toFixed(1)}%</p>
+                    <p className="text-sm text-foreground">
+                      {selected.citation_rate != null ? selected.citation_rate.toFixed(1) + "%" : "—"}
+                    </p>
                   </div>
                   <div className="bg-surface-elevated rounded-md p-3">
                     <p className="text-[10px] text-muted-foreground uppercase">Citas target</p>
