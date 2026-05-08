@@ -142,11 +142,11 @@ PROMPT_REGISTRY = {
         ],
     },
     "geo_optimizer": {
-        "version": "3.1.2",
+        "version": "3.2.0",
         "description": "GEO expert con contexto pre-baked: analiza pages_context + fragmentos de competidores del scorecard. Genera recomendaciones L1 ancladas a evidencia real + prompt L2. Incluye llms.txt bajo machine_scannability.",
-        "model": "claude-haiku-4-5-20251001",
+        "model": "claude-sonnet-4-6",
         "temperature": 0.2,
-        "max_tokens": 8192,
+        "max_tokens": 16384,
         "system": (
             "Eres un investigador experto en GEO (Generative Engine Optimization), la disciplina de optimizar "
             "contenido web para que los motores de IA generativa —Gemini, ChatGPT, Claude, Perplexity— lo citen "
@@ -258,7 +258,14 @@ PROMPT_REGISTRY = {
             "✗ Link building / backlinks — no se resuelve con contenido, es earned media.\n"
             "✗ Schema.org JSON-LD como solución GEO — ayuda al retrieval web, no a la generación.\n"
             "✗ Recomendaciones genéricas — si no puedes citarla a una query concreta y a un fragmento "
-            "de competidor real, no es una recomendación GEO, es un consejo SEO genérico.\n\n"
+            "de competidor real, no es una recomendación GEO, es un consejo SEO genérico.\n"
+            "✗ Tablas comparativas con datos de plataformas externas (Code.org, Scratch, MIT App Inventor, etc.) "
+            "que no aparezcan literalmente en CONTENIDO ACTUAL o en los fragmentos de competidores del input. "
+            "Si no tienes datos verificados de una plataforma en el contexto, omite esa fila de la tabla.\n"
+            "✗ Afirmaciones de autoridad social sin fuente real verificable en el contexto: frases como "
+            "'docentes españoles han identificado...', 'expertos recomiendan...', 'centros educativos usan...' "
+            "sin cita textual y URL verificable. Si no tienes una cita real, no uses authority_injection "
+            "para fabricar consenso social.\n\n"
 
             "═══════════════════════════════════════════════════════\n"
             "PROTOCOLO DE ANÁLISIS (4 PASOS OBLIGATORIOS)\n"
@@ -342,7 +349,11 @@ PROMPT_REGISTRY = {
             "7. cross_mode_signal viene anotado en cada query del input; cópialo a la recomendación.\n"
             "8. El prompt L2 debe funcionar sin contexto adicional — quien lo use no ha leído este análisis.\n"
             "9. Las URLs con ⚠ GAP DE RETRIEVAL SIEMPRE generan una recomendación semantic_clarity "
-            "   (es la corrección de mayor leverage: sin retrieval, ningún otro cambio de contenido importa)."
+            "   (es la corrección de mayor leverage: sin retrieval, ningún otro cambio de contenido importa).\n"
+            "10. Cuando una URL tiene '⚠ CONTENIDO ANTIGUO' o '⚠ POSIBLE TOPIC MISMATCH' en CONTENIDO ACTUAL, "
+            "    incluye una evaluación explícita en la primera recomendación de esa URL: ¿merece optimizarse "
+            "    o conviene crear una nueva página dedicada? Usa impact=medio si hay topic mismatch, "
+            "    ya que el ROI de optimizar la página equivocada es bajo."
         ),
         "user_template": (
             "SITE: programamos.es — plataforma educativa sin ánimo de lucro de programación para niños, "
@@ -384,6 +395,10 @@ PROMPT_REGISTRY = {
             "3.1.2: Añadir sección SEÑAL ESPECIAL — GAP DE RETRIEVAL. Cuando el contexto marca "
             "⚠ GAP DE RETRIEVAL, el modelo DEBE generar recomendación semantic_clarity para reescribir "
             "la introducción de la página y aumentar similitud vectorial con la query. Regla dura 9.",
+            "3.2.0: Migración del modelo principal a claude-sonnet-4-6 para mayor fidelidad a instrucciones. "
+            "Lista negra ampliada: prohibir tablas con datos de plataformas externas no verificados y "
+            "afirmaciones de autoridad social sin cita real. Regla dura 10: evaluar si página antigua o "
+            "topic mismatch merece optimizarse o crear contenido nuevo.",
         ],
     },
     "page_clone": {

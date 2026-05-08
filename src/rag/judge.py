@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from typing import Any, Dict, List, Optional
 
 from langchain_core.prompts import ChatPromptTemplate
@@ -18,6 +19,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from src.prompts.registry import get_prompt
 
 logger = logging.getLogger(__name__)
+
+_TRANSIENT_KEYWORDS = ("503", "high demand", "server disconnected", "socket", "connection reset", "overloaded", "unavailable", "rate limit")
+_API_RETRY_BASE_DELAY = 15.0  # doubles each attempt
 
 _REQUIRED_KEYS = ["answer", "citations", "sources_used", "sources_available_but_unused"]
 _REQUIRED_CITATION_KEYS = ["index", "url", "quote"]
@@ -78,11 +82,16 @@ class RAGJudge:
     # Public API
     # ------------------------------------------------------------------
 
+    @staticmethod
+    def _is_transient_error(exc: Exception) -> bool:
+        msg = str(exc).lower()
+        return any(k in msg for k in _TRANSIENT_KEYWORDS)
+
     def generate_answer_with_agent(
         self,
         question: str,
         vectorstore: Any,
-        max_retries: int = 2,
+        max_retries: int = 3,
     ) -> Dict[str, Any]:
         """Generate a JSON answer using the agent with FAISS search tool.
 
@@ -121,11 +130,9 @@ class RAGJudge:
                 result = executor.invoke({"input": question})
                 output_text = result["output"]
 
-                # Try to extract JSON from the output
                 parsed = self._extract_json(output_text)
                 self._validate_schema(parsed)
 
-                # Track usage (agent executor doesn't expose token counts easily)
                 self.token_usage.append(
                     {"question": question[:80], "usage": {"mode": "agent"}}
                 )
@@ -150,6 +157,20 @@ class RAGJudge:
                     exc,
                 )
                 if attempt == max_retries:
+                    raise
+
+            except Exception as exc:
+                if attempt < max_retries and self._is_transient_error(exc):
+                    delay = _API_RETRY_BASE_DELAY * (2 ** attempt)
+                    logger.warning(
+                        "Transient API error (attempt %d/%d): %s — retrying in %.0fs",
+                        attempt + 1,
+                        max_retries + 1,
+                        exc,
+                        delay,
+                    )
+                    time.sleep(delay)
+                else:
                     raise
 
         raise RuntimeError("generate_answer_with_agent: all retries exhausted")  # pragma: no cover

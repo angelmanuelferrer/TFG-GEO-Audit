@@ -57,6 +57,13 @@ def main() -> None:
         choices=["R1", "R2", "R3", "R4"],
         help="Rotation block to include (default: core only)",
     )
+    parser.add_argument(
+        "--cache-ttl",
+        type=float,
+        default=24.0,
+        metavar="HOURS",
+        help="Reuse cached target vectorstore if younger than N hours (default: 24, 0 = always recrawl)",
+    )
     args = parser.parse_args()
 
     config = load_experiment_config()
@@ -92,18 +99,43 @@ def main() -> None:
     )
     print(f"Frozen vectorstore loaded ({vs_dir})")
 
-    # --- 4. Crawl + chunk + embed target ---
-    print(f"\n=== 3/6 Crawling target: {target_url} ===")
-    crawler = SiteCrawler(config)
-    target_docs = crawler.crawl_site(target_url, is_target=True)
-    print(f"Target pages: {len(target_docs)}")
+    # --- 4. Crawl + chunk + embed target (with cache) ---
+    target_cache_dir = PROJECT_ROOT / "data" / "target_vectorstore_cache"
+    target_cache_meta = target_cache_dir / "meta.json"
 
-    print("\n=== 4/6 Chunking + embedding target ===")
-    chunker = TokenAwareChunker(config)
-    target_chunks = chunker.chunk_documents(target_docs)
-    print(f"Target chunks: {len(target_chunks)}")
+    def _load_cached_target_vs() -> "FAISS | None":
+        if args.cache_ttl <= 0 or not target_cache_meta.exists():
+            return None
+        with open(target_cache_meta) as f:
+            meta = json.load(f)
+        age_h = (time.time() - meta["timestamp"]) / 3600
+        if age_h > args.cache_ttl:
+            return None
+        print(f"\n=== 3/6 Target vectorstore from cache ({age_h:.1f}h old, TTL={args.cache_ttl:.0f}h) ===")
+        vs = FAISS.load_local(str(target_cache_dir), embeddings, allow_dangerous_deserialization=True)
+        print(f"  pages={meta['n_pages']}  chunks={meta['n_chunks']}")
+        return vs
 
-    target_vs = FAISS.from_documents(target_chunks, embeddings)
+    target_vs = _load_cached_target_vs()
+
+    if target_vs is None:
+        print(f"\n=== 3/6 Crawling target: {target_url} ===")
+        crawler = SiteCrawler(config)
+        target_docs = crawler.crawl_site(target_url, is_target=True)
+        print(f"Target pages: {len(target_docs)}")
+
+        print("\n=== 4/6 Chunking + embedding target ===")
+        chunker = TokenAwareChunker(config)
+        target_chunks = chunker.chunk_documents(target_docs)
+        print(f"Target chunks: {len(target_chunks)}")
+
+        target_vs = FAISS.from_documents(target_chunks, embeddings)
+
+        target_cache_dir.mkdir(parents=True, exist_ok=True)
+        target_vs.save_local(str(target_cache_dir))
+        with open(target_cache_meta, "w") as f:
+            json.dump({"timestamp": time.time(), "n_pages": len(target_docs), "n_chunks": len(target_chunks)}, f)
+        print(f"  Target vectorstore cached at {target_cache_dir}")
 
     # Merge: target + frozen competitors
     frozen_vs.merge_from(target_vs)
