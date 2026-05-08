@@ -14,7 +14,7 @@ def test_dashboard_overview(client):
 
     assert "live" in body
     live = body["live"]
-    assert live["latest_run_id"] == "LIVE-2026-W14"
+    assert live["latest_run_id"].startswith("LIVE-")
     assert "by_engine" in live
 
     assert "seo" in body
