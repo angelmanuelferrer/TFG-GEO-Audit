@@ -45,8 +45,11 @@ jobs:
   sonarcloud:
     name: SonarCloud Analysis
     runs-on: ubuntu-latest
-    # El token se configura como secret tras importar el proyecto en sonarcloud.io
+    # El token se configura como secret tras importar el proyecto en sonarcloud.io;
+    # mientras no exista, el paso de análisis se omite sin fallar.
     if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -80,9 +83,8 @@ jobs:
           npx vitest run --coverage
 
       - name: SonarCloud Scan
+        if: ${{ env.SONAR_TOKEN != '' }}
         uses: SonarSource/sonarqube-scan-action@v5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   # ── Frontend ─────────────────────────────────────────────────────────────────
   frontend-lint:
