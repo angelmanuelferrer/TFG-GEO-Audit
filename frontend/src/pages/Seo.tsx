@@ -176,18 +176,22 @@ export default function SeoPage() {
                 })}
               </div>
             </div>
-            <ResponsiveContainer width="100%" height={240}>
-              <LineChart data={mobileChartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(213 40% 22%)" />
-                <XAxis dataKey="fecha" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
-                <YAxis domain={[0, 100]} tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
-                <Tooltip contentStyle={tooltipStyle} />
-                <Legend iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
-                <Line type="monotone" dataKey="Performance" stroke="hsl(187 94% 43%)" strokeWidth={2} dot={{ r: 3 }} />
-                <Line type="monotone" dataKey="SEO" stroke="hsl(263 70% 66%)" strokeWidth={2} dot={{ r: 3 }} />
-                <Line type="monotone" dataKey="Accessibility" stroke="hsl(160 84% 39%)" strokeWidth={2} dot={{ r: 3 }} />
-              </LineChart>
-            </ResponsiveContainer>
+            <div className="overflow-x-auto chart-scroll">
+              <div style={{ minWidth: Math.max(560, mobileChartData.length * 22), height: 240 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={mobileChartData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(213 40% 22%)" />
+                    <XAxis dataKey="fecha" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
+                    <YAxis domain={[0, 100]} tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
+                    <Tooltip contentStyle={tooltipStyle} />
+                    <Legend iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
+                    <Line type="monotone" dataKey="Performance" stroke="hsl(187 94% 43%)" strokeWidth={2} dot={{ r: 3 }} />
+                    <Line type="monotone" dataKey="SEO" stroke="hsl(263 70% 66%)" strokeWidth={2} dot={{ r: 3 }} />
+                    <Line type="monotone" dataKey="Accessibility" stroke="hsl(160 84% 39%)" strokeWidth={2} dot={{ r: 3 }} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
 
           {/* Desktop chart */}
@@ -207,18 +211,22 @@ export default function SeoPage() {
                 })}
               </div>
             </div>
-            <ResponsiveContainer width="100%" height={240}>
-              <LineChart data={desktopChartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="hsl(213 40% 22%)" />
-                <XAxis dataKey="fecha" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
-                <YAxis domain={[0, 100]} tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
-                <Tooltip contentStyle={tooltipStyle} />
-                <Legend iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
-                <Line type="monotone" dataKey="Performance" stroke="hsl(187 94% 43%)" strokeWidth={2} dot={{ r: 3 }} />
-                <Line type="monotone" dataKey="SEO" stroke="hsl(263 70% 66%)" strokeWidth={2} dot={{ r: 3 }} />
-                <Line type="monotone" dataKey="Accessibility" stroke="hsl(160 84% 39%)" strokeWidth={2} dot={{ r: 3 }} />
-              </LineChart>
-            </ResponsiveContainer>
+            <div className="overflow-x-auto chart-scroll">
+              <div style={{ minWidth: Math.max(560, desktopChartData.length * 22), height: 240 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={desktopChartData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(213 40% 22%)" />
+                    <XAxis dataKey="fecha" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
+                    <YAxis domain={[0, 100]} tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
+                    <Tooltip contentStyle={tooltipStyle} />
+                    <Legend iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
+                    <Line type="monotone" dataKey="Performance" stroke="hsl(187 94% 43%)" strokeWidth={2} dot={{ r: 3 }} />
+                    <Line type="monotone" dataKey="SEO" stroke="hsl(263 70% 66%)" strokeWidth={2} dot={{ r: 3 }} />
+                    <Line type="monotone" dataKey="Accessibility" stroke="hsl(160 84% 39%)" strokeWidth={2} dot={{ r: 3 }} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -227,18 +235,22 @@ export default function SeoPage() {
       {webVitalsData.length > 0 && (
         <div className="bg-card border border-border rounded-lg p-4 space-y-3">
           <h3 className="text-sm font-semibold text-foreground flex items-center gap-1.5"><Smartphone className="h-4 w-4 text-muted-foreground" /> Mobile — Web Vitals (LCP & TBT)</h3>
-          <ResponsiveContainer width="100%" height={200}>
-            <LineChart data={webVitalsData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(213 40% 22%)" />
-              <XAxis dataKey="fecha" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
-              <YAxis yAxisId="lcp" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} label={{ value: "s", position: "insideLeft", style: { fill: "hsl(215 20% 65%)", fontSize: 10 } }} />
-              <YAxis yAxisId="tbt" orientation="right" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} label={{ value: "ms", position: "insideRight", style: { fill: "hsl(215 20% 65%)", fontSize: 10 } }} />
-              <Tooltip contentStyle={tooltipStyle} />
-              <Legend iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
-              <Line yAxisId="lcp" type="monotone" dataKey="LCP" stroke="hsl(0 84% 60%)" strokeWidth={2} dot={{ r: 3 }} />
-              <Line yAxisId="tbt" type="monotone" dataKey="TBT" stroke="hsl(38 92% 50%)" strokeWidth={2} dot={{ r: 3 }} />
-            </LineChart>
-          </ResponsiveContainer>
+          <div className="overflow-x-auto chart-scroll">
+            <div style={{ minWidth: Math.max(560, webVitalsData.length * 22), height: 260 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={webVitalsData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="hsl(213 40% 22%)" />
+                  <XAxis dataKey="fecha" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} />
+                  <YAxis yAxisId="lcp" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} label={{ value: "s", position: "insideLeft", style: { fill: "hsl(215 20% 65%)", fontSize: 10 } }} />
+                  <YAxis yAxisId="tbt" orientation="right" tick={{ fill: "hsl(215 20% 65%)", fontSize: 11 }} label={{ value: "ms", position: "insideRight", style: { fill: "hsl(215 20% 65%)", fontSize: 10 } }} />
+                  <Tooltip contentStyle={tooltipStyle} />
+                  <Legend iconSize={8} wrapperStyle={{ fontSize: "11px" }} />
+                  <Line yAxisId="lcp" type="monotone" dataKey="LCP" stroke="hsl(0 84% 60%)" strokeWidth={2} dot={{ r: 3 }} />
+                  <Line yAxisId="tbt" type="monotone" dataKey="TBT" stroke="hsl(38 92% 50%)" strokeWidth={2} dot={{ r: 3 }} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
         </div>
       )}
     </div>

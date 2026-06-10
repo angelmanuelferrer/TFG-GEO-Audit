@@ -11,7 +11,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.settings import settings
-from app.routers import catalog, experimental, live, metrics, overview, seo, optimizer
+from app.routers import catalog, experimental, live, metrics, overview, seo, optimizer, jobs
+from app.services.job_runner import init_db
 
 
 app = FastAPI(
@@ -19,6 +20,9 @@ app = FastAPI(
     version="1.0.0",
     description="API REST para el dashboard de visibilidad GEO de programamos.es",
 )
+
+# Inicializa la tabla de jobs en SQLite al arrancar
+init_db()
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,3 +40,4 @@ app.include_router(seo.router, prefix="/api/seo", tags=["seo"])
 app.include_router(metrics.router, prefix="/api/metrics", tags=["metrics"])
 app.include_router(overview.router, prefix="/api/dashboard/overview", tags=["overview"])
 app.include_router(optimizer.router, prefix="/api/optimizer", tags=["optimizer"])
+app.include_router(jobs.router, prefix="/api/jobs", tags=["jobs"])

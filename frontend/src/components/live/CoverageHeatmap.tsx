@@ -19,7 +19,7 @@ const ENGINE_LABELS: Record<string, string> = {
 export function CoverageHeatmap({ matrix }: { matrix: CoverageMatrixResponse }) {
   return (
     <div className="bg-card border border-border rounded-lg p-5 space-y-3">
-      <h3 className="text-sm font-semibold text-foreground">Heatmap: Categoría × Motor</h3>
+      <h3 className="text-sm font-semibold text-foreground">Heatmap: Visibilidad (%) por Categoría × Motor</h3>
       <div className="overflow-x-auto">
         <div
           className="grid gap-1"

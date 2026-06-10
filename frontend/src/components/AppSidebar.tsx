@@ -6,6 +6,7 @@ import {
   Radio,
   BarChart3,
   Wand2,
+  PlayCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,12 @@ const navGroups = [
       { to: "/optimizer", label: "Optimizer", icon: Wand2 },
     ],
   },
+  {
+    label: "Pipelines",
+    items: [
+      { to: "/jobs", label: "Pipeline Runner", icon: PlayCircle },
+    ],
+  },
 ];
 
 export function AppSidebar() {
@@ -31,9 +38,7 @@ export function AppSidebar() {
       {/* Logo */}
       <div className="px-5 py-5 border-b border-sidebar-border">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">G</span>
-          </div>
+          <img src="/favicon.ico" alt="GEO-Audit logo" className="h-8 w-8 rounded-lg object-contain" />
           <div>
             <h1 className="text-foreground font-semibold text-base leading-tight">GEO-Audit</h1>
             <span className="text-[10px] px-1.5 py-0.5 rounded bg-accent text-muted-foreground font-medium">

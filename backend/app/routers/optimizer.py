@@ -37,8 +37,11 @@ def get_prioritize(
 
 @router.post("/analyze", dependencies=[Depends(verify_api_key)])
 async def post_analyze(body: AnalyzeRequest):
-    """Lanza el GEOOptimizer para las queries seleccionadas."""
+    """Lanza el GEOOptimizer para las queries seleccionadas (máximo 4)."""
     from src.optimizer.geo_optimizer import GEOOptimizer
+
+    if len(body.query_ids) > 4:
+        raise HTTPException(status_code=422, detail="Puedes analizar un máximo de 4 queries a la vez.")
 
     prioritized = prioritize(mode=body.mode, data_dir=settings.data_dir, top_k=50)
     selected = [q for q in prioritized["queries"] if q["query_id"] in body.query_ids]

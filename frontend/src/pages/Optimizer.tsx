@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { Sparkles, ChevronRight, Copy, Check, FlaskConical, Radio } from "lucide-react";
+import { Sparkles, ChevronRight, Copy, Check, FlaskConical, Radio, Globe, FileSearch, GitCompare, Lightbulb } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -119,6 +119,8 @@ function QueryRow({
   );
 }
 
+const MAX_ANALYZE = 4;
+
 function PriorityPanel({
   mode,
   onAnalyze,
@@ -130,6 +132,7 @@ function PriorityPanel({
 }) {
   const [selected, setSelected] = useState<string | null>(null);
   const [checkedIds, setCheckedIds] = useState<Set<string>>(new Set());
+  const { toast } = useToast();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["prioritize", mode],
@@ -137,12 +140,19 @@ function PriorityPanel({
   });
 
   function toggleCheck(id: string) {
-    setCheckedIds((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
+    if (checkedIds.has(id)) {
+      setCheckedIds((prev) => { const next = new Set(prev); next.delete(id); return next; });
+    } else {
+      if (checkedIds.size >= MAX_ANALYZE) {
+        toast({
+          title: "Límite alcanzado",
+          description: `Puedes analizar un máximo de ${MAX_ANALYZE} queries a la vez.`,
+          variant: "destructive",
+        });
+        return;
+      }
+      setCheckedIds((prev) => { const next = new Set(prev); next.add(id); return next; });
+    }
   }
 
   if (isLoading) return <div className="space-y-3">{[...Array(5)].map((_, i) => <Skeleton key={i} className="h-16 w-full" />)}</div>;
@@ -159,9 +169,9 @@ function PriorityPanel({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => setCheckedIds(new Set(data.queries.map((q) => q.query_id)))}
+            onClick={() => setCheckedIds(new Set(data.queries.slice(0, MAX_ANALYZE).map((q) => q.query_id)))}
           >
-            Todas
+            Top {MAX_ANALYZE}
           </Button>
           <Button
             size="sm"
@@ -197,6 +207,68 @@ function PriorityPanel({
   );
 }
 
+const ANALYZING_STEPS = [
+  { icon: FileSearch,  label: "Cargando queries seleccionadas",         delay: 0 },
+  { icon: Globe,       label: "Recuperando páginas de competidores",    delay: 800 },
+  { icon: GitCompare,  label: "Comparando con tu contenido",            delay: 2000 },
+  { icon: Lightbulb,   label: "Generando recomendaciones con Gemini",   delay: 3400 },
+];
+
+function AnalyzingLoader() {
+  return (
+    <div className="flex flex-col items-center justify-center py-8 gap-6">
+      {/* Icono central animado */}
+      <div className="relative">
+        <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping" />
+        <div className="relative h-14 w-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
+          <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
+        </div>
+      </div>
+
+      <div className="text-center">
+        <p className="text-sm font-semibold text-foreground">Analizando con Gemini</p>
+        <p className="text-xs text-muted-foreground mt-0.5">Esto puede tardar unos segundos…</p>
+      </div>
+
+      {/* Pasos con fade-up escalonado */}
+      <div className="w-full max-w-xs space-y-2.5">
+        {ANALYZING_STEPS.map((step, i) => {
+          const Icon = step.icon;
+          const isLast = i === ANALYZING_STEPS.length - 1;
+          return (
+            <div
+              key={i}
+              className="opacity-0 animate-[fade-up_0.5s_ease-out_forwards] flex items-center gap-3 rounded-lg border border-border bg-surface-elevated px-3 py-2.5"
+              style={{ animationDelay: `${step.delay}ms` }}
+            >
+              <div className={`shrink-0 h-7 w-7 rounded-full flex items-center justify-center ${isLast ? "bg-primary/15 border border-primary/30" : "bg-muted"}`}>
+                {isLast
+                  ? <Icon className="h-3.5 w-3.5 text-primary animate-spin-slow" />
+                  : <Icon className="h-3.5 w-3.5 text-muted-foreground" />
+                }
+              </div>
+              <span className={`text-xs ${isLast ? "text-foreground font-medium" : "text-muted-foreground"}`}>
+                {step.label}
+              </span>
+              {isLast && (
+                <div className="ml-auto flex gap-0.5">
+                  {[0, 1, 2].map((d) => (
+                    <div
+                      key={d}
+                      className="h-1 w-1 rounded-full bg-primary animate-bounce"
+                      style={{ animationDelay: `${d * 150}ms` }}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function RecommendationsPanel({ data }: { data: AnalyzeResponse }) {
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
@@ -204,7 +276,7 @@ function RecommendationsPanel({ data }: { data: AnalyzeResponse }) {
   function copyPrompt() {
     navigator.clipboard.writeText(data.prompt_l2);
     setCopied(true);
-    toast({ title: "Prompt copiado", description: "Pégalo en Claude Code apuntando al repo del sitio." });
+    toast({ title: "Prompt copiado", description: "Pégalo en tu editor de código apuntando al repo del sitio." });
     setTimeout(() => setCopied(false), 2000);
   }
 
@@ -272,7 +344,7 @@ function RecommendationsPanel({ data }: { data: AnalyzeResponse }) {
 
       <div>
         <div className="flex items-center justify-between mb-2">
-          <h3 className="font-semibold">Prompt para Claude Code (L2)</h3>
+          <h3 className="font-semibold">Prompt de optimización</h3>
           <Button variant="outline" size="sm" onClick={copyPrompt}>
             {copied ? <Check className="h-4 w-4 mr-1.5" /> : <Copy className="h-4 w-4 mr-1.5" />}
             {copied ? "Copiado" : "Copiar prompt"}
@@ -304,7 +376,7 @@ export default function OptimizerPage() {
       if (status === 429 || status === 503) {
         toast({ title: "Gemini no disponible", description: detail ?? "Cuota agotada o alta demanda. Espera un momento e inténtalo de nuevo.", variant: "destructive" });
       } else {
-        toast({ title: "Error al analizar", description: detail ?? "Revisa que el backend está activo y tiene ANTHROPIC_API_KEY configurada.", variant: "destructive" });
+        toast({ title: "Error al analizar", description: detail ?? "Revisa que el backend está activo.", variant: "destructive" });
       }
     },
   });
@@ -367,13 +439,7 @@ export default function OptimizerPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {analyzeMutation.isPending && (
-              <div className="space-y-3">
-                <Skeleton className="h-24 w-full" />
-                <Skeleton className="h-24 w-full" />
-                <Skeleton className="h-24 w-full" />
-              </div>
-            )}
+            {analyzeMutation.isPending && <AnalyzingLoader />}
             {!analyzeMutation.isPending && !results && (
               <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
                 <Sparkles className="h-8 w-8 text-muted-foreground/40" />

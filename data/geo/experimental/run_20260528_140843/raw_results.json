@@ -1,0 +1,1417 @@
+[
+  {
+    "query_id": "Q001",
+    "query": "¿Qué proyectos existen para enseñar programación a niños en España?",
+    "answer": {
+      "answer": "En España, existen varios proyectos e iniciativas para enseñar programación a niños. La organización Programamos, por ejemplo, colabora con Coder Dojo y ha desarrollado talleres para que niños y niñas aprendan a programar sus propios videojuegos y aplicaciones [1]. Programamos también ha sido reconocida por Google con el RISE Award 2016 por un proyecto que ofrece talleres gratuitos en unidades de oncología pediátrica de hospitales españoles, permitiendo a los niños hospitalizados aprender a programar sus propios videojuegos [4]. Aunque históricamente la enseñanza de la programación en España ha dependido de iniciativas individuales de docentes, las administraciones públicas están comenzando a tomar medidas para generalizar estas enseñanzas, impartiendo formación a sus profesores y desarrollando diversas iniciativas [2].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/entrevista-eva-y-mari-luz/",
+          "quote": "Además de estos talleres, también colaboráis con Programamos, Coder Dojo y estáis iniciando un nuevo proyecto para enseñar a programar a niños y niñas. ¿Qué os mueve a dedicar vuestro tiempo en estas iniciativas de voluntariado?\n\nLa ilusión que les hace descubrir que ellos mismos pueden hacer sus propios videojuegos y aplicaciones es enorme."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/paises-que-han-introducido-la-programacion-en-la-escuela/",
+          "quote": "En nuestro país hay un buen número de docentes que lleva mucho tiempo enseñando a programar a su alumnado, pero hasta el momento se trataban de iniciativas individuales que no estaban promovidas desde las administraciones públicas. Sin embargo, se están comenzando a dar pasos en este sentido y ya hay varias Comunidades Autónomas que quieren generalizar estas enseñanzas y que han comenzado a impartir formación a sus docentes y a desarrollar distintas iniciativas."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/google-reconoce-con-el-rise-award-2016-a-programamos/",
+          "quote": "El proyecto de Programamos, que ya se desarrolló de manera piloto el pasado mes de enero en launidad de oncología pediátrica del Hospital Virgen del Rocío de Sevilla,consiste en la organización de talleres para queniños y niñas ingresados en hospitales españolespuedan aprovechar su estancia para aprender a programar sus propios videojuegos. El objetivo escontribuir al bienestar de los pacientes y conseguir su motivación.  Estos talleresson totalmente gratuitostanto para los centros sanitarios como para las familias."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/entrevista-eva-y-mari-luz/",
+        "https://programamos.es/paises-que-han-introducido-la-programacion-en-la-escuela/",
+        "https://programamos.es/google-reconoce-con-el-rise-award-2016-a-programamos/"
+      ],
+      "sources_available_but_unused": [
+        "https://www.educaciontrespuntocero.com/recursos/programacion/juegos-de-programacion"
+      ]
+    }
+  },
+  {
+    "query_id": "Q002",
+    "query": "¿Cómo puedo enseñar a programar a niños de primaria?",
+    "answer": {
+      "answer": "Enseñar programación a niños de primaria los prepara para los desafíos del futuro, ayudándoles a asimilar ideas y conceptos básicos sobre programación y pensamiento computacional [3], [4]. La programación puede integrarse con otras asignaturas, como matemáticas o lengua, haciendo el aprendizaje más divertido y significativo al permitirles crear sus propios videojuegos o presentaciones [1].\n\nPara niños de primaria, se recomiendan lenguajes de programación visual como Scratch y Scratch Jr:\n\n*   **Scratch Jr** es una versión adaptada de Scratch, ideal para niños de entre 5 y 7 años. Se puede instalar en tablets (Android o iPad) y presenta bloques grandes y sencillos de usar, facilitando la creación de escenarios con un solo clic [5].\n*   **Scratch** es un lenguaje visual de programación desarrollado por el Instituto Tecnológico de Massachusetts (MIT), diseñado para niños de 8 a 16 años, aunque es adecuado para cualquier edad [3], [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/entrevista-patricia-flor/",
+          "quote": "La programación informática se puede utilizar para enseñar cualquier cosa. Desde matemáticas a lengua española. Es mucho más divertido aprender cómo funciona el universo, qué es un ángulo o, en general, resolver un problema, si a la vez estás creando tu propio videojuego. El curso pasado estuvimos trabajando con el libro de Saint-Exupery,El Principito. Los alumnos hicieron una presentación con Scratch y acabaron creando un videojuego en el que el principito jugaba con las estrellas. Trabajando de esta manera haces su experiencia más significativa y nunca van a olvidar lo aprendido."
+        },
+        {
+          "index": 3,
+          "url": "https://laestacioncyt.es/ensenar-programacion-a-un-a-nino-a-con-scratch",
+          "quote": "Enseñar a los niños/as programación,es prepararles para los desafíos de la vida moderna.En un futuro se impartirá en las aulas la programación, como una asignatura obligatoria, para que vayan asimilando ideas y conceptos básicos sobre la programación y el pensamiento computacional.\n\nScratches un lenguaje visual de programacióndesarrollado por elInstituto Tecnológico de Massachussetts(MIT) para enseñar a chicos/as de 8-16 años, aunque cualquier edad es buena para aprenderlo, pero el destinatario ideal son los más pequeños."
+        },
+        {
+          "index": 4,
+          "url": "https://laestacioncyt.es/ensenar-programacion-a-un-a-nino-a-con-scratch/",
+          "quote": "Enseñar a los niños/as programación,es prepararles para los desafíos de la vida moderna.En un futuro se impartirá en las aulas la programación, como una asignatura obligatoria, para que vayan asimilando ideas y conceptos básicos sobre la programación y el pensamiento computacional.\n\nScratches un lenguaje visual de programacióndesarrollado por elInstituto Tecnológico de Massachussetts(MIT) para enseñar a chicos/as de 8-16 años, aunque cualquier edad es buena para aprenderlo, pero el destinatario ideal son los más pequeños."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/reyes-magos-ideas-regalos-programacion-robotica-navidades/",
+          "quote": "Si tienes una tablet, te aconsejo empezar a trabajar conScratch Jr, la versión adaptada de Scratch que permite a los neolectores empezar a programar. Lo más interesante es que puede usarse en cualquier lugar, dado que puede instalarse en un dispositivo cada vez más presente en nuestros hogares, las tablets, sean de Android como Ipads . En esta adaptación han simplificado el proceso de programar orientándolo a niños de entre 5 y 7 años: los bloques son grandes y sencillos de usar, la creación de diferentes escenarios está a un solo “clic de dedo”, etc. Y lo mejor es que no hace falta mucha inversión. Dependerá de si tienes o no una Tablet para los niños.Aquí tenéis más información"
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/entrevista-patricia-flor/",
+        "https://laestacioncyt.es/ensenar-programacion-a-un-a-nino-a-con-scratch",
+        "https://laestacioncyt.es/ensenar-programacion-a-un-a-nino-a-con-scratch/",
+        "https://programamos.es/reyes-magos-ideas-regalos-programacion-robotica-navidades/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/paises-que-han-introducido-la-programacion-en-la-escuela/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q003",
+    "query": "¿Qué recursos gratuitos hay para aprender Scratch?",
+    "answer": {
+      "answer": "Existen varios recursos gratuitos para aprender Scratch. Uno de los más destacados es el \"Curso de Introducción a Scratch\" ofrecido por Programamos, que enseña los fundamentos de la programación mientras se crean videojuegos [1], [2], [5].\n\nAdemás, la ayuda oficial del MIT, creadores de Scratch, proporciona una guía de inicio y proyectos recomendados [3]. La comunidad ScratchED también es una fuente valiosa de tutoriales y herramientas curriculares [3].\n\nPara un aprendizaje autodirigido, la \"Web de Autoaprendizaje Scratch\" es una adaptación de la traducción de Informática Creativa que ofrece actividades con dificultad progresiva [4]. También puedes encontrar videotutoriales en plataformas como YouTube, incluyendo el canal de Programamos, que ofrece guías paso a paso para construir proyectos en Scratch [3], [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/",
+          "quote": "Un curso totalmente gratuito de introducción a la programación con Scratch con el que aprenderás lo básico mientras programas videojuegos. Es un magnífico recurso que hemos creado desde Programamos para que puedas introducirte en el mundo de la programación con Scratch."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/recursos/scratch/",
+          "quote": "Un curso totalmente gratuito de introducción a la programación con Scratch con el que aprenderás lo básico mientras programas videojuegos. Es un magnífico recurso que hemos creado desde Programamos para que puedas introducirte en el mundo de la programación con Scratch."
+        },
+        {
+          "index": 3,
+          "url": "https://www.educaciontrespuntocero.com/recursos/programacion/programar-con-scratch",
+          "quote": "Entre ellas, está la ayuda oficial que provee el propio MIT, que incluye una guía de inicio y conjunto de proyectos recomendados, entre otros muchosrecursos; la comunidad ScratchED, donde encontrar tutoriales y herramientas a nivel curricular; o algunos vídeos de YouTube que ofrecen las claves necesarias para conocer un poco más a fondo el programa."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/recursos/scratch/",
+          "quote": "Una adaptación de la traducción Informática Creativa a formato web. Ofrece distintas actividades que van creciendo en dificultad. Sin duda un recurso magnífico para comenzar a aprender programando con Scratch.\n\n## Nuestro canal de Youtube\n\nEn nuestro canal de Youtube encontrarás vídeos con los que podrás aprender a programar de forma sencilla."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/inicio2/",
+          "quote": "Un curso totalmente gratuito de introducción a la programación con Scratch con el que aprenderás lo básico mientras programas videojuegos. Es un magnífico recurso que hemos creado desde Programamos para que puedas introducirte en el mundo de la programación con Scratch."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/",
+        "https://programamos.es/recursos/scratch/",
+        "https://www.educaciontrespuntocero.com/recursos/programacion/programar-con-scratch",
+        "https://programamos.es/inicio2/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q004",
+    "query": "¿Cuáles son las mejores iniciativas de educación tecnológica para jóvenes?",
+    "answer": {
+      "answer": "Existen diversas iniciativas de educación tecnológica dirigidas a jóvenes, con el objetivo de fomentar el desarrollo de habilidades digitales y vocaciones STEAM (Ciencia, Tecnología, Ingeniería, Artes y Matemáticas) [1]. Algunas de las más destacadas incluyen:\n\n*   **ScolarTIC**: Una comunidad digital hispana enfocada en docentes y futuros docentes, que también puede influir en la educación tecnológica de los jóvenes a través de la formación de sus educadores [1].\n*   **STEMBYME**: Una plataforma de formación diseñada para jóvenes de 14 a 20 años, que busca impulsar las vocaciones STEAM [1].\n*   **Code.org**: Ofrece cursos de programación para jóvenes, facilitando el aprendizaje de habilidades de codificación [1].\n*   **GIRLS FIRST**: Una iniciativa específica para estudiantes femeninas, con el fin de promover su participación en el ámbito STEM [3].\n*   **Programamos**: Esta plataforma ofrece recursos y cursos, incluyendo una formación abierta y gratuita sobre Inteligencia Artificial y educación, así como el portal \"Hackea la Cuarentena\" que acerca la programación a todas las edades de forma sencilla [4].\n\nAdemás, se mencionan recursos para la programación en el aula y el uso de la Inteligencia Artificial en la educación, destacando la importancia de entender cómo funciona la IA y compartir recursos para su aplicación pedagógica [2, 4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://intef.es/recursos-2/otros-recursos/",
+          "quote": "algunas sus iniciativas son:ScolarTIC(comunidad digital de ámbito hispano dirigida a docentes y futuros docentes);STEMBYME(plataforma de formación para fomentar el desarrollo de las vocaciones STEAM entre los jóvenes de 14 a 20 años);code.org(cursos de programación para jóvenes);Orientador Profesional Virtual;ConectaEmpleo"
+        },
+        {
+          "index": 2,
+          "url": "https://www.educaciontrespuntocero.com/tecnologia/lo-ultimo-monitores-aula-segunda-parte/",
+          "quote": "Las mejores experiencias de programación en el aula"
+        },
+        {
+          "index": 3,
+          "url": "https://www.educaciontrespuntocero.com/tecnologia/dispositivos-segun-la-edad/",
+          "quote": "GIRLS FIRST: la iniciativa STEM para las estudiantes"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/",
+          "quote": "Una formación abierta y gratuita para entender en detalle qué es y cómo funciona la IA, compartiendo recursos para utilizar la IA en el aula, mostrando casos de éxito internacionales, hablando con docentes para conocer estrategias pedagógicas y conociendo a referentes de la investigación. Cada viernes una nueva entrega: un vídeo y un artículo en nuestro blog.\n\n# Portal Hackea la Cuarentena\n\nUn portal que nace ante la situación que estamos viviendo a causa del Covid-19 y que tiene como objetivo acercar la programación a pequeños y mayores de una forma más directa y sencilla. Aprovecha el confinamiento para desarrollar tu Pensamiento Computacional con todas las actividades y cursos gratuitos que te proponemos."
+        }
+      ],
+      "sources_used": [
+        "https://intef.es/recursos-2/otros-recursos/",
+        "https://www.educaciontrespuntocero.com/tecnologia/lo-ultimo-monitores-aula-segunda-parte/",
+        "https://www.educaciontrespuntocero.com/tecnologia/dispositivos-segun-la-edad/",
+        "https://programamos.es/"
+      ],
+      "sources_available_but_unused": [
+        "https://www.educaciontrespuntocero.com/tecnologia/portatiles-realidad-virtual/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q005",
+    "query": "¿Qué organizaciones sin ánimo de lucro promueven la programación infantil?",
+    "answer": {
+      "answer": "Dos organizaciones sin ánimo de lucro que promueven la programación infantil son Code.org y Programamos [3], [5].\n\nCode.org busca fomentar e incentivar la programación en niños, permitiéndoles familiarizarse con diversos lenguajes de programación desde edades tempranas. Ofrecen la iniciativa \"La hora del código\" (Hour of Code), que proporciona más de 500 tutoriales de una hora en más de 45 idiomas, accesibles para cualquier persona en cualquier lugar [3], [4].\n\nPor su parte, la asociación Programamos promueve el uso de la programación y es reconocida por su labor en tecnología y educación. Ofrecen recursos para todas las edades (a partir de 5 años) y utilizan software como Scratch Jr. y Scratch, así como robots como Beebot, LEGO WeDo, Makey Makey o mBot [5]. Programamos también realiza talleres de programación informática en hospitales infantiles, como el Hospital Universitario Virgen del Rocío de Sevilla, introduciendo a los niños en el uso de Scratch [1]. Además, colaboran con programas como Caixa Proinfancia de Save the Children para llevar la programación a niños en riesgo de exclusión social [2].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/hospital/",
+          "quote": "Este mes de febrero desde Programamos hemos comenzado a realizar talleres de programación informática en elHospital Universitario Virgen del Rocío de Sevilla. En estas actividades introducimos a losniños y niñas con estancias de corta o larga duraciónen el Hospital Infantil en el uso de la programación con Scratch."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/exclusion-social/",
+          "quote": "El pasado miércoles día 17 de junio compartimos una tarde muy bonita con los chicos y chicas del programaCaixa Proinfancia de Save the Children. Este proyecto trabaja con un grupo de unos20 chicos de 6 a 11 años en riesgo de exclusión socialque cada tarde realizan estudio asistido y actividades de ocio con los monitores del programa deSave the Children."
+        },
+        {
+          "index": 3,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "Code.orges una organización sin ánimo de lucro que tiene por objetivo fomentar e incentivar la programación en los niños.Permite familiarizarse con diferentes lenguajes de programación desde edades tempranas. Tiene“La hora del código”(Hour of Code), una propuesta diseñada para acercar a todo el mundo a la programación. Cualquier persona, en cualquier lugar, puede organizar un evento en Hora de Código y probar más de 500 cursos disponibles en 45 idiomas."
+        },
+        {
+          "index": 4,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+          "quote": "La Hora del Código de Code.org tiene disponible más de 500 tutoriales de una hora en más de 45 idiomas."
+        },
+        {
+          "index": 5,
+          "url": "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+          "quote": "La asociaciónProgramamosse encarga de promover el uso de la programación , siendo una de las ONGs que mejor trabajo están haciendo en los últimos tiempos en lo relativo a la tecnología y la educación. Entre sus materiales cabe destacar la sección de recursos, con materiales para todos los públicos (a partir de 5 años) y que juegan con software y plataformas comoScratch Jr. y Scratch o «juguetes» yrobotscomo Beebot, LEGO WeDo, Makey Makey o mBot."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/hospital/",
+        "https://programamos.es/exclusion-social/",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+        "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q006",
+    "query": "¿Cuál es la mejor plataforma para que los niños aprendan a programar?",
+    "error": "Expecting ',' delimiter: line 28 column 6 (char 7305)"
+  },
+  {
+    "query_id": "Q007",
+    "query": "Diferencias entre Code.org, Scratch y otras plataformas educativas de programación",
+    "error": "Expecting ',' delimiter: line 28 column 6 (char 6435)"
+  },
+  {
+    "query_id": "Q008",
+    "query": "¿Qué alternativas a Code.org existen en español?",
+    "answer": {
+      "answer": "Existen varias alternativas a Code.org para aprender programación en español. Una de las plataformas más populares es Scratch, que es gratuita y está dirigida a niños y jóvenes de 8 a 16 años, con una versión simplificada llamada Scratch Jr. para los más pequeños [2], [3]. Otra opción es Tynker, un lenguaje visual similar a Scratch que permite a los niños aprender a programar resolviendo puzles y creando juegos [2], [3].\n\nTambién se destaca Pixie, un proyecto español basado en Blockly, diseñado para edades escolares con retos de programación y licencias para uso doméstico o en el aula [1]. Además, Code.org ofrece más de 500 tutoriales de una hora en más de 45 idiomas, incluyendo español, a través de su iniciativa \"La Hora del Código\" [2], [3], [5]. Otras herramientas mencionadas que pueden ser alternativas incluyen Blockly, Alice, Kodable, Minecraft Code Builder, CodeBug, BeetleBlocks, ScratchX, Mblock, Bitbloq, Codecombat, Snap! y Logo [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+          "quote": "Unproyectoespañol diseñado para edades escolares, tanto en el colegio como en casa. Basado enBlockly, Pixie está lleno de retos para programar que nos permitirán aprender más y más a medida que los vamos resolviendo.Cómo dibujarfiguras geométricas, cómo programar un disparo o muchos otros cursos más, con licencias disponibles tanto para hogar como para su uso en clase con decenas de alumnos."
+        },
+        {
+          "index": 2,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "Scratch: Trata de una de las plataformas más populares de programación educativa.Es un programa totalmente gratuito dirigido a niños y jóvenes de entre 8 y 16 años.Lo puedes utilizar en trabajos sencillos (7-8 años) a trabajos más avanzados.\n\nPara los niños más pequeños dispones de una versión especial llamadaScratch Jr.\n\nEl área del trabajo de Scratch es muy fácil e intuitivo, lo que le hace muy fácil de aprender a los niños.\n\nTynker: Podría decirse que es un recurso similar a Scratch. Es un lenguaje visual ideal para que los niños/as aprendan a programar de forma fácil e intuitiva, resolviendo puzles y construyendo sus propios juegos."
+        },
+        {
+          "index": 3,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+          "quote": "Scratch: Trata de una de las plataformas más populares de programación educativa.Es un programa totalmente gratuito dirigido a niños y jóvenes de entre 8 y 16 años.Lo puedes utilizar en trabajos sencillos (7-8 años) a trabajos más avanzados.\n\nPara los niños más pequeños dispones de una versión especial llamadaScratch Jr.\n\nEl área del trabajo de Scratch es muy fácil e intuitivo, lo que le hace muy fácil de aprender a los niños.\n\nTynker: Podría decirse que es un recurso similar a Scratch. Es un lenguaje visual ideal para que los niños/as aprendan a programar de forma fácil e intuitiva, resolviendo puzles y construyendo sus propios juegos."
+        },
+        {
+          "index": 4,
+          "url": "https://www.educaciontrespuntocero.com/recursos/programacion/lenguajes-programacion-informatica-para-primaria-secundaria",
+          "quote": "- Blockly\n\n- Tynker\n\n- Code.org\n\n- Alice\n\n- Kodable\n\n- Minecraft Code Builder\n\n- CodeBug\n\n- BeetleBlocks\n\n- ScratchX, las extensiones de Scratch\n\n- Mblock\n\n- Bitbloq\n\n- Codecombat\n\n- Snap!\n\n- Aprendo a programar\n\n- Logo"
+        },
+        {
+          "index": 5,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "La Hora del Código de Code.org tiene disponible más de 500 tutoriales de una hora en más de 45 idiomas."
+        }
+      ],
+      "sources_used": [
+        "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+        "https://www.educaciontrespuntocero.com/recursos/programacion/lenguajes-programacion-informatica-para-primaria-secundaria"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q009",
+    "query": "Comparativa de herramientas para enseñar pensamiento computacional",
+    "answer": {
+      "answer": "Para la enseñanza del pensamiento computacional, herramientas como Scratch y App Inventor son ampliamente utilizadas y han sido objeto de comparación para determinar su efectividad [1]. Un estudio que analizó 900 proyectos de ambas plataformas encontró que cada lenguaje destaca en diferentes dimensiones del pensamiento computacional [1, 3].\n\n**Scratch** obtuvo mejores puntuaciones en áreas como el paralelismo, la sincronización y el control de flujo [3]. Sin embargo, los proyectos grandes en Scratch pueden tener puntuaciones bajas en interactividad con el usuario [3].\n\n**App Inventor** mostró una mayor efectividad en la interactividad con el usuario y la representación de la información [3]. A pesar de esto, incluso los proyectos grandes en App Inventor tienden a puntuar bajo en el control de flujo [3].\n\nLa combinación de Scratch y App Inventor puede ser beneficiosa, ya que permite alcanzar un desarrollo más completo y alto en todas las dimensiones del pensamiento computacional con menos esfuerzo que si se utilizara solo una de ellas [2].\n\nAdemás de estas herramientas, un modelo integral para el desarrollo del pensamiento computacional en Primaria y Secundaria sugiere la integración de entornos de aprendizaje como [5]:\n*   **Close-ended:** Como Code.org [5].\n*   **Open-ended:** Como Scratch [5].\n*   **Hardware-driven:** Como Arduino [5].\n\nPara la evaluación del pensamiento computacional, se mencionan herramientas como el Test de Pensamiento Computacional (TPC), las Tareas Bebras y Dr. Scratch [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+          "quote": "Ayer se publicó unartículo muy interesante en la revista Electronicsde dos investigadores coreanos que han tratado de medir qué lenguaje es más efectivo a la hora de desarrollar el pensamiento computacional, para lo que han comparado proyectos creados conScratchy conApp Inventor, probablemente los dos lenguajes visuales más utilizados en todo el mundo en colegios e institutos."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+          "quote": "Por tanto, los resultados obtenidos parecen indicar que cada lenguaje tiene distintas áreas de excelecia en relación al desarrollo de las habilidades de pensamiento computacional.En consecuencia, parece buena idea que el alumnado aprenda a trabajar con ambos lenguajes, puesto que la combinación de las dos herramientas puede ayudar a alcanzar un nivel de desarrollo alto y completo en todas las dimensiones de esta competencia con menos esfuerzo que si se utilizara solo uno de ellas."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+          "quote": "Los resultados del análisis muestran quecada lenguaje parace ser más efectivo para trabajar diferentes dimensiones del pensamiento computacional. Así, los proyectos Scratch obtuvieron mejores puntuaciones en las áreas deParalelismo,SincronizaciónyControl de flujo. Por el contrario, los proyectos App Inventor tuvieron una puntuación mayor en relación a laInteractividad con el usuarioy laRepresentación de la información."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/primera-tesis-doctoral-en-espana-sobre-pensamiento-computacional/",
+          "quote": "Un modelo que apuesta por integrar en el aula entornos de aprendizaje‘close-ended’(como Code.org),‘open-ended’(como Scratch), y‘hardware-driven’(como Arduino); en donde se resuelvan problemas de carácter diverso (viso-espaciales, lógico-científicos, narrativos, musicales, artísticos…); y apoyándose en herramientas de evaluación de distinto tipo, cuya complementariedad queda también demostrada en la tesis: elTest de Pensamiento Computacional (TPC), lasTareas Bebras, yDr. Scratch."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+        "https://programamos.es/primera-tesis-doctoral-en-espana-sobre-pensamiento-computacional/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q010",
+    "query": "¿Qué proyectos educativos de programación operan en Andalucía?",
+    "answer": {
+      "answer": "En Andalucía, la organización Programamos colabora con la Consejería de Educación de la Junta de Andalucía para ofrecer proyectos educativos de programación dirigidos al profesorado [1, 5]. Estos proyectos incluyen cursos como \"Programación de videojuegos con Scratch como herramienta educativa\" y \"Simulaciones educativas con Snap!\" [1]. El objetivo principal de estos cursos es capacitar a los docentes para que utilicen la programación informática como una herramienta pedagógica en el aula, fomentando el aprendizaje en diversas materias como lengua, ciencias, matemáticas o inglés, en lugar de convertirlos en programadores expertos [2, 3]. Cerca de 1000 docentes andaluces han completado con éxito estas formaciones [1].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/nuevo-curso-gratuito-de-programacion-con-snap-para-profesorado-de-andalucia/",
+          "quote": "Desde Programamos llevamos varios años colaborando con laConsejería de Educación de la Junta de Andalucíaen la elaboración y tutorización de cursos para aprender el uso de la programación informática como recurso educativo dentro del aula. En concreto, en estas últimas convocatorias se ha ofertado el curso de “Programación de videojuegos con Scratch como herramienta educativa” que ha contado con una gran aceptación dentro del profesorado andaluz. Cerca de 1000 docentes de distintos niveles educativos y especialidades han terminado con éxito dicha formación y nos consta que muchos están aplicando lo aprendido en sus clases.\n\nEn esta convocatoria, además de ofertarse elcurso de Scratchestrenamos uno nuevo:Simulaciones educativas con Snap!"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/curso-gratuito-andalucia/",
+          "quote": "Maestros de Infantil y Educación Primaria, así como profesores de Secundaria y Formación Profesional, aprenderán a programar por si mismos sus propios videojuegos y, sobre todo, para introducir la programación informática como una herramienta educativa. En definitiva,la programación no es en este caso un fin, si no un instrumentopara motivar el aprendizaje en todos los niveles educativos de materias tan diversas como la lengua, ciencias, matemáticas o inglés. El objetivo de los docentes del curso no es que los profesores andaluces se conviertan en expertos programadores sino que aprendan a utilizar la programación como un aliado para educar de una manera diferente."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/500-solicitudes/",
+          "quote": "Maestros de Infantil y Educación Primaria, así como profesores de Secundaria y Formación Profesional, están durante estas semanas adquiriendo las destrezas para programar por si mismos sus propios videojuegos y, sobre todo, para introducir la programación informática como una herramienta educativa. En definitiva,la programación no es en este caso un fin, si no un instrumentopara motivar el aprendizaje en todos los niveles educativos de materias tan diversas como la lengua, ciencias, matemáticas o inglés. El objetivo de los cuatro docentes del curso no es que los profesores andaluces se conviertan en expertos programadores sino que aprendan a utilizar la programación como un aliado para educar de una manera diferente."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/que-hacemos/",
+          "quote": "Del 30 de noviembre al 25 de febrero Programamos desarrolla esta actividad formativa dentro del programa de formación del profesorado de la Consejería de Educación de la Junta de Andalucía."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/nuevo-curso-gratuito-de-programacion-con-snap-para-profesorado-de-andalucia/",
+        "https://programamos.es/curso-gratuito-andalucia/",
+        "https://programamos.es/500-solicitudes/",
+        "https://programamos.es/que-hacemos/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q011",
+    "query": "¿En qué consiste el proyecto Programamos?",
+    "answer": {
+      "answer": "El proyecto Programamos es una iniciativa sin ánimo de lucro y una comunidad de docentes que busca fomentar el desarrollo del pensamiento computacional desde edades tempranas, abarcando desde la educación infantil hasta la universidad [1, 3, 4]. Su objetivo principal es transformar a los estudiantes de meros consumidores de tecnología en creadores tecnológicos, enseñándoles a programar videojuegos y desarrollar aplicaciones móviles [1, 4, 5].\n\nPara lograr esto, Programamos ofrece diversos recursos y materiales con licencia libre para el aprendizaje y uso en el aula [1, 3]. También proporciona formación a docentes para que puedan integrar la programación y la robótica como herramientas educativas en sus clases y en distintas disciplinas [1]. Además, organizan eventos y talleres gratuitos de programación y robótica, y participan en charlas para divulgar su experiencia [1]. Un aspecto notable del proyecto incluye la organización de talleres gratuitos en hospitales españoles, donde niños y niñas ingresados aprenden a programar sus propios videojuegos, contribuyendo a su bienestar y motivación [2].\n\nEl proyecto fue iniciado por cuatro personas (dos profesores de informática y dos maestras de infantil y primaria) y se ha constituido legalmente como una asociación sin ánimo de lucro, creciendo como una comunidad colaborativa [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/inicio2/",
+          "quote": "Proyecto sin ánimo de lucro que acerca la#programacióna edades tempranas mediante el desarrollode#videojuegosy#AppsParaMóviles. Todos nuestros recursos y materiales a tu alcance, con una licencia libre para que puedas aprender o usarlos con tus alumnos/as o hijos/as. Queremos que, como nosotros, cualquier docente pueda usar la programación y la robótica en sus clases. No solo les enseñamos a programar sino mostramos estrategias para usarla como herramienta educativa y en todas las disciplinas. Desde Programamos organizamos eventos y talleres gratuitos de programación y robótica. También participamos en charlas y ponencias para divulgar nuestra experiencia."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/google-reconoce-con-el-rise-award-2016-a-programamos/",
+          "quote": "El proyecto de Programamos, que ya se desarrolló de manera piloto el pasado mes de enero en launidad de oncología pediátrica del Hospital Virgen del Rocío de Sevilla,consiste en la organización de talleres para queniños y niñas ingresados en hospitales españolespuedan aprovechar su estancia para aprender a programar sus propios videojuegos. El objetivo escontribuir al bienestar de los pacientes y conseguir su motivación. Estos talleresson totalmente gratuitostanto para los centros sanitarios como para las familias."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/faq/",
+          "quote": "El proyecto lo comenzamos cuatro personas, dos profesores de informática y dos maestras de infantil y primaria, pero poco a poco vamos creciendo y formando una comunidad en la que todos los miembros colaboramos compartiendo materiales, recursos, dudas, ideas o noticias.Jurídicamente estamos constituidos como asociación sin ánimo de lucro. Programamos es una comunidad de docentes cuyo objetivo fundamental es promover el desarrollo del pensamiento computacional desde edades tempranas a través de la programación en todas las etapas escolares, desde Educación Infantil hasta Formación Profesional o la Universidad. En nuestra plataforma se explican las motivaciones de este proyecto y sus objetivos, se incorpora información que pretende ayudar a docentes noveles en estas tecnologías a plantear esta iniciativa en su aula y se cuelgan todos los materiales didácticos que utilizamos en nuestras clases"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/",
+          "quote": "Proyecto sin ánimo de lucro que fomenta el desarrollo del Pensamiento Computacional desde edades tempranas mediante el desarrollode#videojuegosy#AppsParaMóviles."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/el-proyecto/",
+          "quote": "El objetivo principal con el que nace este proyecto es tratar de modificar la forma en la que los estudiantes se relacionan con la tecnología, pasando de ser consumidores a creadores tecnológicos a través de la programación de videojuegos y el desarrollo de aplicaciones para dispositivos móviles."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/inicio2/",
+        "https://programamos.es/google-reconoce-con-el-rise-award-2016-a-programamos/",
+        "https://programamos.es/faq/",
+        "https://programamos.es/",
+        "https://programamos.es/el-proyecto/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q012",
+    "query": "¿Quién está detrás de Programamos.es?",
+    "answer": {
+      "answer": "Programamos.es fue iniciado por cuatro personas: dos profesores de informática y dos maestras de infantil y primaria [4]. Actualmente, se ha convertido en una comunidad de docentes que busca promover el pensamiento computacional y la programación desde edades tempranas [4]. El equipo de Programamos incluye a José Ignacio Huertas Fernández [2], y formadores como Eva Hu, Mari Luz Aguado, Néstor Moreno y Ángela Vargas, además de Adrián Yánez, quien es periodista y docente [1], [5]. Jurídicamente, Programamos está constituido como una asociación sin ánimo de lucro [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/quienes-somos/",
+          "quote": "Poco a poco, la familia de Programamos ha ido creciendo y para que le pongas cara al equipo, aquí os los presentamos.\n\nEva Hu\n\nFormadora\n\nEstudiante de último curso de grado en Ingeniería de Telecomunicaciones en la especialidad Imagen y Sonido. Compagina sus estudios trabajando como desarrolladora de la herramienta web Dr.Scratch en la Universidad Rey Juan Carlos.\n\nMari Luz Aguado\n\nFormadora\n\nEstudiante de la Universidad Rey Juan Carlos, terminando la doble titulación en Ingeniería de Telecomunicación y Licenciatura en Administración y Dirección de Empresas. Colabora en el desarrollo técnico y de difusión de la aplicación Dr.Scratch para intentar motivar a los más pequeños a entrar en el mundo de la programación.\n\nAdrián Yánez\n\nPeriodista. Docente."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/quienes-somos/",
+          "quote": "Quiénes somos\n\n[José Ignacio Huertas Fernández](https://programamos.es/author/joseihf/)"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/faq/",
+          "quote": "El proyecto lo comenzamos cuatro personas, dos profesores de informática y dos maestras de infantil y primaria, pero poco a poco vamos creciendo y formando una comunidad en la que todos los miembros colaboramos compartiendo materiales, recursos, dudas, ideas o noticias.Jurídicamente estamos constituidos como asociación sin ánimo de lucro.¿Qué es Programamos?José Ignacio Huertas Fernández2016-10-22T12:32:55+02:00¿Qué es Programamos?Programamos es una comunidad de docentes cuyo objetivo fundamental es promover el desarrollo del pensamiento computacional desde edades tempranas a través de la programación en todas las etapas escolares, desde Educación Infantil hasta Formación Profesional o la Universidad.En nuestra plataforma se explican las motivaciones de este proyecto y sus objetivos, se incorpora información que pretende ayudar a docentes noveles en estas tecnologías a plantear esta iniciativa en su aula y se cuelgan todos los materiales didácticos que utilizamos en nuestras clases"
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/quienes-somos/",
+          "quote": "Néstor Moreno\n\nFormador\n\nTras cursar estudios de magisterio, descubrió su pasión por la informática y se formó como desarrollador de aplicaciones web. Ahora combina estas dos disciplinas entrenando a jóvenes estudiantes para que aprendan programación a través del desarrollo de videojuegos con Scratch.\n\nÁngela Vargas\n\nÁngela es ingeniera de telecomunicaciones y graduada en administración de empresas. Actualmente, mientras cursa el máster de telecomunicaciones, trabaja como investigadora en el grupo KGBL3 de la URJC. Su trabajo en Programamos le permite combinar sus dos pasiones: la tecnología y la enseñanza a niños y jóvenes, campo en el que tiene una gran experiencia a pesar de su juventud."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/quienes-somos/",
+        "https://programamos.es/faq/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/con-las-manos-en-scratch/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q013",
+    "query": "¿Qué ofrece la web programamos.es?",
+    "answer": {
+      "answer": "Programamos.es es un proyecto sin ánimo de lucro que busca acercar la programación a edades tempranas mediante el desarrollo de videojuegos y aplicaciones móviles [1]. Ofrece diversos servicios y recursos, incluyendo: \n\n*   **Recursos:** Pone a disposición materiales y recursos con licencia libre para que cualquier persona pueda aprender o utilizarlos con alumnos o hijos [1], [4].\n*   **Formación:** Diseña cursos y materiales para que docentes y otros colectivos aprendan a incluir el Pensamiento Computacional en su actividad diaria, enseñando no solo a programar, sino también estrategias para usar la programación como herramienta educativa en todas las disciplinas [1], [4].\n*   **Eventos y difusión:** Organiza eventos y talleres gratuitos de programación y robótica, y participa en charlas y ponencias para divulgar su experiencia [1], [2], [4].\n*   **Investigación:** Investiga el impacto del aprendizaje de la programación y el desarrollo del pensamiento computacional en escolares, obteniendo resultados positivos que comparten en su blog [2], [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/inicio2/",
+          "quote": "Proyecto sin ánimo de lucro que acerca la#programacióna edades tempranas mediante el desarrollode#videojuegosy#AppsParaMóviles.\n\n# ¿Qué hacemos en Programamos?\n\n## Recursos\n\nTodos nuestros recursos y materiales a tu alcance, con una licencia libre para que puedas aprender o usarlos con tus alumnos/as o hijos/as.\n\n## Formación\n\nQueremos que, como nosotros, cualquier docente pueda usar la programación y la robótica en sus clases. No solo les enseñamos a programar sino mostramos estrategias para usarla como herramienta educativa y en todas las disciplinas.\n\n## Eventos\n\nDesde Programamos organizamos eventos y talleres gratuitos de programación y robótica. También participamos en charlas y ponencias para divulgar nuestra experiencia. ¿Te apuntas a la próxima?"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/inicio2/",
+          "quote": "## Eventos\n\nDesde Programamos organizamos eventos y talleres gratuitos de programación y robótica. También participamos en charlas y ponencias para divulgar nuestra experiencia. ¿Te apuntas a la próxima?\n\n## Investigación\n\n¿Qué impacto tiene el aprendizaje de la programación en los escolares? Es algo que nos preocupa y que estamos investigando y obteniendo unos resultados muy positivos. ¡Síguenos en nuestro blog y te lo contamos!"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/",
+          "quote": "## RECURSOS\n\n### RECURSOS\n\nTodos nuestros recursos y materiales a tu alcance, con una licencia libre para que puedas aprender o usarlos con tu familia, alumnado o quien quieras. ¡Nunca ha sido tan sencillo aprender a programar!\n\n## FORMACIÓN\n\n### FORMACIÓN\n\nDesde Programamos diseñamos cursos y materiales para que docentes y otros colectivos aprendan cómo incluir el Pensamiento Computacional en su actividad diaria.\n\n## DIFUSIÓN\n\n### DIFUSIÓN\n\nOrganizamos eventos y talleres gratuitos de programación y robótica. También participamos en charlas y ponencias para divulgar nuestra experiencia. ¿Te apuntas a la próxima?\n\n## INVESTIGACIÓN\n\n### INVESTIGACIÓN\n\n¿Qué impacto tiene el desarrollo del pensamiento computacional en los escolares? Es algo que nos preocupa y que estamos investigando. ¡Síguenos y te contamos todas nuestras conclusiones!"
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/inicio2/",
+        "https://programamos.es/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/comunicado/",
+        "https://programamos.es/con-las-manos-en-scratch/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q014",
+    "query": "Recursos de Programamos para docentes",
+    "answer": {
+      "answer": "Programamos ofrece una variedad de recursos y herramientas para docentes interesados en integrar la programación y el pensamiento computacional en el aula [1], [3]. Entre ellos se encuentran:\n\n*   **Comunidad Programamos**: Una red social dedicada a la programación donde los docentes pueden compartir, interactuar y aprender en comunidad, uniendo esfuerzos para mejorar la enseñanza y el aprendizaje de la programación [1], [5]. Se ha creado un espacio específico dentro de esta comunidad para apoyar a los docentes de Andalucía que impartirán robótica en Primaria, ofreciendo materiales con licencia libre y un servicio de préstamo de equipamiento [2].\n*   **Dr. Scratch**: Una aplicación web desarrollada en colaboración con la Universidad Rey Juan Carlos que permite validar proyectos de Scratch y evaluar aspectos del pensamiento computacional. Esta herramienta ayuda a los docentes a conocer si los proyectos están bien realizados y cómo mejorarlos, y ha sido reconocida con un Google Rise Award [1].\n*   **Sección de Recursos**: Programamos ha renovado su sección de recursos para unificar y facilitar el acceso a todos los materiales generados [4]. Estos recursos y materiales están disponibles con una licencia libre para su uso en el aula o en casa, cubriendo diferentes niveles educativos, desde Educación Infantil hasta Bachillerato [3], [5]. Incluyen recomendaciones de herramientas como Scratch, App Inventor y Beebots, clasificadas por etapas educativas [4].\n*   **Formación**: Programamos diseña cursos y materiales para que docentes y otros colectivos aprendan a incluir el Pensamiento Computacional en su actividad diaria [3].\n*   **Difusión**: Organizan eventos y talleres gratuitos de programación y robótica, y participan en charlas y ponencias para divulgar su experiencia [3].\n*   **Investigación**: Realizan investigaciones sobre el impacto del desarrollo del pensamiento computacional en escolares [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/inicio2/",
+          "quote": "Como docentes sabemos lo complejo que es utilizar la programación informática en el aula o en casa. Para ayudarte hemos desarrollado estas herramientas.\n\n# Comunidad Programamos\n\nLa primerared social de Programaciónen la que podrás compartir, interaccionar, aprender, disfrutar, conocer y todo ello en comunidad. Una herramienta esencial para unir esfuerzos para mejorar el aprendizaje y la enseñanza de la programación.\n\n¡Porque la programación, si es compartida, se disfruta mucho más!.\n\n[Unirme](https://comunidad.programamos.es)\n\n# Dr. Scratch\n\nUna aplicación web desarrollada junto a la Universidad Rey Juan Carlos. Con ella podrás validar tus proyectos Scratch en relación a varios aspectos del pensamiento computacional. Es, por tanto, una herramienta magnífica que te permite evaluar de forma automática tus proyectos Scratch para conocer si están realizados correctamente y cómo es posible mejorarlos.\n\n¡Y además ha sido premiada con unGoogle Rise Award!"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/andalucia-incorpora-robotica-al-curriculo-de-tercer-ciclo-de-primaria-estamos-preparados/",
+          "quote": "Desde Programamos, por supuesto, nos ponemos a disposición de la Consejería de Educación y Deporte de la Junta de Andalucía para colaborar en la preparación del profesorado andaluz. Además, como primer paso para apoyar a los docentes que vayan a impartir estos contenidos a partir del próximo curso, vamos a crearun espacio en laComunidad Programamospara que puedan estar en contacto, compartir ideas, recursos, herramientas, iniciativas y, en definitiva, esfuerzos, que les ayuden a llevar al aula la programación y la robótica con las máximas garantías. A lo largo del verano iremos subiendo al espacio todos nuestros materiales con una licencia libre de manera que en septiembre tengan todo listo para comenzar. Y también anunciamos que a partir de otoño vamos a poner en marchaun servicio de préstamo de materialpara que los centros puedan disponer durante algunas semanas del equipamiento informático y tecnológico necesario."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/",
+          "quote": "## RECURSOS\n\n### RECURSOS\n\nTodos nuestros recursos y materiales a tu alcance, con una licencia libre para que puedas aprender o usarlos con tu familia, alumnado o quien quieras. ¡Nunca ha sido tan sencillo aprender a programar!\n\n## FORMACIÓN\n\n### FORMACIÓN\n\nDesde Programamos diseñamos cursos y materiales para que docentes y otros colectivos aprendan cómo incluir el Pensamiento Computacional en su actividad diaria.\n\n## DIFUSIÓN\n\n### DIFUSIÓN\n\nOrganizamos eventos y talleres gratuitos de programación y robótica. También participamos en charlas y ponencias para divulgar nuestra experiencia. ¿Te apuntas a la próxima?\n\n## INVESTIGACIÓN\n\n### INVESTIGACIÓN\n\n¿Qué impacto tiene el desarrollo del pensamiento computacional en los escolares? Es algo que nos preocupa y que estamos investigando. ¡Síguenos y te contamos todas nuestras conclusiones!"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/renovamos-nuestra-seccion-de-recursos-de-la-web/",
+          "quote": "¡Hemos renovado nuestra sección de recursos de la web!\n\nAcabamos de cambiar todo el apartado de Materiales que teníamos hasta ahora en la web por una nueva sección de recursos. Con este cambio hemos querido unificar todos los recursos que hemos ido generando desde Programamos para que puedas localizarlos de forma rápida y sencilla.\n\nEstas son algunas de las novedades que, a partir de ahora podrás encontrar:\n\n- Una nuevapágina de recursos, en la que se muestran las distintas herramientas que, desde Programamos, te recomendamos utilizar: Scratch, App Inventor, Beebots, etc. Para que te sea más sencillo saber qué herramienta elegir, te proponemos una clasificación por etapas educativas. Poco a poco iremos habilitando más y añadiendo nuevas."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/vuelta-al-cole/",
+          "quote": "Si os animáis a introducir la programación informática en vuestras clases os dejamos el enlace a algunos de losRecursos y materialesdetodos los niveles educativos, desde Educación Infantil a Bachillerato. También puedes registrarte en nuestraComunidad,la primera red social sobre Programación. En ella podrás estar en contacto con otros docentes que están implementando la programación en sus clases o que quieren comenzar a hacerlo."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/inicio2/",
+        "https://programamos.es/andalucia-incorpora-robotica-al-curriculo-de-tercer-ciclo-de-primaria-estamos-preparados/",
+        "https://programamos.es/",
+        "https://programamos.es/renovamos-nuestra-seccion-de-recursos-de-la-web/",
+        "https://programamos.es/vuelta-al-cole/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q015",
+    "query": "¿Cómo participar en Programamos?",
+    "answer": {
+      "answer": "Puedes participar en Programamos de varias maneras, dependiendo de tus intereses y el tipo de actividad que busques. Una forma general de involucrarte es unirte a la Comunidad Programamos, una red social de programación, creando una cuenta en su sitio web [1].\n\nTambién puedes participar en eventos específicos que organizan o promueven:\n\n*   **Comunidad Programamos**: Accede a https://comunidad.programamos.es y crea una cuenta para formar parte de la red social y colaborar en los espacios disponibles [1].\n*   **Eventos con Scratch**: Por ejemplo, en el evento \"Celebra el día de Andalucía con Scratch\", se te pedía abrir un proyecto de Scratch, \"reinventarlo\" (crear una copia), personalizarlo añadiendo imágenes y modificando el programa, y luego compartirlo y agregarlo a un estudio específico [2]. Si tienes dudas, puedes plantearlas en la Comunidad Programamos [2].\n*   **Concursos como Bebras Contest**: Programamos recomienda participar en iniciativas como las Bebras Contest, que no requieren conocimientos previos y son una forma de promover el pensamiento computacional. Puedes encontrar ejemplos de ejercicios y registrarte en la plataforma de Bebras Contest [3].\n*   **Semana de la Programación de la UE**: Si deseas organizar un evento, participar en encuentros o colaborar con esta iniciativa, puedes ponerte en contacto con Programamos [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/nace-la-comunidad-programamos-una-red-social-de-programacion/",
+          "quote": "Es tan sencillo como acceder ahttps://comunidad.programamos.esy crear una cuenta. Solo 2 minutos te separan de ser parte de este gran proyecto."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/andalucia-scratch/",
+          "quote": "- Abre el siguiente proyecto Scratch que hemos creado de ejemplo:https://scratch.mit.edu/projects/99205775/\n\n- Dale al botón «Reinventar». Con ello te habrás creado una copia del proyecto en tu cuenta Scratch. Recuerda que debes estar conectado con tu usuario de la comunidad Scratch.\n\n- Edita el proyecto para personalizarlo. ¿Cómo? Muy sencillo:Añade las imágenes que quieras utilizar en Fondos.Modifica el programa del gato de Scratch para que cambie a esos fondos y haga las preguntas que hayas preparado sobre ellos.\n\n- Por último, comparte el proyecto y agrégalo al estudio que hemos preparado para el día de Andalucía\n\n¡Muchas gracias por participar!\n\nSi tienes alguna duda, puedes plantearla en laComunidad Programamos."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/acepta-el-reto-participa-en-las-bebras-contest-2017/",
+          "quote": "Desde Programamos te recomendamos a que participes con tu alumnado en esta estupenda iniciativa. Como te hemos contado, no se requieren conocimientos previos y es una magnífica forma de promover y medir el pensamiento computacional de vuestro alumnado.\n\nPara abrir boca, te dejamos un reto de años anteriores:\n\nEn el siguiente enlace tienes tanto ejemplos de ejercicios de convocatorias anteriores como la plataforma en la que puedes registrarte para participar:\n\n[Bebras Contest](http://bebras.ehu.es/index.php)"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/semana-de-la-programacion-de-la-ue/",
+          "quote": "Así que si te animas a organizar un evento, quieres participar en cualquiera de los encuentros o te gustaría colaborar de algún modo con esta iniciativa, no dudes en ponerte en contacto con nosotros."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/nace-la-comunidad-programamos-una-red-social-de-programacion/",
+        "https://programamos.es/andalucia-scratch/",
+        "https://programamos.es/acepta-el-reto-participa-en-las-bebras-contest-2017/",
+        "https://programamos.es/semana-de-la-programacion-de-la-ue/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/participa-investigacion-programacion/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q016",
+    "query": "¿Qué es el pensamiento computacional y cómo desarrollarlo en niños?",
+    "answer": {
+      "answer": "El pensamiento computacional es un proceso que implica resolver problemas, diseñar sistemas y comprender el comportamiento humano utilizando conceptos fundamentales de la informática [1]. Se trata de pensar como lo haría un científico informático al enfrentarse a un problema [1]. También se define como la capacidad de formular problemas de manera que sus soluciones puedan representarse como secuencias de instrucciones y algoritmos [1]. Este proceso permite generalizar y transferir la resolución de problemas para abordar una amplia variedad de situaciones [3].\n\nPara desarrollar el pensamiento computacional en niños, especialmente en la etapa de Educación Infantil, es fundamental abordarlo desde un enfoque global e integrarlo de manera transversal en el currículo [2]. Se recomienda comenzar con actividades \"desenchufadas\" (unplugged activities), que son juegos de lógica, cartas, cuerdas o movimientos físicos que ayudan a comprender conceptos informáticos como algoritmos o transmisión de datos [2]. El desarrollo de esta habilidad promueve la adquisición de destrezas cognitivas, sociales, tecnológicas y de programación, esenciales para la sociedad actual [4]. Además, fomenta nuevas formas de pensar, estimula la creatividad, la resolución de problemas y el aprendizaje colaborativo [5]. Aunque se puede promover a través de la programación de videojuegos y aplicaciones, también es posible desarrollarlo desde cualquier disciplina y con otros recursos educativos [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/que-es-el-pensamiento-computacional/",
+          "quote": "En palabras de la propia Wing «el pensamiento computacional implica resolver problemas, diseñar sistemas y comprender el comportamiento humano, haciendo uso de los conceptos fundamentales de la informática». Es decir, que la esencia del pensamiento computacional es pensar como lo haría un científico informático cuando nos enfrentamos a un problema.\n\nOtras definiciones de pensamiento computacional han ido surgiendo en la literatura científica desde entonces. Entre las más aceptadas se encuentran la deAhoy la de laRoyal Society:\n\n- El pensamiento computacional es el proceso que permite formular problemas de forma que sus soluciones pueden ser representadas como secuencias de instrucciones y algoritmos."
+        },
+        {
+          "index": 2,
+          "url": "https://code.intef.es/noticias/el-desarrollo-del-pensamiento-computacional-en-la-etapa-de-educacion-infantil",
+          "quote": "Durante esta etapa inicial de aprendizaje, es fundamental abordar el PC desde un enfoque global que se centre en el desarrollo integral de los y las estudiantes. En este sentido, resulta deseable introducir el PC de manera transversal, integrando los saberes básicos de diversas áreas del currículo de forma globalizada. Al hacerlo, no solo se promueve el desarrollo de habilidades computacionales, sino que también se fomenta la motivación del alumnado mediante la aplicación práctica de estos conceptos en diversos contextos.\n\nLo ideal es comenzar con el desarrollo de actividades desenchufadas (unplugged activities). Estas actividades emplean juegos de lógica, cartas, cuerdas o movimientos físicos que se utilizan para representar y comprender diferentes conceptos informáticos, como algoritmos o trasmisión de datos."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/que-es-el-pensamiento-computacional/",
+          "quote": "- Generalizar y transferir este proceso de resolución de problemas para ser capaz de resolver una gran variedad de familias de problemas.\n\nElobjetivo fundamentalde Programamos es, precisamente, promover el desarrollo del pensamiento computacional desde edades tempranas a través de la programación de videojuegos y aplicaciones para móviles en todas las etapas escolares, desde educación infantil hasta formación profesional. Sin embargo, es posible desarrollar el pensamiento computacional de nuestros estudiantes desde cualquier disciplina y haciendo uso de otros recursos educativos, no solo a través de la programación."
+        },
+        {
+          "index": 4,
+          "url": "https://code.intef.es/noticias/el-desarrollo-del-pensamiento-computacional-en-la-etapa-de-educacion-infantil",
+          "quote": "El desarrollo del pensamiento computacional (en adelante, PC) promueve la adquisición de habilidades cognitivas, sociales, tecnológicas y de programación, necesarias en la sociedad del siglo XXI. Estas habilidades son fundamentales para la formulación, evaluación y resolución de tareas en cualquier contexto, y pueden trabajarse desde la etapa de Educación Infantil."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/propuestas-para-trabajar-el-pensamiento-computacional-en-educacion-infantil-de-forma-desenchufada/",
+          "quote": "Para ellos el aprendizaje del pensamiento computacional es una nueva alfabetización para el siglo XXI que apoya a los niños en el desarrollo de nuevas formas de pensar en sí mismos y en el mundo, y que permite desarrollar habilidades lingüísticas y numéricas, estimula la creatividad, fomenta la resolución de problemas y el aprendizaje colaborativo."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/que-es-el-pensamiento-computacional/",
+        "https://code.intef.es/noticias/el-desarrollo-del-pensamiento-computacional-en-la-etapa-de-educacion-infantil",
+        "https://programamos.es/propuestas-para-trabajar-el-pensamiento-computacional-en-educacion-infantil-de-forma-desenchufada/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q017",
+    "query": "¿Cómo introducir la programación en educación infantil sin ordenadores?",
+    "answer": {
+      "answer": "Para introducir la programación en educación infantil sin ordenadores, se recomienda el uso de actividades desenchufadas (unplugged activities) y robots de mesa [1], [2]. Estas metodologías permiten desarrollar el pensamiento computacional de manera integral y transversal, integrando saberes de diversas áreas del currículo [1].\n\nLas actividades desenchufadas emplean juegos de lógica, cartas, cuerdas o movimientos físicos para representar y comprender conceptos informáticos como algoritmos o la transmisión de datos [1]. Existen repositorios de actividades desenchufadas de CodeINTEF, EU Code Week y Programamos que pueden ser utilizados [2].\n\nPosteriormente, se pueden introducir robots de mesa como Bee Bot, Blue Bot, Cubetto, Ozobot o mTiny [2]. Estos robots ayudan a fomentar la competencia viso-espacial, la orientación espacial, el pensamiento lógico, la capacidad de cálculo y la concentración [3]. Algunos ejemplos de robots programables adaptados para esta edad incluyen Clementoni Croko, Edelvives robot Next 1.0, Learning Resources ratón robot programable, Lexibook Powerman Junior y RC Tecnic robot constructor [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://code.intef.es/noticias/el-desarrollo-del-pensamiento-computacional-en-la-etapa-de-educacion-infantil",
+          "quote": "Durante esta etapa inicial de aprendizaje, es fundamental abordar el PC desde un enfoque global que se centre en el desarrollo integral de los y las estudiantes. En este sentido, resulta deseable introducir el PC de manera transversal, integrando los saberes básicos de diversas áreas del currículo de forma globalizada. Al hacerlo, no solo se promueve el desarrollo de habilidades computacionales, sino que también se fomenta la motivación del alumnado mediante la aplicación práctica de estos conceptos en diversos contextos.\n\nLo ideal es comenzar con el desarrollo de actividades desenchufadas (unplugged activities). Estas actividades emplean juegos de lógica, cartas, cuerdas o movimientos físicos que se utilizan para representar y comprender diferentes conceptos informáticos, como algoritmos o trasmisión de datos."
+        },
+        {
+          "index": 2,
+          "url": "https://code.intef.es/noticias/el-desarrollo-del-pensamiento-computacional-en-la-etapa-de-educacion-infantil",
+          "quote": "A modo de ejemplo, en los siguientes espacios web se recopilan diferentes actividades desenchufadas para poder empezar a trabajar con el alumnado de Educación Infantil:\n\n- Repositorio de actividades desenchufadas de CodeINTEF\n\n- Repositorio de actividades de EU Code Week\n\n- Repositorio de actividades desenchufadas de Programamos\n\nSeguidamente, se puede empezar a trabajar con robots de mesa como, por ejemplo: Bee Bot, Blue Bot, Cubetto, Ozobot, mTiny o equivalentes."
+        },
+        {
+          "index": 3,
+          "url": "https://www.educaciontrespuntocero.com/tecnologia/robotica-educacion-infantil-construir-programar-robots/",
+          "quote": "Fomentar la competencia viso-espacial, trabajar la orientación espacial y el pensamiento lógico, reforzar la capacidad de cálculo o mejorar los niveles de atención y concentración. Estos son algunos de los beneficios que proporciona laprogramación, una disciplina que los estudiantes no sólo pueden descubrir en la escuela; también en casa gracias al desarrollo de distintas propuestas a modo de robots, pensadas y adaptadas a su edad. La siguiente recopilación se dirige al alumnado de Infantil.\n\nÍndice de contenidos\n\n- Clementoni Croko\n\n- Edelvives, robot Next 1.0\n\n- Learning Resources, ratón robot programable\n\n- Lexibook, Powerman Junior\n\n- RC Tecnic, robot constructor"
+        }
+      ],
+      "sources_used": [
+        "https://code.intef.es/noticias/el-desarrollo-del-pensamiento-computacional-en-la-etapa-de-educacion-infantil",
+        "https://www.educaciontrespuntocero.com/tecnologia/robotica-educacion-infantil-construir-programar-robots/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/participamos-en-el-master-para-profesorado-de-secundaria-y-fp-de-la-universidad-de-sevilla/",
+        "https://programamos.es/recursos/beebots/el-rincon-de-los-mas-pequenos/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q018",
+    "query": "¿Cuál es la diferencia entre Scratch y Scratch Jr?",
+    "answer": {
+      "answer": "Scratch y Scratch Jr. son herramientas de programación por bloques, pero están diseñadas para diferentes grupos de edad y niveles de habilidad [3]. Scratch está pensado para usuarios de entre 8 y 16 años [1], mientras que Scratch Jr. es una versión adaptada para niños más pequeños, específicamente entre 5 y 7 años, incluyendo alumnos de infantil y primer ciclo de primaria [3], [4].\n\nLas principales diferencias radican en su diseño y complejidad:\n\n*   **Edad del usuario**: Scratch Jr. está dirigido a niños que aún no saben leer ni escribir [2], [5].\n*   **Interfaz**: La interfaz de Scratch Jr. es más simple, con bloques de programación más grandes, menos colores y una organización que evita que todos los bloques aparezcan a la vez en la pantalla [2], [3]. Ha sido rediseñada para ser más intuitiva y adaptarse al desarrollo cognitivo, social, personal y emocional de los niños pequeños [3], [4].\n*   **Funcionalidad**: Scratch Jr. permite a los niños crear sus propias historias interactivas o juegos de manera lúdica, encajando bloques gráficos como si fueran un puzle [3]. Su objetivo es introducir conceptos básicos de razonamiento lógico y resolución de problemas en edades tempranas [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://intef.es/observatorio_tecno/makey-makey-y-scratch-en-el-aula-de-musica",
+          "quote": ". Está pensado parausar entre los 8 y 16 añosy existe una versión para edades más tempranas conocida como Scratch Jr."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/el-proyecto/que-herramientas-se-usan/",
+          "quote": "Scratch Jr es una versión de Scratch que se intenta adecuar a un alumnado que aún no sabe leer y escribir desarrollando una interfaz más simple, bloques de un mayor tamaño, con menos colores y que se organizan de manera que en la pantalla no salgan todos a la vez."
+        },
+        {
+          "index": 3,
+          "url": "https://intef.es/observatorio_tecno/scratch-jr-aprendiendo-a-programar-y-programando-para-aprender",
+          "quote": "Scratch Jres una herramienta para iniciar a los niños de 5 años de Infantil e incluso primer ciclo de Primaria (entre 5 y 7 años) en ellenguaje de programación por bloquesde una manera divertida y lúdica.Scratch Jr es una adaptación del lenguaje de programación de Scratch, en la que han rediseñado la interfaz y la programación para hacerla mássencilla, adaptándola a las características y necesidades de los niños de infantil y cuidando que coincidiera con sudesarrollo cognitivo, social, personal y emocional.Su funcionamiento es muyintuitivoya que a través del encaje, como si de un puzle se tratase, de bloques gráficos de programación, los niños pueden crear sus propias historias interactivas o juegos."
+        },
+        {
+          "index": 4,
+          "url": "https://www.educaciontrespuntocero.com/tecnologia/alternativas-a-scratch",
+          "quote": "Es una versión adaptada del lenguaje de programación Scratch dirigida a estudiantes a partir de 5 años. Disponible como aplicación para dispositivos Android e iOS, facilita el desarrollo de juegos interactivos e historias mientras trabajan habilidades como la resolución de problemas. Sus creadores han rediseñado su interfaz (basada también en bloques de colores) para que resulte más intuitiva, incluido un editor de pintura para personalizar los elementos, objetos y personajes de los proyectos que desarrollan los alumnos."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/alumnos-de-infantil-programando-videojuegos-scratch-jr/",
+          "quote": "Es por esto que el equipo de investigación del Instituto Tecnológico de Massachusetts, creador deScratch, se encuentra en estos momento en proceso de desarrollo de una nueva herramienta que se adapte a las necesidades del alumnado entre los 5 y 7 años:Scratch Jr. Este programa está orientado a que el alumnado de estas edades pueda desarrollar estrategias de resolución de problemas, conceptos básicos de razonamiento lógico y otros conocimientos relacionados con el ámbito de la ciencia mientras se divierten e interactúan con el ordenador dentro de una comunidad de aprendizaje."
+        }
+      ],
+      "sources_used": [
+        "https://intef.es/observatorio_tecno/makey-makey-y-scratch-en-el-aula-de-musica",
+        "https://programamos.es/el-proyecto/que-herramientas-se-usan/",
+        "https://intef.es/observatorio_tecno/scratch-jr-aprendiendo-a-programar-y-programando-para-aprender",
+        "https://www.educaciontrespuntocero.com/tecnologia/alternativas-a-scratch",
+        "https://programamos.es/alumnos-de-infantil-programando-videojuegos-scratch-jr/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q019",
+    "query": "¿Qué herramientas existen para evaluar proyectos Scratch de estudiantes?",
+    "answer": {
+      "answer": "Existen diversas herramientas y enfoques para evaluar proyectos Scratch de estudiantes, que van desde el análisis manual hasta herramientas de evaluación automática. Una herramienta destacada es Dr. Scratch, una aplicación web que automatiza el análisis de proyectos Scratch [2].\n\n**Dr. Scratch**\nEsta herramienta permite a docentes y estudiantes analizar proyectos Scratch para verificar la correcta programación, identificar errores y recibir retroalimentación para mejorar el código [2]. Dr. Scratch evalúa aspectos como la existencia de código no ejecutado, la correcta sincronización de personajes mediante mensajes, la inicialización adecuada de atributos de objetos, la repetición de código y la significatividad en el nombramiento de objetos [2]. Además, utiliza elementos de ludificación como puntuaciones y medallas para motivar a los estudiantes a mejorar sus habilidades de programación [2]. La validez del análisis de pensamiento computacional que realiza Dr. Scratch ha sido respaldada por estudios que muestran una fuerte correlación entre sus puntuaciones y las evaluaciones de expertos [3, 4].\n\n**Otros enfoques para la evaluación**\nSegún Karen Brennan y Mitchel Resnick, existen tres enfoques principales para evaluar el pensamiento computacional en estudiantes que utilizan Scratch [1]:\n\n1.  **Análisis del Portfolio de Proyectos**: Consiste en evaluar los trabajos finales guardados en el perfil del estudiante para analizar los bloques de programación utilizados [1].\n2.  **Entrevistas Basadas en Artefactos**: El alumnado selecciona proyectos en los que ha trabajado para discutirlos en detalle, permitiendo al docente revisar el proceso de creación y verificar la comprensión del estudiante [1].\n3.  **Diseño de Escenarios**: Se formulan preguntas sobre el funcionamiento y posibles mejoras de los proyectos para evaluar el proceso y el desarrollo de competencias a lo largo del curso [1].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://www.educaciontrespuntocero.com/recursos/evaluar-pensamiento-computacional",
+          "quote": "Según un artículo de Karen Brennan y Mitchel Resnick publicado en la página web deCode INTEF, existen tres enfoques para evaluar el pensamiento computacional en los estudiantes que usanScratch. El primero de ellos es el ‘Análisis del Portfolio de Proyectos’, en el que se evalúan los trabajos finales guardados en el perfil del estudiante para analizar los bloques de programación que han elaborado.\n\nOtra opción son las ‘Entrevistas Basadas en Artefactos’, que consiste en que el alumnado selecciona proyectos en los cuales ha trabajado para abordarlos en detalle en el aula; de este modo, el docente revisa el proceso de creación y comprueba si lo han entendido. Por último se encuentra el llamado ‘Diseño de Escenarios’, donde se formulan preguntas sobre el funcionamiento y mejoras de los proyectos para evaluar el proceso y el desarrollo competencial a lo largo del curso."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/dr-scratch-analisis-automatico-de-proyectos-scratch/",
+          "quote": "Dr. Scratch es una aplicación web que permite a docentes y estudiantes automatizar el análisis de proyectos proyectos Scratch para comprobar si han sido programados correctamente, aprender de sus errores, recibir retroalimentación para mejorar el código y, haciendo uso de ciertos elementos del mundo de la ludificación (gamification) como las puntuaciones y las medallas, servir de estímulo para incentivar un deseo de mejorar sus habilidades como programadores.\n\nAsí, por cada proyecto analizado, la herramienta comprueba si existe código que nunca llega a ejecutarse, si la sincronización de los personajes mediante mensajes es correcta, si se inicializan de forma adecuada los atributos de los objetos, si existe código repetido en los programas de los distintos personajes y si el nombrado de los objetos es significativo."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/nueva-validacion-del-analisis-realizado-por-dr-scratch/",
+          "quote": "Las correlaciones entre las puntuaciones de Dr. Scratch y las evaluaciones de los expertos son muy fuertes, lo que puede considerarse una validación del análisis de pensamiento computacional que realiza la herramienta."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/nueva-validacion-del-analisis-realizado-por-dr-scratch/",
+          "quote": "Dr. Scratches una herramienta que permite analizar de forma sencilla y automática proyectos Scratch para evaluar el grado de desarrollo del pensamiento computacional. Como parte del proceso de validación de la herramienta, un grupo formado por investigadores de las Universidades URJC, UNED y Northeastearn University, en colaboración con Programamos, hemos desarrollado unestudio para comprobar la relación entra las puntuaciones que otorga Dr. Scratch con las de evaluadores expertos. Y lo cierto es que los resultados son realmente interesantes."
+        }
+      ],
+      "sources_used": [
+        "https://www.educaciontrespuntocero.com/recursos/evaluar-pensamiento-computacional",
+        "https://programamos.es/dr-scratch-analisis-automatico-de-proyectos-scratch/",
+        "https://programamos.es/nueva-validacion-del-analisis-realizado-por-dr-scratch/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/itinerarios-aprendizaje-basados-datos-desarrollar-pensamiento-computacional-scratch/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q020",
+    "query": "Cómo acceder a los cursos gratuitos de Programamos",
+    "answer": {
+      "answer": "Para acceder a los cursos gratuitos de Programamos, debes visitar la página web programamos.es/hack [1]. Estos cursos, que se basan en investigaciones científicas desarrolladas con la Universidad Rey Juan Carlos y la Universidad Nacional de Educación a Distancia, están grabados y se pueden seguir en cualquier momento y lugar [1]. Programamos también ofrece un curso online gratuito de introducción a la programación con Scratch [2].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/hackea-la-cuarentena-actividades-y-cursos-gratuitos-para-aprender-a-programar/",
+          "quote": "Visita programamos.es/hack para unirte a esta gran comunidad y empezar a desarrollar tu pensamiento computacional. Como en todas nuestras acciones, estos cursos se basan en rigurosas investigaciones científicas desarrolladas junto a la Universidad Rey Juan Carlos y la Universidad Nacional de Educación a Distancia, y se comparten con una licencia libre. Además de las clases gratuitas -que están grabadas y pueden seguirse en cualquier momento y desde cualquier lugar-"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/un-breve-balance-de-nuestro-2018/",
+          "quote": "Una de ellas es nuestro curso online gratuito de introducción a la programación con Scratch, en el que han participado ya casi 8.000 personas de todos los rincones del mundo, y que es muy bien valorado entre los usuarios."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/hackea-la-cuarentena-actividades-y-cursos-gratuitos-para-aprender-a-programar/",
+        "https://programamos.es/un-breve-balance-de-nuestro-2018/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/iniciativas-gratuitas-para-apoyar-a-docentes-y-estudiantes-durante-la-suspension-de-las-clases/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q021",
+    "query": "¿Dónde encontrar proyectos de Scratch en español para primaria?",
+    "answer": {
+      "answer": "Puedes encontrar proyectos de Scratch en español para primaria en varios recursos en línea. El sitio web \"Programamos\" ofrece una serie de presentaciones diseñadas para el aula de primaria, que incluyen proyectos como \"Introducción a la herramienta Scratch\", \"El baile del gato\", \"La fiesta de disfraces\", \"Videojuego arkanoid (I) y (II)\", y \"Mensajes y eventos\" [1, 2, 3]. Estos proyectos cubren desde los elementos básicos de la herramienta hasta conceptos más avanzados como el movimiento, la apariencia, los eventos, los condicionales, las variables y la sincronización de procesos [1, 2, 3]. Además, \"Programamos\" también menciona proyectos sugeridos por los propios alumnos, que pueden ser utilizados para explicar contenidos, como trabajos finales o para crear videojuegos contextualizados [4].\n\nOtra fuente es \"Educación 3.0\", que propone cinco proyectos sencillos para iniciarse en la programación con Scratch, adecuados para asignaturas como Música, Matemáticas o Lengua. Entre ellos se encuentran \"La liebre y la tortuga\", \"Movimiento de varios objetos\", \"Piano\", \"Memoria de pez\" y \"Cat\" [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/recursos/scratch/",
+          "quote": "Presentaciones Scratch para el aula (Primaria)\n\n#### Introducción a la herramienta Scratch\n\nEn esta sesión se introduce a los estudiantes en la creación de un pequeño videojuego con el entorno de programación Scratch viendo los elementos básicos de la herramienta, así como las mínimas pautas para comprender su funcionamiento: creación de un proyecto, identificación de sentencias, almacenamiento del proyecto, creación de una cuenta en Scratch o subir el resultado a la web.\n\n**Scratch en primaria 1: Introducción a la herramienta**\n\nfrom\n\n**Programamos**\n\n#### 2 - El baile del gato\n\nEn esta sesión se introduce a los estudiantes en el manejo de la herramienta para conseguir el movimiento de un objeto, así como el control de la dirección del mismo. Se relaciona con contenidos como: ejes cartesianos, ángulos, …\n\n**Scratch en primaria 2: El baile del gato**"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/recursos/scratch/",
+          "quote": "#### 3 - La fiesta de disfraces\n\nEn estas diapositivas se enseña a utilizar la apariencia de los objetos y el escenario de Scratch, mediante la pestaña «Disfraces» y a utilizar las instrucciones para manejarla.\n\n**Scratch en primaria 3: La fiesta de disfraces**\n\nfrom\n\n**Programamos**\n\n#### 4 - Videojuego arkanoid (I)\n\nEn estas diapositivas crearemos la base del videojuego\n\n**Arkanoid**\n\ncon Scratch, controlando el movimiento, la apariencia y los eventos. Como novedad, se trabajan los condicionales (sentencias SI) y los aleatorios.\n\n**Scratch en primaria 4: Videojuego arkanoid (I)**"
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/recursos/scratch/",
+          "quote": "#### 5 - Videojuego arkanoid (II)\n\nEn estas diapositivas continuaremos desarrollando el videojuego Arkanoid con Scratch agregando muchas mejoras. Trabajaremos las variables para agregar «vidas» a nuestro videojuego y para algo más…\n\n**Scratch en primaria 5: Videojuego arkanoid (II)**\n\nfrom\n\n**Programamos**\n\n#### 6 - Mensajes y eventos\n\nEn estas diapositivas se trabajará la sincronización de procesos mediante mensajes y eventos. Para ello se va a construir una historia entre dos chicas. Te damos el principio y tú tienes que acabar la historia…\n\n**Scratch en primaria 6: Mensajes y eventos**"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/experiencias-y-conclusiones-tras-introducir-la-programacion-en-el-aula-por-primera-vez/",
+          "quote": "- Para explicar o repasar un contenido (juegos de preguntas sobre historia, visitas virtuales a ciudades europeas, trabajar la técnica del “diálogo”, dibujar figuras geométricas de la vida real, etc)\n\n- Como “trabajo final” a un proyecto de clase (Sustituyendo o complementando a murales, maquetas,…)\n\n- Para crear un videojuego “contextualizado” en una fiesta determinada, aniversario, o celebración (día de la madre, Navidad,…).\n\n- Para jugar.\n\nLa mayoría de estos proyectos han sido sugeridos por los alumnos, con la pregunta;¿Lo podemos hacer con Scratch?Enlaces a algunos de los proyectos:\n\n- https://scratch.mit.edu/projects/71444692/\n\n- https://scratch.mit.edu/projects/71445434/\n\n- https://scratch.mit.edu/projects/71444876/\n\n- https://scratch.mit.edu/projects/71445786/\n\n- https://scratch.mit.edu/projects/71447518/\n\n- https://scratch.mit.edu/projects/71447324/"
+        },
+        {
+          "index": 5,
+          "url": "https://www.educaciontrespuntocero.com/recursos/proyectos-empezar-a-programar-scratch",
+          "quote": "Hemos seleccionado algunos para clase de Música, de Matemáticas o de Lengua, entre otros.\n\nEDUCA30 HEADER DISPLAY\n\nÍndice de contenidos\n\n- La liebre y la tortuga\n\n- Movimiento de varios objetos\n\n- Piano\n\n- Memoria de pez\n\n- Cat\n\n## La liebre y la tortuga\n\nUn juego que tiene como protagonistas a una tortuga y una liebre: la primera se moverá en horizontal por la parte inferior de la pantalla, mientras que la segunda estará corriendo en todas las direcciones posible. ¿Cuál es el objetivo? Que la tortuga no pille a la liebre y, para conseguirlo, el jugador tendrá que mover al personaje con ayuda del teclado del ordenador."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/recursos/scratch/",
+        "https://programamos.es/experiencias-y-conclusiones-tras-introducir-la-programacion-en-el-aula-por-primera-vez/",
+        "https://www.educaciontrespuntocero.com/recursos/proyectos-empezar-a-programar-scratch"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q022",
+    "query": "¿Qué actividades desenchufadas puedo hacer para enseñar algoritmos a niños?",
+    "answer": {
+      "answer": "Las actividades desenchufadas o 'unplugged' son métodos efectivos para enseñar algoritmos a niños sin necesidad de dispositivos electrónicos, centrándose en el razonamiento lógico y el pensamiento crítico [4]. Estas actividades permiten a los niños comprender conceptos de programación a través de juegos y dinámicas prácticas [5].\n\nAlgunas actividades desenchufadas para enseñar algoritmos incluyen:\n\n*   **Programando robots… ¡humanos!** En esta actividad, los niños trabajan en parejas, \"programándose\" mutuamente para dibujar imágenes. El objetivo es desarrollar algoritmos sencillos y aprender a codificarlos, trabajando la secuenciación y las nociones algorítmicas [1].\n*   **Bailando en bucle.** Esta actividad enseña el concepto de bucles en algoritmos. Los niños observan patrones de movimiento repetidos en un baile y aprenden a usar bucles para simplificar secuencias de instrucciones largas [1].\n*   **Mis amigos robot.** Utilizando un vocabulario predefinido, los estudiantes escriben un programa para construir una estructura con vasos de plástico, que otro estudiante ejecuta como si fuera un robot. Esta actividad aborda conceptos como algoritmo, depuración de programas y código fuente [2].\n*   **Divide y vencerás.** Esta actividad se enfoca en la descomposición y la abstracción, así como en la secuenciación y las nociones algorítmicas. Los niños reflexionan sobre cómo las tareas rutinarias se dividen en minitareas o pasos que, al seguirse en el orden correcto, completan la tarea principal [3].\n\nAdemás, actividades como la resolución de laberintos o la construcción de torres siguiendo instrucciones específicas son útiles para que los niños comprendan qué es un patrón o un algoritmo sin las limitaciones de la tecnología [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/recopilacion-de-actividades-desenchufadas-para-trabajar-el-pensamiento-computacional/",
+          "quote": "- Programando robots… ¡humanos!Con esta actividad se pretende trabajar fundamentalmente la secuenciación y las nociones algorítmicas. Para ello, el alumnado trabajará en parejas y se “programarán” unos a otros para dibujar imágenes. Con esta actividad se aprende a desarrollar algoritmos sencillos y a codificarlos en programas.  (Descargar aquí)\n\n- Bailando en bucle. Cuando escribimos algoritmos para resolver una tarea y la secuencia de instrucciones es larga, a menudo aparecen órdenes que se repiten. Para evitar esta repetición se pueden usar unas estructuras algorítmicas que se llaman bucles. Con esta actividad vamos a poder observar los patrones repetidos de movimiento en un baile, y aprenderemos a utilizar bucles para simplificar la secuencia de instrucciones que representa el baile. (Descargar aquí)"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/aprender-a-programar-sin-ordenador/",
+          "quote": "En esta misma línea, nuestro amigoIsrael Gutiérrez, también embajador de laSemana Europea de la Programación, nos ha enviado una actividad muy divertida que ha preparado para poder trabajar con niños (¡y adultos!) conceptos como algoritmo, depuración de programas y código fuente. En esta actividad, llamadaMis amigos robot, usando un vocabulario predefinido los estudiantes escribirán un programa para construir una estructura con vasos de plástico, que otro de los estudiantes ejecutará a modo de robot."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/recopilacion-de-actividades-desenchufadas-para-trabajar-el-pensamiento-computacional/",
+          "quote": "- Divide y vencerás. Esta actividad tiene como objetivo trabajar la descomposición y la abstracción, fundamentalmente, aunque también la secuenciación y las nociones algorítmicas. Para ello trataremos de que nuestro alumnado recapacite sobre cómo lleva a cabo tareas rutinarias que, en realidad, se descomponen o dividen en minitareas o pasos que son muy fáciles de realizar, y que siguiéndolos en el orden adecuado nos ayudan a conseguir la tarea completa. (Descargar aquí)"
+        },
+        {
+          "index": 4,
+          "url": "https://www.educaciontrespuntocero.com/recursos/evaluar-pensamiento-computacional",
+          "quote": "Lasactividades desenchufadas o actividades ‘unplugged’son útiles para la evaluación del pensamiento computacional, ya que se centran en los procesos cognitivos involucrados en la resolución de problemas, midiendo habilidades de razonamiento lógico y pensamiento crítico. Así, actividades como la resolución de laberintos o la construcción de torres siguiendo unas instrucciones específicas permiten al profesorado comprobar si los estudiantes saben lo que es un patrón o un algoritmo sin que se vean limitados por la tecnología."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/aprender-a-programar-sin-ordenador/",
+          "quote": "Una de las actividades que realizamos ayer durante el eventoCode Sevilla: A programarestuvo dedicada a trabajar la programación sin contar con un ordenador, actividades que son ideales para trabajar en familia en casa e ir adquiriendo ciertas destrezas del mundo de la programación."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/recopilacion-de-actividades-desenchufadas-para-trabajar-el-pensamiento-computacional/",
+        "https://programamos.es/aprender-a-programar-sin-ordenador/",
+        "https://www.educaciontrespuntocero.com/recursos/evaluar-pensamiento-computacional"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q023",
+    "query": "¿Cómo enseñar programación de videojuegos con Scratch en el aula?",
+    "answer": {
+      "answer": "Enseñar programación de videojuegos con Scratch en el aula es una forma efectiva de fomentar la imaginación, la creatividad y el pensamiento lógico y algorítmico en los estudiantes [1]. Scratch, un software de creación de videojuegos desarrollado por el MIT, permite realizar proyectos visualmente atractivos de manera sencilla [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://www.educaciontrespuntocero.com/recursos/programacion/programar-con-scratch",
+          "quote": "Gracias a ellos, se consigue fomentar la imaginación y la creatividad y reforzar elpensamiento lógicoy algorítmico del alumnado."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/preparar-un-taller-de-scratch-para-80-ninos-de-8-anos/",
+          "quote": "En esta línea pensamos que Scratch, el software de creación de videojuegos desarrollado por el MIT, podría ser la herramienta a utilizar, ya que permite realizar cosas muy vistosas y llamativas de forma muy sencilla."
+        }
+      ],
+      "sources_used": [
+        "https://www.educaciontrespuntocero.com/recursos/programacion/programar-con-scratch",
+        "https://programamos.es/preparar-un-taller-de-scratch-para-80-ninos-de-8-anos/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/taller-sobre-programacion-en-el-curso-education-3-0/",
+        "https://www.educaciontrespuntocero.com/recursos/videojuegos-con-scratch"
+      ]
+    }
+  },
+  {
+    "query_id": "Q024",
+    "query": "¿Qué formación necesita un profesor para dar clases de programación a niños?",
+    "answer": {
+      "answer": "Para que un profesor pueda impartir clases de programación a niños, es fundamental que reciba una formación específica, ya que esta tiene un impacto significativo en los resultados de aprendizaje de los estudiantes [1]. Los docentes deben aprender a programar ellos mismos antes de poder enseñar esta materia [2].\n\nLa formación necesaria suele incluir el desarrollo de destrezas para incorporar la programación y la robótica en el aula, a menudo de manera práctica y con un enfoque en la gestión del aula y la evaluación de proyectos de programación [4]. Existen cursos diseñados para profesionales de la educación que buscan reciclarse e integrar nuevas metodologías, como la programación de videojuegos con herramientas como Scratch [3]. Estos programas están pensados para maestros de infantil y primaria, incluso sin conocimientos previos, para que aprendan a utilizar la programación y la robótica de forma transversal como herramientas educativas [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/que-indica-la-investigacion-cientifica-sobre-la-idea-de-programar-para-aprender/",
+          "quote": "…parece evidente que la formación del profesorado tiene un impacto muy importante en los resultados de aprendizaje que obtengan los estudiantes."
+        },
+        {
+          "index": 2,
+          "url": "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+          "quote": "Es necesarioenseñar a programar, y en nuestro papel de padres, profesores o docentes es una obligación realizar un paso previo:aprender programación para profesores para poder enseñarla a nuestros pupilos."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/500-solicitudes/",
+          "quote": "Aprender a programar para enseñar de una manera diferente. Ese es el objetivo de nuestro curso«Programación de videojuegos con Scratch como herramienta educativa”ofrecido por la Asociación Programamos y laConsejería de Educación de la Junta de Andalucía."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/curso-universitario-como-utilizo-la-programacion-y-la-robotica-en-el-aula/",
+          "quote": "El primero de ellos, que es el que imparte Programamos, está dedicado a conocer el mundo de la programación y a adquirir las destrezas necesarias para poder incorporar la programación y la robótica a tu aula. Como todos los cursos que impartimos, se tratará de una formación muy práctica (¡manos en la masa!) gracias a la que aprenderás a programar todo tipo de historias, animaciones, proyectos artísticos y musicales, así como simulaciones y videojuegos. Además, como se trata de un curso pensado para docentes, trataremos distintos aspectos prácticos de la gestión del aula, como la evaluación de proyectos de programación."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/curso-verano-robotica-1/",
+          "quote": "Este curso, que se desarrolla en Valencia, es una gran oportunidad para que maestros de infantil y primaria, sin ningún tipo de conocimientos previos, aprendan cómo llevar la programación y la robótica a sus aulas para usarlas de forma totalmente transversal y como herramientas educativas."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/que-indica-la-investigacion-cientifica-sobre-la-idea-de-programar-para-aprender/",
+        "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+        "https://programamos.es/500-solicitudes/",
+        "https://programamos.es/curso-universitario-como-utilizo-la-programacion-y-la-robotica-en-el-aula/",
+        "https://programamos.es/curso-verano-robotica-1/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q025",
+    "query": "¿Qué recursos hay para enseñar inteligencia artificial a niños y adolescentes?",
+    "answer": {
+      "answer": "Existen diversas herramientas y recursos diseñados para enseñar inteligencia artificial (IA) a niños y adolescentes, haciendo el aprendizaje sencillo, divertido y eficaz [1]. Algunas de las opciones más destacadas incluyen:\n\n*   **Machine Learning for Kids**: Esta aplicación web es un referente central para introducir la IA en el aula, utilizando APIs de IBM Watson Developer Cloud [2]. Permite a los usuarios crear modelos de aprendizaje automático sin necesidad de conocimientos de programación, enfocándose en la recopilación de datos, la creación del modelo y el entrenamiento [3], [5]. El INTEF ha elaborado un recurso completo sobre esta herramienta [1].\n*   **Teachable Machine**: Similar a Machine Learning for Kids, esta herramienta facilita la creación de modelos de aprendizaje automático de manera rápida e intuitiva, sin requerir conocimientos de programación [1], [3].\n*   **LearningML**: Este programa también se basa en el entrenamiento de máquinas y permite explorar la potencia y los límites de la IA a través de proyectos de programación, conectándose con el currículo escolar [3], [4].\n\nEstas herramientas permiten trabajar ideas fundamentales de la IA desde la educación Primaria y son útiles para enseñar contenidos curriculares de manera transversal, mientras los estudiantes desarrollan su competencia digital [1], [5]. La iniciativa AI4K12 mantiene un repositorio actualizado de este tipo de herramientas [1]. Además, existen actividades \"unplugged\" que permiten trabajar aspectos conceptuales de la IA sin necesidad de dispositivos electrónicos [1].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/a-que-nos-referimos-cuando-decimos-que-todo-el-mundo-deberia-aprender-sobre-inteligencia-artificial-en-la-escuela/",
+          "quote": "Aunque evidentemente esta es una tendencia incipiente, lo cierto es que ya existen herramientas diseñadas específicamente para trabajar las ideas fundamentales de la inteligencia artificial desde la educación Primaria. Y además, permiten que el aprendizaje sea muy sencillo, divertido y eficaz.\n\nLa iniviativaAI4K12tiene un repositorio que se actualiza constantemente para recopilar este tipo de herramientas, por lo que es un sitio muy recomendable para echar un ojo de vez en cuando. Nosotros hoy vamos a destacar tan solo dos de ellas:Machine learning for Kids-de la que disponéis deun recurso realmente completo elaborado por el INTEFhace unos meses- yTeachable Machine, de la que os dejamos un vídeo demostrativo de nuestro compañero José Ignacio Huertas.\n\nIncluso existen iniciativas para trabajar aspectos conceptuales sobre esta disciplina sin utilizar siquiera dispositivos electrónicos, tal como vimos en la última edición del curso de verano en eltaller de actividades unplugged."
+        },
+        {
+          "index": 2,
+          "url": "https://intef.es/Noticias/inteligencia-artificial-en-el-aula",
+          "quote": "Planteado el problema, que cualquier joven programador de Scratch habrá experimentado, comienza el viaje por el universo de la Inteligencia Artificial de la mano deMachine Learning for Kids, la aplicación web queconstituye el referente central del recursocuyo desarrollo está a cargo deDale Laneutilizando APIs deIBM Watson Developer Cloud. La herramienta está basada enteramente en la web y no requiere ni instalación ni configuración compleja para usarse."
+        },
+        {
+          "index": 3,
+          "url": "https://www.educaciontrespuntocero.com/recursos/inteligencia-artificial-ia",
+          "quote": "Estos tres programas (LearningML,Machine Learning for kidsyTeachable Machine) tienen el mismo proceso, basado en el entrenamiento de la máquina, mediante una manera rápida, sencilla e intuitiva de crear modelos de aprendizaje automático. No es necesario conocimientos deprogramaciónni por parte del docente ni del estudiante. En primer lugar, hay que pensar en algún saber básico con el que se vaya a trabajar y pueda clasificarse. Por ejemplo, la clasificación de residuos según el tipo de contenedor, reinos de los seres vivos, personajes o hechos históricos del S. XIX, lugares, comidas, lenguaje de signos,sectores de trabajo, tipos de oraciones…"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/compartimos-los-materiales-del-curso-impacto-social-y-educativo-de-la-inteligencia-artificial/",
+          "quote": "- Exploramos la potencia y los límites de la IA mediante proyectos de programación. La herramienta LearningML.\n\n- Proyectos de IA para el aula. Conexión con el currículo."
+        },
+        {
+          "index": 5,
+          "url": "https://www.educaciontrespuntocero.com/recursos/inteligencia-artificial-ia",
+          "quote": "El Machine Learning oaprendizaje automáticotambién se puede aplicar para llevar la IA al aula. Para ello, se compone de varias fases: recopilación de datos, creación del modelo para que este pueda hacer sus predicciones, entrenamiento, y la fase de inferencia en la que se obtienen resultados en función de los datos introducidos al modelo. Este aprendizaje automático ya está siendo utilizado por docentes para enseñar contenidos curriculares de manera transversal en el aula desde edades muy tempranas, a la vez que los estudiantes aprendencompetencia digital. A continuación, ofrezco una serie derecursospara aplicar la IA desde Infantil hasta Secundaria."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/a-que-nos-referimos-cuando-decimos-que-todo-el-mundo-deberia-aprender-sobre-inteligencia-artificial-en-la-escuela/",
+        "https://intef.es/Noticias/inteligencia-artificial-en-el-aula",
+        "https://www.educaciontrespuntocero.com/recursos/inteligencia-artificial-ia",
+        "https://programamos.es/compartimos-los-materiales-del-curso-impacto-social-y-educativo-de-la-inteligencia-artificial/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q026",
+    "query": "¿Scratch vs Code.org para clases de primaria?",
+    "answer": {
+      "answer": "Tanto Scratch como Code.org son plataformas populares y gratuitas para enseñar programación a niños en primaria, cada una con sus propias características distintivas [1, 2, 4].\n\n**Scratch**\nEs una plataforma de programación educativa muy popular, desarrollada por el MIT, dirigida a niños y jóvenes de entre 8 y 16 años [1, 2, 4]. Su área de trabajo es intuitiva y fácil de aprender, permitiendo a los niños crear historias interactivas, juegos y animaciones mediante un lenguaje de programación visual [1, 2, 4]. Fomenta la creatividad y el pensamiento lógico a través de proyectos colaborativos [4]. Para los niños más pequeños, existe una versión especial llamada Scratch Jr. [1, 2]. Se puede utilizar para trabajos sencillos (7-8 años) hasta proyectos más avanzados, como animaciones o presentaciones de investigación [1, 2, 5].\n\n**Code.org**\nOfrece cursos de programación gratuitos diseñados para ser accesibles y divertidos para estudiantes de todas las edades [4]. Una de sus iniciativas más conocidas es la \"Hora del Código\", que cuenta con más de 500 tutoriales de una hora disponibles en más de 45 idiomas [1, 2]. Code.org proporciona un entorno abierto con muchas posibilidades de creación, incluyendo App Lab, un entorno de programación basado en bloques de colores pero fundamentado en JavaScript, ideal para crear aplicaciones web sencillas para dispositivos móviles [3]. Sus actividades y recursos pueden integrarse en el currículo escolar para acercar la programación al alumnado [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "Scratch: Trata de una de las plataformas más populares de programación educativa.Es un programa totalmente gratuito dirigido a niños y jóvenes de entre 8 y 16 años.Lo puedes utilizar en trabajos sencillos (7-8 años) a trabajos más avanzados.\n\nPara los niños más pequeños dispones de una versión especial llamadaScratch Jr.\n\nEl área del trabajo de Scratch es muy fácil e intuitivo, lo que le hace muy fácil de aprender a los niños.\n\nLa Hora del Código de Code.org tiene disponible más de 500 tutoriales de una hora en más de 45 idiomas."
+        },
+        {
+          "index": 2,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+          "quote": "Scratch: Trata de una de las plataformas más populares de programación educativa.Es un programa totalmente gratuito dirigido a niños y jóvenes de entre 8 y 16 años.Lo puedes utilizar en trabajos sencillos (7-8 años) a trabajos más avanzados.\n\nPara los niños más pequeños dispones de una versión especial llamadaScratch Jr.\n\nEl área del trabajo de Scratch es muy fácil e intuitivo, lo que le hace muy fácil de aprender a los niños.\n\nLa Hora del Código de Code.org tiene disponible más de 500 tutoriales de una hora en más de 45 idiomas."
+        },
+        {
+          "index": 3,
+          "url": "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+          "quote": "Al igual que ocurre con Scratch, enCode.orgtambién nos encontramos con una plataforma para programar además de las guías y tutoriales de los que ya hemos hablado. Si te registras tendrás acceso a un entorno abierto y con muchas posibilidades, en el que podrás crear lo que se te antoje. Y no sólo eso: merece especial mención laApp Lab, un entorno de programación a través de bloques de colores pero basado en JavaScript, y perfecto para crear sencillas apps web diseñadas para móvil."
+        },
+        {
+          "index": 4,
+          "url": "https://code.intef.es/noticias/recursos-y-plataformas-gratuitas-para-el-aprendizaje-de-la-programacion",
+          "quote": "Scratch es una plataforma desarrollada por el MIT (Massachusetts Institute of Technology) que permite al alumnado crear historias interactivas, juegos y animaciones mediante un lenguaje de programación visual. Permite fomentar la creatividad y el pensamiento lógico mediante proyectos colaborativos.\n\nCode.org ofrece cursos gratuitos de programación para estudiantes de todas las edades. Sus lecciones están diseñadas para ser accesibles y divertidas. Un ejemplo práctico podría ser participar en la Hora del Código, una serie de actividades que introducen conceptos básicos de programación y que se comparten con docentes de toda Europa. Integrar las actividades de Code.org en el currículo y utilizar sus recursos para proyectos de clase sería clave para poder acercar la programación al alumnado."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/nuevos-retos-para-mi-clase-de-primaria/",
+          "quote": "Después de un trimestre de toma de contacto con Scratch, el alumnado de sexto de primaria del CEIP Paz y Amistad de Sevilla está impaciente por seguir aprendiendo a programar.\n\nA lo largo de tres o cuatro sesiones, hemos aprendido algunas nociones básicas de Scratch y mis alumnos/as ya saben realizar animaciones, incluso algunos han presentado trabajos de investigación con esta herramienta."
+        }
+      ],
+      "sources_used": [
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+        "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+        "https://code.intef.es/noticias/recursos-y-plataformas-gratuitas-para-el-aprendizaje-de-la-programacion",
+        "https://programamos.es/nuevos-retos-para-mi-clase-de-primaria/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q027",
+    "query": "¿App Inventor vs Scratch para crear aplicaciones con estudiantes de secundaria?",
+    "answer": {
+      "answer": "Tanto Scratch como App Inventor son lenguajes de programación visual basados en bloques, ampliamente utilizados en entornos educativos para desarrollar el pensamiento computacional [2], [3]. Sin embargo, presentan diferencias clave que los hacen más adecuados para distintos propósitos con estudiantes de secundaria.\n\n**Scratch** es un entorno de programación visual desarrollado por el MIT, intuitivo y fácil de usar, enfocado en la creación de programas de forma general [3]. Destaca en el desarrollo de habilidades relacionadas con el paralelismo, la sincronización y el control de flujo [4].\n\n**App Inventor**, también de Google Labs y basado en los mismos fundamentos de bloques que Scratch, está diseñado específicamente para crear aplicaciones de software para dispositivos móviles Android [1], [3]. Esta característica puede generar una alta motivación en estudiantes de secundaria, ya que les permite crear sus propias aplicaciones para smartphones o tabletas [1]. App Inventor es más efectivo para trabajar la interactividad con el usuario y la representación de la información [4]. Aunque las aplicaciones creadas con App Inventor pueden ser limitadas en su complejidad, cubren un gran número de necesidades básicas en un dispositivo móvil [3].\n\nEn resumen, mientras que Scratch es excelente para enseñar conceptos fundamentales de programación y control de flujo, App Inventor es una opción muy interesante para estudiantes de secundaria que buscan crear aplicaciones funcionales para dispositivos móviles, aprovechando su familiaridad con estas tecnologías y fomentando la motivación a través de la interactividad con el usuario [1], [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/materiales/bachillerato/",
+          "quote": "Así que, con estos datos en la mano y teniendo en cuenta por tanto que gran parte del alumnado de estas edades cuenta con un dispositivo móvil, ya sean smartphones o tabletas, ¿por qué no utilizar un software de creación de apps? Por consiguiente, en lugar de utilizar Scratch como plataforma de programación se considera una opción muy interesante decantarse por el softwareMIT App Inventor, que se basa en los mismos fundamentos que Scratch (bloques de código ordenados por categorías) para permitir la creación de aplicaciones para dispositivos móviles. Con la ubicuidad que están alcanzando estas tecnologías, el alumnado desarrolla unos niveles de motivación altísimos por crear sus propias apps para compartirlas con sus amistades y familiares."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+          "quote": "Ayer se publicó unartículo muy interesante en la revista Electronicsde dos investigadores coreanos que han tratado de medir qué lenguaje es más efectivo a la hora de desarrollar el pensamiento computacional, para lo que han comparado proyectos creados conScratchy conApp Inventor, probablemente los dos lenguajes visuales más utilizados en todo el mundo en colegios e institutos."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/el-proyecto/que-herramientas-se-usan/",
+          "quote": "Scratch es una aplicación desarrollada por el MIT que consiste en un entorno donde se puede programar de forma visual. La forma de componer programas está enfocada tanto a pequeños como a grandes. Por ello, es una aplicación intuitiva y fácil de utilizar. Google App Inventor es una aplicación de Google Labs para crear aplicaciones de software para el sistema operativo Android. De forma visual y a partir de un conjunto de herramientas básicas, el usuario puede ir enlazando una serie de bloques para crear la aplicación. El sistema es gratuito y se puede descargar fácilmente de la web. Las aplicaciones fruto de App Inventor están limitadas por su simplicidad, aunque permiten cubrir un gran número de necesidades básicas en un dispositivo móvil."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+          "quote": "Los resultados del análisis muestran quecada lenguaje parace ser más efectivo para trabajar diferentes dimensiones del pensamiento computacional. Así, los proyectos Scratch obtuvieron mejores puntuaciones en las áreas deParalelismo,SincronizaciónyControl de flujo. Por el contrario, los proyectos App Inventor tuvieron una puntuación mayor en relación a laInteractividad con el usuarioy laRepresentación de la información. Además, los investigadores destacan que aunque en líneas generales los proyectos muy grandes suelen tener buenas puntuaciones en la mayoría de las dimensiones del pensamiento computacional, en App Inventor incluso los proyectos muy grandes puntúan bajo enControl de flujo, mientras que en Scratch ocurre algo equivalente respecto a laInteractividad con el usuario."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/materiales/bachillerato/",
+        "https://programamos.es/que-lenguaje-es-mas-efectivo-para-desarrollar-el-pensamiento-computacional-scratch-o-app-inventor/",
+        "https://programamos.es/el-proyecto/que-herramientas-se-usan/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q028",
+    "query": "¿Qué plataforma de programación por bloques es más adecuada para infantil?",
+    "answer": {
+      "answer": "Para la etapa infantil, Scratch Jr. es considerada una plataforma de programación por bloques muy adecuada [3]. Ha sido diseñada específicamente para niños de 5 años en adelante, incluyendo el primer ciclo de Primaria (entre 5 y 7 años), adaptando su interfaz y programación para ser más sencilla e intuitiva [3]. Su funcionamiento se asemeja a un puzle, donde los niños encajan bloques gráficos para crear historias interactivas o juegos [3]. Esta herramienta no solo enseña a programar, sino que también ayuda a organizar el pensamiento, resolver problemas y desarrollar estrategias cognitivas [3]. Aunque la programación por bloques puede parecer compleja para niños pequeños, Scratch Jr. es visual y fácil de manejar, ideal para aquellos que se están iniciando en el lenguaje escrito o aún no lo dominan [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "Los niños tendrán un primer contacto con la programación de una forma lúdica y divertida mediantela programación por bloques. Implica encajar piezas prediseñadas de tal forma que se genere una lista de acciones a seguir para solucionar un problema o generar una idea. Es una manera práctica y visual de programar en entornos gráficos."
+        },
+        {
+          "index": 2,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "Code.orges una organización sin ánimo de lucro que tiene por objetivo fomentar e incentivar la programación en los niños.Permite familiarizarse con diferentes lenguajes de programación desde edades tempranas."
+        },
+        {
+          "index": 3,
+          "url": "https://intef.es/observatorio_tecno/scratch-jr-aprendiendo-a-programar-y-programando-para-aprender",
+          "quote": "Scratch Jres una herramienta para iniciar a los niños de 5 años de Infantil e incluso primer ciclo de Primaria (entre 5 y 7 años) en ellenguaje de programación por bloquesde una manera divertida y lúdica.Scratch Jr es una adaptación del lenguaje de programación de Scratch, en la que han rediseñado la interfaz y la programación para hacerla mássencilla, adaptándola a las características y necesidades de los niños de infantil y cuidando que coincidiera con sudesarrollo cognitivo, social, personal y emocional.Su funcionamiento es muyintuitivoya que a través del encaje, como si de un puzle se tratase, de bloques gráficos de programación, los niños pueden crear sus propias historias interactivas o juegos.A través de Scratch Jr los niños no soloaprenden a programar sino que además aprenden a organizar su pensamiento, a expresarse, a resolver problemasa través de una secuencia ordenada de instrucciones, desarrollando estrategias cognitivas de planificación, organización, análisis, representación,… utilizando la"
+        },
+        {
+          "index": 4,
+          "url": "https://intef.es/observatorio_tecno/scratch-jr-aprendiendo-a-programar-y-programando-para-aprender",
+          "quote": "Aunque puede parecer que la programación por bloques es complicada para iniciarse en infantil, con Scrarch Jr es todo lo contrario ya que es una aplicación muy intuitiva, visual, fácil de manejar, diseñada para alumnos que no tienen acceso al lenguaje escrito o que se están iniciando en él."
+        }
+      ],
+      "sources_used": [
+        "https://intef.es/observatorio_tecno/scratch-jr-aprendiendo-a-programar-y-programando-para-aprender",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q029",
+    "query": "¿Programamos tiene materiales para educación secundaria?",
+    "answer": {
+      "answer": "Sí, Programamos ofrece materiales educativos para la educación secundaria, especialmente para la asignatura de Informática aplicada de 4º de ESO [1]. Estos materiales están diseñados para ser utilizados a lo largo de un trimestre y comprenden diapositivas, programas Scratch, vídeos, enlaces de interés y fichas [1]. De hecho, la enseñanza secundaria es el nivel que cuenta con la mayor cantidad de materiales desarrollados por Programamos, aunque también disponen de recursos para otros niveles como primaria, infantil, bachillerato y ciclos formativos [2].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/materiales/secundaria/",
+          "quote": "En este apartado encontrarás los materiales elaborados para la asignaturaInformática aplicada de 4º de ESO. Cada unidad cuenta con sus diapositivas y otros recursos de apoyo, como programas scratch, vídeos, enlaces de interés, fichas, etcétera. Estos materiales se han programado para realizarse a lo largo de un trimestre."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/materiales/",
+          "quote": "Como llevamos más tiempo trabajando con alumnado deEnseñanza Secundaria, este es el nivel que cuenta con más materiales desarrollados, pero ya disponemos también de un buen número de experiencias, ideas y recursos paraprimaria,infantil,bachilleratoyciclos formativos."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/materiales/secundaria/",
+        "https://programamos.es/materiales/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/cursoveranounia2015/",
+        "https://programamos.es/renovamos-nuestra-seccion-de-recursos-de-la-web/",
+        "https://programamos.es/compartimos-los-materiales-del-curso-impacto-social-y-educativo-de-la-inteligencia-artificial/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q030",
+    "query": "Programamos talleres presenciales de programación en colegios",
+    "answer": {
+      "answer": "Programamos organiza talleres presenciales de programación en colegios y otros entornos educativos. Por ejemplo, han impartido talleres de Scratch en el distrito de Loranca en Fuenlabrada (Madrid) como actividades extraescolares [2]. También han participado en eventos como la dotNet Spain Conference, ofreciendo talleres de programación para niños con el uso de placas MakeyMakey [1]. Además, han realizado talleres en la Asociación de la Prensa de Sevilla, donde periodistas y sus hijos aprendieron a programar y crear videojuegos [4].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/proximos-eventos/",
+          "quote": "Eldía 28participaremos en ladotNet Spain Conferenceimpartiendo un par de talleres de programación para niños de distintas edades, en los que los asistentes tendrán la oportunidad de conectar sus creaciones informáticas con el mundo físico utilizando placas MakeyMakey."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/programamos-en-loranca/",
+          "quote": "Durante los últimos cuatro viernes, Programamos organizó una serie de talleres de Scratch en el distrito de Loranca en Fuenlabrada (Madrid). ¿El objetivo? Ofrecer actividades extraescolares alternativas a las ya existentes y acercar la programación a las niñas y niños de Loranca."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/aps/",
+          "quote": "El 30 de septiembre visitamos laAsociación de la Prensa de Sevillapara organizar un taller en el queparticiparon periodistas sevillanos con sus hijos e hijas. Juntos se introdujeron en el mundo de la programación informática y realizaron divertidas actividades. Aprendieron a mejorar su videojuego favorito, crearon su propio personaje,   le dieron órdenes para que realizara un movimiento en concreto , conectaron el mundo virtual y el real cazando «al vuelo» las rosquillas que aparecían en pantalla y, en definitiva, crearon su propio videojuego."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/proximos-eventos/",
+        "https://programamos.es/programamos-en-loranca/",
+        "https://programamos.es/aps/"
+      ],
+      "sources_available_but_unused": [
+        "https://www.educaciontrespuntocero.com/empresas/coding-giants",
+        "https://programamos.es/programadores/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q031",
+    "query": "¿Qué formación ofrece Programamos a profesores?",
+    "answer": {
+      "answer": "Programamos ofrece diversas modalidades de formación para docentes, enfocadas en la programación como herramienta didáctica [1]. En colaboración con la Universidad Internacional de La Rioja (UNIR), han desarrollado un título universitario de 10 créditos ECTS y 300 horas lectivas [1]. Además, imparten master classes que consisten en 5 o 6 clases online de 90 minutos sobre diferentes temáticas, como una introducción a la programación con Scratch, desarrollo de aplicaciones móviles y robótica [1]. También colaboran en la Escuela UNIR de Privacidad y Seguridad, ofreciendo un módulo para docentes con talleres prácticos sobre la importancia de la programación para la seguridad en línea [2].\n\nProgramamos ha impartido cursos a profesores en varias comunidades autónomas de España, incluyendo Andalucía, Navarra, Ceuta y Galicia, formando a más de 2000 docentes con certificados oficiales que acreditan su habilidad para enseñar programando [4]. El objetivo de estos cursos es que los maestros y profesores aprendan a programar sus propios videojuegos y utilicen la programación como un instrumento para motivar el aprendizaje en diversas materias como lengua, ciencias, matemáticas o inglés, en lugar de convertirles en programadores expertos [3, 5]. Un ejemplo de curso es \"Programación de videojuegos con Scratch como herramienta educativa\", ofrecido en colaboración con la Consejería de Educación de la Junta de Andalucía [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/convenio-unir-programamos-para-formacion-de-profesorado/",
+          "quote": "Gracias a este acuerdo, Programamos va a colaborar con la UNIR para ofertar distintas modalidades de formación para docentes relacionadas con el mundo de la programación y su uso como herramienta didáctica.\n\n- Por un lado, se va a proceder a la elaboración de un título Universitario de 10 créditos ECTS  y 300 horas lectivas que se espera que comience a impartirse el próximo otoño.\n\n- Antes, durante los próximos meses, se van a impartir distintos cursosmaster class(cada master class constará de entre 5 o 6 clases online de 90 minutos de duración) sobre diferentes temáticas. El primero de estos cursos consistirá en una introducción a la programación con la herramienta Scratch, y en el futuro se incorporarán nuevos cursos sobre desarrollo de aplicaciones móviles, robótica y otras temáticas relacionadas."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/convenio-unir-programamos-para-formacion-de-profesorado/",
+          "quote": "Además vamos a colaborar en un proyecto específico de formación del profesorado incorporándonos a laEscuela Unir de Privacidad y Seguridad, dirigida porCarlos Represa, con un módulo para docentes compuesto de tres talleres prácticos que muestran la importancia de la programación y su necesario conocimiento para poder desenvolverse con seguridad en la red y entre aplicaciones software."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/500-solicitudes/",
+          "quote": "En definitiva,la programación no es en este caso un fin, si no un instrumentopara motivar el aprendizaje en todos los niveles educativos de materias tan diversas como la lengua, ciencias, matemáticas o inglés. El objetivo de los cuatro docentes del curso no es que los profesores andaluces se conviertan en expertos programadores sino que aprendan a utilizar la programación como un aliado para educar de una manera diferente."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/hacemos-balance-de-un-2016-para-recordar/",
+          "quote": "Pero no solo hemos trabajado en Andalucía, ya que este año hemos seguido formando a docentes de toda España (Navarra, Ceuta, Galicia y un largo etcétera), yya son más de 2000 docentes los que han conseguido con Programamos un certificado oficial que acredita su habilidad para enseñar programando."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/500-solicitudes/",
+          "quote": "Aprender a programar para enseñar de una manera diferente. Ese es el objetivo de nuestro curso«Programación de videojuegos con Scratch como herramienta educativa”ofrecido por la Asociación Programamos y laConsejería de Educación de la Junta de Andalucía."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/convenio-unir-programamos-para-formacion-de-profesorado/",
+        "https://programamos.es/500-solicitudes/",
+        "https://programamos.es/hacemos-balance-de-un-2016-para-recordar/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q032",
+    "query": "Contacto Programamos.es para colaboraciones educativas",
+    "answer": {
+      "answer": "Programamos.es está interesado en colaboraciones educativas y busca construir una comunidad de profesionales de la educación, familias y estudiantes para compartir experiencias, recursos e ideas [1], [2]. Han colaborado con diversas administraciones educativas, como el Ministerio de Educación y varias consejerías autonómicas, para la formación de docentes [5]. También colaboran con la Universidad Rey Juan Carlos en estudios sobre el impacto de la programación en el aprendizaje [4]. Aunque no se proporciona un método de contacto directo específico para colaboraciones, el sitio web anima a los docentes a compartir sus experiencias y a contactar con ellos para proponer ideas y sugerencias [1], [2].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/creando-comunidad/",
+          "quote": "Queremos ser una gran comunidad. Un punto de unión de profesionales de la educación, familias, chavales, …, que comparta experiencias, recursos, dudas, inquietudes, ideas, … Si estás enseñando a programar a chavales de cualquier edad nos encantaría conocerte. ¿Te animas a contarnos tus experiencias y a compartir tus ideas?"
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/creando-comunidad/",
+          "quote": "Cuando comenzamos con el proyecto programamos quizás el mayor objetivo que nos planteamos fue que la plataforma sirviera de punto de encuentro de todos los docentes que trabajamos enseñando y aprendiendo a desarrollar el pensamiento computacional a través de la programación. Parece que, poco a poco, estamos logrando este objetivo: cada día tenemos más lectores y suscriptores tanto en la web como en las redes sociales; docentes y padres nos escriben con ideas, dudas y sugerencias; nos llegan propuestas para contar nuestra experiencia en medios de comunicación; y nos invitan escuelas e institutos a que vayamos a explicar esta iniciativa a sus estudiantes."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/un-2015-para-recordar/",
+          "quote": "Es por ello que colaboramos con la Universidad Rey Juan Carlos en el desarrollo de diversos estudios que tratan de medir el impacto de la introducción de la programación en el aprendizaje de diferentes disciplinas, como lasmatemáticaso elinglés, entre otras."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/curso-programacion-andalucia/",
+          "quote": "En el pasado nuestro equipo ya ha colaborado con el Ministerio de Educación, la Consellería de Cultura y Educación de la Xunta de Galicia, el Departamento de Educación de la Comunidad Foral de Navarra o la Consejería de Educación del Gobierno de La Rioja."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/creando-comunidad/",
+        "https://programamos.es/un-2015-para-recordar/",
+        "https://programamos.es/curso-programacion-andalucia/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q033",
+    "query": "¿Qué curso online es mejor para formar profesores en pensamiento computacional?",
+    "answer": {
+      "answer": "Un curso online gratuito de introducción al pensamiento computacional, diseñado específicamente para docentes de Educación Primaria, es ofrecido por el Centro del Profesorado de Sevilla [1]. Este curso busca ayudar a los maestros a integrar esta habilidad en sus clases [1]. La formación del profesorado es crucial para el éxito en la enseñanza del pensamiento computacional, ya que tiene un impacto significativo en los resultados de aprendizaje de los estudiantes [2]. Preparar a los docentes es un paso fundamental para las escuelas, y el acceso a diferentes modalidades de desarrollo profesional y a una comunidad de educadores son elementos clave para lograrlo [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/nuevo-curso-gratuito-de-introduccion-al-pensamiento-computacional-para-docentes-de-primaria/",
+          "quote": "A la vuelta de las vacaciones participaremos en un nuevo curso de introducción al pensamiento computacional, totalmente gratuito, que está diseñado específicamente para tratar de ayudar a docentes de Educación Primaria que tienen que comenzar a introducir esta habilidad en sus clases. Es una formación organizada por el Centro del Profesorado de Sevilla."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/que-indica-la-investigacion-cientifica-sobre-la-idea-de-programar-para-aprender/",
+          "quote": "…parece evidente que la formación del profesorado tiene un impacto muy importante en los resultados de aprendizaje que obtengan los estudiantes."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/pensamiento-computacional-la-5-c-habilidades-siglo-xxi/",
+          "quote": "Preparar a los docentes para enseñar pensamiento computacional es una tarea clave que las escuelas deben abordar como primer paso. Y si el profesorado enseña pensamiento computacional en el contexto de sus asignaturas, tendrán el beneficio adicional de identificar conexiones con distintas partes del currículo que luego puedan desarrollar.Para ello, tener acceso a propuestas normartivas, herramientas para la evaluación, diferentes modalidades de desarrollo profesional, buenas prácticas para su enseñanza y, lo que quizás es más importante, formar parte de una comunidad de educadores, son elementos fundamentales para acercar esta habilidad vital del siglo XXI a todos los niños y niñas."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/nuevo-curso-gratuito-de-introduccion-al-pensamiento-computacional-para-docentes-de-primaria/",
+        "https://programamos.es/que-indica-la-investigacion-cientifica-sobre-la-idea-de-programar-para-aprender/",
+        "https://programamos.es/pensamiento-computacional-la-5-c-habilidades-siglo-xxi/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/concluimos-el-curso-de-programacion-y-robotica-del-mecd-y-uimp/",
+        "https://programamos.es/curso-de-verano-programacion-y-robotica-en-la-escuela-infantil-y-primaria-18/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q034",
+    "query": "¿Tynker vs Scratch para enseñar programación a niños?",
+    "answer": {
+      "answer": "Tanto Tynker como Scratch son lenguajes de programación visuales basados en bloques, ideales para enseñar a niños de forma fácil e intuitiva [1, 2]. Ambos permiten a los niños aprender a programar resolviendo puzles y construyendo sus propios juegos [1, 2].\n\nEl área de trabajo de Tynker es muy similar a la de Scratch [1, 2]. Tynker destaca en el aspecto visual-creativo del desarrollo de juegos, permitiendo la creación de personajes animados, vídeos y más [1, 2, 5]. Además, Tynker ofrece plantillas para facilitar la creación y personalización de escenarios, sonidos y personajes [5]. Tynker también proporciona tutoriales y secciones específicas para padres y profesores, ayudándoles a dominar la herramienta antes de enseñarla a los niños [4]. Scratch, por su parte, puede ser utilizado por niños a partir de los 6 o 7 años [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+          "quote": "Tynker: Podría decirse que es un recurso similar a Scratch. Es un lenguaje visual ideal para que los niños/as aprendan a programar de forma fácil e intuitiva, resolviendo puzles y construyendo sus propios juegos.\n\nEste programa destaca enel aspecto visual-creativo de desarrollo de juegos. Los bloques son conceptos de programación que permite crear prácticamente todo lo que imaginen, como personajes animados, vídeos animados, etc.\n\nEl área de trabajo de Tynker es muy similar al de Scratch."
+        },
+        {
+          "index": 2,
+          "url": "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+          "quote": "Tynker: Podría decirse que es un recurso similar a Scratch. Es un lenguaje visual ideal para que los niños/as aprendan a programar de forma fácil e intuitiva, resolviendo puzles y construyendo sus propios juegos.\n\nEste programa destaca enel aspecto visual-creativo de desarrollo de juegos. Los bloques son conceptos de programación que permite crear prácticamente todo lo que imaginen, como personajes animados, vídeos animados, etc.\n\nEl área de trabajo de Tynker es muy similar al de Scratch."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/7-apps/",
+          "quote": ". Si bien Scratch puede ser utilizado desde los 6-7 años, quizás Snap, aunque pueda ser usado igualmente, sea más indicado para edades posteriores.Su interfaz y la posibilidad de construir nuestras propias instrucciones (Build Your Own Blocks), actualmente también presente en Scratch, la hacen una buena opción para su uso en estudios superiores.7.TynkerPor último, volvemos a sacar una app de la que recientemente os hemos hablado en Programamos.¿No te acuerdas?. Mira lo que os contamos sobre ellaaquí.ConclusiónHoy día existen muchas alternativas para que los más pequeños puedan aprender a programar a la vez que se están divirtiendo. En esta entrada os hemos presentado 7 alternativas, aunque existen muchas más.Esperamos que os haya resultado de utilidad y no olvidéis  contarnos vuestra experiencia: ¿has utilizado alguna? ¿qué te ha parecido? ¿Conoces alguna otra ‘app’?"
+        },
+        {
+          "index": 4,
+          "url": "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+          "quote": "Programación fácil», esta es la tarjeta de presentación deTinker, una plataforma de programación para niños que desde su lanzamiento en 2012 se ha volcado en convertirse en una herramienta para que profesionales de laeducacióny padres conozcan los entresijos de todo esto de programar. Además de los tutoriales para iniciarse en esta materia incluyen dos secciones específicas para adultos,una para padresyotra para profesores, para que puedan dominar todos los aspectos de la herramienta antes de explicársela a sus pupilos."
+        },
+        {
+          "index": 5,
+          "url": "https://www.educaciontrespuntocero.com/recursos/programacion/lenguajes-programacion-informatica-para-primaria-secundaria",
+          "quote": "A través de bloques que representan distintos conceptos de programación, los estudiantes pueden crear personajes animados, videojuegos o hasta vídeos musicales. Cuenta, además, con plantillas que facilitan la tarea ya que con ellas se puede seleccionar y personalizar un escenario, un sonido o un personaje siendo el propio alumnado el que interactúa con ellos mediante el uso de comandos lógicos."
+        }
+      ],
+      "sources_used": [
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos",
+        "https://laestacioncyt.es/lenguajes-de-programacion-para-ninos/",
+        "https://programamos.es/7-apps/",
+        "https://www.educaciontrespuntocero.com/recursos/guia-programacion-profesores",
+        "https://www.educaciontrespuntocero.com/recursos/programacion/lenguajes-programacion-informatica-para-primaria-secundaria"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q035",
+    "query": "¿Cómo integrar la programación en el currículo de primaria en España?",
+    "answer": {
+      "answer": "En España, la integración de la programación en el currículo de primaria se está llevando a cabo de diversas maneras, con algunas comunidades autónomas liderando el proceso [1]. Una de las aproximaciones principales es la integración de la programación como una herramienta transversal en asignaturas existentes, como las matemáticas [1], [2]. Por ejemplo, Navarra fue pionera en España al incluir la programación en el currículo de matemáticas en 4º y 5º de primaria desde el curso 2014, con un enfoque multidisciplinar [2], [3]. Andalucía, por su parte, ha incluido 30 minutos semanales de robótica en matemáticas para 5º y 6º de primaria desde el curso 2019/20 [3].\n\nOtra estrategia es la introducción de la programación como una nueva asignatura, como es el caso de Madrid [1]. Además de estas comunidades, Galicia, Ceuta y Melilla también están formando a su profesorado en esta dirección [1].\n\nA nivel general en la educación primaria española, se han incluido contenidos de informática en los tres ciclos, tanto en el área de Matemáticas como en Conocimiento del medio natural, social y cultural. El objetivo es que al finalizar esta etapa, el alumnado se haya iniciado en el desarrollo de soluciones digitales sencillas y sostenibles, incluyendo la programación informática por bloques y la robótica educativa, para resolver problemas o retos de manera creativa [4].\n\nEste enfoque de integrar la programación como una herramienta transversal es similar al adoptado por países como Estonia, el primer Estado europeo en introducir la programación en el currículo educativo, y Finlandia, que también la integra en todas las materias y ha invertido en la formación de docentes [1], [2], [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/espana-lidera-codeweek/",
+          "quote": "En España, varias comunidades autónomas ya cuentan con la introducción de la programación en las aulas. Es el caso deNavarra, que desde el curso pasado la integra en primaria como una herramienta transversal a materias como las matemáticas oMadrid, que arranca este curso con una nueva asignatura.Andalucía, Galicia, Ceuta y Melillaestán también formando a su profesorado en esta dirección."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/workshop-bruselas/",
+          "quote": "Cabe destacar que esta aproximación es la que ha seguido la Comunidad deNavarra, pionera en nuestro país, al incluir desde el pasado cursoprogramación en el curriculum de matemáticas, aunque con un enfoque multidisciplinar,  en 4º y 5º de primaria."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/pensamiento-computacional-e-informatica-en-pisa-2021/",
+          "quote": "Así laComunidad Autónoma de Navarra incluyó en su currículo en el 2014 el trabajo de las matemáticas a través de la programación en los últimos cursos de Primaria, y en Programamos hemos tenido la oportunidad de colaborar con la formación de los docentes navarros cada año desde entonces.Andalucíaeste curso 2019/20 ha incluido30 minutos semanales de robótica en matemáticas en 5º y 6º de Primaria."
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/de-verdad-la-informatica-desaparece-de-bachillerato/",
+          "quote": "Educación primaria. Se han incluido contenidos de informática en los tres ciclos, tanto en el área de Matemáticas y como en Conocimiento del medio natural, social y cultural. Al terminar esta etapa el alumnado se habrá iniciado «en el desarrollo de soluciones digitales sencillas y sostenibles (reutilización de materiales tecnológicos, programación informática por bloques, robótica educativa…) para resolver problemas concretos o retos propuestos de manera creativa, solicitando ayuda en caso necesario»"
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/paises-que-han-introducido-la-programacion-en-la-escuela/",
+          "quote": "En el año 2012,Estonialanzó el proyectoProgeTiigerde forma experimental con un grupo de centros escolares y, desde el 2013, este programa queintroduce la programación desde 1º de primariaya está disponible para todas las escuelas."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/espana-lidera-codeweek/",
+        "https://programamos.es/workshop-bruselas/",
+        "https://programamos.es/pensamiento-computacional-e-informatica-en-pisa-2021/",
+        "https://programamos.es/de-verdad-la-informatica-desaparece-de-bachillerato/",
+        "https://programamos.es/paises-que-han-introducido-la-programacion-en-la-escuela/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q036",
+    "query": "Historia y fundadores del proyecto Programamos",
+    "answer": {
+      "answer": "El proyecto Programamos fue iniciado por cuatro personas: dos profesores de informática y dos maestras de infantil y primaria [1]. Entre los fundadores se encuentran Patricia Flor, maestra de Primaria, y María Moriana, maestra de Infantil [5]. José Ignacio Huertas Fernández también es una figura clave en el proyecto, habiendo contribuido con artículos y siendo mencionado como autor [1], [2].\n\nLa historia del proyecto comenzó hace unos años, cuando los fundadores descubrieron la herramienta Scratch gracias a una campaña de alfabetización digital en el Reino Unido. Inicialmente, exploraron la posibilidad de introducir Scratch en las clases de Informática Aplicada (4º de ESO) [2].\n\nProgramamos se ha constituido como una asociación sin ánimo de lucro y su objetivo principal es fomentar el desarrollo del pensamiento computacional a través de la programación desde las primeras edades en todas las etapas educativas, desde Educación Infantil hasta la Universidad [1].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/faq/",
+          "quote": "El proyecto lo comenzamos cuatro personas, dos profesores de informática y dos maestras de infantil y primaria, pero poco a poco vamos creciendo y formando una comunidad en la que todos los miembros colaboramos compartiendo materiales, recursos, dudas, ideas o noticias.Jurídicamente estamos constituidos como asociación sin ánimo de lucro.¿Qué es Programamos?José Ignacio Huertas Fernández2016-10-22T12:32:55+02:00¿Qué es Programamos?Programamos es una comunidad de docentes cuyo objetivo fundamental es promover el desarrollo del pensamiento computacional desde edades tempranas a través de la programación en todas las etapas escolares, desde Educación Infantil hasta Formación Profesional o la Universidad."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/el-proyecto/en-que-consiste/",
+          "quote": "El proyecto comenzó hace unos años cuando nos encontramos con la herramienta Scratch gracias a laCampaña por la alfabetización digitalpromovida en el Reino Unido. En ese momento, con un poco de escepticismo, nos planteamos si podría introducirse esta herramienta en las clases de Informática Aplicada (4º de ESO). Después de mucho trastear, jugar e investigar, consideramos que podría ser una buena idea y comenzamos con el desarrollo de este proyecto."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/escribiendo-codigo-igualdad/",
+          "quote": "Entre los fundadores de la asociación hay dos mujeres:Patricia Flor,maestra de Primaria yMaría Moriana, maestra de Infantil, dos apasionadas de la Educación que han llevado la programación informática a sus centros educativos."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/faq/",
+        "https://programamos.es/el-proyecto/en-que-consiste/",
+        "https://programamos.es/escribiendo-codigo-igualdad/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/quienes-somos/",
+        "https://programamos.es/proyecto-descubre-universidad-de-murcia/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q037",
+    "query": "¿Dr. Scratch qué es y cómo funciona?",
+    "answer": {
+      "answer": "Dr. Scratch es una aplicación web gratuita diseñada para que estudiantes y docentes analicen automáticamente proyectos de Scratch [1], [3]. Su objetivo es evaluar si los proyectos han sido programados correctamente, ofrecer retroalimentación para mejorar el código y fomentar el desarrollo de habilidades de programación mediante elementos de ludificación como puntuaciones y medallas [1].\n\nLa herramienta funciona analizando diversos aspectos del código de un proyecto de Scratch [1]:\n*   Identifica código que no se ejecuta [1].\n*   Verifica la correcta sincronización de personajes a través de mensajes [1].\n*   Asegura la inicialización adecuada de los atributos de los objetos [1].\n*   Detecta código repetido en los programas de diferentes personajes [1].\n*   Evalúa si los objetos tienen nombres significativos [1].\n\nAdemás, Dr. Scratch mide el grado de desarrollo del pensamiento computacional en cada proyecto, asignando un valor basado en el nivel alcanzado en áreas como la abstracción, el pensamiento lógico, la sincronización, la paralelización, el control de flujo, la interactividad con el usuario y la representación de la información [2]. La versión web actual se enfoca principalmente en esta evaluación del pensamiento computacional [2].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/dr-scratch-analisis-automatico-de-proyectos-scratch/",
+          "quote": "Dr. Scratch es una aplicación web que permite a docentes y estudiantes automatizar el análisis de proyectos proyectos Scratch para comprobar si han sido programados correctamente, aprender de sus errores, recibir retroalimentación para mejorar el código y, haciendo uso de ciertos elementos del mundo de la ludificación (gamification) como las puntuaciones y las medallas, servir de estímulo para incentivar un deseo de mejorar sus habilidades como programadores.\n\nAsí, por cada proyecto analizado, la herramienta comprueba si existe código que nunca llega a ejecutarse, si la sincronización de los personajes mediante mensajes es correcta, si se inicializan de forma adecuada los atributos de los objetos, si existe código repetido en los programas de los distintos personajes y si el nombrado de los objetos es significativo."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/dr-scratch-analisis-automatico-de-proyectos-scratch/",
+          "quote": "Con el objetivo de medir el grado de desarrollo del pensamiento computacional demostrado en la programación de cada proyecto analizado, Dr. Scratch otorga un valor en función del nivel alcanzado en relación a la capacidad de abstracción, el pensamiento lógico, la sincronización, la paralelización, el control de flujo, la interactividad con el usuario y la representación de la información.\n\nLa herramienta puede comenzar a probarse, pero la versión disponible en la web tan solo analiza el desarrollo del pensamiento computacional. El resto de funcionalidades – análisis de errores, badges, registro de usuarios, etc – han sido deshabilitadas."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/conferencia-pensamiento-computacional-y-programacion-en-la-escuela-viena/",
+          "quote": "Tras la comida llegó nuestro turno, en el que presentamos la herramientaDr. Scratch, una aplicación web libre que permite a aprendices y educadores analizar proyectos Scratch para evaluar el desarrollo del pensamiento computacional y recibir ideas para mejorar sus habilidades de programación."
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/dr-scratch-analisis-automatico-de-proyectos-scratch/",
+        "https://programamos.es/conferencia-pensamiento-computacional-y-programacion-en-la-escuela-viena/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/nuestro-resumen-de-la-scratch-conference-2014-dias-2-y-3/",
+        "https://programamos.es/recursos/scratch/"
+      ]
+    }
+  },
+  {
+    "query_id": "Q038",
+    "query": "¿Cómo motivar a las niñas a interesarse por la programación?",
+    "answer": {
+      "answer": "Para motivar a las niñas a interesarse por la programación, es importante reconocer que pueden tener diferentes enfoques y motivaciones en comparación con los niños; por ejemplo, las niñas a menudo buscan que sus programas sean estéticamente agradables [1]. Es crucial animarlas a perseguir su interés en la tecnología y la programación, asegurándoles que están perfectamente capacitadas para desarrollar una carrera en este campo [4].\n\nEntender el funcionamiento interno de la tecnología, más allá de los dispositivos que usamos a diario, puede aumentar significativamente su interés [2]. La ilusión de crear sus propios videojuegos y aplicaciones es una gran motivación, ya que muchas niñas no creen inicialmente que puedan hacerlo [3].\n\nAdemás, es fundamental abordar la brecha de género existente, ya que las chicas suelen tener menos exposición y experiencia previa en codificación, una diferencia que se acentúa con la edad [5]. Se sugiere una pedagogía diferencial para las niñas, enfocándose en el aprendizaje de la programación a través de narraciones y la resolución de problemas de índole social, en lugar de centrarse exclusivamente en videojuegos, lo que puede ayudar a prevenir la desmotivación en la secundaria [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/entrevista-eva-y-mari-luz/",
+          "quote": "Sí. En general hemos notado que los niños se conforman con que su programa funcione y las niñas quieren que sea bonito."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/entrevista-eva-y-mari-luz/",
+          "quote": "Estudiar carreras profesionales en este ámbito te permite conocer todo lo que hay por debajo y entender cómo funcionan. ¡Cuando consigues entender algo te gusta mucho más!"
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/entrevista-eva-y-mari-luz/",
+          "quote": "La ilusión que les hace descubrir que ellos mismos pueden hacer sus propios videojuegos y aplicaciones es enorme. Cuando les dices que ellos también lo pueden hacer no se lo creen porque piensan que son «cosas de mayores»…"
+        },
+        {
+          "index": 4,
+          "url": "https://programamos.es/angela-vargas-anima-a-las-ninas-que-disfrutan-con-la-tecnologia-llegareis-muy-lejos-en-este-campo/",
+          "quote": "Sin duda, que luchen por ello y que se encuentran perfectamente capacitadas para conseguirlo."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/primera-tesis-doctoral-en-espana-sobre-pensamiento-computacional/",
+          "quote": "en primer lugar, desde una aproximación de género, encontramos que las chicas están menos expuestas y tienen menos experiencia previa en‘coding’que los chicos(Figura 4), brecha que además tiende a ensancharse según se avanza por las etapas del sistema educativo; en segundo lugar, parece que especialmente las chicas de secundaria se desmotivan más fácilmente en el aprendizaje del‘coding’y necesitan de una pedagogía diferencial al respecto (p.e., aprendizaje de la programación a través de narraciones y de resolución de problemas de índole social, y no tanto a través de videojuegos)"
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/entrevista-eva-y-mari-luz/",
+        "https://programamos.es/angela-vargas-anima-a-las-ninas-que-disfrutan-con-la-tecnologia-llegareis-muy-lejos-en-este-campo/",
+        "https://programamos.es/primera-tesis-doctoral-en-espana-sobre-pensamiento-computacional/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q039",
+    "query": "¿Qué iniciativas STEAM hay para colegios públicos en España?",
+    "answer": {
+      "answer": "En España, existen diversas iniciativas STEAM (Ciencia, Tecnología, Ingeniería, Artes y Matemáticas) dirigidas a colegios públicos, tanto a nivel nacional como regional. El Instituto Nacional de Tecnologías Educativas y de Formación del Profesorado (INTEF) promueve plataformas como ScolarTIC, una comunidad digital para docentes, y STEMBYME, enfocada en fomentar vocaciones STEAM en jóvenes de 14 a 20 años [3]. También se mencionan recursos como code.org para cursos de programación [3], Proyecto Descartes con materiales educativos digitales [4], Lego Education Robotix para robótica y programación [4], y Educaplay para la creación de actividades lúdicas [4].\n\nVarias comunidades autónomas han implementado el programa \"Código Escuela 4.0\", que busca integrar la robótica educativa y el pensamiento computacional. Este programa se encuentra activo en regiones como Castilla-La Mancha, que cuenta con una Red de dinamizadores de transformación digital y robótica [1]; Castilla y León [1]; Extremadura [1]; La Rioja [1]; Madrid, donde también se ofrece capacitación CE 4.0 [1]; Murcia [1]; y Navarra [1]. Galicia, por su parte, dispone de programaciones y una guía didáctica de robótica [1].\n\nAdemás, algunos colegios públicos destacan por sus proyectos innovadores en el ámbito STEAM. Por ejemplo, el CEPA Sierra Norte en Torrelaguna (Madrid), un centro de educación para adultos, ha sido seleccionado como proyecto de innovación educativa por la Comunidad de Madrid, apostando por la programación, la robótica y la impresión 3D, y transformando su aula de informática en un espacio maker [2]. Este centro ha desarrollado proyectos STEAM como 'Sierra saludable', que aborda la salud desde un enfoque multidisciplinar [2]. Otros centros públicos innovadores incluyen el CEIP La Pradera en Segovia y el Colegio público Buztintxuri en Pamplona [5].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://code.intef.es/noticias/recursos-y-plataformas-gratuitas-para-el-aprendizaje-de-la-programacion",
+          "quote": "- Castilla La Mancha. Red de dinamizadores de transformación digital y robótica.Red de Dinamizadores/as de Transformación Digital y Robótica de Castilla-La Mancha – Centro Regional de Formación del Profesorado de Castilla la Mancha\n\n- Castilla y León.Programa Escuela 4.0.Programa Código Escuela 4.0 en Castilla y León – Profesorado – Portal de Educación de la Junta de Castilla y León\n\n- Extremadura.Código Escuela 4.0 Extremadura – Código Escuela 4.0 Extremadura para la Robótica Educativa y Pensamiento Computacional\n\n- Galicia:ProgramacionesyGuía Didácticade robótica\n\n- La Rioja.Código Escuela 4.0\n\n- Madrid:Código Escuela 4.0yCapacitación CE 4.0\n\n- Murcia.Código Escuela 4.0 MurciaCódigo Escuela 4.0 Murcia | Pensamiento Computacional y Robótica Educativa\n\n- Navarra.Programas"
+        },
+        {
+          "index": 2,
+          "url": "https://www.educaciontrespuntocero.com/experiencias/escuelas-mas-innovadoras-espana",
+          "quote": "Activo e innovador eneducación para adultos, este centro ha sido seleccionado como proyecto de innovación educativa de la Comunidad de Madridapostando fuertemente por la programación, la robótica y la impresión 3D.  Para ello, ha transformado el aula de informática en un espacio maker yfomentado los espacios colaborativos. Destacan sus proyectos STEAM como el de ‘Sierra saludable’, que trabaja la salud desde un enfoque multidisciplinar y transversal."
+        },
+        {
+          "index": 3,
+          "url": "https://intef.es/recursos-2/otros-recursos/",
+          "quote": "algunas sus iniciativas son:ScolarTIC(comunidad digital de ámbito hispano dirigida a docentes y futuros docentes);STEMBYME(plataforma de formación para fomentar el desarrollo de las vocaciones STEAM entre los jóvenes de 14 a 20 años);code.org(cursos de programación para jóvenes);Orientador Profesional Virtual;ConectaEmpleo"
+        },
+        {
+          "index": 4,
+          "url": "https://intef.es/recursos-2/otros-recursos/",
+          "quote": "Proyecto Descartes: web de la Red Educativa Digital Descartes, en la que se incluyen materiales para diversas asignaturas, adaptados y desarrollados conDescartes JS, que se pueden utilizar en ordenadores, tablets y smartphones, en cualquier sistema operativo.Lego Education Robotix: iniciativas online para profesores, familias y alumnos, de manera que estos últimos puedan seguir aprendiendo desde casa robótica, programación y STEAM.Educaplay: herramienta que permite la creación de actividades lúdicas, al tiempo que ofrece la posibilidad de encontrar tareas para distintas temáticas y niveles."
+        },
+        {
+          "index": 5,
+          "url": "https://www.educaciontrespuntocero.com/experiencias/escuelas-mas-innovadoras-espana",
+          "quote": "- CEIP La Pradera (Segovia)\n\n- Colegio público Buztintxuri (Pamplona)"
+        }
+      ],
+      "sources_used": [
+        "https://code.intef.es/noticias/recursos-y-plataformas-gratuitas-para-el-aprendizaje-de-la-programacion",
+        "https://www.educaciontrespuntocero.com/experiencias/escuelas-mas-innovadoras-espana",
+        "https://intef.es/recursos-2/otros-recursos/"
+      ],
+      "sources_available_but_unused": []
+    }
+  },
+  {
+    "query_id": "Q040",
+    "query": "¿Programamos organiza eventos durante la Semana del Código?",
+    "answer": {
+      "answer": "Sí, Programamos organiza y participa activamente en eventos durante la Semana del Código (Codeweek) [1], [2]. Han organizado actividades en diversas ciudades como Sevilla, Santiago, Ceuta, Pamplona y Madrid [1]. Entre los eventos destacados se encuentran CodeSevilla y Superprogramadores Code for the Planet en Madrid [1]. También han contribuido al diseño y renovación de la web europea de la Codeweek [1]. En 2015, Programamos tuvo un papel protagonista en la Codeweek, que se celebró del 10 al 18 de octubre, con más de 150.000 participantes en 37 países [2]. España es uno de los países con más actividades organizadas [2]. Programamos también ha realizado eventos de cierre de la Codeweek, como el de Superprogramadores en Medialab Prado, patrocinado por Orange, donde participaron más de 50 familias [3], [5]. Además, los socios de Programamos realizan talleres y acciones en sus centros educativos durante toda la semana [3].",
+      "citations": [
+        {
+          "index": 1,
+          "url": "https://programamos.es/un-2015-para-recordar/",
+          "quote": "Nuestra gran cita fue la Codeweek que se celebró entre el 10 y el 18 de octubre y de los que Programamos organizó actividades en Sevilla, Santiago, Ceuta, Pamplona o Madrid entre otras ciudades. Entre los más destacados, CodeSevilla o Superprogramadores Code for the Planet, en Madrid. También muy emocionante fue el taller con familias de periodistas que hicimos en la Asociación de la Prensa de Sevilla el 30 de septiembre. Además, este año nos sentimos especialmente orgullosos de haber contribuido al diseño y renovación de la web a nivel europeo de la Codeweek."
+        },
+        {
+          "index": 2,
+          "url": "https://programamos.es/programa-codeweek/",
+          "quote": "Después de una larga espera, por fin, ¡Ya está aquí la Codeweek! Como sabéis durante la semana del 10 al 18 de octubre más de 150.000 personas de 37 países participarán en 4.000 eventos repartidos por toda la geografía europea. Puedes consultar todos estos eventos en el mapa que aparece en el siguiente link http://events.codeweek.eu/\n\nEspaña es uno de los países que más actividades organiza. Tienes el listado completo de actividades que se realizan en nuestro país haciendo clic aquí. Un año más Programamos tendrá un papel protagonista en la Codeweek y por ello queremos adelantaros las actividades en las que participaremos en estos días."
+        },
+        {
+          "index": 3,
+          "url": "https://programamos.es/programa-codeweek/",
+          "quote": "Cerraremos la programación con el evento Superprogramadores en Madrid que, con el patrocinio de Orange, realizaremos el sábado 17 de octubre en Medialab Prado.\n\nAdemás de ello, los socios de Programamos realizarán a lo largo de toda la semana diferentes talleres y acciones en sus centros educativos. Te recordamos que tú también puedes organizar tu propio evento y por eso te lo ponemos muy fácil. En el siguiente enlace te proponemos una serie de herramientas y recursos para que organices tu propia actividad. Haz clic aquí."
+        },
+        {
+          "index": 5,
+          "url": "https://programamos.es/que-hacemos/",
+          "quote": "El evento de cierre de la Codeweek en España fue realizado por Programamos y Orange en Medialab Prado. Participaron en él más de 50 familias en una jornada en la que conectamos en directo con [...]"
+        }
+      ],
+      "sources_used": [
+        "https://programamos.es/un-2015-para-recordar/",
+        "https://programamos.es/programa-codeweek/",
+        "https://programamos.es/que-hacemos/"
+      ],
+      "sources_available_but_unused": [
+        "https://programamos.es/celebramos-csedweek-con-derek-breen-en-sevilla/"
+      ]
+    }
+  }
+]

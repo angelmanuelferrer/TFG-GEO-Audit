@@ -28,7 +28,7 @@ export function SentimentDonuts({ data }: { data: SentimentDistribution[] }) {
             { name: "Positivo", value: eng.POSITIVO },
             { name: "Neutro", value: eng.NEUTRO },
             { name: "Negativo", value: eng.NEGATIVO },
-            { name: "Sin dato", value: eng.null },
+            { name: "No citado", value: eng.null },
           ].filter((d) => d.value > 0);
 
           const colors = [
@@ -59,12 +59,14 @@ export function SentimentDonuts({ data }: { data: SentimentDistribution[] }) {
                     stroke="none"
                   >
                     {chartData.map((entry, idx) => {
-                      const colorKey = entry.name === "Positivo" ? "POSITIVO" : entry.name === "Neutro" ? "NEUTRO" : entry.name === "Negativo" ? "NEGATIVO" : "null";
+                      const colorKey = entry.name === "Positivo" ? "POSITIVO" : entry.name === "Neutro" ? "NEUTRO" : entry.name === "Negativo" ? "NEGATIVO" : "null"; // "No citado" → "null"
                       return <Cell key={idx} fill={SENTIMENT_COLORS[colorKey] ?? colors[idx]} />;
                     })}
                   </Pie>
                   <Tooltip
-                    contentStyle={{ backgroundColor: "hsl(222 45% 10%)", border: "1px solid hsl(213 40% 22%)", borderRadius: "8px", fontSize: "11px" }}
+                    contentStyle={{ backgroundColor: "hsl(222 45% 10%)", border: "1px solid hsl(213 40% 22%)", borderRadius: "8px", fontSize: "11px", color: "hsl(215 20% 85%)" }}
+                    labelStyle={{ color: "hsl(215 20% 85%)" }}
+                    itemStyle={{ color: "hsl(215 20% 85%)" }}
                     formatter={(value: number, name: string) => [value, name]}
                   />
                 </PieChart>
@@ -79,7 +81,7 @@ export function SentimentDonuts({ data }: { data: SentimentDistribution[] }) {
           { label: "Positivo", color: SENTIMENT_COLORS.POSITIVO },
           { label: "Neutro", color: SENTIMENT_COLORS.NEUTRO },
           { label: "Negativo", color: SENTIMENT_COLORS.NEGATIVO },
-          { label: "Sin dato", color: SENTIMENT_COLORS.null },
+          { label: "No citado", color: SENTIMENT_COLORS.null },
         ].map((l) => (
           <div key={l.label} className="flex items-center gap-1.5">
             <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: l.color }} />

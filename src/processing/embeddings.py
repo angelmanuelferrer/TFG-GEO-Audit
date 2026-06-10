@@ -1,9 +1,9 @@
-"""Embedding factory: Google text-embedding-004 via google-genai SDK.
+"""Embedding factory: Google gemini-embedding-001 via google-genai SDK.
 
 Uses the new google-genai>=1 SDK directly (not langchain-google-genai, which
-uses v1beta API where text-embedding-004 is unavailable).
+uses the v1beta API where gemini-embedding-001 is unavailable).
 
-See ADR-016 in docs/DECISIONS.md.
+See ADR-017 in docs/DECISIONS.md (supersedes ADR-016).
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ _RETRY_BASE_DELAY = 5.0  # seconds, doubles each attempt
 
 
 class GoogleGenAIEmbeddings(Embeddings):
-    """LangChain-compatible embeddings via google-genai SDK (text-embedding-004)."""
+    """LangChain-compatible embeddings via google-genai SDK (gemini-embedding-001)."""
 
     def __init__(self, model: str = "models/gemini-embedding-001") -> None:
         self.model = model
@@ -80,5 +80,5 @@ class GoogleGenAIEmbeddings(Embeddings):
 def create_embeddings(
     config: Optional[Dict[str, Any]] = None,
 ) -> GoogleGenAIEmbeddings:
-    """Create embeddings via Google text-embedding-004 API."""
+    """Create embeddings via Google gemini-embedding-001 API."""
     return GoogleGenAIEmbeddings()

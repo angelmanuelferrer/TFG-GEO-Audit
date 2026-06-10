@@ -62,7 +62,10 @@ def _latest_experimental_run(data_dir: pathlib.Path) -> Optional[pathlib.Path]:
     if not base.exists():
         return None
     dirs = sorted(
-        [d for d in base.iterdir() if d.is_dir() and d.name.startswith("run_")],
+        [
+            d for d in base.iterdir()
+            if d.is_dir() and d.name.startswith("run_") and (d / "scorecard.json").exists()
+        ],
         key=lambda d: d.name,
         reverse=True,
     )

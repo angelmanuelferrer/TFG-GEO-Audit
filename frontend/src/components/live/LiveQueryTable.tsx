@@ -152,7 +152,7 @@ export function LiveQueryTable({ results, engines }: LiveQueryTableProps) {
                               {eng.sentiment && (
                                 <div className="flex justify-between">
                                   <span className="text-muted-foreground">Sentiment</span>
-                                  <Badge variant="outline" className={cn("text-[9px]",
+                                  <Badge variant="outline" className={cn("text-[8px] px-1 py-0 h-4 leading-none",
                                     eng.sentiment === "POSITIVO" ? "border-success/40 text-success" :
                                     eng.sentiment === "NEGATIVO" ? "border-destructive/40 text-destructive" :
                                     "border-muted-foreground/40 text-muted-foreground"

@@ -2,7 +2,7 @@
 """Discovery pipeline: find competitors and freeze vectorstore.
 
 Equivalent to notebooks/00_discover_competitors.ipynb but runs from terminal.
-Requires EMBEDDING_SERVER_URL and EMBEDDING_SERVER_TOKEN in .env (Kaggle GPU server).
+Requires GOOGLE_API_KEY in .env (Gemini discovery + embeddings via Google API).
 
 Usage:
     python scripts/run_discovery.py [--top N]

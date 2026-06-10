@@ -1,0 +1,4302 @@
+{
+  "run_id": "LIVE-2026-W20",
+  "timestamp": "2026-05-17T10:23:00.841384+00:00",
+  "engines": [
+    "gemini",
+    "claude",
+    "openai"
+  ],
+  "engine_tiers": {
+    "gemini": "full",
+    "claude": "light",
+    "openai": "medium"
+  },
+  "n_queries": 100,
+  "results": [
+    {
+      "query_id": "Q001",
+      "query_text": "¿Qué proyectos existen para enseñar programación a niños en España?",
+      "query_category": "informacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 20.0,
+          "first_citation_rank": 2,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 559,
+              "context": "puración de errores y el análisis de datos.\n*   **Programamos**: Un proyecto sin ánimo de lucro que busca fomen"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 9,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q002",
+      "query_text": "¿Cómo puedo enseñar a programar a niños de primaria?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 22,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q003",
+      "query_text": "¿Qué recursos gratuitos hay para aprender Scratch?",
+      "query_category": "informacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 20,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 5.0,
+          "first_citation_rank": 8,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 1336,
+              "context": ". Cursos y Tutoriales en Línea Gratuitos:**\n*   **Programamos:** Ofrece un curso gratuito de introducción a la "
+            },
+            {
+              "source": "answer",
+              "position": 2309,
+              "context": "T, cursos de Scratch en YouTube (destacando el de Programamos para docentes), y otros materiales en línea.\n*   "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q004",
+      "query_text": "¿Cuáles son las mejores iniciativas de educación tecnológica para jóvenes?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 18,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q005",
+      "query_text": "¿Qué organizaciones sin ánimo de lucro promueven la programación infantil?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 30,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q006",
+      "query_text": "¿Cuál es la mejor plataforma para que los niños aprendan a programar?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 13,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q007",
+      "query_text": "Diferencias entre Code.org, Scratch y otras plataformas educativas de programación",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 27,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q008",
+      "query_text": "¿Qué alternativas a Code.org existen en español?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 16,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q009",
+      "query_text": "Comparativa de herramientas para enseñar pensamiento computacional",
+      "query_category": "comparativa",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 6.67,
+          "first_citation_rank": 14,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 20,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q010",
+      "query_text": "¿Qué proyectos educativos de programación operan en Andalucía?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 9,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 30,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 5,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q011",
+      "query_text": "¿En qué consiste el proyecto Programamos?",
+      "query_category": "navegacional",
+      "engine_coverage": 66.67,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 60.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 13,
+              "context": "El proyecto \"Programamos\" es una iniciativa educativa sin ánimo de lucro q"
+            },
+            {
+              "source": "answer",
+              "position": 714,
+              "context": "ientas visuales de programación** Para lograrlo, \"Programamos\" utiliza lenguajes de programación visuales. Las "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 6,
+          "is_visible": true,
+          "som": 60.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 43,
+              "context": "Voy a buscar información sobre el proyecto Programamos.El proyecto **Programamos** consiste en lo siguie"
+            },
+            {
+              "source": "answer",
+              "position": 69,
+              "context": "ación sobre el proyecto Programamos.El proyecto **Programamos** consiste en lo siguiente:\n\nProgramamos es una c"
+            },
+            {
+              "source": "answer",
+              "position": 110,
+              "context": "oyecto **Programamos** consiste en lo siguiente:\n\nProgramamos es una comunidad de docentes cuyo objetivo fundam"
+            },
+            {
+              "source": "answer",
+              "position": 1280,
+              "context": " sus clases.\n\n**Actividades principales:**\n\nDesde Programamos diseñan cursos y materiales para que docentes apr"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 12,
+              "context": "El proyecto Programamos es una iniciativa que busca promover la enseñanza"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q012",
+      "query_text": "¿Quién está detrás de Programamos.es?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 6,
+          "target_citations": 6,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos.es está gestionado por la asociación sin ánimo de"
+            },
+            {
+              "source": "answer",
+              "position": 68,
+              "context": "á gestionado por la asociación sin ánimo de lucro Programamos. El objetivo fundamental de esta asociación es pr"
+            },
+            {
+              "source": "answer",
+              "position": 321,
+              "context": " todas las etapas escolares.\n\nLos cofundadores de Programamos son José Ignacio Huertas Fdez y Jesús Moreno León"
+            },
+            {
+              "source": "answer",
+              "position": 1056,
+              "context": "ez, Gregorio Robles y Néstor Moreno, entre otros. Programamos también se ha convertido en socio institucional d"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 20.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 59,
+              "context": "información específica sobre quién está detrás de Programamos.es en mi conocimiento actual. Déjame buscar infor"
+            },
+            {
+              "source": "answer",
+              "position": 227,
+              "context": " búsqueda, puedo proporcionarte información sobre Programamos.es:\n\nProgramamos es una asociación sin ánimo de l"
+            },
+            {
+              "source": "answer",
+              "position": 244,
+              "context": "proporcionarte información sobre Programamos.es:\n\nProgramamos es una asociación sin ánimo de lucro cuyo objetiv"
+            },
+            {
+              "source": "answer",
+              "position": 691,
+              "context": "s de forma clara, la página de \"Quiénes somos\" de Programamos.es muestra que detrás del proyecto hay un equipo "
+            },
+            {
+              "source": "answer",
+              "position": 1416,
+              "context": "adora en el grupo KGBL3 de la URJC\n\nLa familia de Programamos ha ido creciendo con la incorporación de más prof"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos.es es una asociación sin ánimo de lucro dedicada "
+            },
+            {
+              "source": "answer",
+              "position": 293,
+              "context": "educación infantil hasta formación profesional. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 317,
+              "context": " formación profesional. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\nEl equipo "
+            },
+            {
+              "source": "answer",
+              "position": 390,
+              "context": "somos/?utm_source=openai))\n\nEl equipo fundador de Programamos está compuesto por:\n\n- **José Ignacio Huertas Fer"
+            },
+            {
+              "source": "answer",
+              "position": 625,
+              "context": " docente en Secundaria y Formación Profesional. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 649,
+              "context": " Formación Profesional. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\n- **Jesús "
+            },
+            {
+              "source": "answer",
+              "position": 906,
+              "context": "nal y en proyectos educativos a nivel nacional. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 930,
+              "context": "tivos a nivel nacional. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\n- **Patric"
+            },
+            {
+              "source": "answer",
+              "position": 1163,
+              "context": "cia docente y experiencia en gestión educativa. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 1187,
+              "context": "a en gestión educativa. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\n- **María "
+            },
+            {
+              "source": "answer",
+              "position": 1404,
+              "context": " trabaja en el CEIP Ortiz de Zúñiga de Sevilla. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 1428,
+              "context": "z de Zúñiga de Sevilla. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\nAdemás de "
+            },
+            {
+              "source": "answer",
+              "position": 1518,
+              "context": "=openai))\n\nAdemás de los fundadores, el equipo de Programamos incluye a profesionales como Eva Hu, Mari Luz Agu"
+            },
+            {
+              "source": "answer",
+              "position": 1861,
+              "context": "s áreas para apoyar la misión de la asociación. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 1885,
+              "context": "isión de la asociación. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai)) "
+            }
+          ],
+          "sentiment": "NEUTRO"
+        }
+      }
+    },
+    {
+      "query_id": "Q013",
+      "query_text": "¿Qué ofrece la web programamos.es?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 9,
+          "is_visible": true,
+          "som": 90.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 7,
+              "context": "La web programamos.es es una iniciativa de una asociación sin ánimo "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 38,
+              "context": "No tengo información específica sobre programamos.es en mi conocimiento actual. Déjame buscar infor"
+            },
+            {
+              "source": "answer",
+              "position": 126,
+              "context": "al. Déjame buscar información sobre ese sitio web.Programamos.es es una plataforma que ofrece una herramienta p"
+            }
+          ],
+          "sentiment": "NEUTRO"
+        },
+        "openai": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos.es es una asociación sin ánimo de lucro dedicada "
+            },
+            {
+              "source": "answer",
+              "position": 201,
+              "context": "creación de videojuegos y aplicaciones móviles. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 225,
+              "context": "y aplicaciones móviles. ([programamos.es](https://programamos.es/?utm_source=openai))\n\nEntre sus principales ac"
+            },
+            {
+              "source": "answer",
+              "position": 477,
+              "context": "rogramación a estudiantes, docentes y familias. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 501,
+              "context": "s, docentes y familias. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n- **Formación**: Diseñan"
+            },
+            {
+              "source": "answer",
+              "position": 691,
+              "context": "ensamiento computacional en su práctica diaria. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 715,
+              "context": " en su práctica diaria. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n- **Difusión**: Organiza"
+            },
+            {
+              "source": "answer",
+              "position": 911,
+              "context": "arlas y ponencias para divulgar su experiencia. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 935,
+              "context": "ivulgar su experiencia. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n- **Investigación**: Est"
+            },
+            {
+              "source": "answer",
+              "position": 1136,
+              "context": "do sus conclusiones con la comunidad educativa. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 1160,
+              "context": "la comunidad educativa. ([programamos.es](https://programamos.es/?utm_source=openai))\n\nAdemás, Programamos.es h"
+            },
+            {
+              "source": "answer",
+              "position": 1205,
+              "context": "ps://programamos.es/?utm_source=openai))\n\nAdemás, Programamos.es ha desarrollado herramientas como Dr. Scratch,"
+            },
+            {
+              "source": "answer",
+              "position": 1468,
+              "context": "ta ha sido reconocida con un Google Rise Award. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 1492,
+              "context": "n un Google Rise Award. ([programamos.es](https://programamos.es/?utm_source=openai))\n\nPara mantenerse al día c"
+            },
+            {
+              "source": "answer",
+              "position": 1623,
+              "context": " recursos, puedes visitar su sitio web oficial. ([programamos.es](https://programamos.es/?utm_source=openai)) "
+            },
+            {
+              "source": "answer",
+              "position": 1647,
+              "context": "r su sitio web oficial. ([programamos.es](https://programamos.es/?utm_source=openai)) "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q014",
+      "query_text": "Recursos de Programamos para docentes",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 50.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos es una organización sin ánimo de lucro fundada po"
+            },
+            {
+              "source": "answer",
+              "position": 317,
+              "context": "tilizarlos en sus clases.\n\nEntre los recursos que Programamos pone a disposición de los docentes, se encuentran"
+            },
+            {
+              "source": "answer",
+              "position": 1819,
+              "context": "ercar la programación de forma sencilla.\n\nAdemás, Programamos mantiene una red social para educadores interesad"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 4,
+          "is_visible": true,
+          "som": 40.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 58,
+              "context": "rch for information about teaching resources from Programamos.Excelente pregunta. **Programamos** es una ONG qu"
+            },
+            {
+              "source": "answer",
+              "position": 92,
+              "context": " resources from Programamos.Excelente pregunta. **Programamos** es una ONG que se encarga de promover el uso de"
+            },
+            {
+              "source": "answer",
+              "position": 227,
+              "context": "ce diversos recursos para docentes:\n\n## Comunidad Programamos\n\nLa Comunidad Programamos es una red social en la"
+            },
+            {
+              "source": "answer",
+              "position": 253,
+              "context": "docentes:\n\n## Comunidad Programamos\n\nLa Comunidad Programamos es una red social en la que docentes y familias d"
+            },
+            {
+              "source": "answer",
+              "position": 1104,
+              "context": "s\" y \"Herramientas\".\n\n## Formación para Docentes\n\nProgramamos participa en actividades formativas dirigidas a d"
+            },
+            {
+              "source": "answer",
+              "position": 1359,
+              "context": "s recursos visitando directamente el sitio web de Programamos en programamos.es, donde encontrarás toda esta in"
+            },
+            {
+              "source": "answer",
+              "position": 1374,
+              "context": "tando directamente el sitio web de Programamos en programamos.es, donde encontrarás toda esta información organ"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 10,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 2345,
+              "context": "render-y-consumir-contenido/?utm_source=openai)\n**Programamos**  \nProyecto sin ánimo de lucro que acerca la pro"
+            },
+            {
+              "source": "answer",
+              "position": 2600,
+              "context": " que los docentes los utilicen con sus alumnos. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 2624,
+              "context": "ilicen con sus alumnos. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n\nEstas plataformas brind"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q015",
+      "query_text": "¿Cómo participar en Programamos?",
+      "query_category": "navegacional",
+      "engine_coverage": 66.67,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 25.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 20,
+              "context": "Para participar en \"Programamos\", una iniciativa sin ánimo de lucro dedicada a fo"
+            },
+            {
+              "source": "answer",
+              "position": 214,
+              "context": "e colaboración y aprovechamiento de sus recursos. Programamos busca acercar la programación a niños y jóvenes m"
+            },
+            {
+              "source": "answer",
+              "position": 478,
+              "context": "ras:\n\n*   **Utilizar sus recursos y materiales:** Programamos ofrece una amplia gama de recursos y materiales e"
+            },
+            {
+              "source": "answer",
+              "position": 1232,
+              "context": "us redes sociales.\n*   **Comunidad de docentes:** Programamos es una comunidad de docentes que enseñan programa"
+            },
+            {
+              "source": "answer",
+              "position": 1586,
+              "context": "de todas sus novedades.\n\nEl objetivo principal de Programamos es promover el desarrollo del pensamiento computa"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 59,
+              "context": "información específica sobre un programa llamado \"Programamos\" en mis conocimientos actuales. Para poder ayudar"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos es una organización sin ánimo de lucro que promue"
+            },
+            {
+              "source": "answer",
+              "position": 193,
+              "context": "creación de videojuegos y aplicaciones móviles. ([programamos.es](https://programamos.es/?utm_source=openai)) S"
+            },
+            {
+              "source": "answer",
+              "position": 217,
+              "context": "y aplicaciones móviles. ([programamos.es](https://programamos.es/?utm_source=openai)) Si deseas participar en s"
+            },
+            {
+              "source": "answer",
+              "position": 385,
+              "context": "crarte:\n\n**1. Participar en talleres y eventos:**\nProgramamos organiza talleres y eventos gratuitos de programa"
+            },
+            {
+              "source": "answer",
+              "position": 610,
+              "context": "ventos para aprender y compartir conocimientos. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 634,
+              "context": "ompartir conocimientos. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n**2. Utilizar sus recurs"
+            },
+            {
+              "source": "answer",
+              "position": 970,
+              "context": "la programación de manera sencilla y accesible. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 994,
+              "context": "a sencilla y accesible. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n**3. Colaborar como volu"
+            },
+            {
+              "source": "answer",
+              "position": 1310,
+              "context": "omo voluntario, puedes contactar directamente con Programamos a través de su correo electrónico: info@programam"
+            },
+            {
+              "source": "answer",
+              "position": 1362,
+              "context": "ogramamos a través de su correo electrónico: info@programamos.es. ([programamos.es](https://programamos.es/?utm"
+            },
+            {
+              "source": "answer",
+              "position": 1380,
+              "context": " de su correo electrónico: info@programamos.es. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 1404,
+              "context": "o: info@programamos.es. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n**4. Seguir sus canales "
+            },
+            {
+              "source": "answer",
+              "position": 1732,
+              "context": "mas novedades y oportunidades de participación. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 1756,
+              "context": "dades de participación. ([programamos.es](https://programamos.es/?utm_source=openai))\n\nParticipar en Programamo"
+            },
+            {
+              "source": "answer",
+              "position": 1807,
+              "context": "rogramamos.es/?utm_source=openai))\n\nParticipar en Programamos te permitirá contribuir al fomento del pensamient"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q016",
+      "query_text": "¿Qué es el pensamiento computacional y cómo desarrollarlo en niños?",
+      "query_category": "informacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 8,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q017",
+      "query_text": "¿Cómo introducir la programación en educación infantil sin ordenadores?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 7,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q018",
+      "query_text": "¿Cuál es la diferencia entre Scratch y Scratch Jr?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q019",
+      "query_text": "¿Qué herramientas existen para evaluar proyectos Scratch de estudiantes?",
+      "query_category": "comparativa",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 7,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 20,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q020",
+      "query_text": "Cómo acceder a los cursos gratuitos de Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 39,
+              "context": "Para acceder a los cursos gratuitos de Programamos, puedes seguir estas opciones:\n\n*   **Actividades"
+            },
+            {
+              "source": "answer",
+              "position": 152,
+              "context": " cursos gratuitos de Pensamiento Computacional:** Programamos ofrece diversas actividades y cursos sin costo pa"
+            },
+            {
+              "source": "answer",
+              "position": 699,
+              "context": " Bird o Super Mario Bros, y también colaboras con Programamos al tomarlo.\n*   **Canal de YouTube:** En su canal"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 20,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 5.0,
+          "first_citation_rank": 14,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 70,
+              "context": "ción sobre cómo acceder a los cursos gratuitos de Programamos.Los resultados no me muestran información específ"
+            },
+            {
+              "source": "answer",
+              "position": 142,
+              "context": "ados no me muestran información específica sobre \"Programamos\". Déjame hacer una búsqueda más específica.¡Perfe"
+            },
+            {
+              "source": "answer",
+              "position": 306,
+              "context": "te explico cómo acceder a los cursos gratuitos de Programamos:\n\n## Acceso a los cursos gratuitos de Programamos"
+            },
+            {
+              "source": "answer",
+              "position": 356,
+              "context": "Programamos:\n\n## Acceso a los cursos gratuitos de Programamos\n\nProgramamos es un portal que tiene como objetivo"
+            },
+            {
+              "source": "answer",
+              "position": 369,
+              "context": "\n## Acceso a los cursos gratuitos de Programamos\n\nProgramamos es un portal que tiene como objetivo acercar la p"
+            },
+            {
+              "source": "answer",
+              "position": 1153,
+              "context": "u blog.\n\n### Cómo acceder\n\nPuedes visitarlos en **programamos.es** y explorar directamente los cursos disponibl"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 3,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 50,
+              "context": "Para acceder a los cursos gratuitos ofrecidos por Programamos, puedes visitar su página web oficial en [program"
+            },
+            {
+              "source": "answer",
+              "position": 104,
+              "context": "ramamos, puedes visitar su página web oficial en [programamos.es](https://programamos.es/). Allí encontrarás un"
+            },
+            {
+              "source": "answer",
+              "position": 128,
+              "context": "su página web oficial en [programamos.es](https://programamos.es/). Allí encontrarás una sección dedicada a rec"
+            },
+            {
+              "source": "answer",
+              "position": 450,
+              "context": "ogramación mediante la creación de videojuegos. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 474,
+              "context": "reación de videojuegos. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\n- **Cur"
+            },
+            {
+              "source": "answer",
+              "position": 683,
+              "context": "pace Invaders o Flappy Bird utilizando Scratch. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 707,
+              "context": "ird utilizando Scratch. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\n- **Cur"
+            },
+            {
+              "source": "answer",
+              "position": 942,
+              "context": "mpartiendo recursos para utilizarla en el aula. ([programamos.es](https://programamos.es/ia/?utm_source=openai)"
+            },
+            {
+              "source": "answer",
+              "position": 966,
+              "context": " utilizarla en el aula. ([programamos.es](https://programamos.es/ia/?utm_source=openai))\n\nAdemás, Programamos o"
+            },
+            {
+              "source": "answer",
+              "position": 1014,
+              "context": "//programamos.es/ia/?utm_source=openai))\n\nAdemás, Programamos organiza eventos y talleres gratuitos de programa"
+            },
+            {
+              "source": "answer",
+              "position": 1238,
+              "context": "s novedades siguiéndolos en sus redes sociales. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 1262,
+              "context": " en sus redes sociales. ([programamos.es](https://programamos.es/?utm_source=openai))\n\nPara acceder a estos rec"
+            },
+            {
+              "source": "answer",
+              "position": 1362,
+              "context": "a estos recursos, visita la página de recursos de Programamos en [programamos.es/recursos](https://programamos."
+            },
+            {
+              "source": "answer",
+              "position": 1378,
+              "context": ", visita la página de recursos de Programamos en [programamos.es/recursos](https://programamos.es/recursos/). A"
+            },
+            {
+              "source": "answer",
+              "position": 1411,
+              "context": " Programamos en [programamos.es/recursos](https://programamos.es/recursos/). Allí encontrarás enlaces directos "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q021",
+      "query_text": "¿Dónde encontrar proyectos de Scratch en español para primaria?",
+      "query_category": "informacional",
+      "engine_coverage": 66.67,
+      "engines": {
+        "gemini": {
+          "total_citations": 13,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 7.69,
+          "first_citation_rank": 6,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 1438,
+              "context": "jo y avanzando a programación más compleja.\n*   **Programamos:** Ofrece cursos gratuitos y de pago de introducc"
+            },
+            {
+              "source": "answer",
+              "position": 2803,
+              "context": " \"Creative Computing\" traducida al castellano por Programamos.\n\n**3. Entornos específicos para primaria y prime"
+            }
+          ],
+          "sentiment": "NEUTRO"
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 5,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 20.0,
+          "first_citation_rank": 4,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 1131,
+              "context": "mentos/ou5umhabz1qkcpou?utm_source=openai))\n\n4. **Programamos**: Proporciona videotutoriales y recursos para cr"
+            },
+            {
+              "source": "answer",
+              "position": 1281,
+              "context": "ncluyendo videojuegos y actividades artísticas. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 1305,
+              "context": "actividades artísticas. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\n5. **Po"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q022",
+      "query_text": "¿Qué actividades desenchufadas puedo hacer para enseñar algoritmos a niños?",
+      "query_category": "informacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 7,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q023",
+      "query_text": "¿Cómo enseñar programación de videojuegos con Scratch en el aula?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 22,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q024",
+      "query_text": "¿Qué formación necesita un profesor para dar clases de programación a niños?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q025",
+      "query_text": "¿Qué recursos hay para enseñar inteligencia artificial a niños y adolescentes?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 18,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 20,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q026",
+      "query_text": "¿Scratch vs Code.org para clases de primaria?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 26,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q027",
+      "query_text": "¿App Inventor vs Scratch para crear aplicaciones con estudiantes de secundaria?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 13,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q028",
+      "query_text": "¿Qué plataforma de programación por bloques es más adecuada para infantil?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q029",
+      "query_text": "¿Programamos tiene materiales para educación secundaria?",
+      "query_category": "navegacional",
+      "engine_coverage": 66.67,
+      "engines": {
+        "gemini": {
+          "total_citations": 3,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos tiene materiales específicos para educación secun"
+            },
+            {
+              "source": "answer",
+              "position": 397,
+              "context": "or cantidad de materiales desarrollados dentro de Programamos, aunque también disponen de recursos para educaci"
+            },
+            {
+              "source": "answer",
+              "position": 807,
+              "context": " a través del uso de nuevas tecnologías.\n\nAdemás, Programamos organiza sus recursos por niveles educativos, inc"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 76,
+              "context": "ífica sobre los materiales educativos que ofrece \"Programamos\" para educación secundaria. Para obtener una resp"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 3,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos ofrece materiales educativos diseñados para la ed"
+            },
+            {
+              "source": "answer",
+              "position": 434,
+              "context": " para desarrollarse a lo largo de un trimestre. ([programamos.es](https://programamos.es/materiales/secundaria/"
+            },
+            {
+              "source": "answer",
+              "position": 458,
+              "context": " largo de un trimestre. ([programamos.es](https://programamos.es/materiales/secundaria/?utm_source=openai))\n\nAd"
+            },
+            {
+              "source": "answer",
+              "position": 525,
+              "context": "teriales/secundaria/?utm_source=openai))\n\nAdemás, Programamos es una comunidad de docentes que promueve el desa"
+            },
+            {
+              "source": "answer",
+              "position": 764,
+              "context": "la programación en todas las etapas educativas. ([programamos.es](https://programamos.es/?p=5955&utm_source=ope"
+            },
+            {
+              "source": "answer",
+              "position": 788,
+              "context": " las etapas educativas. ([programamos.es](https://programamos.es/?p=5955&utm_source=openai))\n\nPuedes acceder a "
+            },
+            {
+              "source": "answer",
+              "position": 911,
+              "context": "ales y más información en su sitio web oficial. ([programamos.es](https://programamos.es/?utm_source=openai)) "
+            },
+            {
+              "source": "answer",
+              "position": 935,
+              "context": "n su sitio web oficial. ([programamos.es](https://programamos.es/?utm_source=openai)) "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q030",
+      "query_text": "Programamos talleres presenciales de programación en colegios",
+      "query_category": "navegacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q031",
+      "query_text": "¿Qué formación ofrece Programamos a profesores?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 40.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos ofrece a los profesores formación centrada princi"
+            },
+            {
+              "source": "answer",
+              "position": 376,
+              "context": " etapas educativas.\n\nLa formación que proporciona Programamos incluye:\n*   **Cursos y materiales sobre Pensamie"
+            },
+            {
+              "source": "answer",
+              "position": 2148,
+              "context": "ótica, donde pueden compartir ideas y colaborar.\n\nProgramamos, una asociación sin ánimo de lucro formada por do"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 3,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 80,
+              "context": "nocimientos sobre qué formación específica ofrece Programamos a profesores. Permíteme buscar esa información pa"
+            },
+            {
+              "source": "answer",
+              "position": 232,
+              "context": "ncontré información sobre la formación que ofrece Programamos. Programamos desarrolla actividades formativas de"
+            },
+            {
+              "source": "answer",
+              "position": 245,
+              "context": "mación sobre la formación que ofrece Programamos. Programamos desarrolla actividades formativas dentro del prog"
+            },
+            {
+              "source": "answer",
+              "position": 412,
+              "context": "ucación de la Junta de Andalucía. El sitio web de Programamos también menciona formación en \"Videojuegos y 'app"
+            },
+            {
+              "source": "answer",
+              "position": 650,
+              "context": "recomendaría visitar directamente el sitio web de Programamos (programamos.es), donde probablemente encontrarás"
+            },
+            {
+              "source": "answer",
+              "position": 663,
+              "context": "visitar directamente el sitio web de Programamos (programamos.es), donde probablemente encontrarás información "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 3,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos es una asociación sin ánimo de lucro que se dedic"
+            },
+            {
+              "source": "answer",
+              "position": 239,
+              "context": "icaciones móviles como herramientas didácticas. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 263,
+              "context": "erramientas didácticas. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\nPara apoya"
+            },
+            {
+              "source": "answer",
+              "position": 395,
+              "context": "a integración de estas herramientas en sus aulas, Programamos ofrece diversas iniciativas de formación:\n\n- **Cu"
+            },
+            {
+              "source": "answer",
+              "position": 635,
+              "context": "ensamiento computacional en su práctica diaria. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 659,
+              "context": " en su práctica diaria. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n- **Masterclasses y tall"
+            },
+            {
+              "source": "answer",
+              "position": 958,
+              "context": "so de estas tecnologías en el ámbito educativo. ([programamos.es](https://programamos.es/convenio-unir-programa"
+            },
+            {
+              "source": "answer",
+              "position": 982,
+              "context": "en el ámbito educativo. ([programamos.es](https://programamos.es/convenio-unir-programamos-para-formacion-de-pr"
+            },
+            {
+              "source": "answer",
+              "position": 1011,
+              "context": "gramamos.es](https://programamos.es/convenio-unir-programamos-para-formacion-de-profesorado/?utm_source=openai)"
+            },
+            {
+              "source": "answer",
+              "position": 1328,
+              "context": " con la programación y su aplicación didáctica. ([programamos.es](https://programamos.es/convenio-unir-programa"
+            },
+            {
+              "source": "answer",
+              "position": 1352,
+              "context": "u aplicación didáctica. ([programamos.es](https://programamos.es/convenio-unir-programamos-para-formacion-de-pr"
+            },
+            {
+              "source": "answer",
+              "position": 1381,
+              "context": "gramamos.es](https://programamos.es/convenio-unir-programamos-para-formacion-de-profesorado/?utm_source=openai)"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q032",
+      "query_text": "Contacto Programamos.es para colaboraciones educativas",
+      "query_category": "navegacional",
+      "engine_coverage": 66.67,
+      "engines": {
+        "gemini": {
+          "total_citations": 8,
+          "target_citations": 7,
+          "is_visible": true,
+          "som": 87.5,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 35,
+              "context": "Para colaboraciones educativas con Programamos.es, puedes ponerte en contacto con ellos a través"
+            },
+            {
+              "source": "answer",
+              "position": 141,
+              "context": "ravés de su dirección de correo electrónico: info@programamos.es.\n\nProgramamos es una asociación sin ánimo de l"
+            },
+            {
+              "source": "answer",
+              "position": 158,
+              "context": "ción de correo electrónico: info@programamos.es.\n\nProgramamos es una asociación sin ánimo de lucro cuyo objetiv"
+            },
+            {
+              "source": "answer",
+              "position": 665,
+              "context": " la robótica.\n\nTambién cuentan con una \"Comunidad Programamos\", una red social diseñada para que educadores y o"
+            }
+          ],
+          "sentiment": "NEUTRO"
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 46,
+              "context": "I appreciate your interest in reaching out to Programamos.es for educational collaborations. However, I sho"
+            },
+            {
+              "source": "answer",
+              "position": 281,
+              "context": "ntact information directly.\n\nTo get in touch with Programamos.es for educational collaborations, I'd recommend:"
+            },
+            {
+              "source": "answer",
+              "position": 1033,
+              "context": "oration inquiry\n- Research more information about Programamos.es and their educational initiatives\n- Suggest wh"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 3,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 47,
+              "context": "Para establecer una colaboración educativa con Programamos, puedes ponerte en contacto con ellos a través de"
+            },
+            {
+              "source": "answer",
+              "position": 166,
+              "context": "uientes opciones:\n\n- **Correo electrónico**: info@programamos.es\n- **Formulario de contacto**: Puedes rellenar "
+            },
+            {
+              "source": "answer",
+              "position": 311,
+              "context": "ina web para que se pongan en contacto contigo. ([programamos.es](https://programamos.es/contacta/?utm_source=o"
+            },
+            {
+              "source": "answer",
+              "position": 335,
+              "context": "an en contacto contigo. ([programamos.es](https://programamos.es/contacta/?utm_source=openai))\n\nProgramamos es "
+            },
+            {
+              "source": "answer",
+              "position": 381,
+              "context": "s://programamos.es/contacta/?utm_source=openai))\n\nProgramamos es una asociación sin ánimo de lucro dedicada a p"
+            },
+            {
+              "source": "answer",
+              "position": 667,
+              "context": "educación infantil hasta formación profesional. ([programamos.es](https://programamos.es/quienes-somos/?utm_sou"
+            },
+            {
+              "source": "answer",
+              "position": 691,
+              "context": " formación profesional. ([programamos.es](https://programamos.es/quienes-somos/?utm_source=openai))\n\nAdemás, of"
+            },
+            {
+              "source": "answer",
+              "position": 873,
+              "context": "ar la programación y la robótica en sus clases. ([programamos.es](https://programamos.es/?utm_source=openai))\n\n"
+            },
+            {
+              "source": "answer",
+              "position": 897,
+              "context": "robótica en sus clases. ([programamos.es](https://programamos.es/?utm_source=openai))\n\nNo dudes en contactar co"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q033",
+      "query_text": "¿Qué curso online es mejor para formar profesores en pensamiento computacional?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 18,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q034",
+      "query_text": "¿Tynker vs Scratch para enseñar programación a niños?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 14,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 30,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q035",
+      "query_text": "¿Cómo integrar la programación en el currículo de primaria en España?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 18,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q036",
+      "query_text": "Historia y fundadores del proyecto Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 3,
+          "is_visible": true,
+          "som": 75.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 12,
+              "context": "El proyecto Programamos es una asociación sin ánimo de lucro cuyo objetiv"
+            },
+            {
+              "source": "answer",
+              "position": 649,
+              "context": "de los estudiantes.\n\nPara lograr estos objetivos, Programamos utiliza herramientas como Scratch para la creació"
+            },
+            {
+              "source": "answer",
+              "position": 1089,
+              "context": "laborar en el aula.\n\n**Fundadores:**\n\nEl proyecto Programamos fue fundado por un equipo de profesionales de la "
+            },
+            {
+              "source": "answer",
+              "position": 2645,
+              "context": " del inglés.\n\nA lo largo del tiempo, el equipo de Programamos ha crecido, incorporando a más personas que colab"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "claude": {
+          "total_citations": 20,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 104,
+              "context": "información específica sobre un proyecto llamado \"Programamos\". Los resultados obtenidos hacen referencia a otr"
+            },
+            {
+              "source": "answer",
+              "position": 480,
+              "context": "ecisa sobre la historia y fundadores del proyecto Programamos, necesitaría que aclarara:\n\n- ¿Es un proyecto edu"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos es una comunidad y un proyecto de desarrollo enfo"
+            },
+            {
+              "source": "answer",
+              "position": 686,
+              "context": "miento de la Comunidad**: A lo largo de los años, Programamos ha crecido y ha incluido foros, clases en línea y"
+            },
+            {
+              "source": "answer",
+              "position": 912,
+              "context": "rsos Educativos**: Además de cursos y tutoriales, Programamos ha ofrecido contenido sobre tecnología, tendencia"
+            },
+            {
+              "source": "answer",
+              "position": 1070,
+              "context": "rogramadores.\n\n4. **Impacto Actual**: Hoy en día, Programamos es reconocido como uno de los recursos más comple"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q037",
+      "query_text": "¿Dr. Scratch qué es y cómo funciona?",
+      "query_category": "navegacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q038",
+      "query_text": "¿Cómo motivar a las niñas a interesarse por la programación?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 21,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q039",
+      "query_text": "¿Qué iniciativas STEAM hay para colegios públicos en España?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 8,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "claude": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 8,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q040",
+      "query_text": "¿Programamos organiza eventos durante la Semana del Código?",
+      "query_category": "navegacional",
+      "engine_coverage": 33.33,
+      "engines": {
+        "gemini": {
+          "total_citations": 3,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 33.33,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos está involucrado con la Semana del Código (EU Cod"
+            },
+            {
+              "source": "answer",
+              "position": 100,
+              "context": " Código (EU Code Week). La plataforma \"Codeweek - Programamos – Videojuegos y 'apps'\" se menciona en relación c"
+            },
+            {
+              "source": "answer",
+              "position": 508,
+              "context": "unque las búsquedas no indican explícitamente que Programamos organice \"sus propios\" eventos de manera directa,"
+            }
+          ],
+          "sentiment": "NEUTRO"
+        },
+        "claude": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 43,
+              "context": "No tengo información disponible sobre si \"¿Programamos\" organiza eventos durante la Semana del Código. P"
+            },
+            {
+              "source": "answer",
+              "position": 264,
+              "context": "es.\n\n¿Podrías proporcionarme más contexto sobre \"¿Programamos\"? Por ejemplo:\n- ¿Es una organización específica,"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 15,
+              "context": "Para saber si \"Programamos\" está organizando eventos durante la Semana del C"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q041",
+      "query_text": "¿Cómo crear un club de programación Scratch en un colegio?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 16,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q042",
+      "query_text": "¿Qué juegos educativos enseñan programación a niños de 5 a 7 años?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 12,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q043",
+      "query_text": "¿Dónde conseguir material didáctico gratuito sobre pensamiento computacional?",
+      "query_category": "informacional",
+      "engine_coverage": 50.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 12,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 8.33,
+          "first_citation_rank": 10,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q044",
+      "query_text": "¿Cómo evaluar las competencias de pensamiento computacional en primaria?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q045",
+      "query_text": "¿Qué actividades unplugged existen para enseñar pensamiento computacional?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q046",
+      "query_text": "¿CoderDojo vs otras iniciativas gratuitas de enseñanza de programación en España?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 17,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q047",
+      "query_text": "¿Qué asociación de programación infantil es más activa en Andalucía?",
+      "query_category": "comparativa",
+      "engine_coverage": 50.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 11,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 9.09,
+          "first_citation_rank": 3,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 1196,
+              "context": "ne de programación de videojuegos con Scratch.\n\n**Programamos** es una asociación sin ánimo de lucro que busca "
+            },
+            {
+              "source": "answer",
+              "position": 3571,
+              "context": "ntos y proyectos en el presente y futuro cercano. Programamos también destaca por su objetivo de promover el pe"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 4,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q048",
+      "query_text": "¿Scratch vs Blockly para aprender programación por bloques?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 17,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q049",
+      "query_text": "Guías didácticas de Scratch en Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos ofrece diversas guías didácticas y recursos para "
+            },
+            {
+              "source": "answer",
+              "position": 1076,
+              "context": " programar con Scratch.\n*   **Canal de YouTube**: Programamos también cuenta con un canal de YouTube donde se p"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 4,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 25.0,
+          "first_citation_rank": 2,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos ofrece una variedad de recursos didácticos para a"
+            },
+            {
+              "source": "answer",
+              "position": 1168,
+              "context": "a programación de forma práctica y entretenida. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 1192,
+              "context": "práctica y entretenida. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\n\n\n[Curs"
+            },
+            {
+              "source": "answer",
+              "position": 1670,
+              "context": "os desarrollen sus habilidades de programación. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 1694,
+              "context": "idades de programación. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\n\n\n[¿Qué"
+            },
+            {
+              "source": "answer",
+              "position": 2085,
+              "context": " clave de programación y diseño de videojuegos. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 2109,
+              "context": " diseño de videojuegos. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\n\nAdemás"
+            },
+            {
+              "source": "answer",
+              "position": 2188,
+              "context": "ch/?utm_source=openai))\n\n\nAdemás de estos cursos, Programamos cuenta con un canal de YouTube donde se comparten"
+            },
+            {
+              "source": "answer",
+              "position": 2360,
+              "context": "una fuente adicional de aprendizaje y práctica. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 2384,
+              "context": "aprendizaje y práctica. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\nEstos r"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q050",
+      "query_text": "¿Cómo descargar recursos gratuitos de Programamos?",
+      "query_category": "navegacional",
+      "engine_coverage": 50.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 3,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 66.67,
+          "first_citation_rank": 2,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 37,
+              "context": "Para descargar recursos gratuitos de Programamos, sigue estos pasos:\n\n1.  **Visita la sección de \""
+            },
+            {
+              "source": "answer",
+              "position": 127,
+              "context": "isita la sección de \"Recursos\" en su sitio web.** Programamos es una asociación sin ánimo de lucro dedicada a a"
+            },
+            {
+              "source": "answer",
+              "position": 385,
+              "context": "orías de recursos.** En la sección de recursos de Programamos, encontrarás una recopilación de materiales que h"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 37,
+              "context": "Para descargar recursos gratuitos de Programamos, puedes visitar su sitio web oficial en [programa"
+            },
+            {
+              "source": "answer",
+              "position": 90,
+              "context": "gramamos, puedes visitar su sitio web oficial en [programamos.com](https://programamos.com/). Allí encontrarás "
+            },
+            {
+              "source": "answer",
+              "position": 115,
+              "context": "su sitio web oficial en [programamos.com](https://programamos.com/). Allí encontrarás una sección dedicada a re"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q051",
+      "query_text": "Curso de inteligencia artificial y educación de Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 2,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos offers a comprehensive online course titled \"Curs"
+            },
+            {
+              "source": "answer",
+              "position": 1244,
+              "context": "ion that will offer a look into the future of AI. Programamos also encourages participants to subscribe to thei"
+            },
+            {
+              "source": "answer",
+              "position": 1366,
+              "context": "r for updates and provides an email address (info@programamos.es) for inquiries. Programamos is actively involv"
+            },
+            {
+              "source": "answer",
+              "position": 1397,
+              "context": "mail address (info@programamos.es) for inquiries. Programamos is actively involved in other AI-related initiati"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 2,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 50.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos ofrece un curso gratuito titulado \"Inteligencia A"
+            },
+            {
+              "source": "answer",
+              "position": 694,
+              "context": "riales complementarios en su sitio web oficial. ([programamos.es](https://programamos.es/ia/?utm_source=openai)"
+            },
+            {
+              "source": "answer",
+              "position": 718,
+              "context": "n su sitio web oficial. ([programamos.es](https://programamos.es/ia/?utm_source=openai))\n\nPara una introducción"
+            }
+          ],
+          "sentiment": "NEUTRO"
+        }
+      }
+    },
+    {
+      "query_id": "Q052",
+      "query_text": "¿Programamos tiene canal de YouTube con tutoriales de Scratch?",
+      "query_category": "navegacional",
+      "engine_coverage": 50.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 2,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 5,
+              "context": "Sí, \"Programamos\" tiene presencia en YouTube con tutoriales de Scr"
+            },
+            {
+              "source": "answer",
+              "position": 105,
+              "context": "ales de Scratch.\n\nSe encuentra un video titulado \"Programamos con Scratch\" que muestra cómo dar los primeros pa"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 3,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 66.67,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 27,
+              "context": "Sí, el canal de YouTube de Programamos ofrece una variedad de tutoriales sobre Scratch. "
+            },
+            {
+              "source": "answer",
+              "position": 264,
+              "context": "te a crear proyectos interactivos y educativos. ([programamos.es](https://programamos.es/recursos/scratch/?utm_"
+            },
+            {
+              "source": "answer",
+              "position": 288,
+              "context": "eractivos y educativos. ([programamos.es](https://programamos.es/recursos/scratch/?utm_source=openai))\n\nAdemás,"
+            },
+            {
+              "source": "answer",
+              "position": 350,
+              "context": "es/recursos/scratch/?utm_source=openai))\n\nAdemás, Programamos proporciona recursos adicionales, como cursos gra"
+            },
+            {
+              "source": "answer",
+              "position": 527,
+              "context": "eojuegos, que puedes encontrar en su sitio web. ([programamos.es](https://programamos.es/inicio2/?utm_source=op"
+            },
+            {
+              "source": "answer",
+              "position": 551,
+              "context": "ontrar en su sitio web. ([programamos.es](https://programamos.es/inicio2/?utm_source=openai))\n\nPara comenzar, t"
+            },
+            {
+              "source": "answer",
+              "position": 708,
+              "context": "e muestra cómo programar una granja en Scratch:\n\n[Programamos con Scratch: Programando una Granja](https://www."
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q053",
+      "query_text": "¿Dr. Scratch vs otras herramientas para evaluar pensamiento computacional?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q054",
+      "query_text": "¿Qué recursos en español hay para la Hour of Code?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 4,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q055",
+      "query_text": "¿Cómo enseñar Scratch Jr a niños de 3 a 5 años?",
+      "query_category": "informacional",
+      "engine_coverage": 50.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 14,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 14.29,
+          "first_citation_rank": 2,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 3799,
+              "context": "* Útiles para actividades sin dispositivos.\n*   **Programamos:** Cuenta con artículos, videos y guías para los "
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q056",
+      "query_text": "¿Qué plataformas ofrecen formación en pensamiento computacional para profesores en España?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 11,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 11,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q057",
+      "query_text": "¿Code.org en español vs recursos locales españoles de programación educativa?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 20,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q058",
+      "query_text": "Actividades unplugged y sin ordenador en Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 50.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 6,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 16.67,
+          "first_citation_rank": 4,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos ofrece una variedad de actividades \"unplugged\" o "
+            },
+            {
+              "source": "answer",
+              "position": 406,
+              "context": "rónicos.\n\nEntre las actividades desenchufadas que Programamos ha recopilado y compartido, se encuentran las sig"
+            },
+            {
+              "source": "answer",
+              "position": 1723,
+              "context": "acenar y manipular información.\n\nAdemás de estas, Programamos ha referenciado el proyecto \"CS Unplugged\" (Compu"
+            },
+            {
+              "source": "answer",
+              "position": 2053,
+              "context": "computacional y son compatibles con el enfoque de Programamos incluyen:\n*   **Números Binarios (Contando los pu"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 110,
+              "context": "denador que puedes implementar en un entorno como Programamos:\n\n### Actividades Unplugged\n\n1. **Juegos de Lógic"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q059",
+      "query_text": "¿Programamos ofrece certificación o acreditación para docentes?",
+      "query_category": "navegacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 1,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 3,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 67,
+              "context": "mación específica sobre una organización llamada \"Programamos\" que ofrezca certificación o acreditación para do"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q060",
+      "query_text": "Cómo colaborar como voluntario con Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 3,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 110,
+              "context": "rar como voluntario con una organización llamada \"Programamos\". Las búsquedas realizadas arrojan resultados gen"
+            }
+          ],
+          "sentiment": null
+        },
+        "openai": {
+          "total_citations": 0,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos es una organización sin ánimo de lucro que promue"
+            },
+            {
+              "source": "answer",
+              "position": 202,
+              "context": "estás interesado en colaborar como voluntario con Programamos, te recomiendo visitar su sitio web oficial para "
+            },
+            {
+              "source": "answer",
+              "position": 681,
+              "context": "ripción y contactar directamente con el equipo de Programamos para resolver cualquier duda que puedas tener.\n\nR"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q061",
+      "query_text": "¿Cómo adaptar actividades de programación para alumnos con necesidades especiales?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 17,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q062",
+      "query_text": "¿Qué proyectos de Scratch pueden hacer niños de primaria?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q063",
+      "query_text": "¿Cómo enseñar a crear videojuegos con Scratch paso a paso?",
+      "query_category": "informacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 37,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 2.7,
+          "first_citation_rank": 34,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q064",
+      "query_text": "¿Qué metodologías activas funcionan mejor para enseñar programación a niños?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 20,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q065",
+      "query_text": "¿Cómo usar Makey Makey en proyectos educativos de primaria?",
+      "query_category": "informacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 6.67,
+          "first_citation_rank": 8,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q066",
+      "query_text": "¿Bee-Bot vs Scratch Jr para educación infantil?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 31,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q067",
+      "query_text": "¿Qué organizaciones ofrecen talleres gratuitos de programación para niños en España?",
+      "query_category": "comparativa",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 7,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 14.29,
+          "first_citation_rank": 6,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 1527,
+              "context": "sarrollo del pensamiento lógico-matemático.\n*   **Programamos** Este proyecto sin ánimo de lucro organiza talle"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q068",
+      "query_text": "¿Scratch vs App Inventor para desarrollar apps educativas?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 16,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q069",
+      "query_text": "¿Qué comunidad online de educadores en programación es más activa en español?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q070",
+      "query_text": "¿Programamos tiene recursos para usar Bee-Bot en clase?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 50.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos tiene una gran cantidad de recursos para usar Bee"
+            },
+            {
+              "source": "answer",
+              "position": 236,
+              "context": "áreas y habilidades.\n\nAlgunos de los recursos que Programamos proporciona incluyen:\n*   **Fichas y tableros** p"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q071",
+      "query_text": "Programamos redes sociales y comunidad de docentes",
+      "query_category": "navegacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 19,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q072",
+      "query_text": "¿Qué convenios tiene Programamos con la Junta de Andalucía?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 40.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos colabora con la Consejería de Educación de la Jun"
+            },
+            {
+              "source": "answer",
+              "position": 163,
+              "context": "ativas dirigidas al profesorado. Específicamente, Programamos lleva a cabo iniciativas dentro del programa de f"
+            },
+            {
+              "source": "answer",
+              "position": 801,
+              "context": " acuerdo contractual público) directamente entre \"Programamos\" y la Junta de Andalucía. La Junta de Andalucía s"
+            },
+            {
+              "source": "answer",
+              "position": 991,
+              "context": "a formación y el desarrollo, pero la relación con Programamos se describe principalmente como la realización de"
+            }
+          ],
+          "sentiment": "NEUTRO"
+        }
+      }
+    },
+    {
+      "query_id": "Q073",
+      "query_text": "¿Programamos tiene recursos para usar con familias en casa?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 2,
+          "is_visible": true,
+          "som": 50.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos ofrece recursos para usar con familias en casa. D"
+            },
+            {
+              "source": "answer",
+              "position": 226,
+              "context": "cional.\n\nAlgunos de los recursos y propuestas que Programamos tiene para las familias incluyen:\n*   **Actividad"
+            },
+            {
+              "source": "answer",
+              "position": 345,
+              "context": "rdenador**: En su sección \"Hackea la cuarentena\", Programamos ofrece ejemplos descargables e imprimibles que ut"
+            },
+            {
+              "source": "answer",
+              "position": 620,
+              "context": "asa.\n*   **Recursos de programación y robótica**: Programamos recopila recursos para aprender programación y ro"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q074",
+      "query_text": "¿Qué plataforma tiene más recursos de Scratch en español?",
+      "query_category": "comparativa",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 6.67,
+          "first_citation_rank": 7,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 861,
+              "context": "antidad de recursos de Scratch en español:\n\n*   **Programamos**: Este sitio web ofrece una extensa colección de"
+            },
+            {
+              "source": "answer",
+              "position": 1412,
+              "context": "stacando la guía Creative Computing traducida por Programamos.\n*   **Picuino**: Ofrece un tutorial completo de "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q075",
+      "query_text": "¿Cómo implementar la gamificación en clases de programación?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 13,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q076",
+      "query_text": "¿Qué eventos de divulgación de programación hay para familias en España?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 11,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q077",
+      "query_text": "¿Cómo enseñar pensamiento computacional en educación infantil?",
+      "query_category": "informacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 12,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 8.33,
+          "first_citation_rank": 5,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q078",
+      "query_text": "¿Qué iniciativa de programación educativa tiene más presencia en Andalucía?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 14,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q079",
+      "query_text": "Presentaciones y diapositivas de Scratch en Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 0,
+              "context": "Programamos ofrece diversos recursos para aprender Scratch, i"
+            },
+            {
+              "source": "answer",
+              "position": 212,
+              "context": " guías:\n\n*   **Curso de Introducción a Scratch:** Programamos ha creado un curso gratuito de introducción a la "
+            },
+            {
+              "source": "answer",
+              "position": 817,
+              "context": "das\" al juego.\n*   **Guía Informática Creativa:** Programamos también ofrece una traducción al castellano de la"
+            },
+            {
+              "source": "answer",
+              "position": 1280,
+              "context": "*   **Canal de YouTube:** En su canal de YouTube, Programamos ofrece videotutoriales para aprender a programar "
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q080",
+      "query_text": "¿Programamos colabora con universidades o centros de investigación?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 4,
+          "is_visible": true,
+          "som": 80.0,
+          "first_citation_rank": 2,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos colabora activamente con diversas universidades. "
+            },
+            {
+              "source": "answer",
+              "position": 1021,
+              "context": "llo técnico y difusión de Dr. Scratch.\n\nAsimismo, Programamos se ha convertido en socio institucional de la Soc"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q081",
+      "query_text": "¿Cómo fomentar el aprendizaje colaborativo en proyectos de Scratch?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q082",
+      "query_text": "¿Qué curso de Scratch online gratuito es mejor para empezar?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 12,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q083",
+      "query_text": "¿Cómo integrar inteligencia artificial en proyectos educativos de primaria?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 22,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q084",
+      "query_text": "¿Qué beneficios tiene aprender programación en edades tempranas?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 15,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q085",
+      "query_text": "¿Cómo organizar una Hour of Code en un colegio español?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 13,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q086",
+      "query_text": "¿Qué recursos hay para enseñar programación con licencia abierta en español?",
+      "query_category": "informacional",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 14,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4323,
+              "context": "para promover el software libre.\n*   **Asociación Programamos:** Promueve el uso de la programación en la educa"
+            }
+          ],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q087",
+      "query_text": "¿LearningML vs otras herramientas para enseñar IA a niños con Scratch?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 16,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q088",
+      "query_text": "¿Hour of Code vs proyectos continuados de programación escolar?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 28,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q089",
+      "query_text": "¿Qué plataforma tiene mejor comunidad hispanohablante para educadores en programación?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 7,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q090",
+      "query_text": "¿INTEF vs otras plataformas para formación docente en competencia digital?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 13,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q091",
+      "query_text": "¿Qué organización ofrece mejor formación docente en programación en España?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 9,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q092",
+      "query_text": "¿Scratch con extensiones de IA vs herramientas dedicadas de IA educativa?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 17,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q093",
+      "query_text": "¿Guía de computación creativa de Harvard vs otros currículos de Scratch?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 16,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q094",
+      "query_text": "¿Snap! vs Scratch para estudiantes avanzados de secundaria?",
+      "query_category": "comparativa",
+      "engine_coverage": 0.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 18,
+          "target_citations": 0,
+          "is_visible": false,
+          "som": 0.0,
+          "first_citation_rank": null,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q095",
+      "query_text": "¿Qué currículo de pensamiento computacional es más completo en España?",
+      "query_category": "comparativa",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 10,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 10.0,
+          "first_citation_rank": 2,
+          "brand_mentions": [],
+          "sentiment": null
+        }
+      }
+    },
+    {
+      "query_id": "Q096",
+      "query_text": "¿Programamos colabora con Google o Microsoft en proyectos educativos?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 1,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 100.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos tiene una colaboración con Google en proyectos ed"
+            },
+            {
+              "source": "answer",
+              "position": 318,
+              "context": "squeda que indique una colaboración específica de Programamos con Microsoft en proyectos educativos."
+            }
+          ],
+          "sentiment": "NEUTRO"
+        }
+      }
+    },
+    {
+      "query_id": "Q097",
+      "query_text": "Curso de Programamos para hacer videojuegos con Scratch",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 8,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 12.5,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 31,
+              "context": "Si estás buscando un curso de \"Programamos para hacer videojuegos con Scratch\", la plataform"
+            },
+            {
+              "source": "answer",
+              "position": 95,
+              "context": "ra hacer videojuegos con Scratch\", la plataforma \"Programamos\" ofrece una variedad de recursos para aprender a "
+            },
+            {
+              "source": "answer",
+              "position": 247,
+              "context": "e de programación visual.\n\n**Cursos y Recursos de Programamos:**\n\n*   **Curso de Introducción a Scratch:** Prog"
+            },
+            {
+              "source": "answer",
+              "position": 304,
+              "context": "amos:**\n\n*   **Curso de Introducción a Scratch:** Programamos ofrece un curso gratuito de introducción a Scratc"
+            },
+            {
+              "source": "answer",
+              "position": 560,
+              "context": " Scratch:** Para aquellos que desean profundizar, Programamos tiene cursos donde se enseña a crear videojuegos "
+            },
+            {
+              "source": "answer",
+              "position": 863,
+              "context": " cursos, también se colabora con la iniciativa de Programamos para llevar la programación a personas sin recurs"
+            },
+            {
+              "source": "answer",
+              "position": 1351,
+              "context": "*   **Canal de YouTube:** En su canal de YouTube, Programamos ofrece videotutoriales para aprender a programar "
+            },
+            {
+              "source": "answer",
+              "position": 2230,
+              "context": "cursos de Scratch para videojuegos:**\n\nAdemás de \"Programamos\", existen otras opciones para aprender a programa"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q098",
+      "query_text": "¿Cómo hacer una donación o apoyar a Programamos?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 4,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 25.0,
+          "first_citation_rank": 2,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 39,
+              "context": "Para apoyar o realizar una donación a \"Programamos\", es importante identificar a qué organización es"
+            },
+            {
+              "source": "answer",
+              "position": 370,
+              "context": "antes encontradas:\n\n**Para la asociación española Programamos (programamos.es):**\nProgramamos es una asociación"
+            },
+            {
+              "source": "answer",
+              "position": 383,
+              "context": "adas:\n\n**Para la asociación española Programamos (programamos.es):**\nProgramamos es una asociación sin ánimo de"
+            },
+            {
+              "source": "answer",
+              "position": 402,
+              "context": "ociación española Programamos (programamos.es):**\nProgramamos es una asociación sin ánimo de lucro que promueve"
+            },
+            {
+              "source": "answer",
+              "position": 988,
+              "context": " se recomienda visitar directamente su sitio web (programamos.es) o contactarlos a través de los canales que pu"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q099",
+      "query_text": "¿Programamos tiene materiales para Scratch Jr en educación infantil?",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 5,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 20.0,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 4,
+              "context": "Sí, Programamos tiene materiales para Scratch Jr orientados a la "
+            },
+            {
+              "source": "answer",
+              "position": 98,
+              "context": " orientados a la educación infantil. En su sitio, Programamos ofrece recursos para analizar y probar Scratch Jr"
+            },
+            {
+              "source": "answer",
+              "position": 287,
+              "context": "sa con niños.\n\nEntre los recursos que proporciona Programamos se incluyen:\n*   Vídeos que muestran los primeros"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    },
+    {
+      "query_id": "Q100",
+      "query_text": "Proyectos realizados y premios de Programamos",
+      "query_category": "navegacional",
+      "engine_coverage": 100.0,
+      "engines": {
+        "gemini": {
+          "total_citations": 3,
+          "target_citations": 1,
+          "is_visible": true,
+          "som": 33.33,
+          "first_citation_rank": 1,
+          "brand_mentions": [
+            {
+              "source": "answer",
+              "position": 14,
+              "context": "La asociación Programamos ha llevado a cabo diversos proyectos y ha recibid"
+            },
+            {
+              "source": "answer",
+              "position": 154,
+              "context": "a de sus iniciativas.\n\n**Proyectos realizados por Programamos:**\n\nProgramamos es un proyecto sin ánimo de lucro"
+            },
+            {
+              "source": "answer",
+              "position": 170,
+              "context": "ivas.\n\n**Proyectos realizados por Programamos:**\n\nProgramamos es un proyecto sin ánimo de lucro centrado en fom"
+            },
+            {
+              "source": "answer",
+              "position": 1692,
+              "context": "entes e investigadores en el campo.\n\n**Premios de Programamos:**\n\n*   **Premio Google por Dr. Scratch:** La apl"
+            },
+            {
+              "source": "answer",
+              "position": 1795,
+              "context": "* La aplicación web Dr. Scratch, desarrollada por Programamos junto a la Universidad Rey Juan Carlos, fue galar"
+            },
+            {
+              "source": "answer",
+              "position": 1907,
+              "context": "onada con un premio de Google.\n\nCabe destacar que Programamos también ha participado como parte del jurado en c"
+            },
+            {
+              "source": "answer",
+              "position": 2224,
+              "context": "s a los participantes, aunque no se especifica si Programamos es el organizador directo o una entidad colaborad"
+            }
+          ],
+          "sentiment": "POSITIVO"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "gemini": {
+      "visibility_rate": 42.0,
+      "avg_som": 17.15,
+      "avg_first_rank": 3.83,
+      "n_queries": 100,
+      "n_visible": 42
+    },
+    "claude": {
+      "visibility_rate": 15.0,
+      "avg_som": 3.62,
+      "avg_first_rank": 3.5,
+      "n_queries": 40,
+      "n_visible": 6
+    },
+    "openai": {
+      "visibility_rate": 20.0,
+      "avg_som": 14.53,
+      "avg_first_rank": 2.08,
+      "n_queries": 60,
+      "n_visible": 12
+    }
+  },
+  "engine_coverage_avg": 32.33,
+  "delta_vs_prev_week": {
+    "gemini": {
+      "gained": [
+        "Q009",
+        "Q016",
+        "Q043",
+        "Q055",
+        "Q065",
+        "Q067",
+        "Q077",
+        "Q096"
+      ],
+      "lost": [
+        "Q006",
+        "Q035",
+        "Q045",
+        "Q060",
+        "Q066",
+        "Q087",
+        "Q092"
+      ],
+      "stable_visible": [
+        "Q001",
+        "Q003",
+        "Q011",
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q015",
+        "Q019",
+        "Q020",
+        "Q021",
+        "Q022",
+        "Q029",
+        "Q031",
+        "Q032",
+        "Q036",
+        "Q037",
+        "Q040",
+        "Q047",
+        "Q049",
+        "Q050",
+        "Q051",
+        "Q058",
+        "Q063",
+        "Q070",
+        "Q072",
+        "Q073",
+        "Q074",
+        "Q079",
+        "Q080",
+        "Q095",
+        "Q097",
+        "Q098",
+        "Q099",
+        "Q100"
+      ],
+      "stable_invisible": [
+        "Q002",
+        "Q004",
+        "Q005",
+        "Q007",
+        "Q008",
+        "Q010",
+        "Q017",
+        "Q018",
+        "Q023",
+        "Q024",
+        "Q025",
+        "Q026",
+        "Q027",
+        "Q028",
+        "Q030",
+        "Q033",
+        "Q034",
+        "Q038",
+        "Q039",
+        "Q041",
+        "Q042",
+        "Q044",
+        "Q046",
+        "Q048",
+        "Q052",
+        "Q053",
+        "Q054",
+        "Q056",
+        "Q057",
+        "Q059",
+        "Q061",
+        "Q062",
+        "Q064",
+        "Q068",
+        "Q069",
+        "Q071",
+        "Q075",
+        "Q076",
+        "Q078",
+        "Q081",
+        "Q082",
+        "Q083",
+        "Q084",
+        "Q085",
+        "Q086",
+        "Q088",
+        "Q089",
+        "Q090",
+        "Q091",
+        "Q093",
+        "Q094"
+      ]
+    },
+    "claude": {
+      "gained": [
+        "Q011",
+        "Q031"
+      ],
+      "lost": [
+        "Q032",
+        "Q033",
+        "Q036"
+      ],
+      "stable_visible": [
+        "Q012",
+        "Q013",
+        "Q014",
+        "Q020"
+      ],
+      "stable_invisible": [
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q005",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q015",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q021",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025",
+        "Q026",
+        "Q027",
+        "Q028",
+        "Q029",
+        "Q030",
+        "Q034",
+        "Q035",
+        "Q037",
+        "Q038",
+        "Q039",
+        "Q040"
+      ]
+    },
+    "openai": {
+      "gained": [
+        "Q014",
+        "Q049"
+      ],
+      "lost": [],
+      "stable_visible": [
+        "Q012",
+        "Q013",
+        "Q015",
+        "Q020",
+        "Q021",
+        "Q029",
+        "Q031",
+        "Q032",
+        "Q051",
+        "Q052"
+      ],
+      "stable_invisible": [
+        "Q001",
+        "Q002",
+        "Q003",
+        "Q004",
+        "Q005",
+        "Q006",
+        "Q007",
+        "Q008",
+        "Q009",
+        "Q010",
+        "Q011",
+        "Q016",
+        "Q017",
+        "Q018",
+        "Q019",
+        "Q022",
+        "Q023",
+        "Q024",
+        "Q025",
+        "Q026",
+        "Q027",
+        "Q028",
+        "Q030",
+        "Q033",
+        "Q034",
+        "Q035",
+        "Q036",
+        "Q037",
+        "Q038",
+        "Q039",
+        "Q040",
+        "Q041",
+        "Q042",
+        "Q043",
+        "Q044",
+        "Q045",
+        "Q046",
+        "Q047",
+        "Q048",
+        "Q050",
+        "Q053",
+        "Q054",
+        "Q055",
+        "Q056",
+        "Q057",
+        "Q058",
+        "Q059",
+        "Q060"
+      ]
+    }
+  }
+}
