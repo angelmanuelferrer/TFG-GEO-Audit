@@ -1,0 +1,6 @@
+# Dependencias mínimas para los tests del núcleo del pipeline (tests/)
+pytest>=8,<9
+pytest-cov>=5,<6
+tiktoken>=0.7
+langchain-core>=0.3,<0.4
+langchain-text-splitters>=0.3,<0.4

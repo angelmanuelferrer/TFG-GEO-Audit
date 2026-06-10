@@ -108,14 +108,14 @@ function LaunchExperimentalDialog({ onLaunched }: { onLaunched: () => void }) {
           <Label className="text-sm font-medium mb-3 block">Selección de queries</Label>
           <RadioGroup value={block} onValueChange={setBlock} className="space-y-2">
             {BLOCKS.map((b) => (
-              <div key={b.value} className="flex items-start gap-3 rounded-md border border-border p-3 hover:bg-accent/50 cursor-pointer"
-                   onClick={() => setBlock(b.value)}>
+              <label key={b.value} htmlFor={`block-${b.value}`}
+                     className="flex items-start gap-3 rounded-md border border-border p-3 hover:bg-accent/50 cursor-pointer">
                 <RadioGroupItem value={b.value} id={`block-${b.value}`} className="mt-0.5" />
-                <div>
-                  <Label htmlFor={`block-${b.value}`} className="font-medium cursor-pointer">{b.label}</Label>
-                  <p className="text-xs text-muted-foreground">{b.desc}</p>
-                </div>
-              </div>
+                <span className="flex flex-col gap-1">
+                  <span className="text-sm font-medium leading-none">{b.label}</span>
+                  <span className="text-xs text-muted-foreground">{b.desc}</span>
+                </span>
+              </label>
             ))}
           </RadioGroup>
         </div>
@@ -198,15 +198,15 @@ function LaunchLiveDialog({ onLaunched }: { onLaunched: () => void }) {
             <Label className="text-sm font-medium mb-3 block">Motores</Label>
             <div className="space-y-2">
               {ENGINES.map((e) => (
-                <div key={e.value} className="flex items-center gap-3 rounded-md border border-border p-3 hover:bg-accent/50 cursor-pointer"
-                     onClick={() => toggleEngine(e.value)}>
+                <label key={e.value} htmlFor={`eng-${e.value}`}
+                       className="flex items-center gap-3 rounded-md border border-border p-3 hover:bg-accent/50 cursor-pointer">
                   <Checkbox
                     id={`eng-${e.value}`}
                     checked={engines.includes(e.value)}
                     onCheckedChange={() => toggleEngine(e.value)}
                   />
-                  <Label htmlFor={`eng-${e.value}`} className="cursor-pointer">{e.label}</Label>
-                </div>
+                  <span className="text-sm font-medium leading-none">{e.label}</span>
+                </label>
               ))}
             </div>
           </div>
@@ -217,14 +217,14 @@ function LaunchLiveDialog({ onLaunched }: { onLaunched: () => void }) {
             <Label className="text-sm font-medium mb-3 block">Tier de queries</Label>
             <RadioGroup value={tier} onValueChange={setTier} className="space-y-2">
               {TIERS.map((t) => (
-                <div key={t.value} className="flex items-start gap-3 rounded-md border border-border p-3 hover:bg-accent/50 cursor-pointer"
-                     onClick={() => setTier(t.value)}>
+                <label key={t.value} htmlFor={`tier-${t.value}`}
+                       className="flex items-start gap-3 rounded-md border border-border p-3 hover:bg-accent/50 cursor-pointer">
                   <RadioGroupItem value={t.value} id={`tier-${t.value}`} className="mt-0.5" />
-                  <div>
-                    <Label htmlFor={`tier-${t.value}`} className="font-medium cursor-pointer">{t.label}</Label>
-                    <p className="text-xs text-muted-foreground">{t.desc}</p>
-                  </div>
-                </div>
+                  <span className="flex flex-col gap-1">
+                    <span className="text-sm font-medium leading-none">{t.label}</span>
+                    <span className="text-xs text-muted-foreground">{t.desc}</span>
+                  </span>
+                </label>
               ))}
             </RadioGroup>
           </div>

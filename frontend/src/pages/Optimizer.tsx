@@ -69,10 +69,19 @@ function QueryRow({
 }) {
   return (
     <div
+      role="button"
+      tabIndex={0}
+      aria-pressed={selected}
       className={`cursor-pointer rounded-lg border p-4 transition-colors ${
         selected ? "border-primary bg-primary/5" : "border-border hover:border-primary/40 hover:bg-accent/40"
       }`}
       onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect();
+        }
+      }}
     >
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
