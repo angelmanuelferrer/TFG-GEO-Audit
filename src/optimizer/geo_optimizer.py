@@ -8,10 +8,12 @@ Schema de output en src/optimizer/schema.py (GEOOptimizerOutput).
 from __future__ import annotations
 
 import asyncio
+import json
 import os
 import pathlib
 import sys
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
+from urllib.parse import urlparse
 
 PROJECT_ROOT = pathlib.Path(__file__).parents[2]
 if str(PROJECT_ROOT) not in sys.path:
@@ -444,10 +446,40 @@ def _coerce_recommendation(raw: Dict[str, Any]) -> Optional[Dict[str, Any]]:
 
 
 class GEOOptimizer:
+    _COMPETITORS_PATH = PROJECT_ROOT / "data" / "frozen_competitors.json"
+
     def __init__(self):
         if not os.getenv("ANTHROPIC_API_KEY"):
             raise RuntimeError("ANTHROPIC_API_KEY no está configurada.")
         self._prompt_config = get_prompt("geo_optimizer")
+        self._competitor_domains_list = self._load_competitor_domains()
+        self._competitor_domains = set(self._competitor_domains_list)
+
+    @classmethod
+    def _load_competitor_domains(cls) -> List[str]:
+        """Carga los dominios del set congelado de competidores (Discovery)."""
+        try:
+            with open(cls._COMPETITORS_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            logger.warning(
+                "No se pudo cargar %s (%s); el filtrado de snippets Serper quedará vacío.",
+                cls._COMPETITORS_PATH, e,
+            )
+            return []
+        return [d.lower() for d in data.get("top_competitors", [])]
+
+    def _url_is_known_competitor(self, url: str) -> bool:
+        """Devuelve True si el dominio de la URL está en el set de competidores congelados."""
+        if not self._competitor_domains:
+            return False
+        try:
+            netloc = urlparse(url).netloc.lower()
+        except Exception:
+            return False
+        if netloc.startswith("www."):
+            netloc = netloc[4:]
+        return any(netloc == d or netloc.endswith("." + d) for d in self._competitor_domains)
 
     def _search_query(self, query_text: str) -> List[str]:
         """Busca en Google vía Serper API y devuelve URLs de TARGET_DOMAIN."""
@@ -470,15 +502,22 @@ class GEOOptimizer:
         return urls
 
     def _search_competitor_snippets(self, query_text: str) -> List[Dict[str, str]]:
-        """Busca SIN site: prefix y devuelve snippets de los top 3 resultados externos."""
+        """Busca en Google restringiendo a los competidores del set congelado y devuelve hasta 3 snippets.
+
+        La query se construye como ``{query} (site:dom1 OR site:dom2 OR ...)`` con los dominios
+        de ``top_competitors`` del Discovery, para que Google priorice resultados de esos sitios.
+        Adicionalmente se aplica un filtro defensivo sobre los resultados.
+        """
         api_key = os.getenv("SERPER_API_KEY")
-        if not api_key:
+        if not api_key or not self._competitor_domains_list:
             return []
+        site_clause = " OR ".join(f"site:{d}" for d in self._competitor_domains_list)
+        scoped_query = f"{query_text} ({site_clause})"
         import requests as _req
         r = _req.post(
             "https://google.serper.dev/search",
             headers={"X-API-KEY": api_key, "Content-Type": "application/json"},
-            json={"q": query_text, "num": 5, "gl": "es", "hl": "es"},
+            json={"q": scoped_query, "num": 10, "gl": "es", "hl": "es"},
             timeout=10,
         )
         r.raise_for_status()
@@ -486,6 +525,8 @@ class GEOOptimizer:
         for item in r.json().get("organic", []):
             url = item.get("link", "")
             if TARGET_DOMAIN in url:
+                continue
+            if not self._url_is_known_competitor(url):
                 continue
             snippet = item.get("snippet", "")
             if snippet:
