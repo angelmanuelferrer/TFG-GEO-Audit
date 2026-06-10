@@ -42,7 +42,3 @@ npm run lint     # eslint
 | `Seo` | `/seo` | Serie temporal de métricas PageSpeed |
 | `Optimizer` | `/optimizer` | Priorización de consultas y recomendaciones GEO |
 | `Jobs` | `/jobs` | Lanzar y monitorizar ejecuciones del pipeline |
-
-## Desarrollo sin backend
-
-Los archivos `src/api/mock-*.ts` proporcionan datos de ejemplo para desarrollar la UI sin levantar el backend.
