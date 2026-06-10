@@ -71,6 +71,11 @@ jobs:
           pip install -r requirements.txt
           pytest tests/ --cov=app --cov-report=xml:coverage.xml
 
+      - name: Core pipeline coverage
+        run: |
+          pip install -r tests/requirements.txt
+          pytest tests/ --cov=src --cov-report=xml:coverage-core.xml
+
       - uses: actions/setup-node@v4
         with:
           node-version: "20"

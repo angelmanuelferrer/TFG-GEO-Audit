@@ -23,6 +23,12 @@ from src.processing.html_processor import StructuredWebLoader
 
 logger = logging.getLogger(__name__)
 
+
+def _safe_log(value: str) -> str:
+    """Elimina caracteres de control (incluidos CR/LF) antes de loguear URLs externas."""
+    return re.sub(r"[\x00-\x1f\x7f]", "", str(value))
+
+
 # XML namespaces used in sitemaps
 _SITEMAP_NS = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
@@ -271,7 +277,7 @@ class SiteCrawler:
         """
         cfg = self.target_cfg if is_target else self.competitor_cfg
         if not cfg.get("enabled", True):
-            logger.info("Crawling disabled for %s (is_target=%s)", url, is_target)
+            logger.info("Crawling disabled for %s (is_target=%s)", _safe_log(url), is_target)
             return []
 
         parsed = urlparse(url)
@@ -408,6 +414,13 @@ class SiteCrawler:
                 continue
             visited.add(normalized)
 
+            # Guard: solo URLs http(s) del dominio objetivo llegan a la petición
+            parsed_current = urlparse(current_url)
+            if parsed_current.scheme not in ("http", "https") or (
+                same_domain and parsed_current.netloc != base_domain
+            ):
+                continue
+
             result.append(URLInfo(loc=current_url, source="bfs"))
 
             if depth >= max_depth:
@@ -444,7 +457,7 @@ class SiteCrawler:
             except requests.RequestException as e:
                 logger.debug("BFS failed to fetch %s: %s", current_url, e)
 
-        logger.info("BFS crawl found %d URLs from %s", len(result), start_url)
+        logger.info("BFS crawl found %d URLs from %s", len(result), _safe_log(start_url))
         return result
 
     # ------------------------------------------------------------------

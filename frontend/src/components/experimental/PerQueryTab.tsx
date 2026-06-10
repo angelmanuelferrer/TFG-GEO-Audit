@@ -60,8 +60,16 @@ export function PerQueryTab({ metrics }: { metrics: PerQueryMetric[] }) {
               ) : (
                 <div
                   key={m.query_id}
+                  role="button"
+                  tabIndex={0}
                   className="grid grid-cols-[60px_1fr_100px_70px_60px_50px_60px_60px] gap-2 px-4 py-2.5 items-center border-b border-border last:border-0 hover:bg-surface-elevated cursor-pointer transition-colors"
                   onClick={() => setSelected(m)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelected(m);
+                    }
+                  }}
                 >
                   <Badge variant="outline" className="text-[10px] font-mono w-fit">
                     {m.query_id}

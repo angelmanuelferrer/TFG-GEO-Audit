@@ -236,11 +236,14 @@ class RAGJudge:
         except json.JSONDecodeError:
             pass
 
-        # 2. Extract from ```json ... ``` blocks
-        match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL)
-        if match:
+        # 2. Extract from ```json ... ``` blocks (string ops: avoids regex backtracking)
+        parts = text.split("```", 2)
+        if len(parts) >= 3:
+            candidate = parts[1]
+            if candidate.startswith("json"):
+                candidate = candidate[4:]
             try:
-                return _try_parse(match.group(1).strip())
+                return _try_parse(candidate.strip())
             except json.JSONDecodeError:
                 pass
 

@@ -51,11 +51,19 @@ export function LiveQueryTable({ results, engines }: LiveQueryTableProps) {
         {results.map((r) => (
           <div
             key={r.query_id}
+            role="button"
+            tabIndex={0}
             className="grid gap-2 px-4 py-2.5 border-b border-border last:border-0 items-center hover:bg-surface-elevated cursor-pointer transition-colors"
             style={{
               gridTemplateColumns: `60px 1fr 100px repeat(${engineCols}, 70px) 90px`,
             }}
             onClick={() => setSelected(r)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setSelected(r);
+              }
+            }}
           >
             <Badge variant="outline" className="text-[10px] font-mono w-fit">{r.query_id}</Badge>
             <Tooltip>

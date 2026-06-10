@@ -23,7 +23,6 @@ import requests as _requests
 logger = logging.getLogger(__name__)
 
 _URL_PATTERN = re.compile(r"https?://[^\s\)\]\"\' <>]+")
-_TRAILING_PUNCT = re.compile(r"[.,;:!?\)]+$")
 
 # Domains to exclude (not real competitors)
 _EXCLUDED_DOMAINS = {
@@ -312,7 +311,7 @@ class CompetitorFinder:
 
     def _clean_url(self, url: str) -> Optional[str]:
         """Clean a URL and return None if it should be excluded."""
-        url = _TRAILING_PUNCT.sub("", url).rstrip("/")
+        url = url.rstrip(".,;:!?)").rstrip("/")
         domain = self._get_domain(url)
         if (
             not domain
