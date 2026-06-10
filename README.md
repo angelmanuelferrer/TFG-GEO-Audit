@@ -15,7 +15,7 @@ El sistema combina un pipeline experimental controlado (RAG con vectorstore de c
 ├── data/                 # Resultados (JSON) y vectorstore congelado — el dashboard lee de aquí
 ├── backend/              # API FastAPI del dashboard  → backend/README.md
 ├── frontend/             # Dashboard React + Vite     → frontend/README.md
-└── docs/                 # Memoria (LaTeX), ADRs (DECISIONS.md), informes
+└── docs/                 # Memoria del TFG (memoria.pdf)
 ```
 
 ## Puesta en marcha rápida
@@ -45,9 +45,9 @@ Variables de entorno necesarias para ejecutar el pipeline (no para visualizar): 
 
 ## Documentación
 
-- **Memoria del TFG**: `docs/memoria/latex/` (fuente) — el PDF se publica en las releases.
-- **Decisiones de arquitectura**: `docs/DECISIONS.md` (ADR-001 a ADR-017).
-- **Manuales de despliegue y de usuario**: anexos de la memoria.
+- **Memoria del TFG**: [`docs/memoria.pdf`](docs/memoria.pdf).
+- **Decisiones de arquitectura**: ADR-001 a ADR-017, recogidas en el Anexo A de la memoria.
+- **Manuales de despliegue y de usuario**: Anexos D y E de la memoria.
 
 ---
 

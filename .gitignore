@@ -28,17 +28,10 @@ venv/
 # Jupyter
 .ipynb_checkpoints/
 
-# LaTeX build (la memoria compilada se publica como asset de la release)
-docs/memoria/latex/*.aux
-docs/memoria/latex/*.bbl
-docs/memoria/latex/*.blg
-docs/memoria/latex/*.lof
-docs/memoria/latex/*.log
-docs/memoria/latex/*.lol
-docs/memoria/latex/*.lot
-docs/memoria/latex/*.out
-docs/memoria/latex/*.toc
-docs/memoria/latex/*.pdf
+# Documentación: en el repositorio solo se publica la memoria compilada;
+# las fuentes (LaTeX, informes, ADRs, fases) se mantienen solo en local
+docs/*
+!docs/memoria.pdf
 texput.log
 
 # Cobertura de tests
@@ -47,8 +40,6 @@ coverage.xml
 htmlcov/
 frontend/coverage/
 
-# PDFs de referencia (no se publican)
-docs/*.pdf
 
 # Runs experimentales no publicados (solo se versiona el citado en la memoria)
 data/geo/experimental/run_20260405_163337/
@@ -70,6 +61,3 @@ data/target_vectorstore_cache/
 
 # Internal context (not for public)
 /contexto-interno
-
-# Material de referencia de terceros (no se publica)
-docs/tfg_manuel_canizares.md
