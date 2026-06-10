@@ -1,0 +1,16 @@
+{
+    "fecha": "2026-04-17_09-06-42",
+    "url": "https://programamos.es/",
+    "mobile": {
+        "performance": 33.0,
+        "seo": 92.0,
+        "accessibility": 88.0,
+        "lcp": "6.5\u00a0s",
+        "tbt": "270\u00a0ms"
+    },
+    "desktop": {
+        "performance": 77.0,
+        "seo": 92.0,
+        "accessibility": 85.0
+    }
+}
