@@ -8,7 +8,7 @@ El sistema combina un pipeline experimental controlado (RAG con vectorstore de c
 
 ```
 ├── src/                  # Pipeline de investigación (discovery, processing, rag, optimizer, prompts)
-├── notebooks/            # 00_discover_competitors (una vez) y 01_experimental_run (N veces, en Kaggle)
+├── notebooks/            # 00_discover_competitors (una vez) y 01_experimental_run (N veces)
 ├── scripts/              # CLI: run_discovery.py, run_experimental.py
 ├── collect_metrics/      # Colectores de métricas (SEO diario, GEO live semanal vía CI)
 ├── config/               # experiment_config.json + queries.json (100 consultas con rotación)
@@ -20,7 +20,7 @@ El sistema combina un pipeline experimental controlado (RAG con vectorstore de c
 
 ## Puesta en marcha rápida
 
-**Pipeline de investigación** (la ejecución pesada se hace en Kaggle; ver memoria, anexo de despliegue):
+**Pipeline de investigación** (los embeddings van por la API de Gemini, sin GPU local; ver memoria, anexo de despliegue):
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
