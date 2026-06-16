@@ -3,6 +3,7 @@ import type { RawResponse, PerQueryMetric } from "@/api/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { describeRunError } from "@/lib/utils";
 
 const PAGE_SIZE = 10;
 const CATEGORIES = ["todas", "informacional", "comparativa", "navegacional"];
@@ -113,7 +114,9 @@ function RawCard({ item, category }: { item: RawResponse["items"][0]; category?:
           {category && <Badge variant="secondary" className="text-[10px]">{category}</Badge>}
           <span className="text-sm text-muted-foreground">{item.query}</span>
         </div>
-        <p className="text-xs text-destructive italic">{item.error}</p>
+        <p className="text-xs text-destructive italic" title={describeRunError(item.error).detail}>
+          {describeRunError(item.error).message}
+        </p>
       </div>
     );
   }
