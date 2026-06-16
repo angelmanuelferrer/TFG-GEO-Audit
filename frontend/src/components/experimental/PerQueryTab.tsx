@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Search } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, describeRunError } from "@/lib/utils";
 
 export function PerQueryTab({ metrics }: { metrics: PerQueryMetric[] }) {
   const [search, setSearch] = useState("");
@@ -55,7 +55,12 @@ export function PerQueryTab({ metrics }: { metrics: PerQueryMetric[] }) {
                   <Badge variant="outline" className="text-[10px] font-mono w-fit border-destructive/40 text-destructive">
                     {m.query_id}
                   </Badge>
-                  <span className="text-sm text-muted-foreground truncate col-span-7 italic">{m.error}</span>
+                  <span
+                    className="text-sm text-muted-foreground truncate col-span-7 italic"
+                    title={describeRunError(m.error).detail}
+                  >
+                    {describeRunError(m.error).message}
+                  </span>
                 </div>
               ) : (
                 <div
